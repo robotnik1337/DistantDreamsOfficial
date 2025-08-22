@@ -5,7 +5,7 @@
 [![Mod Version](https://img.shields.io/badge/Version-0.0.1-blue.svg)]()
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Distant Dreams** is a Minecraft mod that adds a brand new dimension known as the distant realm, filled with mysterious creatures and places to discover. Is it the ancient past of the minecraft world? Or is it something else entirely? That's up for you to decide!
+A new Minecraft mod adding a new dimension for you to explore, the Distant Realm. This dimension is filled with sights familiar and new, and inhabited by prehistoric fauna of all sizes. Will you immerse yourself in this worlds fauna or hunker down and protect yourself from what lurks in the shadows... its up to you to decide.
 ---
 
 ## 📋 Table of Contents
