@@ -1,4 +1,4 @@
-# Distant Dreams: From The Ground Up
+# Distant Dreams
 
 [![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21-brightgreen.svg)](https://minecraft.net/)
 [![Forge Version](https://img.shields.io/badge/Forge-51.0.33-orange.svg)](https://files.minecraftforge.net/)
