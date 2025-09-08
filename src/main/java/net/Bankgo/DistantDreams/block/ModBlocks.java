@@ -5,6 +5,7 @@ import net.Bankgo.DistantDreams.block.custom.ModFlammableRotatedPillarBlock;
 import net.Bankgo.DistantDreams.block.custom.ModFarmBlock;
 import net.Bankgo.DistantDreams.block.custom.ModSoilBlock;
 import net.Bankgo.DistantDreams.item.ModItems;
+import net.Bankgo.DistantDreams.worldgen.tree.ModTreeGrowers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -23,20 +24,21 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, DistantDreams.MODID);
 
+    // ===== START EUCALYPTUS ===== //
     // Eucalyptus Wood
-    public static final RegistryObject<Block> EUCALYPTUS_WOOD = registerBlock("eucalyptus_wood",
+    public static final RegistryObject<RotatedPillarBlock> EUCALYPTUS_WOOD = registerBlock("eucalyptus_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
 
     // Stripped Eucalyptus Wood
-    public static final RegistryObject<Block> STRIPPED_EUCALYPTUS_WOOD = registerBlock("stripped_eucalyptus_wood",
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_EUCALYPTUS_WOOD = registerBlock("stripped_eucalyptus_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
 
     // Eucalyptus Log
-    public static final RegistryObject<Block> EUCALYPTUS_LOG = registerBlock("eucalyptus_log",
+    public static final RegistryObject<RotatedPillarBlock> EUCALYPTUS_LOG = registerBlock("eucalyptus_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
 
     // Stripped Eucalyptus Log
-    public static final RegistryObject<Block> STRIPPED_EUCALYPTUS_LOG = registerBlock("stripped_eucalyptus_log",
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_EUCALYPTUS_LOG = registerBlock("stripped_eucalyptus_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
 
     // Eucalyptus Planks
@@ -89,20 +91,24 @@ public class ModBlocks {
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
 
+    public static final RegistryObject<Block> EUCALYPTUS_SAPLING = registerBlock("eucalyptus_sapling",
+            () -> new SaplingBlock(ModTreeGrowers.EUCALYPTUS, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    // ===== END EUCALYPTUS ===== //
+
     // Sequoia Wood
-    public static final RegistryObject<Block> SEQUOIA_WOOD = registerBlock("sequoia_wood",
+    public static final RegistryObject<RotatedPillarBlock> SEQUOIA_WOOD = registerBlock("sequoia_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
 
     // Stripped Sequoia Wood
-    public static final RegistryObject<Block> STRIPPED_SEQUOIA_WOOD = registerBlock("stripped_sequoia_wood",
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_SEQUOIA_WOOD = registerBlock("stripped_sequoia_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
 
     // Sequoia Log
-    public static final RegistryObject<Block> SEQUOIA_LOG = registerBlock("sequoia_log",
+    public static final RegistryObject<RotatedPillarBlock> SEQUOIA_LOG = registerBlock("sequoia_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
 
     // Stripped Sequoia Log
-    public static final RegistryObject<Block> STRIPPED_SEQUOIA_LOG = registerBlock("stripped_sequoia_log",
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_SEQUOIA_LOG = registerBlock("stripped_sequoia_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
 
     // Sequoia Planks

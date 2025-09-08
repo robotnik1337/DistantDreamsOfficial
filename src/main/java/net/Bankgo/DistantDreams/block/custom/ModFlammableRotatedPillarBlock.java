@@ -37,11 +37,11 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
         if (context.getItemInHand().getItem() instanceof AxeItem) {
 
             // Eucalyptus logs/wood
-            if(state.is(ModBlocks.EUCALYPTUS_LOG.get())) {
+            if (state.is(ModBlocks.EUCALYPTUS_LOG.get())) {
                 return ModBlocks.STRIPPED_EUCALYPTUS_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
 
-            if(state.is(ModBlocks.EUCALYPTUS_WOOD.get())) {
+            if (state.is(ModBlocks.EUCALYPTUS_WOOD.get())) {
                 return ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
 

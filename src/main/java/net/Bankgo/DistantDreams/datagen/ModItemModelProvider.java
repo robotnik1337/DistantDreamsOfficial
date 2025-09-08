@@ -21,7 +21,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        basicItem(ModItems.EUCALYPTUS_SAPLING.get());
+//        basicItem(ModItems.EUCALYPTUS_SAPLING.get());
         basicItem(ModItems.SEQUOIA_SAPLING.get());
 
         // Button Item
@@ -47,6 +47,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(ModBlocks.LIMESTONE_BRICK_WALL, ModBlocks.LIMESTONE_BRICKS);
         wallItem(ModBlocks.MOSSY_DISTANT_STONE_BRICK_WALL, ModBlocks.MOSSY_DISTANT_STONE_BRICKS);
         wallItem(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL, ModBlocks.MOSSY_LIMESTONE_BRICKS);
+
+        // Sapling Items
+        saplingItem(ModBlocks.EUCALYPTUS_SAPLING);
     }
 
     public void buttonItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {
@@ -71,5 +74,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(DistantDreams.MODID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(DistantDreams.MODID, "block/" + item.getId().getPath()));
     }
 }

@@ -33,7 +33,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.EUCALYPTUS_DOOR.get());
                         output.accept(ModBlocks.EUCALYPTUS_TRAPDOOR.get());
                         output.accept(ModBlocks.EUCALYPTUS_LEAVES.get());
-                        output.accept(ModItems.EUCALYPTUS_SAPLING.get());
+                        output.accept(ModBlocks.EUCALYPTUS_SAPLING.get());
                         output.accept(ModBlocks.SEQUOIA_LOG.get());
                         output.accept(ModBlocks.STRIPPED_SEQUOIA_LOG.get());
                         output.accept(ModBlocks.SEQUOIA_WOOD.get());

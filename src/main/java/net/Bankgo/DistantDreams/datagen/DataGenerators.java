@@ -44,5 +44,7 @@ public class DataGenerators {
 
         // Generate item model json
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+
+        generator.addProvider(event.includeServer(), new ModDatapackEntries(packOutput, lookupProvider));
     }
 }

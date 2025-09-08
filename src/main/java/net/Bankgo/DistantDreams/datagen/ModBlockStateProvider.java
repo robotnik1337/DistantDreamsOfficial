@@ -25,9 +25,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         // Standard Wood Blocks
         blockWithItem(ModBlocks.EUCALYPTUS_PLANKS);
-        blockWithItem(ModBlocks.EUCALYPTUS_LEAVES);
         blockWithItem(ModBlocks.SEQUOIA_PLANKS);
-        blockWithItem(ModBlocks.SEQUOIA_LEAVES);
 
         // Standard Stone Blocks
         blockWithItem(ModBlocks.DISTANT_STONE);
@@ -43,12 +41,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.MOSSY_LIMESTONE_BRICKS);
 
         // Wood log blocks
-        logBlock((RotatedPillarBlock) ModBlocks.EUCALYPTUS_LOG.get());
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_EUCALYPTUS_LOG.get(),
-                modLoc("block/stripped_eucalyptus_log"),
-                modLoc("block/stripped_eucalyptus_log_top"));
-        logBlock((RotatedPillarBlock) ModBlocks.SEQUOIA_LOG.get());
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_SEQUOIA_LOG.get(),
+        logBlock(ModBlocks.EUCALYPTUS_LOG.get());
+//        axisBlock(ModBlocks.EUCALYPTUS_WOOD.get(), blockTexture(ModBlocks.EUCALYPTUS_WOOD.get()), blockTexture(ModBlocks.EUCALYPTUS_WOOD.get()));
+        logBlock(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get());
+//        axisBlock(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get(), blockTexture(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()), blockTexture(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()));
+        logBlock(ModBlocks.SEQUOIA_LOG.get());
+        axisBlock(ModBlocks.STRIPPED_SEQUOIA_LOG.get(),
                 modLoc("block/stripped_sequoia_log"),
                 modLoc("block/stripped_sequoia_log_top"));
 
@@ -58,16 +56,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 modLoc("block/limestone_pillar_top"));
 
         // Wood blocks
-        axisBlock((RotatedPillarBlock) ModBlocks.EUCALYPTUS_WOOD.get(),
+        axisBlock(ModBlocks.EUCALYPTUS_WOOD.get(),
                 modLoc("block/eucalyptus_log"),
                 modLoc("block/eucalyptus_log"));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get(),
+        axisBlock(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get(),
                 modLoc("block/stripped_eucalyptus_log"),
                 modLoc("block/stripped_eucalyptus_log"));
-        axisBlock((RotatedPillarBlock) ModBlocks.SEQUOIA_WOOD.get(),
+        axisBlock(ModBlocks.SEQUOIA_WOOD.get(),
                 modLoc("block/sequoia_log"),
                 modLoc("block/sequoia_log"));
-        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_SEQUOIA_WOOD.get(),
+        axisBlock(ModBlocks.STRIPPED_SEQUOIA_WOOD.get(),
                 modLoc("block/stripped_sequoia_log"),
                 modLoc("block/stripped_sequoia_log"));
 
@@ -189,6 +187,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Soil Blocks
         grassBlock(ModBlocks.FERTILE_SOIL);
         farmlandBlock(ModBlocks.FERTILE_PLOT);
+
+        // Leaves Blocks
+        leavesBlock(ModBlocks.EUCALYPTUS_LEAVES);
+
+        // Sapling Blocks
+        saplingBlock(ModBlocks.EUCALYPTUS_SAPLING);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
@@ -257,5 +261,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         .build());
 
         simpleBlockItem(blockRegistryObject.get(), farmlandWetModel);
+    }
+
+    private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
+                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 }

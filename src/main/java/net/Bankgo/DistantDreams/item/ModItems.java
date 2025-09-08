@@ -13,8 +13,8 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, DistantDreams.MODID);
 
     // Eucalyptus Sapling
-    public static final RegistryObject<Item> EUCALYPTUS_SAPLING = ITEMS.register("eucalyptus_sapling",
-            () -> new Item(new Item.Properties()));
+//    public static final RegistryObject<Item> EUCALYPTUS_SAPLING = ITEMS.register("eucalyptus_sapling",
+//            () -> new Item(new Item.Properties()));
 
     // Sequoia Sapling
     public static final RegistryObject<Item> SEQUOIA_SAPLING = ITEMS.register("sequoia_sapling",
