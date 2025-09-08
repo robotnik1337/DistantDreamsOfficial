@@ -21,8 +21,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-//        basicItem(ModItems.EUCALYPTUS_SAPLING.get());
-        basicItem(ModItems.SEQUOIA_SAPLING.get());
 
         // Button Item
         buttonItem(ModBlocks.EUCALYPTUS_BUTTON, ModBlocks.EUCALYPTUS_PLANKS);
@@ -50,6 +48,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         // Sapling Items
         saplingItem(ModBlocks.EUCALYPTUS_SAPLING);
+        saplingItem(ModBlocks.SEQUOIA_SAPLING);
     }
 
     public void buttonItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {

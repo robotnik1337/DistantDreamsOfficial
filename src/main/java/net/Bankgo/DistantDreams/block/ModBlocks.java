@@ -95,6 +95,7 @@ public class ModBlocks {
             () -> new SaplingBlock(ModTreeGrowers.EUCALYPTUS, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
     // ===== END EUCALYPTUS ===== //
 
+    // ==== START SEQUOIA ===== //
     // Sequoia Wood
     public static final RegistryObject<RotatedPillarBlock> SEQUOIA_WOOD = registerBlock("sequoia_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
@@ -160,6 +161,11 @@ public class ModBlocks {
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
+
+    public static final RegistryObject<Block> SEQUOIA_SAPLING = registerBlock("sequoia_sapling",
+            () -> new SaplingBlock(ModTreeGrowers.SEQUOIA, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+
+    // ===== END SEQUOIA ===== //
 
     // Fertile Soil Block
     public static final RegistryObject<Block> FERTILE_SOIL = registerBlock("fertile_soil",

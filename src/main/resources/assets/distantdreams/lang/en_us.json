@@ -30,6 +30,7 @@
   "block.distantdreams.sequoia_door": "Sequoia Door",
   "block.distantdreams.sequoia_trapdoor": "Sequoia Trapdoor",
   "block.distantdreams.sequoia_leaves": "Sequoia Leaves",
+  "block.distantdreams.sequoia_sapling": "Sequoia Sapling",
 
   "block.distantdreams.fertile_soil": "Fertile Soil",
   "block.distantdreams.fertile_plot": "Fertile Plot",
@@ -75,8 +76,6 @@
   "block.distantdreams.mossy_limestone_brick_stairs": "Mossy Limestone Brick Stairs",
   "block.distantdreams.mossy_limestone_brick_slab": "Mossy Limestone Brick Slab",
   "block.distantdreams.mossy_limestone_brick_wall": "Mossy Limestone Brick Wall",
-
-  "item.distantdreams.sequoia_sapling": "Sequoia Sapling",
 
   "creativetab.distantdreams.distant_dreams_tab": "Distant Dreams"
 }

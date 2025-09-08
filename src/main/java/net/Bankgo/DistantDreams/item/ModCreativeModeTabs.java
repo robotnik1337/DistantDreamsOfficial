@@ -48,7 +48,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SEQUOIA_DOOR.get());
                         output.accept(ModBlocks.SEQUOIA_TRAPDOOR.get());
                         output.accept(ModBlocks.SEQUOIA_LEAVES.get());
-                        output.accept(ModItems.SEQUOIA_SAPLING.get());
+                        output.accept(ModBlocks.SEQUOIA_SAPLING.get());
                         output.accept(ModBlocks.FERTILE_SOIL.get());
                         output.accept(ModBlocks.FERTILE_PLOT.get());
                         output.accept(ModItems.DREAMCATCHER.get());

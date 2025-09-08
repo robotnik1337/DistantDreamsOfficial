@@ -190,9 +190,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         // Leaves Blocks
         leavesBlock(ModBlocks.EUCALYPTUS_LEAVES);
+        leavesBlock(ModBlocks.SEQUOIA_LEAVES);
 
         // Sapling Blocks
         saplingBlock(ModBlocks.EUCALYPTUS_SAPLING);
+        saplingBlock(ModBlocks.SEQUOIA_SAPLING);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
@@ -265,12 +267,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(),
-                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+                models().cross(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get())).getPath(),
+                        blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(),
-                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
+                models().singleTexture(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get())).getPath(),
+                        ResourceLocation.parse("minecraft:block/leaves"),
                         "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 }

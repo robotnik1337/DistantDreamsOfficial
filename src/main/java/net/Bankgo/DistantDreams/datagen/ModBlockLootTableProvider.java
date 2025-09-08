@@ -54,7 +54,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createDoorTable(ModBlocks.SEQUOIA_DOOR.get()));
         this.dropSelf(ModBlocks.SEQUOIA_TRAPDOOR.get());
         this.add(ModBlocks.SEQUOIA_LEAVES.get(),
-                block -> createLeavesDrops(block, Blocks.OAK_LEAVES, NORMAL_LEAVES_SAPLING_CHANCES));
+                block -> createLeavesDrops(block, ModBlocks.SEQUOIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropSelf(ModBlocks.SEQUOIA_SAPLING.get());
+
         // Fertile Blocks
         this.add(ModBlocks.FERTILE_SOIL.get(),
                 block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
