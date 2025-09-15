@@ -1,6 +1,7 @@
 package net.Bankgo.DistantDreams.datagen;
 
 import net.Bankgo.DistantDreams.DistantDreams;
+import net.Bankgo.DistantDreams.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -20,6 +21,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider pProvider) {
+        // Modded Block Tags
+        copy(ModTags.Blocks.EUCALYPTUS_LOGS, ModTags.Items.EUCALYPTUS_LOGS);
+        copy(ModTags.Blocks.SEQUOIA_LOGS, ModTags.Items.SEQUOIA_LOGS);
+
+        // Vanilla Block Tags
         copy(BlockTags.LOGS, ItemTags.LOGS);
         copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
         copy(BlockTags.PLANKS, ItemTags.PLANKS);

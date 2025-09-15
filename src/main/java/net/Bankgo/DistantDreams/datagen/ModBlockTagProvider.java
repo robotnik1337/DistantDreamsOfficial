@@ -2,6 +2,7 @@ package net.Bankgo.DistantDreams.datagen;
 
 import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.block.ModBlocks;
+import net.Bankgo.DistantDreams.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -19,6 +20,23 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider pProvider) {
+        // MODDED BLOCK TAGS //
+
+        // Block tags for eucalyptus logs (ensures that they function as wood)
+        tag(ModTags.Blocks.EUCALYPTUS_LOGS)
+                .add(ModBlocks.EUCALYPTUS_LOG.get())
+                .add(ModBlocks.EUCALYPTUS_WOOD.get())
+                .add(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get())
+                .add(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get());
+
+        // Block tags for sequoia logs (ensures that they function as wood)
+        tag(ModTags.Blocks.SEQUOIA_LOGS)
+                .add(ModBlocks.SEQUOIA_LOG.get())
+                .add(ModBlocks.SEQUOIA_WOOD.get())
+                .add(ModBlocks.STRIPPED_SEQUOIA_LOG.get())
+                .add(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
+
+
         // Block tags for mining
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.DISTANT_STONE.get())
@@ -57,19 +75,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.FERTILE_PLOT.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL);
-
         tag(BlockTags.NEEDS_DIAMOND_TOOL);
-
-        // Block tags for wood
-        tag(BlockTags.LOGS)
-                .add(ModBlocks.EUCALYPTUS_LOG.get())
-                .add(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get())
-                .add(ModBlocks.EUCALYPTUS_WOOD.get())
-                .add(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get())
-                .add(ModBlocks.SEQUOIA_LOG.get())
-                .add(ModBlocks.STRIPPED_SEQUOIA_LOG.get())
-                .add(ModBlocks.SEQUOIA_WOOD.get())
-                .add(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
+        tag(BlockTags.LOGS);
 
         tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.EUCALYPTUS_LOG.get())

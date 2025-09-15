@@ -1,11 +1,13 @@
 package net.Bankgo.DistantDreams.datagen;
 
 import net.Bankgo.DistantDreams.block.ModBlocks;
+import net.Bankgo.DistantDreams.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -20,7 +22,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(@NotNull RecipeOutput pRecipeOutput) {
-        // Generate all eucalyptus wood recipes
+
+        // Generate all eucalyptus wood recipes.
+        planksFromLog(pRecipeOutput, ModBlocks.EUCALYPTUS_PLANKS.get(), ModTags.Items.EUCALYPTUS_LOGS, 4);
         woodRecipes(
                 pRecipeOutput,
                 ModBlocks.EUCALYPTUS_PLANKS.get(),
@@ -35,7 +39,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "eucalyptus"
         );
 
-        // Generate all sequoia wood recipes
+        // Generate all sequoia wood recipes.
+        planksFromLog(pRecipeOutput, ModBlocks.SEQUOIA_PLANKS.get(), ModTags.Items.SEQUOIA_LOGS, 4);
         woodRecipes(
                 pRecipeOutput,
                 ModBlocks.SEQUOIA_PLANKS.get(),
