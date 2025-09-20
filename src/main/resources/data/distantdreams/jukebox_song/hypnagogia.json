@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.distantdreams.music_disc_hypnagogia.desc"
+  },
+  "length_in_seconds": 181.0,
+  "sound_event": "distantdreams:hypnagogia"
+}
