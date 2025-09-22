@@ -34,6 +34,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.EUCALYPTUS_TRAPDOOR.get());
                         output.accept(ModBlocks.EUCALYPTUS_LEAVES.get());
                         output.accept(ModBlocks.EUCALYPTUS_SAPLING.get());
+
                         output.accept(ModBlocks.SEQUOIA_LOG.get());
                         output.accept(ModBlocks.STRIPPED_SEQUOIA_LOG.get());
                         output.accept(ModBlocks.SEQUOIA_WOOD.get());
@@ -49,9 +50,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SEQUOIA_TRAPDOOR.get());
                         output.accept(ModBlocks.SEQUOIA_LEAVES.get());
                         output.accept(ModBlocks.SEQUOIA_SAPLING.get());
+
                         output.accept(ModBlocks.FERTILE_SOIL.get());
                         output.accept(ModBlocks.FERTILE_PLOT.get());
+
                         output.accept(ModItems.DREAMCATCHER.get());
+                        output.accept(ModItems.MUSIC_DISC_HYPNAGOGIA.get());
 
                         output.accept(ModBlocks.DISTANT_STONE.get());
                         output.accept(ModBlocks.DISTANT_STONE_STAIRS.get());
@@ -72,6 +76,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MOSSY_DISTANT_STONE_BRICK_STAIRS.get());
                         output.accept(ModBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get());
                         output.accept(ModBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get());
+
                         output.accept(ModBlocks.LIMESTONE.get());
                         output.accept(ModBlocks.LIMESTONE_STAIRS.get());
                         output.accept(ModBlocks.LIMESTONE_SLAB.get());
