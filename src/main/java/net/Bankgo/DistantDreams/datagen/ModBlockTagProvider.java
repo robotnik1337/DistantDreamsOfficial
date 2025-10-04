@@ -36,9 +36,21 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_SEQUOIA_LOG.get())
                 .add(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
 
+        // TODO: agg the CHARRED_LOGS tag
+        // Block tags for charred logs (ensures that they function as wood)
+        tag(ModTags.Blocks.CHARRED_LOGS)
+                .add(ModBlocks.CHARRED_LOG.get())
+                .add(ModBlocks.CHARRED_WOOD.get())
+                .add(ModBlocks.STRIPPED_CHARRED_LOG.get())
+                .add(ModBlocks.STRIPPED_CHARRED_WOOD.get());
+
 
         // Block tags for mining
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.CHARRED_LOG.get())
+                .add(ModBlocks.CHARRED_WOOD.get())
+                .add(ModBlocks.STRIPPED_CHARRED_LOG.get())
+                .add(ModBlocks.STRIPPED_CHARRED_WOOD.get())
                 .add(ModBlocks.DISTANT_STONE.get())
                 .add(ModBlocks.DISTANT_STONE_STAIRS.get())
                 .add(ModBlocks.DISTANT_STONE_SLAB.get())
@@ -70,13 +82,16 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.LIMESTONE_PILLAR.get())
                 .add(ModBlocks.LIMESTONE_POWDER.get());
 
+
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ModBlocks.FERTILE_SOIL.get())
                 .add(ModBlocks.FERTILE_PLOT.get());
 
+
         tag(BlockTags.NEEDS_IRON_TOOL);
         tag(BlockTags.NEEDS_DIAMOND_TOOL);
         tag(BlockTags.LOGS);
+
 
         tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.EUCALYPTUS_LOG.get())
@@ -94,39 +109,48 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.PLANKS)
                 .add(ModBlocks.EUCALYPTUS_PLANKS.get())
-                .add(ModBlocks.SEQUOIA_PLANKS.get());
+                .add(ModBlocks.SEQUOIA_PLANKS.get())
+                .add(ModBlocks.CHARRED_PLANKS.get());
 
         tag(BlockTags.WOODEN_STAIRS)
                 .add(ModBlocks.EUCALYPTUS_STAIRS.get())
-                .add(ModBlocks.SEQUOIA_STAIRS.get());
+                .add(ModBlocks.SEQUOIA_STAIRS.get())
+                .add(ModBlocks.CHARRED_STAIRS.get());
 
         tag(BlockTags.WOODEN_SLABS)
                 .add(ModBlocks.EUCALYPTUS_SLAB.get())
-                .add(ModBlocks.SEQUOIA_SLAB.get());
+                .add(ModBlocks.SEQUOIA_SLAB.get())
+                .add(ModBlocks.CHARRED_SLAB.get());
 
         tag(BlockTags.WOODEN_PRESSURE_PLATES)
                 .add(ModBlocks.EUCALYPTUS_PRESSURE_PLATE.get())
-                .add(ModBlocks.SEQUOIA_PRESSURE_PLATE.get());
+                .add(ModBlocks.SEQUOIA_PRESSURE_PLATE.get())
+                .add(ModBlocks.CHARRED_PRESSURE_PLATE.get());
 
         tag(BlockTags.WOODEN_BUTTONS)
                 .add(ModBlocks.EUCALYPTUS_BUTTON.get())
-                .add(ModBlocks.SEQUOIA_BUTTON.get());
+                .add(ModBlocks.SEQUOIA_BUTTON.get())
+                .add(ModBlocks.CHARRED_BUTTON.get());
 
         tag(BlockTags.WOODEN_FENCES)
                 .add(ModBlocks.EUCALYPTUS_FENCE.get())
-                .add(ModBlocks.SEQUOIA_FENCE.get());
+                .add(ModBlocks.SEQUOIA_FENCE.get())
+                .add(ModBlocks.CHARRED_FENCE.get());
 
         tag(BlockTags.FENCE_GATES)
                 .add(ModBlocks.EUCALYPTUS_FENCE_GATE.get())
-                .add(ModBlocks.SEQUOIA_FENCE_GATE.get());
+                .add(ModBlocks.SEQUOIA_FENCE_GATE.get())
+                .add(ModBlocks.CHARRED_FENCE_GATE.get());
 
         tag(BlockTags.WOODEN_DOORS)
                 .add(ModBlocks.EUCALYPTUS_DOOR.get())
-                .add(ModBlocks.SEQUOIA_DOOR.get());
+                .add(ModBlocks.SEQUOIA_DOOR.get())
+                .add(ModBlocks.CHARRED_DOOR.get());
 
         tag(BlockTags.WOODEN_TRAPDOORS)
                 .add(ModBlocks.EUCALYPTUS_TRAPDOOR.get())
-                .add(ModBlocks.SEQUOIA_TRAPDOOR.get());
+                .add(ModBlocks.SEQUOIA_TRAPDOOR.get())
+                .add(ModBlocks.CHARRED_TRAPDOOR.get());
 
         tag(BlockTags.LEAVES)
                 .add(ModBlocks.EUCALYPTUS_LEAVES.get())

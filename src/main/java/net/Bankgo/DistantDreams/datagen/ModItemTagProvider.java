@@ -24,6 +24,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         // Modded Block Tags
         copy(ModTags.Blocks.EUCALYPTUS_LOGS, ModTags.Items.EUCALYPTUS_LOGS);
         copy(ModTags.Blocks.SEQUOIA_LOGS, ModTags.Items.SEQUOIA_LOGS);
+        copy(ModTags.Blocks.CHARRED_LOGS, ModTags.Items.CHARRED_LOGS);
 
         // Vanilla Block Tags
         copy(BlockTags.LOGS, ItemTags.LOGS);

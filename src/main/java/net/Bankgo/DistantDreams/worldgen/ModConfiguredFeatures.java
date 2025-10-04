@@ -42,7 +42,7 @@ public class ModConfiguredFeatures {
 
         register(context, SEQUOIA_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
             BlockStateProvider.simple(ModBlocks.SEQUOIA_LOG.get()),
-                new SequoiaTrunkPlacer(32, 1, 24),
+                new SequoiaTrunkPlacer(32, 8, 24),
 
             BlockStateProvider.simple(ModBlocks.SEQUOIA_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(3), 3),

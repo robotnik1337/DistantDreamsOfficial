@@ -54,6 +54,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModBlocks.SEQUOIA_TRAPDOOR.get(),
                 "sequoia"
         );
+
+        // Generate all sequoia wood recipes.
+        planksFromLog(pRecipeOutput, ModBlocks.CHARRED_PLANKS.get(), ModTags.Items.CHARRED_LOGS, 4);
+        woodRecipes(
+                pRecipeOutput,
+                ModBlocks.CHARRED_PLANKS.get(),
+                ModBlocks.CHARRED_STAIRS.get(),
+                ModBlocks.CHARRED_SLAB.get(),
+                ModBlocks.CHARRED_PRESSURE_PLATE.get(),
+                ModBlocks.CHARRED_BUTTON.get(),
+                ModBlocks.CHARRED_FENCE.get(),
+                ModBlocks.CHARRED_FENCE_GATE.get(),
+                ModBlocks.CHARRED_DOOR.get(),
+                ModBlocks.CHARRED_TRAPDOOR.get(),
+                "charred"
+        );
     }
 
     private void woodRecipes(RecipeOutput pRecipeOutput,

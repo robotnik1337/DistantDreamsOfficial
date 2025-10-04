@@ -29,9 +29,14 @@ public class SequoiaTrunkPlacer extends TrunkPlacer {
 
     @Override
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
-        // TODO: turn the dirt into what we actually want to be placed under the sequoia tree (fertile soil, distant dirt, something else?)
+
+         boolean layerOnePlaced = false;
+         boolean layerTwoPlaced = false;
+         boolean layerThreePlaced = false;
+
+         // TODO: turn the dirt into what we actually want to be placed under the sequoia tree (fertile soil, distant dirt, something else?)
         // Place dirt around the sapling in a circle.
-         BlockPos blockpos = pPos.below();
+        BlockPos blockpos = pPos.below();
         setDirtAt(pLevel, pBlockSetter, pRandom, blockpos, pConfig);
         setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.east(), pConfig);
         setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.east().east(), pConfig);
@@ -59,6 +64,38 @@ public class SequoiaTrunkPlacer extends TrunkPlacer {
 
         return ImmutableList.of(new FoliagePlacer.FoliageAttachment(pPos.above(pFreeTreeHeight), 0, true));
     }
+
+    private void placeBranch(int freeTreeHeight, int currentTreeHeight) {
+        // if the current height is not within the range we can place branches, quit immediately.
+        if (currentTreeHeight < 0 || currentTreeHeight > 25) return;
+
+        int branchLength = 0;
+
+        // three separate cases for layers 1-3
+        if (freeTreeHeight - currentTreeHeight >= 16 && freeTreeHeight - currentTreeHeight <= 25) {
+            return;
+        } else if (freeTreeHeight - currentTreeHeight >= 6 && freeTreeHeight - currentTreeHeight <= 15) {
+            return;
+        } else if (freeTreeHeight - currentTreeHeight >= 0 && freeTreeHeight - currentTreeHeight <= 5) {
+            return;
+        }
+
+
+     }
+
+     private void attemptBranchPlacement(int pFreeTreeHeight, int currentLoopLevel) {
+         // reverse tree height calculation so that 0 is the top of the tree and pFreeTreeHeight is the bottom.
+         int currentTreeHeight = pFreeTreeHeight - currentLoopLevel;
+         // if the current height is not within the range we can place branches, quit immediately.
+         if (currentTreeHeight < 0 || currentTreeHeight > 25) return;
+
+         int branchLength = currentTreeHeight >= 16 ? 3 : currentTreeHeight >= 6 ? 2 : 1;
+         int branchesSpawned = 0;
+
+         for (int i = 0; i < branchLength; i++) {
+
+         }
+     }
 
     private void placeLogIfFreeWithOffset(
             LevelSimulatedReader pLevel,
