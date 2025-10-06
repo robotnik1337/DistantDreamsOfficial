@@ -51,6 +51,15 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CHARRED_WOOD.get())
                 .add(ModBlocks.STRIPPED_CHARRED_LOG.get())
                 .add(ModBlocks.STRIPPED_CHARRED_WOOD.get())
+                .add(ModBlocks.CHARRED_PLANKS.get())
+                .add(ModBlocks.CHARRED_STAIRS.get())
+                .add(ModBlocks.CHARRED_SLAB.get())
+                .add(ModBlocks.CHARRED_PRESSURE_PLATE.get())
+                .add(ModBlocks.CHARRED_BUTTON.get())
+                .add(ModBlocks.CHARRED_FENCE.get())
+                .add(ModBlocks.CHARRED_FENCE_GATE.get())
+                .add(ModBlocks.CHARRED_DOOR.get())
+                .add(ModBlocks.CHARRED_TRAPDOOR.get())
                 .add(ModBlocks.DISTANT_STONE.get())
                 .add(ModBlocks.DISTANT_STONE_STAIRS.get())
                 .add(ModBlocks.DISTANT_STONE_SLAB.get())
@@ -102,6 +111,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_SEQUOIA_LOG.get())
                 .add(ModBlocks.SEQUOIA_WOOD.get())
                 .add(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
+
 
         tag(BlockTags.OVERWORLD_NATURAL_LOGS)
                 .add(ModBlocks.EUCALYPTUS_LOG.get())
