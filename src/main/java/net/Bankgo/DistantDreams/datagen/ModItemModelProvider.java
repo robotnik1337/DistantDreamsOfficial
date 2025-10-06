@@ -2,7 +2,6 @@ package net.Bankgo.DistantDreams.datagen;
 
 import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.block.ModBlocks;
-import net.Bankgo.DistantDreams.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -37,8 +36,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Door Item
         simpleBlockItem(ModBlocks.EUCALYPTUS_DOOR);
         simpleBlockItem(ModBlocks.SEQUOIA_DOOR);
-        // TODO: uncomment the line below once the charred door item texture has been added.
-//        simpleBlockItem(ModBlocks.CHARRED_DOOR);
+        simpleBlockItem(ModBlocks.CHARRED_DOOR);
 
         // Wall Item
         wallItem(ModBlocks.DISTANT_STONE_WALL, ModBlocks.DISTANT_STONE);

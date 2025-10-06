@@ -101,7 +101,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Slab Blocks
         slabBlock(ModBlocks.EUCALYPTUS_SLAB.get(), blockTexture(ModBlocks.EUCALYPTUS_PLANKS.get()), blockTexture(ModBlocks.EUCALYPTUS_PLANKS.get()));
         slabBlock(ModBlocks.SEQUOIA_SLAB.get(), blockTexture(ModBlocks.SEQUOIA_PLANKS.get()), blockTexture(ModBlocks.SEQUOIA_PLANKS.get()));
-        slabBlock(ModBlocks.CHARRED_SLAB.get(), blockTexture(ModBlocks.SEQUOIA_PLANKS.get()), blockTexture(ModBlocks.SEQUOIA_PLANKS.get()));
+        slabBlock(ModBlocks.CHARRED_SLAB.get(), blockTexture(ModBlocks.CHARRED_PLANKS.get()), blockTexture(ModBlocks.CHARRED_PLANKS.get()));
         slabBlock(ModBlocks.DISTANT_STONE_SLAB.get(), blockTexture(ModBlocks.DISTANT_STONE.get()), blockTexture(ModBlocks.DISTANT_STONE.get()));
         slabBlock(ModBlocks.POLISHED_DISTANT_STONE_SLAB.get(), blockTexture(ModBlocks.POLISHED_DISTANT_STONE.get()), blockTexture(ModBlocks.POLISHED_DISTANT_STONE.get()));
         slabBlock(ModBlocks.DISTANT_STONE_BRICK_SLAB.get(), blockTexture(ModBlocks.DISTANT_STONE_BRICKS.get()), blockTexture(ModBlocks.DISTANT_STONE_BRICKS.get()));
