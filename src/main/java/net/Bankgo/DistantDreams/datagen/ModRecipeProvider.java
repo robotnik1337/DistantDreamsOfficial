@@ -2,11 +2,13 @@ package net.Bankgo.DistantDreams.datagen;
 
 import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.Bankgo.DistantDreams.util.ModTags;
+import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -70,6 +72,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "charred"
         );
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CHARRED_CRAFTING_TABLE.get())
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModBlocks.CHARRED_PLANKS.get())
+                .unlockedBy("unlock_right_away", PlayerTrigger.TriggerInstance.tick())
+                .showNotification(false)
+                .save(pRecipeOutput);
+
 
     }
 
@@ -129,5 +139,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .group(groupName)
                 .unlockedBy(getHasName(planks), has(planks))
                 .save(pRecipeOutput);
+
     }
 }
