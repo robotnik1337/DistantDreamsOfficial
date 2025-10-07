@@ -22,9 +22,18 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider pProvider) {
         // Modded Block Tags
-        copy(ModTags.Blocks.EUCALYPTUS_LOGS, ModTags.Items.EUCALYPTUS_LOGS);
-        copy(ModTags.Blocks.SEQUOIA_LOGS, ModTags.Items.SEQUOIA_LOGS);
-        copy(ModTags.Blocks.CHARRED_LOGS, ModTags.Items.CHARRED_LOGS);
+        copy(ModTags.Blocks.EUCALYPTUS_LOGS, ModTags.Items.EUCALYPTUS_LOGS);;
+        copy(ModTags.Blocks.SEQUOIA_LOGS, ModTags.Items.SEQUOIA_LOGS);;
+        copy(ModTags.Blocks.CHARRED_LOGS, ModTags.Items.CHARRED_LOGS);;
+        copy(ModTags.Blocks.CHARRED_PLANKS, ModTags.Items.CHARRED_PLANKS);
+        copy(ModTags.Blocks.CHARRED_STAIRS, ModTags.Items.CHARRED_STAIRS);
+        copy(ModTags.Blocks.CHARRED_SLAB, ModTags.Items.CHARRED_SLAB);
+        copy(ModTags.Blocks.CHARRED_PRESSURE_PLATE, ModTags.Items.CHARRED_PRESSURE_PLATE);
+        copy(ModTags.Blocks.CHARRED_BUTTON, ModTags.Items.CHARRED_BUTTON);
+        copy(ModTags.Blocks.CHARRED_FENCE, ModTags.Items.CHARRED_FENCE);
+        copy(ModTags.Blocks.CHARRED_FENCE_GATE, ModTags.Items.CHARRED_FENCE_GATE);
+        copy(ModTags.Blocks.CHARRED_DOOR, ModTags.Items.CHARRED_DOOR);
+        copy(ModTags.Blocks.CHARRED_TRAPDOOR, ModTags.Items.CHARRED_TRAPDOOR);
 
         // Vanilla Block Tags
         copy(BlockTags.LOGS, ItemTags.LOGS);
