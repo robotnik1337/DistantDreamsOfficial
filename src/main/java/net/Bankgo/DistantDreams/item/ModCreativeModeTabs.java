@@ -64,6 +64,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CHARRED_FENCE_GATE.get());
                         output.accept(ModBlocks.CHARRED_DOOR.get());
                         output.accept(ModBlocks.CHARRED_TRAPDOOR.get());
+                        output.accept(ModBlocks.CHARRED_CRAFTING_TABLE.get());
 
                         output.accept(ModBlocks.FERTILE_SOIL.get());
                         output.accept(ModBlocks.FERTILE_PLOT.get());

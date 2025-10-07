@@ -1,6 +1,7 @@
 package net.Bankgo.DistantDreams.block;
 
 import net.Bankgo.DistantDreams.DistantDreams;
+import net.Bankgo.DistantDreams.block.custom.ModCraftingTableBlock;
 import net.Bankgo.DistantDreams.block.custom.ModFlammableRotatedPillarBlock;
 import net.Bankgo.DistantDreams.block.custom.ModFarmBlock;
 import net.Bankgo.DistantDreams.block.custom.ModSoilBlock;
@@ -226,6 +227,10 @@ public class ModBlocks {
     public static final RegistryObject<TrapDoorBlock> CHARRED_TRAPDOOR = registerBlock("charred_trapdoor",
             () -> new TrapDoorBlock(BlockSetType.OAK,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)));
+
+    // Charred Crafting Table
+    public static final RegistryObject<CraftingTableBlock> CHARRED_CRAFTING_TABLE = registerBlock("charred_crafting_table",
+            () -> new ModCraftingTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE)));
 
     // ===== END CHARRED ===== //
 

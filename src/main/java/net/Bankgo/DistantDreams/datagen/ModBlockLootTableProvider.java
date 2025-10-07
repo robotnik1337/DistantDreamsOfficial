@@ -3,14 +3,11 @@ package net.Bankgo.DistantDreams.datagen;
 import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.LootNumberProviderType;
-import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.minecraftforge.registries.RegistryObject;
 
 import javax.annotation.Nonnull;
@@ -84,6 +81,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.CHARRED_DOOR.get(),
                 block -> createDoorTable(ModBlocks.CHARRED_DOOR.get()));
         this.dropSelf(ModBlocks.CHARRED_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.CHARRED_CRAFTING_TABLE.get());
 
 
         // Fertile Blocks
