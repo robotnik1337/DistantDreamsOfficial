@@ -42,11 +42,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.CRACKED_LIMESTONE_BRICKS);
         blockWithItem(ModBlocks.MOSSY_LIMESTONE_BRICKS);
 
-        // Wood log blocks
+        // Log blocks
         logBlock(ModBlocks.EUCALYPTUS_LOG.get());
-//        axisBlock(ModBlocks.EUCALYPTUS_WOOD.get(), blockTexture(ModBlocks.EUCALYPTUS_WOOD.get()), blockTexture(ModBlocks.EUCALYPTUS_WOOD.get()));
-        logBlock(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get());
-//        axisBlock(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get(), blockTexture(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()), blockTexture(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()));
+        axisBlock(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get(),
+                modLoc("block/stripped_eucalyptus_log"),
+                modLoc("block/stripped_eucalyptus_log_top"));
         logBlock(ModBlocks.SEQUOIA_LOG.get());
         axisBlock(ModBlocks.STRIPPED_SEQUOIA_LOG.get(),
                 modLoc("block/stripped_sequoia_log"),
@@ -84,10 +84,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 modLoc("block/stripped_charred_log"));
 
 
-
-
-
-        // TODO: PUT IN THE REST OF THE SPECIAL WOOD BLOCKS FOR CHARRED
         // Stair Blocks
         stairsBlock(ModBlocks.EUCALYPTUS_STAIRS.get(), blockTexture(ModBlocks.EUCALYPTUS_PLANKS.get()));
         stairsBlock(ModBlocks.SEQUOIA_STAIRS.get(), blockTexture(ModBlocks.SEQUOIA_PLANKS.get()));
