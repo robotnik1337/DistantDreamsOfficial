@@ -5,6 +5,7 @@ import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CraftingTableBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -81,6 +82,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock(ModBlocks.STRIPPED_CHARRED_WOOD.get(),
                 modLoc("block/stripped_charred_log"),
                 modLoc("block/stripped_charred_log"));
+
+
 
 
 
@@ -230,6 +233,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Sapling Blocks
         saplingBlock(ModBlocks.EUCALYPTUS_SAPLING);
         saplingBlock(ModBlocks.SEQUOIA_SAPLING);
+
+        // Custom Crafting Table Blocks
+        craftingTableBlock(ModBlocks.CHARRED_CRAFTING_TABLE);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
@@ -247,6 +253,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void grassBlock(RegistryObject<? extends Block> blockRegistryObject) {
+        assert blockRegistryObject.getId() != null;
         String basePath = blockRegistryObject.getId().getPath();
         ResourceLocation topTexture = modLoc("block/" + basePath + "_top");
         ResourceLocation sideTexture = modLoc("block/" + basePath + "_side");
@@ -263,6 +270,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void farmlandBlock(RegistryObject<? extends Block> blockRegistryObject) {
+        assert blockRegistryObject.getId() != null;
         String basePath = blockRegistryObject.getId().getPath();
         ResourceLocation topWetTexture = modLoc("block/" + basePath + "_top_wet");
         ResourceLocation topTexture = modLoc("block/" + basePath + "_top");
@@ -271,14 +279,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         ModelFile farmlandDryModel = models().withExistingParent(
                 basePath + "_dry",
-                mcLoc("block/farmland")
-        ).texture(
-                "side", sideTexture
-        ).texture(
-                "bottom", bottomTexture
-        ).texture(
-                "top", topTexture
-        );
+                mcLoc("block/farmland")).texture("side", sideTexture)
+                .texture("bottom", bottomTexture)
+                .texture("top", topTexture);
 
         ModelFile farmlandWetModel = models().withExistingParent(
                 basePath + "_wet",
@@ -311,5 +314,28 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().singleTexture(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get())).getPath(),
                         ResourceLocation.parse("minecraft:block/leaves"),
                         "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    private void craftingTableBlock(RegistryObject<CraftingTableBlock> blockRegistryObject) {
+        assert blockRegistryObject.getId() != null;
+        String basePath = blockRegistryObject.getId().getPath();
+        String craftingTableMaterial = basePath.substring(0, basePath.length() - 15);
+        ResourceLocation topTexture = modLoc("block/" + basePath + "_top");
+        ResourceLocation frontTexture = modLoc("block/" + basePath + "_front");
+        ResourceLocation sideTexture = modLoc("block/" + basePath + "_side");
+        ResourceLocation bottomTexture = modLoc("block/" + craftingTableMaterial + "_planks");
+
+        ModelFile craftingTableModel = models().withExistingParent(
+                basePath,
+                mcLoc("block/crafting_table"))
+                .texture("down", bottomTexture)
+                .texture("east", sideTexture)
+                .texture("south", sideTexture)
+                .texture("north", frontTexture)
+                .texture("west", frontTexture)
+                .texture("particle", frontTexture)
+                .texture("up", topTexture);
+
+        simpleBlockWithItem(blockRegistryObject.get(), craftingTableModel);
     }
 }

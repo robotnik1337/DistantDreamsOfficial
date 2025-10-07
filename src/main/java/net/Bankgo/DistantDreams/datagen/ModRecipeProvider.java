@@ -7,7 +7,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -55,7 +54,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "sequoia"
         );
 
-        // Generate all sequoia wood recipes.
+        // Generate all charred wood recipes.
         planksFromLog(pRecipeOutput, ModBlocks.CHARRED_PLANKS.get(), ModTags.Items.CHARRED_LOGS, 4);
         woodRecipes(
                 pRecipeOutput,
@@ -70,6 +69,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModBlocks.CHARRED_TRAPDOOR.get(),
                 "charred"
         );
+
+
     }
 
     private void woodRecipes(RecipeOutput pRecipeOutput,
