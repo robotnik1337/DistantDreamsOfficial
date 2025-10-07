@@ -33,7 +33,6 @@ public class ModTags {
         public static final TagKey<Item> EUCALYPTUS_LOGS = createTag("eucalyptus_logs");
         public static final TagKey<Item> SEQUOIA_LOGS = createTag("sequoia_logs");
         public static final TagKey<Item> CHARRED_LOGS = createTag("charred_logs");
-        // TODO: add the rest of the charred wood block tags here.
 
         public static final TagKey<Item> CHARRED_PLANKS = createTag("charred_planks");
         public static final TagKey<Item> CHARRED_STAIRS = createTag("charred_stairs");
