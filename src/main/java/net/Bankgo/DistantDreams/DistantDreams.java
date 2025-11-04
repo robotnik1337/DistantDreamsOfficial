@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.Bankgo.DistantDreams.item.ModCreativeModeTabs;
 import net.Bankgo.DistantDreams.item.ModItems;
+import net.Bankgo.DistantDreams.worldgen.tree.ModTrunkPlacerTypes;
 import net.Bankgo.DistantDreams.sound.ModSounds;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -47,6 +48,8 @@ public class DistantDreams
         // Register the mod blocks
         ModBlocks.register(modEventBus);
 
+        // Register the trunk placer for the custom sequoia and eucalyptus trees.
+        ModTrunkPlacerTypes.register(modEventBus);
         // Register the mod sounds
         ModSounds.register(modEventBus);
 

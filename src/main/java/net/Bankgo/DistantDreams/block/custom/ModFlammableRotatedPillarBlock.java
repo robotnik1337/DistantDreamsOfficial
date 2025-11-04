@@ -53,6 +53,15 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
             if(state.is(ModBlocks.SEQUOIA_WOOD.get())) {
                 return ModBlocks.STRIPPED_SEQUOIA_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
+
+            // Charred logs/wood
+            if(state.is(ModBlocks.CHARRED_LOG.get())) {
+                return ModBlocks.STRIPPED_CHARRED_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+
+            if(state.is(ModBlocks.CHARRED_WOOD.get())) {
+                return ModBlocks.STRIPPED_CHARRED_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
         }
         return super.getToolModifiedState(state, context, toolAction, simulate);
     }

@@ -1,6 +1,7 @@
 package net.Bankgo.DistantDreams.block;
 
 import net.Bankgo.DistantDreams.DistantDreams;
+import net.Bankgo.DistantDreams.block.custom.ModCraftingTableBlock;
 import net.Bankgo.DistantDreams.block.custom.ModFlammableRotatedPillarBlock;
 import net.Bankgo.DistantDreams.block.custom.ModFarmBlock;
 import net.Bankgo.DistantDreams.block.custom.ModSoilBlock;
@@ -165,6 +166,74 @@ public class ModBlocks {
     public static final RegistryObject<Block> SEQUOIA_SAPLING = registerBlock("sequoia_sapling",
             () -> new SaplingBlock(ModTreeGrowers.SEQUOIA, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
     // ===== END SEQUOIA ===== //
+
+    // ===== START EUCALYPTUS ===== //
+    // Charred Wood
+    public static final RegistryObject<RotatedPillarBlock> CHARRED_WOOD = registerBlock("charred_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
+
+    // Stripped Charred Wood
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_CHARRED_WOOD = registerBlock("stripped_charred_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
+
+    // Charred Log
+    public static final RegistryObject<RotatedPillarBlock> CHARRED_LOG = registerBlock("charred_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+
+    // Stripped Charred Log
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_CHARRED_LOG = registerBlock("stripped_charred_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+
+    // Charred Planks
+    public static final RegistryObject<Block> CHARRED_PLANKS = registerBlock("charred_planks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+
+    // Charred Stairs
+    public static final RegistryObject<StairBlock> CHARRED_STAIRS = registerBlock("charred_stairs",
+            () -> new StairBlock(ModBlocks.CHARRED_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)));
+
+    // Charred Slab
+    public static final RegistryObject<SlabBlock> CHARRED_SLAB = registerBlock("charred_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
+
+    // Charred Pressure Plate
+    public static final RegistryObject<PressurePlateBlock> CHARRED_PRESSURE_PLATE = registerBlock("charred_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.OAK,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE)));
+
+    // Charred Button
+    public static final RegistryObject<ButtonBlock> CHARRED_BUTTON = registerBlock("charred_button",
+            () -> new ButtonBlock(BlockSetType.OAK,
+                    15,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
+
+    // Charred Fence
+    public static final RegistryObject<FenceBlock> CHARRED_FENCE = registerBlock("charred_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)));
+
+    // Charred Fence Gate
+    public static final RegistryObject<FenceGateBlock> CHARRED_FENCE_GATE = registerBlock("charred_fence_gate",
+            () -> new FenceGateBlock(WoodType.OAK,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)));
+
+    // Charred Door
+    public static final RegistryObject<DoorBlock> CHARRED_DOOR = registerBlock("charred_door",
+            () -> new DoorBlock(BlockSetType.OAK,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR)));
+
+    // Charred Trapdoor
+    public static final RegistryObject<TrapDoorBlock> CHARRED_TRAPDOOR = registerBlock("charred_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.OAK,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)));
+
+    // Charred Crafting Table
+    public static final RegistryObject<CraftingTableBlock> CHARRED_CRAFTING_TABLE = registerBlock("charred_crafting_table",
+            () -> new ModCraftingTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE)));
+
+    // ===== END CHARRED ===== //
+
+
 
     // ===== START FERTILE ===== //
     // Fertile Soil Block

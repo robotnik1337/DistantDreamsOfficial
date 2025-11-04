@@ -31,6 +31,23 @@
   "block.distantdreams.sequoia_leaves": "Sequoia Leaves",
   "block.distantdreams.sequoia_sapling": "Sequoia Sapling",
 
+
+  "block.distantdreams.charred_log": "Charred Log",
+  "block.distantdreams.stripped_charred_log": "Stripped Charred Log",
+  "block.distantdreams.charred_wood": "Charred Wood",
+  "block.distantdreams.stripped_charred_wood": "Stripped Charred Wood",
+  "block.distantdreams.charred_planks": "Charred Planks",
+  "block.distantdreams.charred_stairs": "Charred Stairs",
+  "block.distantdreams.charred_slab": "Charred Slab",
+  "block.distantdreams.charred_pressure_plate": "Charred Pressure Plate",
+  "block.distantdreams.charred_button": "Charred Button",
+  "block.distantdreams.charred_fence": "Charred Fence",
+  "block.distantdreams.charred_fence_gate": "Charred Fence Gate",
+  "block.distantdreams.charred_door": "Charred Door",
+  "block.distantdreams.charred_trapdoor": "Charred Trapdoor",
+  "block.distantdreams.charred_crafting_table": "Charred Crafting Table",
+
+
   "block.distantdreams.fertile_soil": "Fertile Soil",
   "block.distantdreams.fertile_plot": "Fertile Plot",
 

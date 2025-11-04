@@ -2,7 +2,6 @@ package net.Bankgo.DistantDreams.datagen;
 
 import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.block.ModBlocks;
-import net.Bankgo.DistantDreams.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -25,16 +24,19 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Button Item
         buttonItem(ModBlocks.EUCALYPTUS_BUTTON, ModBlocks.EUCALYPTUS_PLANKS);
         buttonItem(ModBlocks.SEQUOIA_BUTTON, ModBlocks.SEQUOIA_PLANKS);
+        buttonItem(ModBlocks.CHARRED_BUTTON, ModBlocks.CHARRED_PLANKS);
         buttonItem(ModBlocks.DISTANT_STONE_BUTTON, ModBlocks.DISTANT_STONE);
         buttonItem(ModBlocks.LIMESTONE_BUTTON, ModBlocks.LIMESTONE);
 
         // Fence Item
         fenceItem(ModBlocks.EUCALYPTUS_FENCE, ModBlocks.EUCALYPTUS_PLANKS);
         fenceItem(ModBlocks.SEQUOIA_FENCE, ModBlocks.SEQUOIA_PLANKS);
+        fenceItem(ModBlocks.CHARRED_FENCE, ModBlocks.CHARRED_PLANKS);
 
         // Door Item
         simpleBlockItem(ModBlocks.EUCALYPTUS_DOOR);
         simpleBlockItem(ModBlocks.SEQUOIA_DOOR);
+        simpleBlockItem(ModBlocks.CHARRED_DOOR);
 
         // Wall Item
         wallItem(ModBlocks.DISTANT_STONE_WALL, ModBlocks.DISTANT_STONE);

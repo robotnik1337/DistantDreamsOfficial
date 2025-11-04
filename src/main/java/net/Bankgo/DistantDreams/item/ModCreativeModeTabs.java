@@ -51,6 +51,21 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SEQUOIA_LEAVES.get());
                         output.accept(ModBlocks.SEQUOIA_SAPLING.get());
 
+                        output.accept(ModBlocks.CHARRED_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_CHARRED_LOG.get());
+                        output.accept(ModBlocks.CHARRED_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_CHARRED_WOOD.get());
+                        output.accept(ModBlocks.CHARRED_PLANKS.get());
+                        output.accept(ModBlocks.CHARRED_STAIRS.get());
+                        output.accept(ModBlocks.CHARRED_SLAB.get());
+                        output.accept(ModBlocks.CHARRED_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.CHARRED_BUTTON.get());
+                        output.accept(ModBlocks.CHARRED_FENCE.get());
+                        output.accept(ModBlocks.CHARRED_FENCE_GATE.get());
+                        output.accept(ModBlocks.CHARRED_DOOR.get());
+                        output.accept(ModBlocks.CHARRED_TRAPDOOR.get());
+                        output.accept(ModBlocks.CHARRED_CRAFTING_TABLE.get());
+
                         output.accept(ModBlocks.FERTILE_SOIL.get());
                         output.accept(ModBlocks.FERTILE_PLOT.get());
 

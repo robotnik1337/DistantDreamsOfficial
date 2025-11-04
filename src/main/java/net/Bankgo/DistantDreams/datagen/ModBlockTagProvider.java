@@ -2,6 +2,7 @@ package net.Bankgo.DistantDreams.datagen;
 
 import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.block.ModBlocks;
+import net.Bankgo.DistantDreams.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -19,8 +20,59 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider pProvider) {
+        // MODDED BLOCK TAGS //
+
+        // Block tags for eucalyptus logs (ensures that they function as wood)
+        tag(ModTags.Blocks.EUCALYPTUS_LOGS)
+                .add(ModBlocks.EUCALYPTUS_LOG.get())
+                .add(ModBlocks.EUCALYPTUS_WOOD.get())
+                .add(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get())
+                .add(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get());
+
+        // Block tags for sequoia logs (ensures that they function as wood)
+        tag(ModTags.Blocks.SEQUOIA_LOGS)
+                .add(ModBlocks.SEQUOIA_LOG.get())
+                .add(ModBlocks.SEQUOIA_WOOD.get())
+                .add(ModBlocks.STRIPPED_SEQUOIA_LOG.get())
+                .add(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
+
+        // Block tags for charred logs (ensures that they function as wood)
+        tag(ModTags.Blocks.CHARRED_LOGS)
+                .add(ModBlocks.CHARRED_LOG.get())
+                .add(ModBlocks.CHARRED_WOOD.get())
+                .add(ModBlocks.STRIPPED_CHARRED_LOG.get())
+                .add(ModBlocks.STRIPPED_CHARRED_WOOD.get());
+
+
+        // Special tags for charred blocks that need to be mineable by pickaxe only.
+        tag(ModTags.Blocks.CHARRED_PLANKS).add(ModBlocks.CHARRED_PLANKS.get());
+        tag(ModTags.Blocks.CHARRED_STAIRS).add(ModBlocks.CHARRED_STAIRS.get());
+        tag(ModTags.Blocks.CHARRED_SLAB).add(ModBlocks.CHARRED_SLAB.get());
+        tag(ModTags.Blocks.CHARRED_PRESSURE_PLATE).add(ModBlocks.CHARRED_PRESSURE_PLATE.get());
+        tag(ModTags.Blocks.CHARRED_BUTTON).add(ModBlocks.CHARRED_BUTTON.get());
+        tag(ModTags.Blocks.CHARRED_FENCE).add(ModBlocks.CHARRED_FENCE.get());
+        tag(ModTags.Blocks.CHARRED_FENCE_GATE).add(ModBlocks.CHARRED_FENCE_GATE.get());
+        tag(ModTags.Blocks.CHARRED_DOOR).add(ModBlocks.CHARRED_DOOR.get());
+        tag(ModTags.Blocks.CHARRED_TRAPDOOR).add(ModBlocks.CHARRED_TRAPDOOR.get());
+
+        // END MODDED BLOCK TAGS
+
         // Block tags for mining
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.CHARRED_LOG.get())
+                .add(ModBlocks.CHARRED_WOOD.get())
+                .add(ModBlocks.STRIPPED_CHARRED_LOG.get())
+                .add(ModBlocks.STRIPPED_CHARRED_WOOD.get())
+                .add(ModBlocks.CHARRED_PLANKS.get())
+                .add(ModBlocks.CHARRED_STAIRS.get())
+                .add(ModBlocks.CHARRED_SLAB.get())
+                .add(ModBlocks.CHARRED_PRESSURE_PLATE.get())
+                .add(ModBlocks.CHARRED_BUTTON.get())
+                .add(ModBlocks.CHARRED_FENCE.get())
+                .add(ModBlocks.CHARRED_FENCE_GATE.get())
+                .add(ModBlocks.CHARRED_DOOR.get())
+                .add(ModBlocks.CHARRED_TRAPDOOR.get())
+                .add(ModBlocks.CHARRED_CRAFTING_TABLE.get())
                 .add(ModBlocks.DISTANT_STONE.get())
                 .add(ModBlocks.DISTANT_STONE_STAIRS.get())
                 .add(ModBlocks.DISTANT_STONE_SLAB.get())
@@ -56,20 +108,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.FERTILE_SOIL.get())
                 .add(ModBlocks.FERTILE_PLOT.get());
 
+
         tag(BlockTags.NEEDS_IRON_TOOL);
-
         tag(BlockTags.NEEDS_DIAMOND_TOOL);
+        tag(BlockTags.LOGS);
 
-        // Block tags for wood
-        tag(BlockTags.LOGS)
-                .add(ModBlocks.EUCALYPTUS_LOG.get())
-                .add(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get())
-                .add(ModBlocks.EUCALYPTUS_WOOD.get())
-                .add(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get())
-                .add(ModBlocks.SEQUOIA_LOG.get())
-                .add(ModBlocks.STRIPPED_SEQUOIA_LOG.get())
-                .add(ModBlocks.SEQUOIA_WOOD.get())
-                .add(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
 
         tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.EUCALYPTUS_LOG.get())
@@ -80,6 +123,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_SEQUOIA_LOG.get())
                 .add(ModBlocks.SEQUOIA_WOOD.get())
                 .add(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
+
 
         tag(BlockTags.OVERWORLD_NATURAL_LOGS)
                 .add(ModBlocks.EUCALYPTUS_LOG.get())

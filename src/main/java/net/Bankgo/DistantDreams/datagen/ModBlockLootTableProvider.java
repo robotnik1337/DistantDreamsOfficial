@@ -4,8 +4,10 @@ import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.registries.RegistryObject;
 
 import javax.annotation.Nonnull;
@@ -37,6 +39,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.EUCALYPTUS_TRAPDOOR.get());
         this.add(ModBlocks.EUCALYPTUS_LEAVES.get(),
                 block -> createLeavesDrops(block, ModBlocks.EUCALYPTUS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
         // Sequoia Wood Set
         this.dropSelf(ModBlocks.SEQUOIA_LOG.get());
         this.dropSelf(ModBlocks.STRIPPED_SEQUOIA_LOG.get());
@@ -56,6 +59,30 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.SEQUOIA_LEAVES.get(),
                 block -> createLeavesDrops(block, ModBlocks.SEQUOIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.dropSelf(ModBlocks.SEQUOIA_SAPLING.get());
+
+        // Charred Wood Set
+        // Charred logs and wood will drop 4 pieces of charcoal if they are not broken with silk touch.
+        this.add(ModBlocks.CHARRED_LOG.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.CHARCOAL, ConstantValue.exactly(4)));
+        this.add(ModBlocks.STRIPPED_CHARRED_LOG.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.CHARCOAL, ConstantValue.exactly(4)));
+        this.add(ModBlocks.CHARRED_WOOD.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.CHARCOAL, ConstantValue.exactly(4)));
+        this.add(ModBlocks.STRIPPED_CHARRED_WOOD.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.CHARCOAL, ConstantValue.exactly(4)));
+        this.dropSelf(ModBlocks.CHARRED_PLANKS.get());
+        this.dropSelf(ModBlocks.CHARRED_STAIRS.get());
+        this.add(ModBlocks.CHARRED_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.CHARRED_SLAB.get()));
+        this.dropSelf(ModBlocks.CHARRED_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.CHARRED_BUTTON.get());
+        this.dropSelf(ModBlocks.CHARRED_FENCE.get());
+        this.dropSelf(ModBlocks.CHARRED_FENCE_GATE.get());
+        this.add(ModBlocks.CHARRED_DOOR.get(),
+                block -> createDoorTable(ModBlocks.CHARRED_DOOR.get()));
+        this.dropSelf(ModBlocks.CHARRED_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.CHARRED_CRAFTING_TABLE.get());
+
 
         // Fertile Blocks
         this.add(ModBlocks.FERTILE_SOIL.get(),

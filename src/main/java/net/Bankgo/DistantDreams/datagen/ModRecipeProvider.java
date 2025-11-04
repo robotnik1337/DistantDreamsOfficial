@@ -1,11 +1,14 @@
 package net.Bankgo.DistantDreams.datagen;
 
 import net.Bankgo.DistantDreams.block.ModBlocks;
+import net.Bankgo.DistantDreams.util.ModTags;
+import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -20,7 +23,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(@NotNull RecipeOutput pRecipeOutput) {
-        // Generate all eucalyptus wood recipes
+
+        // Generate all eucalyptus wood recipes.
+        planksFromLog(pRecipeOutput, ModBlocks.EUCALYPTUS_PLANKS.get(), ModTags.Items.EUCALYPTUS_LOGS, 4);
         woodRecipes(
                 pRecipeOutput,
                 ModBlocks.EUCALYPTUS_PLANKS.get(),
@@ -35,7 +40,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "eucalyptus"
         );
 
-        // Generate all sequoia wood recipes
+        // Generate all sequoia wood recipes.
+        planksFromLog(pRecipeOutput, ModBlocks.SEQUOIA_PLANKS.get(), ModTags.Items.SEQUOIA_LOGS, 4);
         woodRecipes(
                 pRecipeOutput,
                 ModBlocks.SEQUOIA_PLANKS.get(),
@@ -49,6 +55,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModBlocks.SEQUOIA_TRAPDOOR.get(),
                 "sequoia"
         );
+
+        // Generate all charred wood recipes.
+        planksFromLog(pRecipeOutput, ModBlocks.CHARRED_PLANKS.get(), ModTags.Items.CHARRED_LOGS, 4);
+        woodRecipes(
+                pRecipeOutput,
+                ModBlocks.CHARRED_PLANKS.get(),
+                ModBlocks.CHARRED_STAIRS.get(),
+                ModBlocks.CHARRED_SLAB.get(),
+                ModBlocks.CHARRED_PRESSURE_PLATE.get(),
+                ModBlocks.CHARRED_BUTTON.get(),
+                ModBlocks.CHARRED_FENCE.get(),
+                ModBlocks.CHARRED_FENCE_GATE.get(),
+                ModBlocks.CHARRED_DOOR.get(),
+                ModBlocks.CHARRED_TRAPDOOR.get(),
+                "charred"
+        );
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CHARRED_CRAFTING_TABLE.get())
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModBlocks.CHARRED_PLANKS.get())
+                .unlockedBy("unlock_right_away", PlayerTrigger.TriggerInstance.tick())
+                .showNotification(false)
+                .save(pRecipeOutput);
+
+
     }
 
     private void woodRecipes(RecipeOutput pRecipeOutput,
@@ -107,5 +139,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .group(groupName)
                 .unlockedBy(getHasName(planks), has(planks))
                 .save(pRecipeOutput);
+
     }
 }
