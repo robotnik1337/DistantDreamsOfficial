@@ -15,7 +15,6 @@
   "block.distantdreams.eucalyptus_leaves": "Eucalyptus Leaves",
   "block.distantdreams.eucalyptus_sapling": "Eucalyptus Sapling",
 
-
   "block.distantdreams.sequoia_log": "Sequoia Log",
   "block.distantdreams.stripped_sequoia_log": "Stripped Sequoia Log",
   "block.distantdreams.sequoia_wood": "Sequoia Wood",
@@ -93,6 +92,9 @@
   "block.distantdreams.mossy_limestone_brick_stairs": "Mossy Limestone Brick Stairs",
   "block.distantdreams.mossy_limestone_brick_slab": "Mossy Limestone Brick Slab",
   "block.distantdreams.mossy_limestone_brick_wall": "Mossy Limestone Brick Wall",
+
+  "item.distantdreams.music_disc_hypnagogia": "Music Disc",
+  "item.distantdreams.music_disc_hypnagogia.desc": "TheAnonymousGhoul - Hypnagogia",
 
   "creativetab.distantdreams.distant_dreams_tab": "Distant Dreams"
 }

@@ -68,7 +68,9 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.FERTILE_SOIL.get());
                         output.accept(ModBlocks.FERTILE_PLOT.get());
+
                         output.accept(ModItems.DREAMCATCHER.get());
+                        output.accept(ModItems.MUSIC_DISC_HYPNAGOGIA.get());
 
                         output.accept(ModBlocks.DISTANT_STONE.get());
                         output.accept(ModBlocks.DISTANT_STONE_STAIRS.get());
@@ -89,6 +91,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MOSSY_DISTANT_STONE_BRICK_STAIRS.get());
                         output.accept(ModBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get());
                         output.accept(ModBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get());
+
                         output.accept(ModBlocks.LIMESTONE.get());
                         output.accept(ModBlocks.LIMESTONE_STAIRS.get());
                         output.accept(ModBlocks.LIMESTONE_SLAB.get());

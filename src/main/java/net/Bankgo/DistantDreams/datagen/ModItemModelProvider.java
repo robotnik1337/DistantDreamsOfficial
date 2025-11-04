@@ -51,6 +51,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Sapling Items
         saplingItem(ModBlocks.EUCALYPTUS_SAPLING);
         saplingItem(ModBlocks.SEQUOIA_SAPLING);
+
+        // Music Disc Items
+        basicItem(ModItems.MUSIC_DISC_HYPNAGOGIA.get());
     }
 
     public void buttonItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {

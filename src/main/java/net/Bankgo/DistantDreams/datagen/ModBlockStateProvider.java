@@ -283,9 +283,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 basePath + "_wet",
                 mcLoc("block/farmland")
         ).texture(
-                "side", sideTexture
+                "dirt", sideTexture
         ).texture(
-                "bottom", bottomTexture
+                "particle", sideTexture
         ).texture(
                 "top", topWetTexture
         );

@@ -96,7 +96,7 @@ public class ModBlocks {
             () -> new SaplingBlock(ModTreeGrowers.EUCALYPTUS, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
     // ===== END EUCALYPTUS ===== //
 
-    // ==== START SEQUOIA ===== //
+    // ===== START SEQUOIA ===== //
     // Sequoia Wood
     public static final RegistryObject<RotatedPillarBlock> SEQUOIA_WOOD = registerBlock("sequoia_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
@@ -165,7 +165,6 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SEQUOIA_SAPLING = registerBlock("sequoia_sapling",
             () -> new SaplingBlock(ModTreeGrowers.SEQUOIA, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
-
     // ===== END SEQUOIA ===== //
 
     // ===== START EUCALYPTUS ===== //
@@ -236,6 +235,7 @@ public class ModBlocks {
 
 
 
+    // ===== START FERTILE ===== //
     // Fertile Soil Block
     public static final RegistryObject<Block> FERTILE_SOIL = registerBlock("fertile_soil",
             () -> new ModSoilBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PODZOL)));
@@ -243,7 +243,9 @@ public class ModBlocks {
     // Fertile Plot Block
     public static final RegistryObject<Block> FERTILE_PLOT = registerBlock("fertile_plot",
             () -> new ModFarmBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND)));
+    // ===== END FERTILE ===== //
 
+    // ===== START DISTANT STONE ===== //
     // Distant Stone Block
     public static final RegistryObject<Block> DISTANT_STONE = registerBlock("distant_stone",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
@@ -326,7 +328,9 @@ public class ModBlocks {
     // Distant Stone Brick Wall
     public static final RegistryObject<WallBlock> MOSSY_DISTANT_STONE_BRICK_WALL = registerBlock("mossy_distant_stone_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_STONE_BRICK_WALL)));
+    // ===== END DISTANT STONE ===== //
 
+    // ===== START LIMESTONE ===== //
     // Limestone Block
     public static final RegistryObject<Block> LIMESTONE = registerBlock("limestone",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
@@ -378,7 +382,7 @@ public class ModBlocks {
 
     // Limestone Brick Stairs
     public static final RegistryObject<StairBlock> LIMESTONE_BRICK_STAIRS = registerBlock("limestone_brick_stairs",
-            () -> new StairBlock(ModBlocks.DISTANT_STONE_BRICKS.get().defaultBlockState(),
+            () -> new StairBlock(ModBlocks.LIMESTONE_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS)));
 
     // Limestone Brick Slab
@@ -417,7 +421,7 @@ public class ModBlocks {
     // Mossy Limestone Brick Wall
     public static final RegistryObject<WallBlock> MOSSY_LIMESTONE_BRICK_WALL = registerBlock("mossy_limestone_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_STONE_BRICK_WALL)));
-
+    // ===== END LIMESTONE ===== //
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
