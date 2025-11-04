@@ -2,6 +2,7 @@ package net.Bankgo.DistantDreams.worldgen;
 
 import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.block.ModBlocks;
+import net.Bankgo.DistantDreams.worldgen.tree.custom.SequoiaFoliagePlacer;
 import net.Bankgo.DistantDreams.worldgen.tree.custom.SequoiaTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -14,14 +15,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> EUCALYPTUS_KEY = registerKey("eucalyptus");
@@ -45,7 +40,7 @@ public class ModConfiguredFeatures {
                 new SequoiaTrunkPlacer(32, 8, 24),
 
             BlockStateProvider.simple(ModBlocks.SEQUOIA_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(3), 3),
+                new SequoiaFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
 
                 new TwoLayersFeatureSize(1, 0, 2)).build()
         );

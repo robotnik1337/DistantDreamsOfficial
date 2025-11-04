@@ -5,8 +5,10 @@ import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.Bankgo.DistantDreams.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
@@ -15,6 +17,8 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 
 import java.util.List;
 import java.util.function.BiConsumer;
+import java.util.function.Function;
+
 
 public class SequoiaTrunkPlacer extends TrunkPlacer {
     public static final MapCodec<SequoiaTrunkPlacer> CODEC = RecordCodecBuilder.mapCodec(sequoiaTrunkPlacerInstance ->
@@ -29,75 +33,91 @@ public class SequoiaTrunkPlacer extends TrunkPlacer {
 
     @Override
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
+         // TODO (much later): turn the dirt into what we actually want to be placed under the sequoia tree (fertile soil, distant dirt, something else?)
 
-         boolean layerOnePlaced = false;
-         boolean layerTwoPlaced = false;
-         boolean layerThreePlaced = false;
-
-         // TODO: turn the dirt into what we actually want to be placed under the sequoia tree (fertile soil, distant dirt, something else?)
         // Place dirt around the sapling in a circle.
         BlockPos blockpos = pPos.below();
         setDirtAt(pLevel, pBlockSetter, pRandom, blockpos, pConfig);
+        setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.north(), pConfig);
+        setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.north().east(), pConfig);
         setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.east(), pConfig);
-        setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.east().east(), pConfig);
-        setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.south(), pConfig);
         setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.south().east(), pConfig);
-        setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.south().east().east(), pConfig);
-        setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.south().south(), pConfig);
-        setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.south().south().east(), pConfig);
-        setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.south().south().east().east(), pConfig);
-        BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
+        setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.south(), pConfig);
+        setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.south().west(), pConfig);
+        setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.west(), pConfig);
+        setDirtAt(pLevel, pBlockSetter, pRandom, blockpos.north().west(), pConfig);
+
+        List<FoliagePlacer.FoliageAttachment> attachments = new java.util.ArrayList<>();
 
         for (int i = 0; i < pFreeTreeHeight; i++) {
-            this.placeLogIfFreeWithOffset(pLevel, pBlockSetter, pRandom, blockpos$mutableblockpos, pConfig, pPos, 0, i, 0);
-            if (i < pFreeTreeHeight - 1) {
-                this.placeLogIfFreeWithOffset(pLevel, pBlockSetter, pRandom, blockpos$mutableblockpos, pConfig, pPos, 1, i, 0);
-                this.placeLogIfFreeWithOffset(pLevel, pBlockSetter, pRandom, blockpos$mutableblockpos, pConfig, pPos, 2, i, 0);
-                this.placeLogIfFreeWithOffset(pLevel, pBlockSetter, pRandom, blockpos$mutableblockpos, pConfig, pPos, 0, i, 1);
-                this.placeLogIfFreeWithOffset(pLevel, pBlockSetter, pRandom, blockpos$mutableblockpos, pConfig, pPos, 1, i, 1);
-                this.placeLogIfFreeWithOffset(pLevel, pBlockSetter, pRandom, blockpos$mutableblockpos, pConfig, pPos, 2, i, 1);
-                this.placeLogIfFreeWithOffset(pLevel, pBlockSetter, pRandom, blockpos$mutableblockpos, pConfig, pPos, 0, i, 2);
-                this.placeLogIfFreeWithOffset(pLevel, pBlockSetter, pRandom, blockpos$mutableblockpos, pConfig, pPos, 1, i, 2);
-                this.placeLogIfFreeWithOffset(pLevel, pBlockSetter, pRandom, blockpos$mutableblockpos, pConfig, pPos, 2, i, 2);
+
+            // circular trunk generation.
+            placeLog(pLevel, pBlockSetter, pRandom, pPos.above(i), pConfig);
+            placeLog(pLevel, pBlockSetter, pRandom, pPos.above(i).north(), pConfig);
+            placeLog(pLevel, pBlockSetter, pRandom, pPos.above(i).north().east(), pConfig);
+            placeLog(pLevel, pBlockSetter, pRandom, pPos.above(i).east(), pConfig);
+            placeLog(pLevel, pBlockSetter, pRandom, pPos.above(i).south().east(), pConfig);
+            placeLog(pLevel, pBlockSetter, pRandom, pPos.above(i).south(), pConfig);
+            placeLog(pLevel, pBlockSetter, pRandom, pPos.above(i).south().west(), pConfig);
+            placeLog(pLevel, pBlockSetter, pRandom, pPos.above(i).west(), pConfig);
+            placeLog(pLevel, pBlockSetter, pRandom, pPos.above(i).north().west(), pConfig);
+
+            // generate a branch for one side of the tree based on height of the current level. grab the tip of the branch to add a foliage attachment to.
+            BlockPos branchTipPosition = generateBranch(i, pLevel, pBlockSetter, pRandom, pConfig, pPos, pFreeTreeHeight);
+            if (branchTipPosition != BlockPos.ZERO) {
+                attachments.add(new FoliagePlacer.FoliageAttachment(branchTipPosition, 0, false));
             }
+//            generateBranch(i, pLevel, pBlockSetter, pRandom, pConfig, pPos, pFreeTreeHeight);
+//            generateBranch(i, pLevel, pBlockSetter, pRandom, pConfig, pPos, pFreeTreeHeight);
+//            generateBranch(i, pLevel, pBlockSetter, pRandom, pConfig, pPos, pFreeTreeHeight);
         }
 
-        return ImmutableList.of(new FoliagePlacer.FoliageAttachment(pPos.above(pFreeTreeHeight), 0, true));
+        attachments.add(new FoliagePlacer.FoliageAttachment(pPos.above(pFreeTreeHeight - 1), 1, true));
+        return ImmutableList.copyOf(attachments);
+//        return ImmutableList.of(new FoliagePlacer.FoliageAttachment(pPos.above(pFreeTreeHeight), 0, true));
     }
 
-    private void placeBranch(int freeTreeHeight, int currentTreeHeight) {
-        // if the current height is not within the range we can place branches, quit immediately.
-        if (currentTreeHeight < 0 || currentTreeHeight > 25) return;
-
-        int branchLength = 0;
-
-        // three separate cases for layers 1-3
-        if (freeTreeHeight - currentTreeHeight >= 16 && freeTreeHeight - currentTreeHeight <= 25) {
-            return;
-        } else if (freeTreeHeight - currentTreeHeight >= 6 && freeTreeHeight - currentTreeHeight <= 15) {
-            return;
-        } else if (freeTreeHeight - currentTreeHeight >= 0 && freeTreeHeight - currentTreeHeight <= 5) {
-            return;
-        }
-
-
-     }
-
-     private void attemptBranchPlacement(int pFreeTreeHeight, int currentLoopLevel) {
-         // reverse tree height calculation so that 0 is the top of the tree and pFreeTreeHeight is the bottom.
-         int currentTreeHeight = pFreeTreeHeight - currentLoopLevel;
+     private BlockPos generateBranch(int currentLoopLevel, LevelSimulatedReader pLevel,
+                                 BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom,
+                                 TreeConfiguration pConfig,
+                                 BlockPos pPos, int pFreeTreeHeight) {
+         // reverse tree height calculation so that 0 is the top of the tree and pFreeTreeHeight is the bottom .
          // if the current height is not within the range we can place branches, quit immediately.
-         if (currentTreeHeight < 0 || currentTreeHeight > 25) return;
+         int currentTreeHeight = pFreeTreeHeight - currentLoopLevel;
+         if (currentTreeHeight < 0 || currentTreeHeight > 25) return BlockPos.ZERO;
 
+         // from the top of the tree to 6 blocks down, the branches should be one block in length.
+         // from 7 to 16 blocks down, they should be two blocks in length.
+         // from 17 to 25 blocks down, they should be three blocks in length.
          int branchLength = currentTreeHeight >= 16 ? 3 : currentTreeHeight >= 6 ? 2 : 1;
-         int branchesSpawned = 0;
+
+         // pick which side of the tree the branch will extrude from based on the current height.
+         Direction branchStartingDirection = currentLoopLevel % 4 == 0 ? Direction.NORTH :
+                 currentLoopLevel % 4 == 1 ? Direction.EAST : currentLoopLevel % 4 == 2 ? Direction.SOUTH : Direction.WEST;
+         BlockPos currentBranchPosition = pPos.above(currentLoopLevel).relative(branchStartingDirection, 1);
+         Direction.Axis branchDirectionAxis = branchStartingDirection == Direction.NORTH || branchStartingDirection == Direction.SOUTH ? Direction.Axis.Z : Direction.Axis.X;
 
          for (int i = 0; i < branchLength; i++) {
+             // move the current branch position forward by 1 block for the next log to be placed.
+             currentBranchPosition = currentBranchPosition.relative(branchStartingDirection, 1);
 
+             if (i == 0) {
+                 pBlockSetter.accept(currentBranchPosition, ((BlockState) Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos)
+                         .setValue(RotatedPillarBlock.AXIS, branchDirectionAxis))));
+             } else {
+                 if (pRandom.nextBoolean()) { currentBranchPosition = currentBranchPosition.above(); }
+                 currentBranchPosition = currentBranchPosition.relative(branchStartingDirection.getClockWise(), pRandom.nextIntBetweenInclusive(-1, 1));
+                 pBlockSetter.accept(currentBranchPosition,
+                         ((BlockState) Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, branchDirectionAxis))));
+
+             }
          }
+         // store the current branch position to add to the list of foliage attachment locations, then return that position.
+         return currentBranchPosition;
      }
 
-    private void placeLogIfFreeWithOffset(
+
+     private void placeLogIfFreeWithOffset(
             LevelSimulatedReader pLevel,
             BiConsumer<BlockPos, BlockState> pBlockSetter,
             RandomSource pRandom,
