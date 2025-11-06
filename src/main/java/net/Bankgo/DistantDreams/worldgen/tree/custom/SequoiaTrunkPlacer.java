@@ -33,7 +33,7 @@ public class SequoiaTrunkPlacer extends TrunkPlacer {
 
     @Override
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
-         // TODO (much later): turn the dirt into what we actually want to be placed under the sequoia tree (fertile soil, distant dirt, something else?)
+        // TODO (much later): turn the dirt into what we actually want to be placed under the sequoia tree (fertile soil, distant dirt, something else?)
 
         // Place dirt around the sapling in a circle.
         BlockPos blockpos = pPos.below();
@@ -63,24 +63,24 @@ public class SequoiaTrunkPlacer extends TrunkPlacer {
             placeLog(pLevel, pBlockSetter, pRandom, pPos.above(i).north().west(), pConfig);
 
             // generate a branch for one side of the tree based on height of the current level. grab the tip of the branch to add a foliage attachment to.
-            BlockPos branchTipPosition = generateBranch(i, pLevel, pBlockSetter, pRandom, pConfig, pPos, pFreeTreeHeight);
-            if (branchTipPosition != BlockPos.ZERO) {
-                attachments.add(new FoliagePlacer.FoliageAttachment(branchTipPosition, 0, false));
+            BlockPos branchTipPosition1 = generateBranch(i, pBlockSetter, pRandom, pConfig, pPos, pFreeTreeHeight, i % 2 == 0 ? Direction.NORTH : Direction.WEST);
+            BlockPos branchTipPosition2 = generateBranch(i, pBlockSetter, pRandom, pConfig, pPos, pFreeTreeHeight, i % 2 == 0 ? Direction.SOUTH : Direction.EAST);
+            if (branchTipPosition1 != BlockPos.ZERO) {
+                attachments.add(new FoliagePlacer.FoliageAttachment(branchTipPosition1, 0, false));
             }
-//            generateBranch(i, pLevel, pBlockSetter, pRandom, pConfig, pPos, pFreeTreeHeight);
-//            generateBranch(i, pLevel, pBlockSetter, pRandom, pConfig, pPos, pFreeTreeHeight);
-//            generateBranch(i, pLevel, pBlockSetter, pRandom, pConfig, pPos, pFreeTreeHeight);
+
+            if (branchTipPosition2 != BlockPos.ZERO) {
+                attachments.add(new FoliagePlacer.FoliageAttachment(branchTipPosition2, 0, false));
+            }
         }
 
         attachments.add(new FoliagePlacer.FoliageAttachment(pPos.above(pFreeTreeHeight - 1), 1, true));
         return ImmutableList.copyOf(attachments);
-//        return ImmutableList.of(new FoliagePlacer.FoliageAttachment(pPos.above(pFreeTreeHeight), 0, true));
     }
 
-     private BlockPos generateBranch(int currentLoopLevel, LevelSimulatedReader pLevel,
-                                 BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom,
-                                 TreeConfiguration pConfig,
-                                 BlockPos pPos, int pFreeTreeHeight) {
+     private BlockPos generateBranch(int currentLoopLevel, BiConsumer<BlockPos, BlockState> pBlockSetter,
+                                     RandomSource pRandom, TreeConfiguration pConfig, BlockPos pPos, int pFreeTreeHeight,
+                                     Direction pDirection) {
          // reverse tree height calculation so that 0 is the top of the tree and pFreeTreeHeight is the bottom .
          // if the current height is not within the range we can place branches, quit immediately.
          int currentTreeHeight = pFreeTreeHeight - currentLoopLevel;
@@ -91,22 +91,26 @@ public class SequoiaTrunkPlacer extends TrunkPlacer {
          // from 17 to 25 blocks down, they should be three blocks in length.
          int branchLength = currentTreeHeight >= 16 ? 3 : currentTreeHeight >= 6 ? 2 : 1;
 
-         // pick which side of the tree the branch will extrude from based on the current height.
-         Direction branchStartingDirection = currentLoopLevel % 4 == 0 ? Direction.NORTH :
-                 currentLoopLevel % 4 == 1 ? Direction.EAST : currentLoopLevel % 4 == 2 ? Direction.SOUTH : Direction.WEST;
-         BlockPos currentBranchPosition = pPos.above(currentLoopLevel).relative(branchStartingDirection, 1);
-         Direction.Axis branchDirectionAxis = branchStartingDirection == Direction.NORTH || branchStartingDirection == Direction.SOUTH ? Direction.Axis.Z : Direction.Axis.X;
+
+         // create a new BlockPos that is offset to the outside of the tree to start placing branches.
+         // also, use the direction that the branch is heading in to determine what rotation of the log to use.
+         BlockPos currentBranchPosition = pPos.above(currentLoopLevel).relative(pDirection, 1)
+                 .relative(pDirection.getClockWise(), pRandom.nextIntBetweenInclusive(-1, 1));
+         Direction.Axis branchDirectionAxis = pDirection == Direction.NORTH || pDirection == Direction.SOUTH ? Direction.Axis.Z : Direction.Axis.X;
 
          for (int i = 0; i < branchLength; i++) {
              // move the current branch position forward by 1 block for the next log to be placed.
-             currentBranchPosition = currentBranchPosition.relative(branchStartingDirection, 1);
+             currentBranchPosition = currentBranchPosition.relative(pDirection, 1);
 
              if (i == 0) {
+                 // don't make offset adjustments if this is the first log on the branch (may change later).
                  pBlockSetter.accept(currentBranchPosition, ((BlockState) Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos)
                          .setValue(RotatedPillarBlock.AXIS, branchDirectionAxis))));
              } else {
+                 // otherwise, offset the next branch either above or on the same level as the previous branch, then
+                 // offset along the clockwise axis of the current branch direction.
                  if (pRandom.nextBoolean()) { currentBranchPosition = currentBranchPosition.above(); }
-                 currentBranchPosition = currentBranchPosition.relative(branchStartingDirection.getClockWise(), pRandom.nextIntBetweenInclusive(-1, 1));
+                 currentBranchPosition = currentBranchPosition.relative(pDirection.getClockWise(), pRandom.nextIntBetweenInclusive(-1, 1));
                  pBlockSetter.accept(currentBranchPosition,
                          ((BlockState) Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, branchDirectionAxis))));
 

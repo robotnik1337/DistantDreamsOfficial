@@ -14,9 +14,9 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> EUCALYPTUS_KEY = registerKey("eucalyptus");
@@ -25,11 +25,11 @@ public class ModConfiguredFeatures {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         register(context, EUCALYPTUS_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.EUCALYPTUS_LOG.get()),
-                new GiantTrunkPlacer(16, 1, 4),
+                new FancyTrunkPlacer(16, 1, 4),
 
                 BlockStateProvider.simple(ModBlocks.EUCALYPTUS_LEAVES.get()),
 //                new SpruceFoliagePlacer(ConstantInt.of(3), ConstantInt.of(3), ConstantInt.of(15)),
-                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 15),
+                new AcaciaFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2)),
 
                 new TwoLayersFeatureSize(1, 0, 2)).build()
         );
