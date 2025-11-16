@@ -170,19 +170,19 @@ public class ModBlocks {
     // ===== START EUCALYPTUS ===== //
     // Charred Wood
     public static final RegistryObject<RotatedPillarBlock> CHARRED_WOOD = registerBlock("charred_wood",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
 
     // Stripped Charred Wood
     public static final RegistryObject<RotatedPillarBlock> STRIPPED_CHARRED_WOOD = registerBlock("stripped_charred_wood",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
 
     // Charred Log
     public static final RegistryObject<RotatedPillarBlock> CHARRED_LOG = registerBlock("charred_log",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
 
     // Stripped Charred Log
     public static final RegistryObject<RotatedPillarBlock> STRIPPED_CHARRED_LOG = registerBlock("stripped_charred_log",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
 
     // Charred Planks
     public static final RegistryObject<Block> CHARRED_PLANKS = registerBlock("charred_planks",
