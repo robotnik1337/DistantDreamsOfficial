@@ -33,9 +33,10 @@ public class DistantDreams
 
     public DistantDreams()
     {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+//        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
+//        modEventBus.addListener(this::commonSetup);
+        var modBusGroup = FMLJavaModLoadingContext.get();
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 

@@ -8,6 +8,11 @@ import net.Bankgo.DistantDreams.block.custom.ModSoilBlock;
 import net.Bankgo.DistantDreams.item.ModItems;
 import net.Bankgo.DistantDreams.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -16,6 +21,7 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -103,7 +109,7 @@ public class ModBlocks {
 
     // Eucalyptus Leaves
     public static final RegistryObject<Block> EUCALYPTUS_LEAVES = registerBlock("eucalyptus_leaves",
-            () -> new TintedParticleLeavesBlock(0.01F, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
+            () -> new UntintedParticleLeavesBlock(0.01F, (ParticleOptions) ParticleTypes.TINTED_LEAVES, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
@@ -164,7 +170,7 @@ public class ModBlocks {
 
     // Sequoia Fence
     public static final RegistryObject<FenceBlock> SEQUOIA_FENCE = registerBlock("sequoia_fence",
-            () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)
+            () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE).
                     .mapColor(MapColor.COLOR_ORANGE)));
 
     // Sequoia Fence Gate
@@ -187,10 +193,11 @@ public class ModBlocks {
 
     // Sequoia Leaves
     public static final RegistryObject<Block> SEQUOIA_LEAVES = registerBlock("sequoia_leaves",
-            () -> new TintedLeavesBlock(0.01F, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
+            () -> new UntintedParticleLeavesBlock(0.01F, (ParticleOptions) ParticleTypes.TINTED_LEAVES, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
+
 
         public static final RegistryObject<Block> SEQUOIA_SAPLING = registerBlock("sequoia_sapling",
                 () -> new SaplingBlock(ModTreeGrowers.SEQUOIA, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
@@ -500,10 +507,29 @@ public class ModBlocks {
     }
 
     public static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(DistantDreams.MODID, name)))));
     }
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
+
+
+    
+    
+    // =========== HELPER METHODS =========== //
+//    private static BlockBehaviour.Properties leavesProperties(SoundType pSound) {
+//        return BlockBehaviour.Properties.of()
+//                .mapColor(MapColor.PLANT)
+//                .strength(0.2F)
+//                .randomTicks()
+//                .sound(pSound)
+//                .noOcclusion()
+//                .isValidSpawn(Blocks::ocelotOrParrot)
+//                .isSuffocating(Blocks::never)
+//                .isViewBlocking(Blocks::never)
+//                .ignitedByLava()
+//                .pushReaction(PushReaction.DESTROY)
+//                .isRedstoneConductor(Blocks::never);
+//    }
 }
