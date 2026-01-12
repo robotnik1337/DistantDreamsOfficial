@@ -4,7 +4,7 @@ import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.worldgen.tree.custom.SequoiaFoliagePlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -16,7 +16,7 @@ public class ModFoliagePlacers {
 //            RecordCodecBuilder.mapCodec(instance -> (instance).and);
             FOLIAGE_PLACERS.register("sequoia_foliage_placer", () -> new FoliagePlacerType<>(SequoiaFoliagePlacer.CODEC));
 
-    public static void register(IEventBus eventBus) {
-        FOLIAGE_PLACERS.register(eventBus);
+    public static void register(BusGroup busGroup) {
+        FOLIAGE_PLACERS.register(busGroup);
     }
 }

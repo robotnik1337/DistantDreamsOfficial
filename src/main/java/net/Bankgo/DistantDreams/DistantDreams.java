@@ -8,18 +8,18 @@ import net.Bankgo.DistantDreams.worldgen.tree.ModFoliagePlacers;
 import net.Bankgo.DistantDreams.worldgen.tree.ModTrunkPlacerTypes;
 import net.Bankgo.DistantDreams.sound.ModSounds;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
+import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+
+import java.lang.invoke.MethodHandles;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(DistantDreams.MODID)
@@ -31,38 +31,41 @@ public class DistantDreams
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public DistantDreams()
+    public DistantDreams(FMLJavaModLoadingContext context)
     {
 //        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         // Register the commonSetup method for modloading
 //        modEventBus.addListener(this::commonSetup);
-        var modBusGroup = FMLJavaModLoadingContext.get();
+        var modBusGroup = context.getModBusGroup();
+        FMLCommonSetupEvent.getBus(modBusGroup).addListener(DistantDreams::commonSetup);
+
         // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
+        BusGroup.DEFAULT.register(MethodHandles.lookup(), this);
 
         // Register the creative mode tabs
-        ModCreativeModeTabs.register(modEventBus);
+        ModCreativeModeTabs.register(modBusGroup);
+
 
         // Register the mod items
-        ModItems.register(modEventBus);
+        ModItems.register(modBusGroup);
 
         // Register the mod blocks
-        ModBlocks.register(modEventBus);
+        ModBlocks.register(modBusGroup);
 
         // Register the trunk and foliage placer types for custom tree generation.
-        ModTrunkPlacerTypes.register(modEventBus);
+        ModTrunkPlacerTypes.register(modBusGroup);
         // Register the mod sounds
-        ModSounds.register(modEventBus);
-        ModFoliagePlacers.register(modEventBus);
+        ModSounds.register(modBusGroup);
+        ModFoliagePlacers.register(modBusGroup);
 
         // Register the item to a creative tab
         // modEventBus.addListener(this::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
+    private static void commonSetup(final FMLCommonSetupEvent event)
     {
 
     }

@@ -77,6 +77,7 @@ minecraft {
             // You can set various levels here.
             // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
+            property 'eventbus.api.strictRuntimeChecks', 'true'
         }
 
         client {
@@ -103,6 +104,7 @@ minecraft {
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
         }
+
     }
 }
 
@@ -145,6 +147,8 @@ dependencies {
     
     // Hack fix for now, force jopt-simple to be exactly 5.0.4 because Mojang ships that version, but some transitive dependencies request 6.0+ 
     implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
+    annotationProcessor 'net.minecraftforge:eventbus-validator:7.0-beta.7'
+
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
