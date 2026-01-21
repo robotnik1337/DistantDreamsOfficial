@@ -4,9 +4,9 @@ import com.mojang.logging.LogUtils;
 import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.Bankgo.DistantDreams.item.ModCreativeModeTabs;
 import net.Bankgo.DistantDreams.item.ModItems;
+import net.Bankgo.DistantDreams.sound.ModSounds;
 import net.Bankgo.DistantDreams.worldgen.tree.ModFoliagePlacers;
 import net.Bankgo.DistantDreams.worldgen.tree.ModTrunkPlacerTypes;
-import net.Bankgo.DistantDreams.sound.ModSounds;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -45,7 +45,6 @@ public class DistantDreams
         // Register the creative mode tabs
         ModCreativeModeTabs.register(modBusGroup);
 
-
         // Register the mod items
         ModItems.register(modBusGroup);
 
@@ -54,8 +53,10 @@ public class DistantDreams
 
         // Register the trunk and foliage placer types for custom tree generation.
         ModTrunkPlacerTypes.register(modBusGroup);
+
         // Register the mod sounds
         ModSounds.register(modBusGroup);
+
         ModFoliagePlacers.register(modBusGroup);
 
         // Register the item to a creative tab
@@ -65,31 +66,20 @@ public class DistantDreams
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    private static void commonSetup(final FMLCommonSetupEvent event)
-    {
-
-    }
+    private static void commonSetup(final FMLCommonSetupEvent event) {}
 
     // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
-    }
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {}
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
-
-    }
+    public void onServerStarting(ServerStartingEvent event) {}
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-
-        }
+        public static void onClientSetup(FMLClientSetupEvent event) {}
     }
 }

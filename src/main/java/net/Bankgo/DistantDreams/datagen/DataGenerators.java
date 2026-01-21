@@ -9,7 +9,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import java.util.Collections;
@@ -37,13 +37,10 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), blockTagsProvider);
 
         // Generate item tag json
-        generator.addProvider(event.includeServer(), new ModItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModItemTagProvider(packOutput, lookupProvider));
 
-        // Generate block model jsone
-        generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
-
-        // Generate item model json
-        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+        // Generate block and item model JSONs
+        generator.addProvider(event.includeClient(), new ModModelProvider(packOutput));
 
         generator.addProvider(event.includeServer(), new ModDatapackEntries(packOutput, lookupProvider));
     }
