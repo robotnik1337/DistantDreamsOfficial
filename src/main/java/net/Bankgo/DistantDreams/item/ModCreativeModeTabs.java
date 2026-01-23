@@ -69,7 +69,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.FERTILE_SOIL.get());
                         output.accept(ModBlocks.FERTILE_PLOT.get());
 
-                        output.accept(ModItems.DREAMCATCHER.get());
                         output.accept(ModItems.MUSIC_DISC_HYPNAGOGIA.get());
 
                         output.accept(ModBlocks.DISTANT_STONE.get());
