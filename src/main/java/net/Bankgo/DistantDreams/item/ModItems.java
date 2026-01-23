@@ -19,11 +19,11 @@ public class  ModItems {
 
     // Music Disc Hypnagogia
     public static final RegistryObject<Item> MUSIC_DISC_HYPNAGOGIA = ITEMS.register("music_disc_hypnagogia",
-            () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.HYPNAGOGIA_KEY).stacksTo(1).rarity(Rarity.RARE)));
+            () -> new Item(new Item.Properties().setId(ITEMS.key("music_disc_hypnagogia")).jukeboxPlayable(ModSounds.HYPNAGOGIA_KEY).stacksTo(1).rarity(Rarity.RARE)));
 
     // Dreamcatcher
     public static final RegistryObject<Item> DREAMCATCHER = ITEMS.register("dreamcatcher",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().setId(ITEMS.key("dreamcatcher"))));
 
 
     public static void register(BusGroup busGroup) {

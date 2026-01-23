@@ -2,13 +2,13 @@ package net.Bankgo.DistantDreams.block;
 
 import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.block.custom.ModCraftingTableBlock;
-import net.Bankgo.DistantDreams.block.custom.ModFlammableRotatedPillarBlock;
 import net.Bankgo.DistantDreams.block.custom.ModFarmBlock;
+import net.Bankgo.DistantDreams.block.custom.ModFlammableRotatedPillarBlock;
 import net.Bankgo.DistantDreams.block.custom.ModSoilBlock;
 import net.Bankgo.DistantDreams.item.ModItems;
 import net.Bankgo.DistantDreams.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -113,7 +113,7 @@ public class ModBlocks {
 
     // Eucalyptus Leaves
     public static final RegistryObject<Block> EUCALYPTUS_LEAVES = registerBlock("eucalyptus_leaves",
-            () -> new UntintedParticleLeavesBlock(0.01F, (ParticleOptions) ParticleTypes.TINTED_LEAVES, setIdProperty("eucalyptus_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+            () -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 1), setIdProperty("eucalyptus_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
@@ -130,7 +130,7 @@ public class ModBlocks {
 
     // Stripped Sequoia Wood
     public static final RegistryObject<RotatedPillarBlock> STRIPPED_SEQUOIA_WOOD = registerBlock("stripped_sequoia_wood",
-            () -> new ModFlammableRotatedPillarBlock(setIdProperty("", BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD))
+            () -> new ModFlammableRotatedPillarBlock(setIdProperty("stripped_sequoia_wood", BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD))
                     .mapColor(MapColor.COLOR_ORANGE)));
 
     // Sequoia Log
@@ -197,7 +197,7 @@ public class ModBlocks {
 
     // Sequoia Leaves
     public static final RegistryObject<Block> SEQUOIA_LEAVES = registerBlock("sequoia_leaves",
-            () -> new UntintedParticleLeavesBlock(0.01F, (ParticleOptions) ParticleTypes.TINTED_LEAVES, setIdProperty("sequoia_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+            () -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 1), setIdProperty("sequoia_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
@@ -437,8 +437,8 @@ public class ModBlocks {
                     setIdProperty("limestone_button", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BUTTON))));
 
     // Limestone Wall
-    public static final RegistryObject<WallBlock> LIMESTONE_WALL = registerBlock("limestone_button",
-            () -> new WallBlock(setIdProperty("limestone_button", BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_WALL))));
+    public static final RegistryObject<WallBlock> LIMESTONE_WALL = registerBlock("limestone_wall",
+            () -> new WallBlock(setIdProperty("limestone_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_WALL))));
 
     // Polished Limestone
     public static final RegistryObject<Block> POLISHED_LIMESTONE = registerBlock("polished_limestone",
@@ -501,7 +501,7 @@ public class ModBlocks {
 
     // Mossy Limestone Brick Wall
     public static final RegistryObject<WallBlock> MOSSY_LIMESTONE_BRICK_WALL = registerBlock("mossy_limestone_brick_wall",
-            () -> new WallBlock(setIdProperty("mossy_limestone_brick_wall", setIdProperty("", BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_STONE_BRICK_WALL)))));
+            () -> new WallBlock(setIdProperty("mossy_limestone_brick_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_STONE_BRICK_WALL))));
     // ===== END LIMESTONE ===== //
 
     private static BlockBehaviour.Properties setIdProperty(String blockName, BlockBehaviour.Properties currentProperties) {

@@ -31,8 +31,7 @@ public class DistantDreams
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public DistantDreams(FMLJavaModLoadingContext context)
-    {
+    public DistantDreams(FMLJavaModLoadingContext context) {
 //        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         // Register the commonSetup method for modloading
 //        modEventBus.addListener(this::commonSetup);
@@ -66,9 +65,11 @@ public class DistantDreams
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
+    @SubscribeEvent
     private static void commonSetup(final FMLCommonSetupEvent event) {}
 
     // Add the example block item to the building blocks tab
+    @SubscribeEvent
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

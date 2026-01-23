@@ -19,7 +19,6 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
 
     @Override
     public void run() {
-        // TODO: copy EVERYTHING over from the ModBlockStateProvider.java files
 
         // Wood, Logs, and Stripped Variants
         woodProvider(ModBlocks.CHARRED_LOG.get()).logWithHorizontal(ModBlocks.CHARRED_LOG.get()).wood(ModBlocks.CHARRED_WOOD.get());
@@ -31,14 +30,17 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
 
 
         // Charred Woodset
-        createTrivialCube(ModBlocks.CHARRED_PLANKS.get());
         createTrapdoor(ModBlocks.CHARRED_TRAPDOOR.get());
-        family(ModBlocks.CHARRED_LOG.get())
+        family(ModBlocks.CHARRED_PLANKS.get())
                 .fence(ModBlocks.CHARRED_FENCE.get())
                 .fenceGate(ModBlocks.CHARRED_FENCE_GATE.get())
                 .stairs(ModBlocks.CHARRED_STAIRS.get())
                 .slab(ModBlocks.CHARRED_SLAB.get())
                 .button(ModBlocks.CHARRED_BUTTON.get())
                 .pressurePlate(ModBlocks.CHARRED_PRESSURE_PLATE.get());
+
+        /* TODO: complete the block model generator for the rest of the blocks. should be provided in the
+            ModBlockStateProvider.java file below */
+
     }
 }
