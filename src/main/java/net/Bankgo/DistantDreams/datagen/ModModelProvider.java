@@ -17,15 +17,6 @@ public class ModModelProvider extends ModelProvider {
         super(pOutput);
     }
 
-    protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
-
-        // ********** BLOCK MODEL GENERATORS ********** //
-
-
-        // Woods
-
-    }
-
     @Override
     protected Stream<Block> getKnownBlocks() {
         return BuiltInRegistries.BLOCK.stream()

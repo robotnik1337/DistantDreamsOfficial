@@ -10,7 +10,6 @@ import net.Bankgo.DistantDreams.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -19,7 +18,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-import java.lang.invoke.MethodHandles;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(DistantDreams.MODID)
@@ -33,42 +31,25 @@ public class DistantDreams
 
     public DistantDreams(FMLJavaModLoadingContext context)
     {
-//        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        // Register the commonSetup method for modloading
-//        modEventBus.addListener(this::commonSetup);
         var modBusGroup = context.getModBusGroup();
         FMLCommonSetupEvent.getBus(modBusGroup).addListener(DistantDreams::commonSetup);
 
-        // Register ourselves for server and other game events we are interested in
-        BusGroup.DEFAULT.register(MethodHandles.lookup(), this);
-
-        // Register the creative mode tabs
         ModCreativeModeTabs.register(modBusGroup);
-
-        // Register the mod items
         ModItems.register(modBusGroup);
-
-        // Register the mod blocks
         ModBlocks.register(modBusGroup);
-
-        // Register the trunk and foliage placer types for custom tree generation.
         ModTrunkPlacerTypes.register(modBusGroup);
-
-        // Register the mod sounds
         ModSounds.register(modBusGroup);
-
         ModFoliagePlacers.register(modBusGroup);
-
-        // Register the item to a creative tab
-        // modEventBus.addListener(this::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
+    @SubscribeEvent
     private static void commonSetup(final FMLCommonSetupEvent event) {}
 
     // Add the example block item to the building blocks tab
+    @SubscribeEvent
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

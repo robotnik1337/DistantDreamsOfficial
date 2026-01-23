@@ -57,7 +57,7 @@ public class Config
 
         // convert the list of strings into a set of items
         items = ITEM_STRINGS.get().stream()
-                .map(itemName -> (Item) ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse(itemName)))
+                .map(itemName -> ForgeRegistries.ITEMS.getValue(ResourceLocation.tryParse(itemName)))
                 .collect(Collectors.toSet());
 
     }
