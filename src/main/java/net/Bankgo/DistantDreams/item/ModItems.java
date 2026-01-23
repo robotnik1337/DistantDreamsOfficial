@@ -22,8 +22,8 @@ public class  ModItems {
             () -> new Item(new Item.Properties().setId(ITEMS.key("music_disc_hypnagogia")).jukeboxPlayable(ModSounds.HYPNAGOGIA_KEY).stacksTo(1).rarity(Rarity.RARE)));
 
     // Dreamcatcher
-    public static final RegistryObject<Item> DREAMCATCHER = ITEMS.register("dreamcatcher",
-            () -> new Item(new Item.Properties().setId(ITEMS.key("dreamcatcher"))));
+//    public static final RegistryObject<Item> DREAMCATCHER = ITEMS.register("dreamcatcher",
+//            () -> new Item(new Item.Properties().setId(ITEMS.key("dreamcatcher"))));
 
 
     public static void register(BusGroup busGroup) {
