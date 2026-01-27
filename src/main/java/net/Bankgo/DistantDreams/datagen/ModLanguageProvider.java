@@ -234,7 +234,7 @@ public class ModLanguageProvider extends LanguageProvider {
 
         // ########## MISCELLANEOUS ##########
 
-        add("itemGroup.distantdreams_tab", "Distant Dreams");
+        add("creativetab.distantdreams.distant_dreams_tab", "Distant Dreams");
 
 
     }

@@ -44,8 +44,8 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         // Eucalyptus Woodset
         woodProvider(ModBlocks.EUCALYPTUS_LOG.get()).logWithHorizontal(ModBlocks.EUCALYPTUS_LOG.get()).wood(ModBlocks.EUCALYPTUS_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()).wood(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get());
-        createTintedLeaves(ModBlocks.EUCALYPTUS_LEAVES.get(), TexturedModel.LEAVES, 0);
-        createCrossBlock(ModBlocks.EUCALYPTUS_SAPLING.get(), PlantType.NOT_TINTED);
+        createTintedLeaves(ModBlocks.EUCALYPTUS_LEAVES.get(), TexturedModel.LEAVES, 7901764);
+        createCutoutSaplingWithItem(ModBlocks.EUCALYPTUS_SAPLING.get(), ModBlocks.POTTED_EUCALYPTUS_SAPLING.get());
 
         family(ModBlocks.EUCALYPTUS_PLANKS.get())
                 .fence(ModBlocks.EUCALYPTUS_FENCE.get())
@@ -61,7 +61,7 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         woodProvider(ModBlocks.SEQUOIA_LOG.get()).logWithHorizontal(ModBlocks.SEQUOIA_LOG.get()).wood(ModBlocks.SEQUOIA_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_SEQUOIA_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_SEQUOIA_LOG.get()).wood(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
         createTintedLeaves(ModBlocks.SEQUOIA_LEAVES.get(), TexturedModel.LEAVES, 0);
-        createCrossBlock(ModBlocks.SEQUOIA_SAPLING.get(), PlantType.NOT_TINTED);
+        createCrossBlockWithDefaultItem(ModBlocks.SEQUOIA_SAPLING.get(), PlantType.NOT_TINTED);
 
         family(ModBlocks.SEQUOIA_PLANKS.get())
                 .fence(ModBlocks.SEQUOIA_FENCE.get())
@@ -161,12 +161,11 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         registerBlockItem(ModBlocks.CHARRED_FENCE_GATE.get());
 
         registerBlockItem(ModBlocks.EUCALYPTUS_PLANKS.get());
-        registerSimpleFlatItemModel(ModBlocks.EUCALYPTUS_SAPLING.get().asItem());
         registerBlockItem(ModBlocks.EUCALYPTUS_PRESSURE_PLATE.get());
         registerBlockItem(ModBlocks.EUCALYPTUS_FENCE_GATE.get());
+        registerBlockItem(ModBlocks.POTTED_EUCALYPTUS_SAPLING.get());
 
         registerBlockItem(ModBlocks.SEQUOIA_PLANKS.get());
-        registerSimpleFlatItemModel(ModBlocks.SEQUOIA_SAPLING.get().asItem());
         registerBlockItem(ModBlocks.SEQUOIA_PRESSURE_PLATE.get());
         registerBlockItem(ModBlocks.SEQUOIA_FENCE_GATE.get());
 
@@ -192,5 +191,30 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
 
     private void registerBlockItem(Block block) {
         registerSimpleItemModel(block, ModelLocationUtils.getModelLocation(block));
+    }
+
+    private void createCutoutSaplingWithItem(Block saplingBlock, Block pottedBlock) {
+        // TODO: fix this functin and make sapling textures work for potted plants.
+        var textures = PlantType.NOT_TINTED.getTextureMapping(saplingBlock);
+        var cutout = PlantType.NOT_TINTED.getCross().create(saplingBlock, textures, (name, model) -> {
+            var json = model.get().getAsJsonObject();
+            json.addProperty("render_type", "minecraft:cutout");
+            json.addProperty("render_type_fast", "minecraft:solid");
+            this.modelOutput.accept(name, () -> json);
+        });
+        MultiVariant multivariant = plainVariant(PlantType.NOT_TINTED.getCrossPot().create(pottedBlock, textures, (name, model) -> {
+            var json = model.get().getAsJsonObject();
+            json.addProperty("render_type", "minecraft:cutout");
+            json.addProperty("render_type_fast", "minecraft:solid");
+            this.modelOutput.accept(name, () -> json);
+        }));
+
+        this.blockStateOutput.accept(createSimpleBlock(saplingBlock, variant(plainModel(cutout))));
+        this.blockStateOutput.accept(createSimpleBlock(pottedBlock, multivariant));
+        this.registerSimpleItemModel(saplingBlock.asItem(), PlantType.NOT_TINTED.createItemModel(this, saplingBlock));
+
+//        var item = ModelTemplates.FLAT_ITEM.create(saplingBlock.asItem(), TextureMapping.layer0(saplingBlock), this.modelOutput);
+//        this.itemModelOutput.accept(saplingBlock.asItem(), ItemModelUtils.plainModel(item));
+        TextureMapping texturemapping = PlantType.NOT_TINTED.getPlantTextureMapping(saplingBlock);
     }
 }

@@ -118,8 +118,11 @@ public class ModBlocks {
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
 
-    public static final RegistryObject<Block> EUCALYPTUS_SAPLING = registerBlock("eucalyptus_sapling",
+    public static final RegistryObject<SaplingBlock> EUCALYPTUS_SAPLING = registerBlock("eucalyptus_sapling",
             () -> new SaplingBlock(ModTreeGrowers.EUCALYPTUS, setIdProperty("eucalyptus_sapling", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))));
+
+    public static final RegistryObject<FlowerPotBlock> POTTED_EUCALYPTUS_SAPLING = registerBlock("potted_eucalyptus_sapling",
+            () -> new FlowerPotBlock(EUCALYPTUS_SAPLING.get(), setIdProperty("potted_eucalyptus_sapling", BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING))));
     // ===== END EUCALYPTUS ===== //
 
     // ===== START SEQUOIA ===== //

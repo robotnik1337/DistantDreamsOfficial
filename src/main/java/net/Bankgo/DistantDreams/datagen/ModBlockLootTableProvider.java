@@ -39,6 +39,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.EUCALYPTUS_TRAPDOOR.get());
         this.add(ModBlocks.EUCALYPTUS_LEAVES.get(),
                 block -> createLeavesDrops(block, ModBlocks.EUCALYPTUS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_EUCALYPTUS_SAPLING.get());
 
         // Sequoia Wood Set
         this.dropSelf(ModBlocks.SEQUOIA_LOG.get());
