@@ -113,7 +113,7 @@ public class ModBlocks {
 
     // Eucalyptus Leaves
     public static final RegistryObject<Block> EUCALYPTUS_LEAVES = registerBlock("eucalyptus_leaves",
-            () -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 1), setIdProperty("eucalyptus_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+            () -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 120, 146, 68), setIdProperty("eucalyptus_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
@@ -135,7 +135,7 @@ public class ModBlocks {
 
     // Sequoia Log
     public static final RegistryObject<RotatedPillarBlock> SEQUOIA_LOG = registerBlock("sequoia_log",
-            () -> new ModFlammableRotatedPillarBlock(setIdProperty("stripped_sequoia_wood", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG))
+            () -> new ModFlammableRotatedPillarBlock(setIdProperty("sequoia_log", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG))
                     .mapColor(pBlockState -> pBlockState.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? MapColor.COLOR_ORANGE : MapColor.TERRACOTTA_ORANGE)));
 
     // Stripped Sequoia Log
