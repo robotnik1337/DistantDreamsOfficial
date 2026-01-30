@@ -1,5 +1,6 @@
 package net.Bankgo.DistantDreams.datagen;
 
+import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
@@ -12,6 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
+import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
@@ -44,7 +46,8 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         // Eucalyptus Woodset
         woodProvider(ModBlocks.EUCALYPTUS_LOG.get()).logWithHorizontal(ModBlocks.EUCALYPTUS_LOG.get()).wood(ModBlocks.EUCALYPTUS_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()).wood(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get());
-        createTintedLeaves(ModBlocks.EUCALYPTUS_LEAVES.get(), TexturedModel.LEAVES, 7901764);
+//        createTintedLeaves(ModBlocks.EUCALYPTUS_LEAVES.get(), TexturedModel.LEAVES, FoliageColor.FOLIAGE_DEFAULT);
+        createTrivialBlock(ModBlocks.EUCALYPTUS_LEAVES.get(), TexturedModel.LEAVES);
         createCutoutSaplingWithItem(ModBlocks.EUCALYPTUS_SAPLING.get(), ModBlocks.POTTED_EUCALYPTUS_SAPLING.get());
 
         family(ModBlocks.EUCALYPTUS_PLANKS.get())
@@ -57,11 +60,13 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         createDoor(ModBlocks.EUCALYPTUS_DOOR.get());
         createTrapdoor(ModBlocks.EUCALYPTUS_TRAPDOOR.get());
 
+
         // Sequoia Woodset
         woodProvider(ModBlocks.SEQUOIA_LOG.get()).logWithHorizontal(ModBlocks.SEQUOIA_LOG.get()).wood(ModBlocks.SEQUOIA_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_SEQUOIA_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_SEQUOIA_LOG.get()).wood(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
-        createTintedLeaves(ModBlocks.SEQUOIA_LEAVES.get(), TexturedModel.LEAVES, 0);
-        createCrossBlockWithDefaultItem(ModBlocks.SEQUOIA_SAPLING.get(), PlantType.NOT_TINTED);
+//        createTintedLeaves(ModBlocks.SEQUOIA_LEAVES.get(), TexturedModel.LEAVES, FoliageColor.FOLIAGE_DEFAULT);
+        createTrivialBlock(ModBlocks.SEQUOIA_LEAVES.get(), TexturedModel.LEAVES);
+        createCutoutSaplingWithItem(ModBlocks.SEQUOIA_SAPLING.get(), ModBlocks.POTTED_SEQUOIA_SAPLING.get());
 
         family(ModBlocks.SEQUOIA_PLANKS.get())
                 .fence(ModBlocks.SEQUOIA_FENCE.get())
@@ -137,19 +142,27 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         Variant plainFertileSoilVariant = plainModel(ModelTemplates.CUBE_BOTTOM_TOP.create(ModBlocks.FERTILE_SOIL.get(), fertileSoilTextureMapping, modelOutput));
         blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.FERTILE_SOIL.get(), createRotatedVariants(plainFertileSoilVariant)));
 
+
+        ModelTemplate CUSTOM_FARMLAND = new ModelTemplate(
+                Optional.of(ResourceLocation.fromNamespaceAndPath(DistantDreams.MODID, "block/template_custom_farmland")),
+                Optional.empty(),
+                TextureSlot.TOP,
+                TextureSlot.SIDE,
+                TextureSlot.BOTTOM
+        );
         TextureMapping fertilePlotTextureMapping = new TextureMapping()
                 .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_bottom"))
                 .put(TextureSlot.TOP, TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_top"))
-                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_side"));
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_side"))
+                .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_top"));
         TextureMapping moistFertilePlotTextureMapping = new TextureMapping()
                 .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_bottom"))
                 .put(TextureSlot.TOP, TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_top_moist"))
-                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_side"));
-        MultiVariant dryFertilePlotVariant = plainVariant(ModelTemplates.CUBE_BOTTOM_TOP
-                .create(TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_top"), fertilePlotTextureMapping, modelOutput));
-        MultiVariant moistFertilePlotVariant = plainVariant(ModelTemplates.CUBE_BOTTOM_TOP
-                .create(TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_top_moist"), moistFertilePlotTextureMapping, modelOutput));
-        blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.FERTILE_PLOT.get()).with(createEmptyOrFullDispatch(BlockStateProperties.MOISTURE, 7, dryFertilePlotVariant, moistFertilePlotVariant)));
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_side"))
+                .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_top"));
+        MultiVariant dryFertilePlotVariant = plainVariant(CUSTOM_FARMLAND.create(ModBlocks.FERTILE_PLOT.get(), fertilePlotTextureMapping, modelOutput));
+        MultiVariant moistFertilePlotVariant = plainVariant(CUSTOM_FARMLAND.create(TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_top_moist"), moistFertilePlotTextureMapping, modelOutput));
+        blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.FERTILE_PLOT.get()).with(createEmptyOrFullDispatch(BlockStateProperties.MOISTURE, 7, moistFertilePlotVariant, dryFertilePlotVariant)));
 
 
 
@@ -163,11 +176,14 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         registerBlockItem(ModBlocks.EUCALYPTUS_PLANKS.get());
         registerBlockItem(ModBlocks.EUCALYPTUS_PRESSURE_PLATE.get());
         registerBlockItem(ModBlocks.EUCALYPTUS_FENCE_GATE.get());
+        registerBlockItem(ModBlocks.EUCALYPTUS_LEAVES.get());
         registerBlockItem(ModBlocks.POTTED_EUCALYPTUS_SAPLING.get());
 
         registerBlockItem(ModBlocks.SEQUOIA_PLANKS.get());
         registerBlockItem(ModBlocks.SEQUOIA_PRESSURE_PLATE.get());
         registerBlockItem(ModBlocks.SEQUOIA_FENCE_GATE.get());
+        registerBlockItem(ModBlocks.SEQUOIA_LEAVES.get());
+        registerBlockItem(ModBlocks.POTTED_SEQUOIA_SAPLING.get());
 
         registerBlockItem(ModBlocks.LIMESTONE.get());
         registerBlockItem(ModBlocks.LIMESTONE_BRICKS.get());
@@ -194,27 +210,22 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
     }
 
     private void createCutoutSaplingWithItem(Block saplingBlock, Block pottedBlock) {
-        // TODO: fix this functin and make sapling textures work for potted plants.
-        var textures = PlantType.NOT_TINTED.getTextureMapping(saplingBlock);
-        var cutout = PlantType.NOT_TINTED.getCross().create(saplingBlock, textures, (name, model) -> {
+        TextureMapping saplingTextures = PlantType.NOT_TINTED.getTextureMapping(saplingBlock);
+        MultiVariant cutoutSaplingVariant = plainVariant(PlantType.NOT_TINTED.getCross().create(saplingBlock, saplingTextures, (name, model) -> {
             var json = model.get().getAsJsonObject();
             json.addProperty("render_type", "minecraft:cutout");
             json.addProperty("render_type_fast", "minecraft:solid");
             this.modelOutput.accept(name, () -> json);
-        });
-        MultiVariant multivariant = plainVariant(PlantType.NOT_TINTED.getCrossPot().create(pottedBlock, textures, (name, model) -> {
+        }));
+        MultiVariant cutoutPottedSaplingVariant = plainVariant(ModelTemplates.FLOWER_POT_CROSS.create(pottedBlock, TextureMapping.plant(saplingBlock), (name, model) -> {
             var json = model.get().getAsJsonObject();
             json.addProperty("render_type", "minecraft:cutout");
             json.addProperty("render_type_fast", "minecraft:solid");
             this.modelOutput.accept(name, () -> json);
         }));
 
-        this.blockStateOutput.accept(createSimpleBlock(saplingBlock, variant(plainModel(cutout))));
-        this.blockStateOutput.accept(createSimpleBlock(pottedBlock, multivariant));
+        this.blockStateOutput.accept(createSimpleBlock(saplingBlock, cutoutSaplingVariant));
+        this.blockStateOutput.accept(createSimpleBlock(pottedBlock, cutoutPottedSaplingVariant));
         this.registerSimpleItemModel(saplingBlock.asItem(), PlantType.NOT_TINTED.createItemModel(this, saplingBlock));
-
-//        var item = ModelTemplates.FLAT_ITEM.create(saplingBlock.asItem(), TextureMapping.layer0(saplingBlock), this.modelOutput);
-//        this.itemModelOutput.accept(saplingBlock.asItem(), ItemModelUtils.plainModel(item));
-        TextureMapping texturemapping = PlantType.NOT_TINTED.getPlantTextureMapping(saplingBlock);
     }
 }
