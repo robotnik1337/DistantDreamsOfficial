@@ -15,6 +15,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -113,7 +114,7 @@ public class ModBlocks {
 
     // Eucalyptus Leaves
     public static final RegistryObject<Block> EUCALYPTUS_LEAVES = registerBlock("eucalyptus_leaves",
-            () -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 120, 146, 68), setIdProperty("eucalyptus_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+            () -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, FoliageColor.FOLIAGE_BIRCH), setIdProperty("eucalyptus_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
@@ -200,7 +201,7 @@ public class ModBlocks {
 
     // Sequoia Leaves
     public static final RegistryObject<Block> SEQUOIA_LEAVES = registerBlock("sequoia_leaves",
-            () -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 1), setIdProperty("sequoia_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+            () -> new UntintedParticleLeavesBlock(0.1F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 9399763), setIdProperty("sequoia_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
@@ -208,6 +209,9 @@ public class ModBlocks {
 
         public static final RegistryObject<Block> SEQUOIA_SAPLING = registerBlock("sequoia_sapling",
                 () -> new SaplingBlock(ModTreeGrowers.SEQUOIA, setIdProperty("sequoia_sapling", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))));
+
+        public static final RegistryObject<FlowerPotBlock> POTTED_SEQUOIA_SAPLING = registerBlock("potted_sequoia_sapling",
+            () -> new FlowerPotBlock(SEQUOIA_SAPLING.get(), setIdProperty("potted_sequoia_sapling", BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING))));
         // ===== END SEQUOIA ===== //
 
         // ===== START CHARRED ===== //
@@ -325,7 +329,7 @@ public class ModBlocks {
             () -> new ModSoilBlock(setIdProperty("fertile_soil", BlockBehaviour.Properties.ofFullCopy(Blocks.PODZOL))));
 
     // Fertile Plot Block
-    public static final RegistryObject<Block> FERTILE_PLOT = registerBlock("fertile_plot",
+    public static final RegistryObject<FarmBlock> FERTILE_PLOT = registerBlock("fertile_plot",
             () -> new ModFarmBlock(setIdProperty("fertile_plot", BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND))));
     // ===== END FERTILE ===== //
 
@@ -533,23 +537,4 @@ public class ModBlocks {
         }
         return out;
     }
-
-
-    
-    
-    // =========== HELPER METHODS =========== //
-//    private static BlockBehaviour.Properties leavesProperties(SoundType pSound) {
-//        return BlockBehaviour.Properties.of()
-//                .mapColor(MapColor.PLANT)
-//                .strength(0.2F)
-//                .randomTicks()
-//                .sound(pSound)
-//                .noOcclusion()
-//                .isValidSpawn(Blocks::ocelotOrParrot)
-//                .isSuffocating(Blocks::never)
-//                .isViewBlocking(Blocks::never)
-//                .ignitedByLava()
-//                .pushReaction(PushReaction.DESTROY)
-//                .isRedstoneConductor(Blocks::never);
-//    }
 }
