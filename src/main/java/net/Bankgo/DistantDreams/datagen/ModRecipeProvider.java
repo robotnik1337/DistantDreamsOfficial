@@ -8,7 +8,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -17,17 +16,33 @@ import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
-    public ModRecipeProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pRegistries) {
-        super(pOutput, pRegistries);
+    public ModRecipeProvider(HolderLookup.Provider lookup, RecipeOutput recipeOutput) {
+        super(lookup, recipeOutput);
+    }
+
+    public static class Runner extends RecipeProvider.Runner {
+        public Runner(PackOutput output, CompletableFuture<HolderLookup.Provider> providerCompletableFuture) {
+            super(output, providerCompletableFuture);
+        }
+
+        @Override
+        protected @NotNull RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
+            return new ModRecipeProvider(provider, recipeOutput);
+        }
+
+        @Override
+        public String getName() {
+            return "";
+        }
     }
 
     @Override
-    protected void buildRecipes(@NotNull RecipeOutput pRecipeOutput) {
+    protected void buildRecipes() {
 
         // Generate all eucalyptus wood recipes.
-        planksFromLog(pRecipeOutput, ModBlocks.EUCALYPTUS_PLANKS.get(), ModTags.Items.EUCALYPTUS_LOGS, 4);
+        planksFromLog(ModBlocks.EUCALYPTUS_PLANKS.get(), ModTags.Items.EUCALYPTUS_LOGS, 4);
         woodRecipes(
-                pRecipeOutput,
+                this.output,
                 ModBlocks.EUCALYPTUS_PLANKS.get(),
                 ModBlocks.EUCALYPTUS_STAIRS.get(),
                 ModBlocks.EUCALYPTUS_SLAB.get(),
@@ -41,9 +56,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         // Generate all sequoia wood recipes.
-        planksFromLog(pRecipeOutput, ModBlocks.SEQUOIA_PLANKS.get(), ModTags.Items.SEQUOIA_LOGS, 4);
+        planksFromLog(ModBlocks.SEQUOIA_PLANKS.get(), ModTags.Items.SEQUOIA_LOGS, 4);
         woodRecipes(
-                pRecipeOutput,
+                this.output,
                 ModBlocks.SEQUOIA_PLANKS.get(),
                 ModBlocks.SEQUOIA_STAIRS.get(),
                 ModBlocks.SEQUOIA_SLAB.get(),
@@ -57,9 +72,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         // Generate all charred wood recipes.
-        planksFromLog(pRecipeOutput, ModBlocks.CHARRED_PLANKS.get(), ModTags.Items.CHARRED_LOGS, 4);
+        planksFromLog(ModBlocks.CHARRED_PLANKS.get(), ModTags.Items.CHARRED_LOGS, 4);
         woodRecipes(
-                pRecipeOutput,
+                this.output,
                 ModBlocks.CHARRED_PLANKS.get(),
                 ModBlocks.CHARRED_STAIRS.get(),
                 ModBlocks.CHARRED_SLAB.get(),
@@ -72,13 +87,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "charred"
         );
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CHARRED_CRAFTING_TABLE.get())
+        shaped(RecipeCategory.MISC, ModBlocks.CHARRED_CRAFTING_TABLE.get())
                 .pattern("##")
                 .pattern("##")
                 .define('#', ModBlocks.CHARRED_PLANKS.get())
                 .unlockedBy("unlock_right_away", PlayerTrigger.TriggerInstance.tick())
                 .showNotification(false)
-                .save(pRecipeOutput);
+                .save(this.output);
 
 
     }
@@ -105,7 +120,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pRecipeOutput);
 
         // Slab Recipe
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, slab, planks);
+        slab(RecipeCategory.BUILDING_BLOCKS, slab, planks);
 
         // Button Recipe
         buttonBuilder(button, planksIngredient)
@@ -114,7 +129,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pRecipeOutput);
 
         // Pressure Plate Recipe
-        pressurePlate(pRecipeOutput, pressurePlate, planks);
+        pressurePlate(pressurePlate, planks);
 
         // Fence Recipe
         fenceBuilder(fence, planksIngredient)

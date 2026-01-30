@@ -6,7 +6,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -69,7 +69,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.FERTILE_SOIL.get());
                         output.accept(ModBlocks.FERTILE_PLOT.get());
 
-                        output.accept(ModItems.DREAMCATCHER.get());
                         output.accept(ModItems.MUSIC_DISC_HYPNAGOGIA.get());
 
                         output.accept(ModBlocks.DISTANT_STONE.get());
@@ -116,7 +115,7 @@ public class ModCreativeModeTabs {
                     }).build());
 
 
-    public static void register(IEventBus eventBus) {
-        CREATIVE_MODE_TABS.register(eventBus);
+    public static void register(BusGroup busGroup) {
+        CREATIVE_MODE_TABS.register(busGroup);
     }
 }

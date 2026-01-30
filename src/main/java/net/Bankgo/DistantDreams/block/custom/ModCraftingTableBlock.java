@@ -32,6 +32,6 @@ public class ModCraftingTableBlock extends CraftingTableBlock {
             ));
             pPlayer.awardStat(Stats.INTERACT_WITH_CRAFTING_TABLE);
         }
-        return InteractionResult.sidedSuccess(pLevel.isClientSide);
+        return InteractionResult.SUCCESS;
     }
 }

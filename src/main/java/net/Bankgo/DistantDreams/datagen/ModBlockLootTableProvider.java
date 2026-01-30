@@ -39,6 +39,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.EUCALYPTUS_TRAPDOOR.get());
         this.add(ModBlocks.EUCALYPTUS_LEAVES.get(),
                 block -> createLeavesDrops(block, ModBlocks.EUCALYPTUS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_EUCALYPTUS_SAPLING.get());
 
         // Sequoia Wood Set
         this.dropSelf(ModBlocks.SEQUOIA_LOG.get());
@@ -59,6 +60,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.SEQUOIA_LEAVES.get(),
                 block -> createLeavesDrops(block, ModBlocks.SEQUOIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.dropSelf(ModBlocks.SEQUOIA_SAPLING.get());
+        this.dropPottedContents(ModBlocks.POTTED_SEQUOIA_SAPLING.get());
 
         // Charred Wood Set
         // Charred logs and wood will drop 4 pieces of charcoal if they are not broken with silk touch.
