@@ -15,20 +15,32 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 
 public class ModConfiguredFeatures {
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_OAK_KEY = registerKey("ancient_oak");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EUCALYPTUS_KEY = registerKey("eucalyptus");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEQUOIA_KEY = registerKey("sequoia");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+        register(context, ANCIENT_OAK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.ANCIENT_OAK_LOG.get()),
+                new DarkOakTrunkPlacer(6, 2, 1),
+
+                BlockStateProvider.simple(ModBlocks.ANCIENT_OAK_LEAVES.get()),
+                new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+
+                new TwoLayersFeatureSize(1, 0, 2)).build()
+        );
+
         register(context, EUCALYPTUS_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.EUCALYPTUS_LOG.get()),
                 new FancyTrunkPlacer(16, 1, 4),
 
                 BlockStateProvider.simple(ModBlocks.EUCALYPTUS_LEAVES.get()),
-//                new SpruceFoliagePlacer(ConstantInt.of(3), ConstantInt.of(3), ConstantInt.of(15)),
                 new AcaciaFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2)),
 
                 new TwoLayersFeatureSize(1, 0, 2)).build()

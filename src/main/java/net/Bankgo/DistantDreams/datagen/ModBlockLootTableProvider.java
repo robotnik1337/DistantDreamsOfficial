@@ -20,6 +20,28 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        // Ancient Oak Wood Set
+        this.dropSelf(ModBlocks.ANCIENT_OAK_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get());
+        this.dropSelf(ModBlocks.ANCIENT_OAK_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_ANCIENT_OAK_WOOD.get());
+        this.dropSelf(ModBlocks.ANCIENT_OAK_SAPLING.get());
+        this.dropSelf(ModBlocks.ANCIENT_OAK_PLANKS.get());
+        this.dropSelf(ModBlocks.ANCIENT_OAK_STAIRS.get());
+        this.add(ModBlocks.ANCIENT_OAK_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.ANCIENT_OAK_SLAB.get()));
+        this.dropSelf(ModBlocks.ANCIENT_OAK_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.ANCIENT_OAK_BUTTON.get());
+        this.dropSelf(ModBlocks.ANCIENT_OAK_FENCE.get());
+        this.dropSelf(ModBlocks.ANCIENT_OAK_FENCE_GATE.get());
+        this.add(ModBlocks.ANCIENT_OAK_DOOR.get(),
+                block -> createDoorTable(ModBlocks.ANCIENT_OAK_DOOR.get()));
+        this.dropSelf(ModBlocks.ANCIENT_OAK_TRAPDOOR.get());
+        this.add(ModBlocks.ANCIENT_OAK_LEAVES.get(),
+                block -> createLeavesDrops(block, ModBlocks.ANCIENT_OAK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.dropPottedContents(ModBlocks.POTTED_ANCIENT_OAK_SAPLING.get());
+
+
         // Eucalyptus Wood Set
         this.dropSelf(ModBlocks.EUCALYPTUS_LOG.get());
         this.dropSelf(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get());
@@ -40,6 +62,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.EUCALYPTUS_LEAVES.get(),
                 block -> createLeavesDrops(block, ModBlocks.EUCALYPTUS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.dropPottedContents(ModBlocks.POTTED_EUCALYPTUS_SAPLING.get());
+
 
         // Sequoia Wood Set
         this.dropSelf(ModBlocks.SEQUOIA_LOG.get());

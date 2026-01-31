@@ -22,12 +22,19 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.@NotNull Provider pProvider) {
         // MODDED BLOCK TAGS //
 
+
+        // Block tags for eucalyptus logs (ensures that they function as wood)
+        tag(ModTags.Blocks.ANCIENT_OAK_LOGS)
+                .add(ModBlocks.ANCIENT_OAK_LOG.get())
+                .add(ModBlocks.ANCIENT_OAK_WOOD.get())
+                .add(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get())
+                .add(ModBlocks.STRIPPED_ANCIENT_OAK_WOOD.get());
+
         // Block tags for eucalyptus logs (ensures that they function as wood)
         tag(ModTags.Blocks.EUCALYPTUS_LOGS)
                 .add(ModBlocks.EUCALYPTUS_LOG.get())
                 .add(ModBlocks.EUCALYPTUS_WOOD.get())
-                .add(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get())
-                .add(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get());
+                .add(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get());
 
         // Block tags for sequoia logs (ensures that they function as wood)
         tag(ModTags.Blocks.SEQUOIA_LOGS)
@@ -56,6 +63,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.CHARRED_TRAPDOOR).add(ModBlocks.CHARRED_TRAPDOOR.get());
 
         // END MODDED BLOCK TAGS
+
 
         // Block tags for mining
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
@@ -130,6 +138,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
 
         tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.ANCIENT_OAK_LOG.get())
+                .add(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get())
+                .add(ModBlocks.ANCIENT_OAK_WOOD.get())
+                .add(ModBlocks.STRIPPED_ANCIENT_OAK_WOOD.get())
                 .add(ModBlocks.EUCALYPTUS_LOG.get())
                 .add(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get())
                 .add(ModBlocks.EUCALYPTUS_WOOD.get())
@@ -141,47 +153,58 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
 
         tag(BlockTags.OVERWORLD_NATURAL_LOGS)
+                .add(ModBlocks.ANCIENT_OAK_LOG.get())
                 .add(ModBlocks.EUCALYPTUS_LOG.get())
                 .add(ModBlocks.SEQUOIA_LOG.get());
 
         tag(BlockTags.PLANKS)
+                .add(ModBlocks.ANCIENT_OAK_PLANKS.get())
                 .add(ModBlocks.EUCALYPTUS_PLANKS.get())
                 .add(ModBlocks.SEQUOIA_PLANKS.get())
                 .add(ModBlocks.CHARRED_PLANKS.get());
 
         tag(BlockTags.WOODEN_STAIRS)
+                .add(ModBlocks.ANCIENT_OAK_STAIRS.get())
                 .add(ModBlocks.EUCALYPTUS_STAIRS.get())
                 .add(ModBlocks.SEQUOIA_STAIRS.get());
 
         tag(BlockTags.WOODEN_SLABS)
+                .add(ModBlocks.ANCIENT_OAK_SLAB.get())
                 .add(ModBlocks.EUCALYPTUS_SLAB.get())
                 .add(ModBlocks.SEQUOIA_SLAB.get());
 
         tag(BlockTags.WOODEN_PRESSURE_PLATES)
+                .add(ModBlocks.ANCIENT_OAK_PRESSURE_PLATE.get())
                 .add(ModBlocks.EUCALYPTUS_PRESSURE_PLATE.get())
                 .add(ModBlocks.SEQUOIA_PRESSURE_PLATE.get());
 
         tag(BlockTags.WOODEN_BUTTONS)
+                .add(ModBlocks.ANCIENT_OAK_BUTTON.get())
                 .add(ModBlocks.EUCALYPTUS_BUTTON.get())
                 .add(ModBlocks.SEQUOIA_BUTTON.get());
 
         tag(BlockTags.WOODEN_FENCES)
+                .add(ModBlocks.ANCIENT_OAK_FENCE.get())
                 .add(ModBlocks.EUCALYPTUS_FENCE.get())
                 .add(ModBlocks.SEQUOIA_FENCE.get());
 
         tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.ANCIENT_OAK_FENCE_GATE.get())
                 .add(ModBlocks.EUCALYPTUS_FENCE_GATE.get())
                 .add(ModBlocks.SEQUOIA_FENCE_GATE.get());
 
         tag(BlockTags.WOODEN_DOORS)
+                .add(ModBlocks.ANCIENT_OAK_DOOR.get())
                 .add(ModBlocks.EUCALYPTUS_DOOR.get())
                 .add(ModBlocks.SEQUOIA_DOOR.get());
 
         tag(BlockTags.WOODEN_TRAPDOORS)
+                .add(ModBlocks.ANCIENT_OAK_TRAPDOOR.get())
                 .add(ModBlocks.EUCALYPTUS_TRAPDOOR.get())
                 .add(ModBlocks.SEQUOIA_TRAPDOOR.get());
 
         tag(BlockTags.LEAVES)
+                .add(ModBlocks.ANCIENT_OAK_LEAVES.get())
                 .add(ModBlocks.EUCALYPTUS_LEAVES.get())
                 .add(ModBlocks.SEQUOIA_LEAVES.get());
 

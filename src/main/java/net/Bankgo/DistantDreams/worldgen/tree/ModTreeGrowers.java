@@ -12,4 +12,7 @@ public class ModTreeGrowers {
 
     public static final TreeGrower SEQUOIA = new TreeGrower(DistantDreams.MODID + ":sequoia",
             Optional.empty(), Optional.of(ModConfiguredFeatures.SEQUOIA_KEY), Optional.empty());
+
+    public static final TreeGrower ANCIENT_OAK = new TreeGrower(DistantDreams.MODID + ":ancient_oak",
+            Optional.empty(), Optional.of(ModConfiguredFeatures.ANCIENT_OAK_KEY), Optional.empty());
 }

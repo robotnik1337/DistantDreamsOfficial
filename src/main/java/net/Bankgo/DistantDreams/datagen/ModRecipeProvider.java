@@ -12,6 +12,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -26,20 +27,36 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         }
 
         @Override
-        protected @NotNull RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
+        protected @NotNull RecipeProvider createRecipeProvider(HolderLookup.@NonNull Provider provider, @NonNull RecipeOutput recipeOutput) {
             return new ModRecipeProvider(provider, recipeOutput);
         }
 
         @Override
-        public String getName() {
+        public @NonNull String getName() {
             return "";
         }
     }
 
     @Override
     protected void buildRecipes() {
+        // Ancient Oak recipes
+        // TODO: add woodFromLog() recipes for all wood types.
+        planksFromLog(ModBlocks.ANCIENT_OAK_PLANKS.get(), ModTags.Items.ANCIENT_OAK_LOGS, 4);
+        woodRecipes(
+                this.output,
+                ModBlocks.ANCIENT_OAK_PLANKS.get(),
+                ModBlocks.ANCIENT_OAK_STAIRS.get(),
+                ModBlocks.ANCIENT_OAK_SLAB.get(),
+                ModBlocks.ANCIENT_OAK_PRESSURE_PLATE.get(),
+                ModBlocks.ANCIENT_OAK_BUTTON.get(),
+                ModBlocks.ANCIENT_OAK_FENCE.get(),
+                ModBlocks.ANCIENT_OAK_FENCE_GATE.get(),
+                ModBlocks.ANCIENT_OAK_DOOR.get(),
+                ModBlocks.ANCIENT_OAK_TRAPDOOR.get(),
+                "ancient_oak"
+        );
 
-        // Generate all eucalyptus wood recipes.
+        // Eucalyptus recipes
         planksFromLog(ModBlocks.EUCALYPTUS_PLANKS.get(), ModTags.Items.EUCALYPTUS_LOGS, 4);
         woodRecipes(
                 this.output,
@@ -55,7 +72,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "eucalyptus"
         );
 
-        // Generate all sequoia wood recipes.
+        // Sequoia recipes
         planksFromLog(ModBlocks.SEQUOIA_PLANKS.get(), ModTags.Items.SEQUOIA_LOGS, 4);
         woodRecipes(
                 this.output,
@@ -71,7 +88,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "sequoia"
         );
 
-        // Generate all charred wood recipes.
+        // Charred recipes
         planksFromLog(ModBlocks.CHARRED_PLANKS.get(), ModTags.Items.CHARRED_LOGS, 4);
         woodRecipes(
                 this.output,

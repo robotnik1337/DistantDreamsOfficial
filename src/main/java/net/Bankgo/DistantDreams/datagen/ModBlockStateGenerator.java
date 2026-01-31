@@ -27,6 +27,23 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
     @Override
     public void run() {
 
+        // Ancient Oak Woodset
+        woodProvider(ModBlocks.ANCIENT_OAK_LOG.get()).logWithHorizontal(ModBlocks.ANCIENT_OAK_LOG.get()).wood(ModBlocks.ANCIENT_OAK_WOOD.get());
+        woodProvider(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get()).wood(ModBlocks.STRIPPED_ANCIENT_OAK_WOOD.get());
+        createTrivialBlock(ModBlocks.ANCIENT_OAK_LEAVES.get(), TexturedModel.LEAVES);
+        createCutoutSaplingWithItem(ModBlocks.ANCIENT_OAK_SAPLING.get(), ModBlocks.POTTED_ANCIENT_OAK_SAPLING.get());
+
+        family(ModBlocks.ANCIENT_OAK_PLANKS.get())
+                .fence(ModBlocks.ANCIENT_OAK_FENCE.get())
+                .fenceGate(ModBlocks.ANCIENT_OAK_FENCE_GATE.get())
+                .stairs(ModBlocks.ANCIENT_OAK_STAIRS.get())
+                .slab(ModBlocks.ANCIENT_OAK_SLAB.get())
+                .button(ModBlocks.ANCIENT_OAK_BUTTON.get())
+                .pressurePlate(ModBlocks.ANCIENT_OAK_PRESSURE_PLATE.get());
+        createDoor(ModBlocks.ANCIENT_OAK_DOOR.get());
+        createTrapdoor(ModBlocks.ANCIENT_OAK_TRAPDOOR.get());
+
+
         // Charred Woodset
         woodProvider(ModBlocks.CHARRED_LOG.get()).logWithHorizontal(ModBlocks.CHARRED_LOG.get()).wood(ModBlocks.CHARRED_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_CHARRED_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_CHARRED_LOG.get()).wood(ModBlocks.STRIPPED_CHARRED_WOOD.get());
@@ -46,7 +63,6 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         // Eucalyptus Woodset
         woodProvider(ModBlocks.EUCALYPTUS_LOG.get()).logWithHorizontal(ModBlocks.EUCALYPTUS_LOG.get()).wood(ModBlocks.EUCALYPTUS_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()).wood(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get());
-//        createTintedLeaves(ModBlocks.EUCALYPTUS_LEAVES.get(), TexturedModel.LEAVES, FoliageColor.FOLIAGE_DEFAULT);
         createTrivialBlock(ModBlocks.EUCALYPTUS_LEAVES.get(), TexturedModel.LEAVES);
         createCutoutSaplingWithItem(ModBlocks.EUCALYPTUS_SAPLING.get(), ModBlocks.POTTED_EUCALYPTUS_SAPLING.get());
 
@@ -64,7 +80,6 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         // Sequoia Woodset
         woodProvider(ModBlocks.SEQUOIA_LOG.get()).logWithHorizontal(ModBlocks.SEQUOIA_LOG.get()).wood(ModBlocks.SEQUOIA_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_SEQUOIA_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_SEQUOIA_LOG.get()).wood(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
-//        createTintedLeaves(ModBlocks.SEQUOIA_LEAVES.get(), TexturedModel.LEAVES, FoliageColor.FOLIAGE_DEFAULT);
         createTrivialBlock(ModBlocks.SEQUOIA_LEAVES.get(), TexturedModel.LEAVES);
         createCutoutSaplingWithItem(ModBlocks.SEQUOIA_SAPLING.get(), ModBlocks.POTTED_SEQUOIA_SAPLING.get());
 
@@ -165,8 +180,14 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.FERTILE_PLOT.get()).with(createEmptyOrFullDispatch(BlockStateProperties.MOISTURE, 7, moistFertilePlotVariant, dryFertilePlotVariant)));
 
 
+        // TODO: get rid of sapling items without getting "Missing item model definition" error
 
-        // ########## BLOCK ITEMS ##########
+        // ########## BLOCK ITEMS ########## //
+        registerBlockItem(ModBlocks.ANCIENT_OAK_PLANKS.get());
+        registerBlockItem(ModBlocks.ANCIENT_OAK_PRESSURE_PLATE.get());
+        registerBlockItem(ModBlocks.ANCIENT_OAK_FENCE_GATE.get());
+        registerBlockItem(ModBlocks.ANCIENT_OAK_LEAVES.get());
+        registerBlockItem(ModBlocks.POTTED_ANCIENT_OAK_SAPLING.get());
 
         registerBlockItem(ModBlocks.CHARRED_PLANKS.get());
         registerBlockItem(ModBlocks.CHARRED_CRAFTING_TABLE.get());

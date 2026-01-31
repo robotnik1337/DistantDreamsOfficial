@@ -10,9 +10,10 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks {
+        public static final TagKey<Block> ANCIENT_OAK_LOGS = createTag("ancient_oak_logs");
+        public static final TagKey<Block> CHARRED_LOGS = createTag("charred_logs");
         public static final TagKey<Block> EUCALYPTUS_LOGS = createTag("eucalyptus_logs");
         public static final TagKey<Block> SEQUOIA_LOGS = createTag("sequoia_logs");
-        public static final TagKey<Block> CHARRED_LOGS = createTag("charred_logs");
 
         public static final TagKey<Block> CHARRED_PLANKS = createTag("charred_planks");
         public static final TagKey<Block> CHARRED_STAIRS = createTag("charred_stairs");
@@ -30,9 +31,10 @@ public class ModTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> ANCIENT_OAK_LOGS = createTag("ancient_oak_logs");
+        public static final TagKey<Item> CHARRED_LOGS = createTag("charred_logs");
         public static final TagKey<Item> EUCALYPTUS_LOGS = createTag("eucalyptus_logs");
         public static final TagKey<Item> SEQUOIA_LOGS = createTag("sequoia_logs");
-        public static final TagKey<Item> CHARRED_LOGS = createTag("charred_logs");
 
         public static final TagKey<Item> CHARRED_PLANKS = createTag("charred_planks");
         public static final TagKey<Item> CHARRED_STAIRS = createTag("charred_stairs");

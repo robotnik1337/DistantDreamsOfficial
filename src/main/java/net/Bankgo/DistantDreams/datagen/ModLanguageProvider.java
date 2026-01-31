@@ -15,6 +15,23 @@ public class ModLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         // ########## BLOCKS ##########
 
+        // Ancient Oak Woodset
+        add(ModBlocks.ANCIENT_OAK_LOG.get(), "Ancient Oak Log");
+        add(ModBlocks.ANCIENT_OAK_WOOD.get(), "Ancient Oak Wood");
+        add(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get(), "Stripped Ancient Oak Log");
+        add(ModBlocks.STRIPPED_ANCIENT_OAK_WOOD.get(), "Stripped Ancient Oak Wood");
+        add(ModBlocks.ANCIENT_OAK_PLANKS.get(), "Ancient Oak Planks");
+        add(ModBlocks.ANCIENT_OAK_LEAVES.get(), "Ancient Oak Leaves");
+        add(ModBlocks.ANCIENT_OAK_SAPLING.get(), "Ancient Oak Sapling");
+        add(ModBlocks.ANCIENT_OAK_STAIRS.get(), "Ancient Oak Stairs");
+        add(ModBlocks.ANCIENT_OAK_SLAB.get(), "Ancient Oak Slab");
+        add(ModBlocks.ANCIENT_OAK_FENCE.get(), "Ancient Oak Fence");
+        add(ModBlocks.ANCIENT_OAK_FENCE_GATE.get(), "Ancient Oak Fence Gate");
+        add(ModBlocks.ANCIENT_OAK_DOOR.get(), "Ancient Oak Door");
+        add(ModBlocks.ANCIENT_OAK_TRAPDOOR.get(), "Ancient Oak Trapdoor");
+        add(ModBlocks.ANCIENT_OAK_PRESSURE_PLATE.get(), "Ancient Oak Pressure Plate");
+        add(ModBlocks.ANCIENT_OAK_BUTTON.get(), "Ancient Oak Button");
+
         // Charred Woodset
         add(ModBlocks.CHARRED_LOG.get(), "Charred Log");
         add(ModBlocks.CHARRED_WOOD.get(), "Charred Wood");
@@ -124,6 +141,23 @@ public class ModLanguageProvider extends LanguageProvider {
 
         // ########## ITEMS ##########
 
+        // Ancient Oak Woodset
+        add(ModBlocks.ANCIENT_OAK_LOG.get().asItem(), "Ancient Oak Log");
+        add(ModBlocks.ANCIENT_OAK_WOOD.get().asItem(), "Ancient Oak Wood");
+        add(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get().asItem(), "Stripped Ancient Oak Log");
+        add(ModBlocks.STRIPPED_ANCIENT_OAK_WOOD.get().asItem(), "Stripped Ancient Oak Wood");
+        add(ModBlocks.ANCIENT_OAK_PLANKS.get().asItem(), "Ancient Oak Planks");
+        add(ModBlocks.ANCIENT_OAK_LEAVES.get().asItem(), "Ancient Oak Leaves");
+        add(ModBlocks.ANCIENT_OAK_SAPLING.get().asItem(), "Ancient Oak Sapling");
+        add(ModBlocks.ANCIENT_OAK_STAIRS.get().asItem(), "Ancient Oak Stairs");
+        add(ModBlocks.ANCIENT_OAK_SLAB.get().asItem(), "Ancient Oak Slab");
+        add(ModBlocks.ANCIENT_OAK_FENCE.get().asItem(), "Ancient Oak Fence");
+        add(ModBlocks.ANCIENT_OAK_FENCE_GATE.get().asItem(), "Ancient Oak Fence Gate");
+        add(ModBlocks.ANCIENT_OAK_DOOR.get().asItem(), "Ancient Oak Door");
+        add(ModBlocks.ANCIENT_OAK_TRAPDOOR.get().asItem(), "Ancient Oak Trapdoor");
+        add(ModBlocks.ANCIENT_OAK_PRESSURE_PLATE.get().asItem(), "Ancient Oak Pressure Plate");
+        add(ModBlocks.ANCIENT_OAK_BUTTON.get().asItem(), "Ancient Oak Button");
+
         // Charred Woodset
         add(ModBlocks.CHARRED_LOG.get().asItem(), "Charred Log");
         add(ModBlocks.CHARRED_WOOD.get().asItem(), "Charred Wood");
@@ -231,9 +265,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.FERTILE_PLOT.get().asItem(), "Fertile Plot");
 
 
-
         // ########## MISCELLANEOUS ##########
-
         add("creativetab.distantdreams.distant_dreams_tab", "Distant Dreams");
 
 

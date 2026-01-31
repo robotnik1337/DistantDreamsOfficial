@@ -19,6 +19,23 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.EUCALYPTUS_PLANKS.get()))
                     .title(Component.translatable("creativetab.distantdreams.distant_dreams_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        // TODO: reorder creative mode slots for all wood sets and stone sets(?) to be in line with vanilla ordering
+                        output.accept(ModBlocks.ANCIENT_OAK_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_ANCIENT_OAK_WOOD.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_PLANKS.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_STAIRS.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_SLAB.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_BUTTON.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_FENCE.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_FENCE_GATE.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_DOOR.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_TRAPDOOR.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_LEAVES.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_SAPLING.get());
+
                         output.accept(ModBlocks.EUCALYPTUS_LOG.get());
                         output.accept(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get());
                         output.accept(ModBlocks.EUCALYPTUS_WOOD.get());

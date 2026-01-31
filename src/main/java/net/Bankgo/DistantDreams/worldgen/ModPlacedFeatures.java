@@ -16,11 +16,16 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import java.util.List;
 
 public class ModPlacedFeatures {
+    public static final ResourceKey<PlacedFeature> ANCIENT_OAK_PLACED_KEY = registerKey("ancient_oak_placed");
     public static final ResourceKey<PlacedFeature> EUCALYPTUS_PLACED_KEY = registerKey("eucalyptus_placed");
     public static final ResourceKey<PlacedFeature> SEQUOIA_PLACED_KEY = registerKey("sequoia_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+
+        register(context, ANCIENT_OAK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ANCIENT_OAK_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1f, 1),
+                        ModBlocks.EUCALYPTUS_SAPLING.get()));
 
         register(context, EUCALYPTUS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EUCALYPTUS_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1f, 1),

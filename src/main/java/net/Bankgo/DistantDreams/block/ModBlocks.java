@@ -39,6 +39,96 @@ public class ModBlocks {
     public static final DeferredRegister<Item> BLOCK_ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, DistantDreams.MODID);
 
+    // TODO: fix leaf particle colors for ancient oak, eucalyptus, and sequoia leaves
+
+    // ===== START EUCALYPTUS ===== //
+    // Eucalyptus Wood
+    public static final RegistryObject<RotatedPillarBlock> ANCIENT_OAK_WOOD = registerBlock("ancient_oak_wood",
+            () -> new ModFlammableRotatedPillarBlock(setIdProperty("ancient_oak_wood", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))
+                    .mapColor(MapColor.COLOR_GRAY), 0, 3));
+
+    // Stripped Eucalyptus Wood
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_ANCIENT_OAK_WOOD = registerBlock("stripped_ancient_oak_wood",
+            () -> new ModFlammableRotatedPillarBlock(setIdProperty("stripped_ancient_oak_wood", BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD))
+                    .mapColor(MapColor.TERRACOTTA_GRAY), 0, 3));
+
+    // Eucalyptus Log
+    public static final RegistryObject<RotatedPillarBlock> ANCIENT_OAK_LOG = registerBlock("ancient_oak_log",
+            () -> new ModFlammableRotatedPillarBlock(setIdProperty("ancient_oak_log", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG))
+                    .mapColor(pBlockState -> pBlockState.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? MapColor.TERRACOTTA_LIGHT_GRAY : MapColor.COLOR_GRAY), 0, 3));
+
+    // Stripped Eucalyptus Log
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_ANCIENT_OAK_LOG = registerBlock("stripped_ancient_oak_log",
+            () -> new ModFlammableRotatedPillarBlock(setIdProperty("stripped_ancient_oak_log", BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG))
+                    .mapColor(MapColor.TERRACOTTA_GRAY), 0, 3));
+
+    // Eucalyptus Planks
+    public static final RegistryObject<Block> ANCIENT_OAK_PLANKS = registerBlock("ancient_oak_planks",
+            () -> new Block(setIdProperty("ancient_oak_planks", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS))
+                    .mapColor(MapColor.TERRACOTTA_GRAY)));
+
+    // Eucalyptus Stairs
+    public static final RegistryObject<StairBlock> ANCIENT_OAK_STAIRS = registerBlock("ancient_oak_stairs",
+            () -> new StairBlock(ModBlocks.ANCIENT_OAK_PLANKS.get().defaultBlockState(),
+                    setIdProperty("ancient_oak_stairs", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS))
+                            .mapColor(MapColor.TERRACOTTA_GRAY)));
+
+    // Eucalyptus Slab
+    public static final RegistryObject<SlabBlock> ANCIENT_OAK_SLAB = registerBlock("ancient_oak_slab",
+            () -> new SlabBlock(setIdProperty("ancient_oak_slab", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB))
+                    .mapColor(MapColor.TERRACOTTA_GRAY)));
+
+    // Eucalyptus Pressure Plate
+    public static final RegistryObject<PressurePlateBlock> ANCIENT_OAK_PRESSURE_PLATE = registerBlock("ancient_oak_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.OAK,
+                    setIdProperty("ancient_oak_pressure_plate", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE))
+                            .mapColor(MapColor.TERRACOTTA_GRAY)));
+
+    // Eucalyptus Button
+    public static final RegistryObject<ButtonBlock> ANCIENT_OAK_BUTTON = registerBlock("ancient_oak_button",
+            () -> new ButtonBlock(BlockSetType.OAK,
+                    15,
+                    setIdProperty("ancient_oak_button", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON))
+                            .mapColor(MapColor.TERRACOTTA_GRAY)));
+
+    // Eucalyptus Fence
+    public static final RegistryObject<FenceBlock> ANCIENT_OAK_FENCE = registerBlock("ancient_oak_fence",
+            () -> new FenceBlock(setIdProperty("ancient_oak_fence", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE))
+                    .mapColor(MapColor.TERRACOTTA_GRAY)));
+
+    // Eucalyptus Fence Gate
+    public static final RegistryObject<FenceGateBlock> ANCIENT_OAK_FENCE_GATE = registerBlock("ancient_oak_fence_gate",
+            () -> new FenceGateBlock(WoodType.OAK,
+                    setIdProperty("ancient_oak_fence_gate", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE))
+                            .mapColor(MapColor.TERRACOTTA_GRAY)));
+
+    // Eucalyptus Door
+    public static final RegistryObject<DoorBlock> ANCIENT_OAK_DOOR = registerBlock("ancient_oak_door",
+            () -> new DoorBlock(BlockSetType.OAK,
+                    setIdProperty("ancient_oak_door", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR))
+                            .mapColor(MapColor.TERRACOTTA_GRAY)));
+
+    // Eucalyptus Trapdoor
+    public static final RegistryObject<TrapDoorBlock> ANCIENT_OAK_TRAPDOOR = registerBlock("ancient_oak_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.OAK,
+                    setIdProperty("ancient_oak_trapdoor", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR))
+                            .mapColor(MapColor.TERRACOTTA_GRAY)));
+
+    // Eucalyptus Leaves
+    public static final RegistryObject<Block> ANCIENT_OAK_LEAVES = registerBlock("ancient_oak_leaves",
+            () -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, FoliageColor.FOLIAGE_BIRCH), setIdProperty("ancient_oak_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+                    .noOcclusion()
+                    .isSuffocating((state, world, pos) -> false)
+                    .isViewBlocking((state, world, pos) -> false)));
+
+    public static final RegistryObject<SaplingBlock> ANCIENT_OAK_SAPLING = registerBlock("ancient_oak_sapling",
+            () -> new SaplingBlock(ModTreeGrowers.ANCIENT_OAK, setIdProperty("ancient_oak_sapling", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING))));
+
+    public static final RegistryObject<FlowerPotBlock> POTTED_ANCIENT_OAK_SAPLING = registerBlock("potted_ancient_oak_sapling",
+            () -> new FlowerPotBlock(ANCIENT_OAK_SAPLING.get(), setIdProperty("potted_ancient_oak_sapling", BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING))));
+    // ===== END ANCIENT_OAK ===== //
+
+
     // ===== START EUCALYPTUS ===== //
     // Eucalyptus Wood
     public static final RegistryObject<RotatedPillarBlock> EUCALYPTUS_WOOD = registerBlock("eucalyptus_wood",
