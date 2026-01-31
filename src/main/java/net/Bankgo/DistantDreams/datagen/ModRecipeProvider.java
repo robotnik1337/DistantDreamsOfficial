@@ -39,9 +39,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes() {
-        // Ancient Oak recipes
-        // TODO: add woodFromLog() recipes for all wood types.
+
         planksFromLog(ModBlocks.ANCIENT_OAK_PLANKS.get(), ModTags.Items.ANCIENT_OAK_LOGS, 4);
+        woodFromLogs(ModBlocks.ANCIENT_OAK_WOOD.get(), ModBlocks.ANCIENT_OAK_LOG.get());
+        woodFromLogs(ModBlocks.STRIPPED_ANCIENT_OAK_WOOD.get(), ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get());
         woodRecipes(
                 this.output,
                 ModBlocks.ANCIENT_OAK_PLANKS.get(),
@@ -56,8 +57,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "ancient_oak"
         );
 
-        // Eucalyptus recipes
+
         planksFromLog(ModBlocks.EUCALYPTUS_PLANKS.get(), ModTags.Items.EUCALYPTUS_LOGS, 4);
+        woodFromLogs(ModBlocks.EUCALYPTUS_WOOD.get(), ModBlocks.EUCALYPTUS_LOG.get());
+        woodFromLogs(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get(), ModBlocks.STRIPPED_EUCALYPTUS_LOG.get());
         woodRecipes(
                 this.output,
                 ModBlocks.EUCALYPTUS_PLANKS.get(),
@@ -72,8 +75,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "eucalyptus"
         );
 
-        // Sequoia recipes
+
         planksFromLog(ModBlocks.SEQUOIA_PLANKS.get(), ModTags.Items.SEQUOIA_LOGS, 4);
+        woodFromLogs(ModBlocks.SEQUOIA_WOOD.get(), ModBlocks.SEQUOIA_LOG.get());
+        woodFromLogs(ModBlocks.STRIPPED_SEQUOIA_WOOD.get(), ModBlocks.STRIPPED_SEQUOIA_LOG.get());
         woodRecipes(
                 this.output,
                 ModBlocks.SEQUOIA_PLANKS.get(),
@@ -88,8 +93,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "sequoia"
         );
 
-        // Charred recipes
+
         planksFromLog(ModBlocks.CHARRED_PLANKS.get(), ModTags.Items.CHARRED_LOGS, 4);
+        woodFromLogs(ModBlocks.CHARRED_WOOD.get(), ModBlocks.CHARRED_LOG.get());
+        woodFromLogs(ModBlocks.STRIPPED_CHARRED_WOOD.get(), ModBlocks.STRIPPED_CHARRED_LOG.get());
         woodRecipes(
                 this.output,
                 ModBlocks.CHARRED_PLANKS.get(),
