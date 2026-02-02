@@ -19,74 +19,71 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.EUCALYPTUS_PLANKS.get()))
                     .title(Component.translatable("creativetab.distantdreams.distant_dreams_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        // TODO: reorder creative mode slots for all wood sets and stone sets(?) to be in line with vanilla ordering
                         output.accept(ModBlocks.ANCIENT_OAK_LOG.get());
-                        output.accept(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get());
                         output.accept(ModBlocks.ANCIENT_OAK_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get());
                         output.accept(ModBlocks.STRIPPED_ANCIENT_OAK_WOOD.get());
                         output.accept(ModBlocks.ANCIENT_OAK_PLANKS.get());
                         output.accept(ModBlocks.ANCIENT_OAK_STAIRS.get());
                         output.accept(ModBlocks.ANCIENT_OAK_SLAB.get());
-                        output.accept(ModBlocks.ANCIENT_OAK_PRESSURE_PLATE.get());
-                        output.accept(ModBlocks.ANCIENT_OAK_BUTTON.get());
                         output.accept(ModBlocks.ANCIENT_OAK_FENCE.get());
                         output.accept(ModBlocks.ANCIENT_OAK_FENCE_GATE.get());
                         output.accept(ModBlocks.ANCIENT_OAK_DOOR.get());
                         output.accept(ModBlocks.ANCIENT_OAK_TRAPDOOR.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.ANCIENT_OAK_BUTTON.get());
                         output.accept(ModBlocks.ANCIENT_OAK_LEAVES.get());
                         output.accept(ModBlocks.ANCIENT_OAK_SAPLING.get());
 
                         output.accept(ModBlocks.EUCALYPTUS_LOG.get());
-                        output.accept(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get());
                         output.accept(ModBlocks.EUCALYPTUS_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get());
                         output.accept(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get());
                         output.accept(ModBlocks.EUCALYPTUS_PLANKS.get());
                         output.accept(ModBlocks.EUCALYPTUS_STAIRS.get());
                         output.accept(ModBlocks.EUCALYPTUS_SLAB.get());
-                        output.accept(ModBlocks.EUCALYPTUS_PRESSURE_PLATE.get());
-                        output.accept(ModBlocks.EUCALYPTUS_BUTTON.get());
                         output.accept(ModBlocks.EUCALYPTUS_FENCE.get());
                         output.accept(ModBlocks.EUCALYPTUS_FENCE_GATE.get());
                         output.accept(ModBlocks.EUCALYPTUS_DOOR.get());
                         output.accept(ModBlocks.EUCALYPTUS_TRAPDOOR.get());
+                        output.accept(ModBlocks.EUCALYPTUS_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.EUCALYPTUS_BUTTON.get());
                         output.accept(ModBlocks.EUCALYPTUS_LEAVES.get());
                         output.accept(ModBlocks.EUCALYPTUS_SAPLING.get());
 
                         output.accept(ModBlocks.SEQUOIA_LOG.get());
-                        output.accept(ModBlocks.STRIPPED_SEQUOIA_LOG.get());
                         output.accept(ModBlocks.SEQUOIA_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_SEQUOIA_LOG.get());
                         output.accept(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
                         output.accept(ModBlocks.SEQUOIA_PLANKS.get());
                         output.accept(ModBlocks.SEQUOIA_STAIRS.get());
                         output.accept(ModBlocks.SEQUOIA_SLAB.get());
-                        output.accept(ModBlocks.SEQUOIA_PRESSURE_PLATE.get());
-                        output.accept(ModBlocks.SEQUOIA_BUTTON.get());
                         output.accept(ModBlocks.SEQUOIA_FENCE.get());
                         output.accept(ModBlocks.SEQUOIA_FENCE_GATE.get());
                         output.accept(ModBlocks.SEQUOIA_DOOR.get());
                         output.accept(ModBlocks.SEQUOIA_TRAPDOOR.get());
+                        output.accept(ModBlocks.SEQUOIA_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.SEQUOIA_BUTTON.get());
                         output.accept(ModBlocks.SEQUOIA_LEAVES.get());
                         output.accept(ModBlocks.SEQUOIA_SAPLING.get());
 
                         output.accept(ModBlocks.CHARRED_LOG.get());
-                        output.accept(ModBlocks.STRIPPED_CHARRED_LOG.get());
                         output.accept(ModBlocks.CHARRED_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_CHARRED_LOG.get());
                         output.accept(ModBlocks.STRIPPED_CHARRED_WOOD.get());
                         output.accept(ModBlocks.CHARRED_PLANKS.get());
                         output.accept(ModBlocks.CHARRED_STAIRS.get());
                         output.accept(ModBlocks.CHARRED_SLAB.get());
-                        output.accept(ModBlocks.CHARRED_PRESSURE_PLATE.get());
-                        output.accept(ModBlocks.CHARRED_BUTTON.get());
                         output.accept(ModBlocks.CHARRED_FENCE.get());
                         output.accept(ModBlocks.CHARRED_FENCE_GATE.get());
                         output.accept(ModBlocks.CHARRED_DOOR.get());
                         output.accept(ModBlocks.CHARRED_TRAPDOOR.get());
+                        output.accept(ModBlocks.CHARRED_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.CHARRED_BUTTON.get());
                         output.accept(ModBlocks.CHARRED_CRAFTING_TABLE.get());
 
                         output.accept(ModBlocks.FERTILE_SOIL.get());
                         output.accept(ModBlocks.FERTILE_PLOT.get());
-
-                        output.accept(ModItems.MUSIC_DISC_HYPNAGOGIA.get());
 
                         output.accept(ModBlocks.DISTANT_STONE.get());
                         output.accept(ModBlocks.DISTANT_STONE_STAIRS.get());
@@ -129,6 +126,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MOSSY_LIMESTONE_BRICK_STAIRS.get());
                         output.accept(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get());
                         output.accept(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
+                        output.accept(ModItems.MUSIC_DISC_HYPNAGOGIA.get());
+
                     }).build());
 
 
