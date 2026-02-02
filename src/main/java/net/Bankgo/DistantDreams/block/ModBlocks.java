@@ -13,6 +13,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ColorRGBA;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.FoliageColor;
@@ -577,7 +578,7 @@ public class ModBlocks {
 
     // Limestone Powder
     public static final RegistryObject<Block> LIMESTONE_POWDER = registerBlock("limestone_powder",
-            () -> new Block(setIdProperty("limestone_powder", BlockBehaviour.Properties.ofFullCopy(Blocks.SAND))));
+            () -> new ColoredFallingBlock(new ColorRGBA(-8356741), setIdProperty("limestone_powder", BlockBehaviour.Properties.ofFullCopy(Blocks.SAND))));
 
     // Cracked Limestone Bricks
     public static final RegistryObject<Block> CRACKED_LIMESTONE_BRICKS = registerBlock("cracked_limestone_bricks",
