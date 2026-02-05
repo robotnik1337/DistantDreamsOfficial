@@ -1,10 +1,7 @@
 package net.Bankgo.DistantDreams.block;
 
 import net.Bankgo.DistantDreams.DistantDreams;
-import net.Bankgo.DistantDreams.block.custom.ModCraftingTableBlock;
-import net.Bankgo.DistantDreams.block.custom.ModFarmBlock;
-import net.Bankgo.DistantDreams.block.custom.ModFlammableRotatedPillarBlock;
-import net.Bankgo.DistantDreams.block.custom.ModSoilBlock;
+import net.Bankgo.DistantDreams.block.custom.*;
 import net.Bankgo.DistantDreams.item.ModItems;
 import net.Bankgo.DistantDreams.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.Direction;
@@ -45,23 +42,23 @@ public class ModBlocks {
     // ===== START EUCALYPTUS ===== //
     // Eucalyptus Wood
     public static final RegistryObject<RotatedPillarBlock> ANCIENT_OAK_WOOD = registerBlock("ancient_oak_wood",
-            () -> new ModFlammableRotatedPillarBlock(setIdProperty("ancient_oak_wood", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))
-                    .mapColor(MapColor.COLOR_GRAY), 0, 3));
+            () -> new AncientOakBlock(setIdProperty("ancient_oak_wood", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD))
+                    .mapColor(MapColor.COLOR_GRAY)));
 
     // Stripped Eucalyptus Wood
     public static final RegistryObject<RotatedPillarBlock> STRIPPED_ANCIENT_OAK_WOOD = registerBlock("stripped_ancient_oak_wood",
-            () -> new ModFlammableRotatedPillarBlock(setIdProperty("stripped_ancient_oak_wood", BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD))
-                    .mapColor(MapColor.TERRACOTTA_GRAY), 0, 3));
+            () -> new AncientOakBlock(setIdProperty("stripped_ancient_oak_wood", BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD))
+                    .mapColor(MapColor.TERRACOTTA_GRAY)));
 
     // Eucalyptus Log
     public static final RegistryObject<RotatedPillarBlock> ANCIENT_OAK_LOG = registerBlock("ancient_oak_log",
-            () -> new ModFlammableRotatedPillarBlock(setIdProperty("ancient_oak_log", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG))
-                    .mapColor(pBlockState -> pBlockState.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? MapColor.TERRACOTTA_LIGHT_GRAY : MapColor.COLOR_GRAY), 0, 3));
+            () -> new AncientOakBlock(setIdProperty("ancient_oak_log", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG))
+                    .mapColor(pBlockState -> pBlockState.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? MapColor.TERRACOTTA_LIGHT_GRAY : MapColor.COLOR_GRAY)));
 
     // Stripped Eucalyptus Log
     public static final RegistryObject<RotatedPillarBlock> STRIPPED_ANCIENT_OAK_LOG = registerBlock("stripped_ancient_oak_log",
-            () -> new ModFlammableRotatedPillarBlock(setIdProperty("stripped_ancient_oak_log", BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG))
-                    .mapColor(MapColor.TERRACOTTA_GRAY), 0, 3));
+            () -> new AncientOakBlock(setIdProperty("stripped_ancient_oak_log", BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG))
+                    .mapColor(MapColor.TERRACOTTA_GRAY)));
 
     // Eucalyptus Planks
     public static final RegistryObject<Block> ANCIENT_OAK_PLANKS = registerBlock("ancient_oak_planks",
