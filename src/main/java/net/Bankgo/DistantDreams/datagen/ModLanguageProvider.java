@@ -2,6 +2,7 @@ package net.Bankgo.DistantDreams.datagen;
 
 import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.block.ModBlocks;
+import net.Bankgo.DistantDreams.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -265,8 +266,13 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.FERTILE_PLOT.get().asItem(), "Fertile Plot");
 
 
+        // ########## ITEMS ############
+        add(ModItems.MUSIC_DISC_HYPNAGOGIA.get(), "Music Disc");
+        add("item.distantdreams.music_disc_hypnagogia.desc", "TheAnonymousGhoul - Hypnagogia");
+
         // ########## MISCELLANEOUS ##########
         add("creativetab.distantdreams.distant_dreams_tab", "Distant Dreams");
+
 
 
     }

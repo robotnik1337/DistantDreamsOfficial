@@ -8,7 +8,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -19,24 +19,26 @@ import org.jspecify.annotations.Nullable;
 public class AncientOakBlock extends ModFlammableRotatedPillarBlock {
 
     public AncientOakBlock(Properties pProperties) {
-        super(pProperties.explosionResistance(10).randomTicks(), 5, 5);
+        super(pProperties.explosionResistance(10), 20, 0);
     }
-
-//    @Override
-//    protected void neighborChanged(@NonNull BlockState pState, @NonNull Level pLevel, @NonNull BlockPos pPos, @NonNull Block pNeighborBlock, @Nullable Orientation pOrientation, boolean pMovedByPiston) {
-//        if (pNeighborBlock.defaultBlockState().is(BlockTags.FIRE)) { charBlock(pLevel, pPos); }
-//    }
 
     @Override
-    public boolean onCaughtFire(BlockState state, Level level, BlockPos pos, @org.jetbrains.annotations.Nullable Direction direction, @org.jetbrains.annotations.Nullable LivingEntity igniter) {
-        charBlock(level, pos);
-        return super.onCaughtFire(state, level, pos, direction, igniter);
+    protected void neighborChanged(@NonNull BlockState pState, @NonNull Level pLevel, @NonNull BlockPos pPos, @NonNull Block pNeighborBlock, @Nullable Orientation pOrientation, boolean pMovedByPiston) {
+        if (pNeighborBlock.defaultBlockState().is(BlockTags.FIRE)) {
+            pLevel.scheduleTick(pPos, pState.getBlock(), 1);
+        }
+        super.neighborChanged(pState, pLevel, pPos, pNeighborBlock, pOrientation, pMovedByPiston);
     }
 
-    // TODO: all ancient oak blocks that are caught on fire MUST be deleted
-    // TODO: fix ancient oak leaves not able to be lit on fire
 
-    private void charBlock(Level level, BlockPos pos) {
+    @Override
+    protected void tick(@NonNull BlockState pState, @NonNull ServerLevel pLevel, @NonNull BlockPos pPos, @NonNull RandomSource pRandom) {
+        charBlock(pLevel, pPos);
+        super.tick(pState, pLevel, pPos, pRandom);
+    }
+
+
+    public void charBlock(Level level, BlockPos pos) {
         if (!level.isClientSide()) {
             if (level instanceof ServerLevel serverLevel) {
                 serverLevel.sendParticles(
@@ -45,25 +47,25 @@ public class AncientOakBlock extends ModFlammableRotatedPillarBlock {
                 );
             }
 
-            Block blockToReplace = level.getBlockState(pos).getBlock();
-            BlockState charredBlock = getCharredBlock(blockToReplace);
+            BlockState blockState = level.getBlockState(pos);
+            BlockState charredBlock = getCharredBlock(blockState.getBlock(), blockState.getValue(AXIS));
 
             level.setBlock(pos, charredBlock, 3);
             level.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.25F, 1.0F);
         }
     }
 
-    private static BlockState getCharredBlock(Block blockToChar) {
+    private static BlockState getCharredBlock(Block blockToChar, Direction.Axis originalAxis) {
         BlockState charredBlock = null;
 
         if (blockToChar == ModBlocks.ANCIENT_OAK_LOG.get()) {
-            charredBlock = ModBlocks.CHARRED_LOG.get().defaultBlockState();
+            charredBlock = ModBlocks.CHARRED_LOG.get().defaultBlockState().setValue(AXIS, originalAxis);
         } else if (blockToChar == ModBlocks.ANCIENT_OAK_WOOD.get()) {
-            charredBlock = ModBlocks.CHARRED_WOOD.get().defaultBlockState();
+            charredBlock = ModBlocks.CHARRED_WOOD.get().defaultBlockState().setValue(AXIS, originalAxis);
         } else if (blockToChar == ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get()) {
-            charredBlock = ModBlocks.STRIPPED_CHARRED_LOG.get().defaultBlockState();
+            charredBlock = ModBlocks.STRIPPED_CHARRED_LOG.get().defaultBlockState().setValue(AXIS, originalAxis);
         } else if (blockToChar == ModBlocks.STRIPPED_ANCIENT_OAK_WOOD.get()) {
-            charredBlock = ModBlocks.STRIPPED_CHARRED_WOOD.get().defaultBlockState();
+            charredBlock = ModBlocks.STRIPPED_CHARRED_WOOD.get().defaultBlockState().setValue(AXIS, originalAxis);
         }
         return charredBlock;
     }

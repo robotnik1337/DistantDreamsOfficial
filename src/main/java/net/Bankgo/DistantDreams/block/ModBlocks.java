@@ -114,7 +114,7 @@ public class ModBlocks {
 
     // Eucalyptus Leaves
     public static final RegistryObject<Block> ANCIENT_OAK_LEAVES = registerBlock("ancient_oak_leaves",
-            () -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, FoliageColor.FOLIAGE_BIRCH), setIdProperty("ancient_oak_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+            () -> new ModLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, FoliageColor.FOLIAGE_BIRCH), setIdProperty("ancient_oak_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
@@ -202,7 +202,7 @@ public class ModBlocks {
 
     // Eucalyptus Leaves
     public static final RegistryObject<Block> EUCALYPTUS_LEAVES = registerBlock("eucalyptus_leaves",
-            () -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, FoliageColor.FOLIAGE_BIRCH), setIdProperty("eucalyptus_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+            () -> new ModLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, FoliageColor.FOLIAGE_BIRCH), setIdProperty("eucalyptus_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
@@ -289,7 +289,7 @@ public class ModBlocks {
 
     // Sequoia Leaves
     public static final RegistryObject<Block> SEQUOIA_LEAVES = registerBlock("sequoia_leaves",
-            () -> new UntintedParticleLeavesBlock(0.1F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 9399763), setIdProperty("sequoia_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+            () -> new ModLeavesBlock(0.1F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 9399763), setIdProperty("sequoia_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
