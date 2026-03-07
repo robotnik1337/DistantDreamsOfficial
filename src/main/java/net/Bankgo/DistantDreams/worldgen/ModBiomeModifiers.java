@@ -1,6 +1,7 @@
 package net.Bankgo.DistantDreams.worldgen;
 
 import net.Bankgo.DistantDreams.DistantDreams;
+import net.Bankgo.DistantDreams.worldgen.biome.ModBiomes;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -27,7 +28,7 @@ public class ModBiomeModifiers {
         ));
 
         context.register(ADD_SEQUOIA_TREE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.SAVANNA_PLATEAU), biomes.getOrThrow(Biomes.WINDSWEPT_SAVANNA)),
+                HolderSet.direct(),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SEQUOIA_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
