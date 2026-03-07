@@ -34,7 +34,7 @@ public class ModOverworldRegion extends Region {
                 .erosion(ParameterUtils.Erosion.EROSION_0, ParameterUtils.Erosion.EROSION_1)
                 .depth(ParameterUtils.Depth.SURFACE, ParameterUtils.Depth.FLOOR)
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
-                .build().forEach(point -> builder.add(point, ModBiomes.SEQUOIA_FOREST));
+                .build().forEach(point -> builder.add(point, ModBiomes.XERIC_SHRUBLAND));
 
         // Add our points to the mapper
         builder.build().forEach(mapper);

@@ -9,6 +9,7 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
+    private static final SurfaceRules.RuleSource SAND = makeStateRule(Blocks.SAND);
     private static final SurfaceRules.RuleSource FERTILE_PLOT = makeStateRule(ModBlocks.FERTILE_PLOT.get());
 
 
@@ -18,8 +19,8 @@ public class ModSurfaceRules {
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
 
         return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.SEQUOIA_FOREST),
-                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, FERTILE_PLOT)),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.XERIC_SHRUBLAND),
+                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SAND)),
                 // Default to a grass and dirt surface
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
         );

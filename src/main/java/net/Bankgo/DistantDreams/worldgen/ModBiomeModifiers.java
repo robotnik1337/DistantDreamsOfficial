@@ -28,7 +28,7 @@ public class ModBiomeModifiers {
         ));
 
         context.register(ADD_SEQUOIA_TREE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(ModBiomes.SEQUOIA_FOREST)),
+                HolderSet.direct(),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SEQUOIA_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
