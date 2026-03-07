@@ -19,7 +19,7 @@ public class ModBiomes {
     public static final ResourceKey<Biome> SEQUOIA_FOREST = ResourceKey.create(Registries.BIOME,
             ResourceLocation.fromNamespaceAndPath(DistantDreams.MODID, "sequoia_forest"));
 
-    public void bootstrap(BootstrapContext<Biome> context) {
+    public static void bootstrap(BootstrapContext<Biome> context) {
         context.register(SEQUOIA_FOREST, sequoiaForest(context));
     }
 
@@ -36,7 +36,7 @@ public class ModBiomes {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 //        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(ModEntities.RHINO.get(), 2, 3, 5));
 
-        spawnBuilder.addSpawn(MobCategory.CREATURE, 4, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 5, 4));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 4, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 4, 4));
 
         BiomeDefaultFeatures.farmAnimals(spawnBuilder);
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);

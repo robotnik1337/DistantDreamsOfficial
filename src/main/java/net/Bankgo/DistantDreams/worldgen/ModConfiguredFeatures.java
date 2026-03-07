@@ -1,5 +1,6 @@
 package net.Bankgo.DistantDreams.worldgen;
 
+import io.netty.util.Constant;
 import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.Bankgo.DistantDreams.worldgen.tree.custom.SequoiaFoliagePlacer;
@@ -15,10 +16,12 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_OAK_KEY = registerKey("ancient_oak");
@@ -28,10 +31,10 @@ public class ModConfiguredFeatures {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         register(context, ANCIENT_OAK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.ANCIENT_OAK_LOG.get()),
-                new DarkOakTrunkPlacer(6, 2, 1),
+                new StraightTrunkPlacer(6, 2, 1),
 
                 BlockStateProvider.simple(ModBlocks.ANCIENT_OAK_LEAVES.get()),
-                new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0),3),
 
                 new TwoLayersFeatureSize(1, 0, 2)).build()
         );

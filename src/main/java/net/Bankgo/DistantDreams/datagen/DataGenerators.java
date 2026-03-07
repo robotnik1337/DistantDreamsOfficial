@@ -32,9 +32,11 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ModItemTagProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModDatapackEntries(packOutput, lookupProvider));
+//        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
 
         generator.addProvider(event.includeClient(), new ModModelProvider(packOutput));
         generator.addProvider(event.includeClient(), new ModLanguageProvider(packOutput, "en_us"));
+
 
     }
 }
