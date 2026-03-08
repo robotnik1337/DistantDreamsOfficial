@@ -289,7 +289,7 @@ public class ModBlocks {
 
     // Sequoia Leaves
     public static final RegistryObject<Block> SEQUOIA_LEAVES = registerBlock("sequoia_leaves",
-            () -> new ModLeavesBlock(0.1F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 9399763), setIdProperty("sequoia_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+            () -> new ModLeavesBlock(0.1F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 3038520), setIdProperty("sequoia_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
@@ -598,6 +598,16 @@ public class ModBlocks {
     public static final RegistryObject<WallBlock> MOSSY_LIMESTONE_BRICK_WALL = registerBlock("mossy_limestone_brick_wall",
             () -> new WallBlock(setIdProperty("mossy_limestone_brick_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_STONE_BRICK_WALL))));
     // ===== END LIMESTONE ===== //
+
+    // ===== START WRYE GRASS ===== //
+    //Wrye Grass
+    public static final RegistryObject<DoublePlantBlock> WRYE_GRASS = registerBlock("wrye_grass",
+            () -> new DoublePlantBlock(setIdProperty("wrye_grass", BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_DRY_GRASS))));
+
+    //Tall Wrye Grass
+    public static final RegistryObject<DoublePlantBlock> TALL_WRYE_GRASS = registerBlock("tall_wrye_grass",
+            () -> new DoublePlantBlock(setIdProperty("tall_wrye_grass", BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_DRY_GRASS))));
+    // ===== END WRYE GRASS ===== //
 
     private static BlockBehaviour.Properties setIdProperty(String blockName, BlockBehaviour.Properties currentProperties) {
         return currentProperties.setId(BLOCKS.key(blockName));

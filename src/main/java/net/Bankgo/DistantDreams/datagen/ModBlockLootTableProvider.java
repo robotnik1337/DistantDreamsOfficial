@@ -108,12 +108,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.CHARRED_TRAPDOOR.get());
         this.dropSelf(ModBlocks.CHARRED_CRAFTING_TABLE.get());
 
-
         // Fertile Blocks
         this.add(ModBlocks.FERTILE_SOIL.get(),
                 block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         this.add(ModBlocks.FERTILE_PLOT.get(),
                 block -> createSingleItemTable(Blocks.DIRT));
+
         // Distant Stone Set
         this.dropSelf(ModBlocks.DISTANT_STONE.get());
         this.dropSelf(ModBlocks.DISTANT_STONE_STAIRS.get());
@@ -138,6 +138,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get()));
         this.dropSelf(ModBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get());
+
         // Limestone Set
         this.dropSelf(ModBlocks.LIMESTONE.get());
         this.dropSelf(ModBlocks.LIMESTONE_STAIRS.get());
@@ -164,6 +165,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get()));
         this.dropSelf(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
+
+        //Wrye Grass
+        this.add(ModBlocks.WRYE_GRASS.get(),
+                this::createGrassDrops);
+        this.add(ModBlocks.TALL_WRYE_GRASS.get(),
+                block -> createDoublePlantWithSeedDrops(block, ModBlocks.TALL_WRYE_GRASS.get()));
     }
 
     @Override

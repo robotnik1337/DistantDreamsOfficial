@@ -288,6 +288,5 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.STONE_BUTTONS)
                 .add(ModBlocks.DISTANT_STONE_BUTTON.get())
                 .add(ModBlocks.LIMESTONE_BUTTON.get());
-
     }
 }
