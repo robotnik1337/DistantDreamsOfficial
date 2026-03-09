@@ -289,7 +289,7 @@ public class ModBlocks {
 
     // Sequoia Leaves
     public static final RegistryObject<Block> SEQUOIA_LEAVES = registerBlock("sequoia_leaves",
-            () -> new ModLeavesBlock(0.1F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 9399763), setIdProperty("sequoia_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
+            () -> new ModLeavesBlock(0.1F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x2e5d38), setIdProperty("sequoia_leaves", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
                     .noOcclusion()
                     .isSuffocating((state, world, pos) -> false)
                     .isViewBlocking((state, world, pos) -> false)));
@@ -419,6 +419,11 @@ public class ModBlocks {
     // Fertile Plot Block
     public static final RegistryObject<FarmBlock> FERTILE_PLOT = registerBlock("fertile_plot",
             () -> new ModFarmBlock(setIdProperty("fertile_plot", BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND))));
+
+    public static final RegistryObject<Block> FERTILE_DIRT = registerBlock("fertile_dirt",
+            () -> new Block(setIdProperty("fertile_dirt", BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT))));
+
+
     // ===== END FERTILE ===== //
 
     // ===== START DISTANT STONE ===== //

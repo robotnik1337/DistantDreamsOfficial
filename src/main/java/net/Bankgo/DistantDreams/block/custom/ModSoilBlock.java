@@ -33,7 +33,7 @@ public class ModSoilBlock extends Block {
                             1.0F, 1.0F);
                 }
                 // Return the block we want to become – Fertile Plot farmland
-                return ModBlocks.FERTILE_PLOT.get().defaultBlockState();
+                return ModBlocks.FERTILE_DIRT.get().defaultBlockState();
             }
         }
         // Any other tool action → let vanilla/other mods handle it

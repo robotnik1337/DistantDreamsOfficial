@@ -122,6 +122,8 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         createRotatedPillarWithHorizontalVariant(ModBlocks.LIMESTONE_PILLAR.get(), TexturedModel.COLUMN_ALT, TexturedModel.COLUMN_HORIZONTAL_ALT);
 
 
+
+
         // Distant Stone
         family(ModBlocks.DISTANT_STONE.get())
                 .wall(ModBlocks.DISTANT_STONE_WALL.get())
@@ -148,7 +150,7 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         createTrivialCube(ModBlocks.CRACKED_DISTANT_STONE_BRICKS.get());
 
 
-        // Soil & Farmland
+        // Fertile Blocks
         TextureMapping fertileSoilTextureMapping = new TextureMapping()
                 .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModBlocks.FERTILE_SOIL.get(), "_bottom"))
                 .copyForced(TextureSlot.BOTTOM, TextureSlot.PARTICLE)
@@ -179,8 +181,11 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         MultiVariant moistFertilePlotVariant = plainVariant(CUSTOM_FARMLAND.create(TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_top_moist"), moistFertilePlotTextureMapping, modelOutput));
         blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.FERTILE_PLOT.get()).with(createEmptyOrFullDispatch(BlockStateProperties.MOISTURE, 7, moistFertilePlotVariant, dryFertilePlotVariant)));
 
+        createTrivialCube(ModBlocks.FERTILE_DIRT.get());
 
         // TODO: get rid of sapling items without getting "Missing item model definition" error
+
+
 
         // ########## BLOCK ITEMS ########## //
         registerBlockItem(ModBlocks.ANCIENT_OAK_PLANKS.get());
@@ -224,6 +229,7 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
 
         registerBlockItem(ModBlocks.FERTILE_SOIL.get());
         registerBlockItem(ModBlocks.FERTILE_PLOT.get());
+        registerBlockItem(ModBlocks.FERTILE_DIRT.get());
     }
 
     private void registerBlockItem(Block block) {

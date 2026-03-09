@@ -255,6 +255,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModBlocks.DISTANT_STONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_DISTANT_STONE_BRICKS.get().asItem(), 0.1F, 200)
                 .unlockedBy("has_distant_stone_bricks", has(ModBlocks.DISTANT_STONE_BRICKS.get()))
                 .save(output);
+
+        // Fertile Blocks
+        this.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FERTILE_DIRT.get(), 2)
+                .requires(ModBlocks.FERTILE_DIRT.get())
+                .requires(Blocks.DIRT)
+                .unlockedBy("has_fertile_dirt", has(ModBlocks.FERTILE_DIRT.get()))
+                .unlockedBy("has_dirt", has(Blocks.DIRT))
+                .save(output, getConversionRecipeName(ModBlocks.FERTILE_DIRT.get(), Blocks.DIRT));
     }
 
 

@@ -114,6 +114,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         this.add(ModBlocks.FERTILE_PLOT.get(),
                 block -> createSingleItemTable(Blocks.DIRT));
+        this.dropSelf(ModBlocks.FERTILE_DIRT.get());
+
         // Distant Stone Set
         this.dropSelf(ModBlocks.DISTANT_STONE.get());
         this.dropSelf(ModBlocks.DISTANT_STONE_STAIRS.get());

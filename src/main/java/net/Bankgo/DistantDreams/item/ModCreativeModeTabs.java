@@ -84,6 +84,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.FERTILE_SOIL.get());
                         output.accept(ModBlocks.FERTILE_PLOT.get());
+                        output.accept(ModBlocks.FERTILE_DIRT.get());
 
                         output.accept(ModBlocks.DISTANT_STONE.get());
                         output.accept(ModBlocks.DISTANT_STONE_STAIRS.get());
