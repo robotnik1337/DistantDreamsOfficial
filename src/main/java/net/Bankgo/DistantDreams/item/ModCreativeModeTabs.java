@@ -104,6 +104,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MOSSY_DISTANT_STONE_BRICK_STAIRS.get());
                         output.accept(ModBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get());
                         output.accept(ModBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get());
+                        output.accept(ModBlocks.DISTANT_COBBLESTONE.get());
+                        output.accept(ModBlocks.DISTANT_COBBLESTONE_STAIRS.get());
+                        output.accept(ModBlocks.DISTANT_COBBLESTONE_SLAB.get());
+                        output.accept(ModBlocks.DISTANT_COBBLESTONE_WALL.get());
+                        output.accept(ModBlocks.MOSSY_DISTANT_COBBLESTONE.get());
+                        output.accept(ModBlocks.MOSSY_DISTANT_COBBLESTONE_STAIRS.get());
+                        output.accept(ModBlocks.MOSSY_DISTANT_COBBLESTONE_SLAB.get());
+                        output.accept(ModBlocks.MOSSY_DISTANT_COBBLESTONE_WALL.get());
 
                         output.accept(ModBlocks.LIMESTONE.get());
                         output.accept(ModBlocks.LIMESTONE_STAIRS.get());

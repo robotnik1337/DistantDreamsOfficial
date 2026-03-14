@@ -503,6 +503,41 @@ public class ModBlocks {
     // Distant Stone Brick Wall
     public static final RegistryObject<WallBlock> MOSSY_DISTANT_STONE_BRICK_WALL = registerBlock("mossy_distant_stone_brick_wall",
             () -> new WallBlock(setIdProperty("mossy_distant_stone_brick_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_STONE_BRICK_WALL))));
+
+    // Distant Cobblestone
+    public static final RegistryObject<Block> DISTANT_COBBLESTONE = registerBlock("distant_cobblestone",
+            () -> new Block(setIdProperty("distant_cobblestone", BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE))));
+
+    // Distant Cobblestone Stairs
+    public static final RegistryObject<StairBlock> DISTANT_COBBLESTONE_STAIRS = registerBlock("distant_cobblestone_stairs",
+            () -> new StairBlock(ModBlocks.DISTANT_COBBLESTONE.get().defaultBlockState(),
+                    setIdProperty("distant_cobblestone_stairs", BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_STAIRS))));
+
+    // Distant Cobblestone Slab
+    public static final RegistryObject<SlabBlock> DISTANT_COBBLESTONE_SLAB = registerBlock("distant_cobblestone_slab",
+            () -> new SlabBlock(setIdProperty("distant_cobblestone_slab", BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_SLAB))));
+
+    // Distant Cobblestone Wall
+    public static final RegistryObject<WallBlock> DISTANT_COBBLESTONE_WALL = registerBlock("distant_cobblestone_wall",
+            () -> new WallBlock(setIdProperty("distant_cobblestone_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_WALL))));
+
+    // Distant Mossy Cobblestone
+    public static final RegistryObject<Block> MOSSY_DISTANT_COBBLESTONE = registerBlock("mossy_distant_cobblestone",
+            () -> new Block(setIdProperty("mossy_distant_cobblestone", BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_COBBLESTONE))));
+
+    // Distant Mossy Cobblestone Stairs
+    public static final RegistryObject<StairBlock> MOSSY_DISTANT_COBBLESTONE_STAIRS = registerBlock("mossy_distant_cobblestone_stairs",
+            () -> new StairBlock(ModBlocks.DISTANT_COBBLESTONE.get().defaultBlockState(),
+                    setIdProperty("mossy_distant_cobblestone_stairs", BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_COBBLESTONE_STAIRS))));
+
+    // Distant Mossy Cobblestone Slab
+    public static final RegistryObject<SlabBlock> MOSSY_DISTANT_COBBLESTONE_SLAB = registerBlock("mossy_distant_cobblestone_slab",
+            () -> new SlabBlock(setIdProperty("mossy_distant_cobblestone_slab", BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_COBBLESTONE_SLAB))));
+
+    // Distant Mossy Cobblestone Wall
+    public static final RegistryObject<WallBlock> MOSSY_DISTANT_COBBLESTONE_WALL = registerBlock("mossy_distant_cobblestone_wall",
+            () -> new WallBlock(setIdProperty("mossy_distant_cobblestone_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_COBBLESTONE_WALL))));
+
     // ===== END DISTANT STONE ===== //
 
     // ===== START LIMESTONE ===== //

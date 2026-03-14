@@ -198,6 +198,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         buttonBuilder(ModBlocks.DISTANT_STONE_BUTTON.get(), Ingredient.of(ModBlocks.DISTANT_STONE.get()))
                 .unlockedBy("has_distant_stone", has(ModBlocks.DISTANT_STONE.get())).save(output);
 
+        stairBuilder(ModBlocks.DISTANT_COBBLESTONE_STAIRS.get(), Ingredient.of(ModBlocks.DISTANT_COBBLESTONE.get()))
+                .unlockedBy("has_distant_stone", has(ModBlocks.DISTANT_COBBLESTONE.get())).save(output);
+        slab(RecipeCategory.DECORATIONS, ModBlocks.DISTANT_COBBLESTONE_SLAB.get(), ModBlocks.DISTANT_COBBLESTONE.get());
+        wall(RecipeCategory.DECORATIONS, ModBlocks.DISTANT_COBBLESTONE_WALL.get(), ModBlocks.DISTANT_COBBLESTONE.get());
+
+        this.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_DISTANT_COBBLESTONE.get())
+                .requires(ModBlocks.DISTANT_COBBLESTONE.get())
+                .requires(Blocks.VINE)
+                .unlockedBy("has_distant_cobblestone", has(ModBlocks.DISTANT_COBBLESTONE.get()))
+                .unlockedBy("has_vine", has(Blocks.VINE))
+                .save(output, getConversionRecipeName(ModBlocks.MOSSY_DISTANT_COBBLESTONE.get(), Blocks.VINE));
+        this.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_DISTANT_COBBLESTONE.get())
+                .requires(ModBlocks.DISTANT_COBBLESTONE.get())
+                .requires(Blocks.MOSS_BLOCK)
+                .unlockedBy("has_distant_cobblestone", has(ModBlocks.DISTANT_COBBLESTONE.get()))
+                .unlockedBy("has_moss_block", has(Blocks.MOSS_BLOCK))
+                .save(output, getConversionRecipeName(ModBlocks.MOSSY_DISTANT_COBBLESTONE.get(), Blocks.MOSS_BLOCK));
+        stairBuilder(ModBlocks.MOSSY_DISTANT_COBBLESTONE_STAIRS.get(), Ingredient.of(ModBlocks.MOSSY_DISTANT_COBBLESTONE.get()))
+                .unlockedBy("has_distant_stone", has(ModBlocks.MOSSY_DISTANT_COBBLESTONE.get())).save(output);
+        slab(RecipeCategory.DECORATIONS, ModBlocks.MOSSY_DISTANT_COBBLESTONE_SLAB.get(), ModBlocks.MOSSY_DISTANT_COBBLESTONE.get());
+        wall(RecipeCategory.DECORATIONS, ModBlocks.MOSSY_DISTANT_COBBLESTONE_WALL.get(), ModBlocks.MOSSY_DISTANT_COBBLESTONE.get());
+
         polished(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_DISTANT_STONE.get(), ModBlocks.DISTANT_STONE.get());
         stairBuilder(ModBlocks.POLISHED_DISTANT_STONE_STAIRS.get(), Ingredient.of(ModBlocks.POLISHED_DISTANT_STONE.get()))
                 .unlockedBy("has_polished_distant_stone", has(ModBlocks.POLISHED_DISTANT_STONE.get())).save(output);
@@ -234,6 +256,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DISTANT_STONE_SLAB.get(), ModBlocks.DISTANT_STONE.get(), 2);
         stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DISTANT_STONE_STAIRS.get(), ModBlocks.DISTANT_STONE.get());
         stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModBlocks.DISTANT_STONE_WALL.get(), ModBlocks.DISTANT_STONE.get());
+
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DISTANT_COBBLESTONE_SLAB.get(), ModBlocks.DISTANT_COBBLESTONE.get(), 2);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DISTANT_COBBLESTONE_STAIRS.get(), ModBlocks.DISTANT_COBBLESTONE.get());
+        stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModBlocks.DISTANT_COBBLESTONE_WALL.get(), ModBlocks.DISTANT_COBBLESTONE.get());
+
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_DISTANT_COBBLESTONE_SLAB.get(), ModBlocks.MOSSY_DISTANT_COBBLESTONE.get(), 2);
+        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_DISTANT_COBBLESTONE_STAIRS.get(), ModBlocks.MOSSY_DISTANT_COBBLESTONE.get());
+        stonecutterResultFromBase(RecipeCategory.DECORATIONS, ModBlocks.MOSSY_DISTANT_COBBLESTONE_WALL.get(), ModBlocks.MOSSY_DISTANT_COBBLESTONE.get());
 
         stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_DISTANT_STONE.get(), ModBlocks.DISTANT_STONE.get());
         stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_DISTANT_STONE_SLAB.get(), ModBlocks.DISTANT_STONE.get(), 2);

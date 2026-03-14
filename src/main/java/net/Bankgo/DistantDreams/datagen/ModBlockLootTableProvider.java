@@ -138,6 +138,16 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get()));
         this.dropSelf(ModBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get());
+        this.dropSelf(ModBlocks.DISTANT_COBBLESTONE.get());
+        this.dropSelf(ModBlocks.DISTANT_COBBLESTONE_STAIRS.get());
+        this.add(ModBlocks.DISTANT_COBBLESTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.DISTANT_COBBLESTONE_SLAB.get()));
+        this.dropSelf(ModBlocks.DISTANT_COBBLESTONE_WALL.get());
+        this.dropSelf(ModBlocks.MOSSY_DISTANT_COBBLESTONE.get());
+        this.dropSelf(ModBlocks.MOSSY_DISTANT_COBBLESTONE_STAIRS.get());
+        this.add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.MOSSY_DISTANT_COBBLESTONE_SLAB.get()));
+        this.dropSelf(ModBlocks.MOSSY_DISTANT_COBBLESTONE_WALL.get());
 
         // Limestone Set
         this.dropSelf(ModBlocks.LIMESTONE.get());

@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.block.model.Variant;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraftforge.fml.common.Mod;
 
 import java.util.Optional;
 import java.util.function.BiConsumer;
@@ -145,6 +146,16 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
                 .stairs(ModBlocks.POLISHED_DISTANT_STONE_STAIRS.get())
                 .slab(ModBlocks.POLISHED_DISTANT_STONE_SLAB.get());
 
+        family(ModBlocks.DISTANT_COBBLESTONE.get())
+                .wall(ModBlocks.DISTANT_COBBLESTONE_WALL.get())
+                .stairs(ModBlocks.DISTANT_COBBLESTONE_STAIRS.get())
+                .slab(ModBlocks.DISTANT_COBBLESTONE_SLAB.get());
+
+        family(ModBlocks.MOSSY_DISTANT_COBBLESTONE.get())
+                .wall(ModBlocks.MOSSY_DISTANT_COBBLESTONE_WALL.get())
+                .stairs(ModBlocks.MOSSY_DISTANT_COBBLESTONE_STAIRS.get())
+                .slab(ModBlocks.MOSSY_DISTANT_COBBLESTONE_SLAB.get());
+
         createTrivialCube(ModBlocks.CRACKED_DISTANT_STONE_BRICKS.get());
 
 
@@ -226,6 +237,8 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         registerBlockItem(ModBlocks.POLISHED_DISTANT_STONE.get());
         registerBlockItem(ModBlocks.CRACKED_DISTANT_STONE_BRICKS.get());
         registerBlockItem(ModBlocks.DISTANT_STONE_PRESSURE_PLATE.get());
+        registerBlockItem(ModBlocks.DISTANT_COBBLESTONE.get());
+        registerBlockItem(ModBlocks.MOSSY_DISTANT_COBBLESTONE.get());
 
         registerBlockItem(ModBlocks.FERTILE_SOIL.get());
         registerBlockItem(ModBlocks.FERTILE_PLOT.get());

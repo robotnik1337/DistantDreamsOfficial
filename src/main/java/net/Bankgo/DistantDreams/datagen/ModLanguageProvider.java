@@ -133,7 +133,18 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.POLISHED_DISTANT_STONE_SLAB.get(), "Polished Distant Stone Slab");
         add(ModBlocks.POLISHED_DISTANT_STONE_WALL.get(), "Polished Distant Stone Wall");
 
+        add(ModBlocks.DISTANT_COBBLESTONE.get(), "Distant Cobblestone");
+        add(ModBlocks.DISTANT_COBBLESTONE_STAIRS.get(), "Distant Cobblestone Stairs");
+        add(ModBlocks.DISTANT_COBBLESTONE_SLAB.get(), "Distant Cobblestone Slab");
+        add(ModBlocks.DISTANT_COBBLESTONE_WALL.get(), "Distant Cobblestone Wall");
+
+        add(ModBlocks.MOSSY_DISTANT_COBBLESTONE.get(), "Mossy Distant Cobblestone");
+        add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_STAIRS.get(), "Mossy Distant Cobblestone Stairs");
+        add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_SLAB.get(), "Mossy Distant Cobblestone Slab");
+        add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_WALL.get(), "Mossy Distant Cobblestone Wall");
+
         add(ModBlocks.CRACKED_DISTANT_STONE_BRICKS.get(), "Cracked Distant Stone Bricks");
+
 
         // Soil
         add(ModBlocks.FERTILE_SOIL.get(), "Fertile Soil");
@@ -263,6 +274,16 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.POLISHED_DISTANT_STONE_STAIRS.get().asItem(), "Polished Distant Stone Stairs");
         add(ModBlocks.POLISHED_DISTANT_STONE_SLAB.get().asItem(), "Polished Distant Stone Slab");
         add(ModBlocks.POLISHED_DISTANT_STONE_WALL.get().asItem(), "Polished Distant Stone Wall");
+
+        add(ModBlocks.DISTANT_COBBLESTONE.get().asItem(), "Distant Cobblestone");
+        add(ModBlocks.DISTANT_COBBLESTONE_STAIRS.get().asItem(), "Distant Cobblestone Stairs");
+        add(ModBlocks.DISTANT_COBBLESTONE_SLAB.get().asItem(), "Distant Cobblestone Slab");
+        add(ModBlocks.DISTANT_COBBLESTONE_WALL.get().asItem(), "Distant Cobblestone Wall");
+
+        add(ModBlocks.MOSSY_DISTANT_COBBLESTONE.get().asItem(), "Mossy Distant Cobblestone");
+        add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_STAIRS.get().asItem(), "Mossy Distant Cobblestone Stairs");
+        add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_SLAB.get().asItem(), "Mossy Distant Cobblestone Slab");
+        add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_WALL.get().asItem(), "Mossy Distant Cobblestone Wall");
 
         add(ModBlocks.CRACKED_DISTANT_STONE_BRICKS.get().asItem(), "Cracked Distant Stone Bricks");
 

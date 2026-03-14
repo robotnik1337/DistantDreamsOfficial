@@ -8,6 +8,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -95,6 +96,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.DISTANT_STONE_BRICK_STAIRS.get())
                 .add(ModBlocks.DISTANT_STONE_BRICK_SLAB.get())
                 .add(ModBlocks.DISTANT_STONE_BRICK_WALL.get())
+                .add(ModBlocks.DISTANT_COBBLESTONE.get())
+                .add(ModBlocks.DISTANT_COBBLESTONE_STAIRS.get())
+                .add(ModBlocks.DISTANT_COBBLESTONE_SLAB.get())
+                .add(ModBlocks.DISTANT_COBBLESTONE_WALL.get())
+                .add(ModBlocks.MOSSY_DISTANT_COBBLESTONE.get())
+                .add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_STAIRS.get())
+                .add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_SLAB.get())
+                .add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_WALL.get())
                 .add(ModBlocks.LIMESTONE.get())
                 .add(ModBlocks.LIMESTONE_STAIRS.get())
                 .add(ModBlocks.LIMESTONE_SLAB.get())
@@ -217,6 +226,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.POLISHED_DISTANT_STONE_STAIRS.get())
                 .add(ModBlocks.DISTANT_STONE_BRICK_STAIRS.get())
                 .add(ModBlocks.MOSSY_DISTANT_STONE_BRICK_STAIRS.get())
+                .add(ModBlocks.DISTANT_COBBLESTONE_STAIRS.get())
+                .add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_STAIRS.get())
                 .add(ModBlocks.LIMESTONE_STAIRS.get())
                 .add(ModBlocks.POLISHED_LIMESTONE_STAIRS.get())
                 .add(ModBlocks.LIMESTONE_BRICK_STAIRS.get())
@@ -232,6 +243,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.POLISHED_LIMESTONE_SLAB.get())
                 .add(ModBlocks.LIMESTONE_BRICK_SLAB.get())
                 .add(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get())
+                .add(ModBlocks.DISTANT_COBBLESTONE_SLAB.get())
+                .add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_SLAB.get())
                 .add(ModBlocks.CHARRED_SLAB.get());
 
         tag(BlockTags.PRESSURE_PLATES)
@@ -260,6 +273,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.POLISHED_DISTANT_STONE_WALL.get())
                 .add(ModBlocks.DISTANT_STONE_BRICK_WALL.get())
                 .add(ModBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get())
+                .add(ModBlocks.DISTANT_COBBLESTONE_WALL.get())
+                .add(ModBlocks.MOSSY_DISTANT_COBBLESTONE_WALL.get())
                 .add(ModBlocks.LIMESTONE_WALL.get())
                 .add(ModBlocks.POLISHED_LIMESTONE_WALL.get())
                 .add(ModBlocks.LIMESTONE_BRICK_WALL.get())
