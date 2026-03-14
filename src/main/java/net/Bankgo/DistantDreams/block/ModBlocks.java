@@ -8,6 +8,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.features.CaveFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.ColorRGBA;
@@ -409,8 +410,6 @@ public class ModBlocks {
 
     // ===== END CHARRED ===== //
 
-
-
     // ===== START FERTILE ===== //
     // Fertile Soil Block
     public static final RegistryObject<Block> FERTILE_SOIL = registerBlock("fertile_soil",
@@ -599,7 +598,7 @@ public class ModBlocks {
             () -> new WallBlock(setIdProperty("mossy_limestone_brick_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_STONE_BRICK_WALL))));
     // ===== END LIMESTONE ===== //
 
-    // ===== START WRYE GRASS ===== //
+    // ===== START XERIC SHRUBLANDS ===== //
     //Wrye Grass
     public static final RegistryObject<DoublePlantBlock> WRYE_GRASS = registerBlock("wrye_grass",
             () -> new DoublePlantBlock(setIdProperty("wrye_grass", BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_DRY_GRASS))));
@@ -607,7 +606,12 @@ public class ModBlocks {
     //Tall Wrye Grass
     public static final RegistryObject<DoublePlantBlock> TALL_WRYE_GRASS = registerBlock("tall_wrye_grass",
             () -> new DoublePlantBlock(setIdProperty("tall_wrye_grass", BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_DRY_GRASS))));
-    // ===== END WRYE GRASS ===== //
+
+    // ===== START XERIC SHRUBLANDS ===== //
+    public static final RegistryObject<BonemealableFeaturePlacerBlock> XERIC_MOSS = registerBlock("xeric_moss",
+            ()-> new BonemealableFeaturePlacerBlock(CaveFeatures.MOSS_PATCH_BONEMEAL, setIdProperty("xeric_moss", BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).mapColor(MapColor.SAND))));
+
+    // ===== END XERIC SHRUBLANDS ===== //
 
     private static BlockBehaviour.Properties setIdProperty(String blockName, BlockBehaviour.Properties currentProperties) {
         return currentProperties.setId(BLOCKS.key(blockName));

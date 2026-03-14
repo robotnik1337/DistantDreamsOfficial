@@ -128,6 +128,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
                         output.accept(ModBlocks.WRYE_GRASS.get());
                         output.accept(ModBlocks.TALL_WRYE_GRASS.get());
+                        output.accept(ModBlocks.XERIC_MOSS.get());
 
                         output.accept(ModItems.MUSIC_DISC_HYPNAGOGIA.get());
                     }).build());

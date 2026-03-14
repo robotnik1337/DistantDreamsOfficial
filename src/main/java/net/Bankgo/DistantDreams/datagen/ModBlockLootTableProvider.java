@@ -166,11 +166,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get()));
         this.dropSelf(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
 
-        //Wrye Grass
+        //Xeric Shrublands
         this.add(ModBlocks.WRYE_GRASS.get(),
                 this::createGrassDrops);
         this.add(ModBlocks.TALL_WRYE_GRASS.get(),
                 block -> createDoublePlantWithSeedDrops(block, ModBlocks.TALL_WRYE_GRASS.get()));
+        this.dropSelf(ModBlocks.XERIC_MOSS.get());
     }
 
     @Override

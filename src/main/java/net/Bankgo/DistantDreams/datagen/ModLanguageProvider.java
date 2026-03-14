@@ -139,6 +139,11 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.FERTILE_SOIL.get(), "Fertile Soil");
         add(ModBlocks.FERTILE_PLOT.get(), "Fertile Plot");
 
+        // Xeric Shrublands
+        add(ModBlocks.WRYE_GRASS.get(), "Wrye Grass");
+        add(ModBlocks.TALL_WRYE_GRASS.get(), "Tall Wrye Grass");
+        add(ModBlocks.XERIC_MOSS.get(), "Xeric Moss");
+
 
         // ########## ITEMS ##########
 
@@ -265,9 +270,10 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.FERTILE_SOIL.get().asItem(), "Fertile Soil");
         add(ModBlocks.FERTILE_PLOT.get().asItem(), "Fertile Plot");
 
-        // Wrye Grass
+        // Xeric Shrublands
         add(ModBlocks.WRYE_GRASS.get().asItem(), "Wrye Grass");
         add(ModBlocks.TALL_WRYE_GRASS.get().asItem(), "Tall Wrye Grass");
+        add(ModBlocks.XERIC_MOSS.get().asItem(), "Xeric Moss");
 
         // ########## ITEMS ############
         add(ModItems.MUSIC_DISC_HYPNAGOGIA.get(), "Music Disc");
