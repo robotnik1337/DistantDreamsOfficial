@@ -10,8 +10,7 @@ import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
@@ -19,6 +18,8 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ANCIENT_OAK_PLACED_KEY = registerKey("ancient_oak_placed");
     public static final ResourceKey<PlacedFeature> EUCALYPTUS_PLACED_KEY = registerKey("eucalyptus_placed");
     public static final ResourceKey<PlacedFeature> SEQUOIA_PLACED_KEY = registerKey("sequoia_placed");
+
+    public static final ResourceKey<PlacedFeature> FERN_PLACED_KEY = registerKey("fern_placed_key");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -34,6 +35,10 @@ public class ModPlacedFeatures {
         register(context, SEQUOIA_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SEQUOIA_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
                         ModBlocks.SEQUOIA_SAPLING.get()));
+
+
+        register(context, FERN_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FERN_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 
     }
 

@@ -33,6 +33,19 @@ public class ModBiomes {
     }
 
     private static Biome sequoiaForest(BootstrapContext<Biome> context) {
+        // OVERALL TO-DO FOR THE SEQUOIA FOREST
+        // TODO: change parameters in sequoia forest section of ModOverworldRegion.java to be more closely aligned with old growth taiga
+        // TODO: remove line of code in ModBiomes.java that spawns mossy cobblestone
+        // TODO: change values in ModPlacedFeatures.java to increase frequency of ferns in sequoia forest
+        /* TODO: fix dirt being placed in caves underneath the sequoia forest (may have to add deepslate rules like the
+            guide did to fix this issue.
+         */
+        // TODO: add more vegetation to sequoia forest
+        /* TODO: find out how to get trees to grow with specific amounts of saplings, then make sequoia only generate
+                 with 1x1, 2x2, or 3x3 square placements of saplings
+         */
+        // TODO: stop dirt from placing under sequoia trees, then make it so that tree placements cannot hang over any cliffs
+
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 4, 5));

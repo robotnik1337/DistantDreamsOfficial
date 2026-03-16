@@ -6,17 +6,25 @@ import net.Bankgo.DistantDreams.worldgen.tree.custom.SequoiaFoliagePlacer;
 import net.Bankgo.DistantDreams.worldgen.tree.custom.SequoiaTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 
@@ -24,6 +32,8 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_OAK_KEY = registerKey("ancient_oak");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EUCALYPTUS_KEY = registerKey("eucalyptus");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEQUOIA_KEY = registerKey("sequoia");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FERN_KEY = registerKey("fern");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         register(context, ANCIENT_OAK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
@@ -56,6 +66,19 @@ public class ModConfiguredFeatures {
 
                 new TwoLayersFeatureSize(1, 0, 2)).build()
         );
+
+        register(context, FERN_KEY, Feature.RANDOM_PATCH,
+                grassPatch(
+                        new WeightedStateProvider(
+                                WeightedList.<BlockState>builder().add(Blocks.FERN.defaultBlockState(), 4)
+                                        .add(Blocks.LARGE_FERN.defaultBlockState(), 4)
+                        ), 32
+                )
+        );
+    }
+
+    private static RandomPatchConfiguration grassPatch(BlockStateProvider pStateProvider, int pTries) {
+        return FeatureUtils.simpleRandomPatchConfiguration(pTries, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(pStateProvider)));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
