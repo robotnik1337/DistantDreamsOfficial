@@ -132,8 +132,7 @@ public class ModItemTagProvider extends VanillaItemTagsProvider {
 
         tag(ItemTags.DIRT)
                 .add(ModBlocks.FERTILE_SOIL.get().asItem())
-                .add(ModBlocks.FERTILE_PLOT.get().asItem())
-                .add(ModBlocks.FERTILE_DIRT.get().asItem());
+                .add(ModBlocks.FERTILE_PLOT.get().asItem());
 
         tag(ItemTags.STAIRS)
                 .add(ModBlocks.DISTANT_STONE_STAIRS.get().asItem())

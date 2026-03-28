@@ -114,8 +114,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ModBlocks.FERTILE_SOIL.get())
-                .add(ModBlocks.FERTILE_PLOT.get())
-                .add(ModBlocks.FERTILE_DIRT.get());
+                .add(ModBlocks.FERTILE_PLOT.get());
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.CHARRED_LOG.get())
@@ -211,8 +210,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.DIRT)
                 .add(ModBlocks.FERTILE_SOIL.get())
-                .add(ModBlocks.FERTILE_PLOT.get())
-                .add(ModBlocks.FERTILE_DIRT.get());
+                .add(ModBlocks.FERTILE_PLOT.get());
 
         tag(BlockTags.STAIRS)
                 .add(ModBlocks.DISTANT_STONE_STAIRS.get())

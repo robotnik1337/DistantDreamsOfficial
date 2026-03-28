@@ -264,7 +264,6 @@ public class ModLanguageProvider extends LanguageProvider {
         // Soil
         add(ModBlocks.FERTILE_SOIL.get().asItem(), "Fertile Soil");
         add(ModBlocks.FERTILE_PLOT.get().asItem(), "Fertile Plot");
-        add(ModBlocks.FERTILE_DIRT.get().asItem(), "Fertile Dirt");
 
 
         // ########## ITEMS ############

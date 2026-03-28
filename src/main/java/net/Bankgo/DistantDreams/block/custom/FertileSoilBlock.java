@@ -36,7 +36,7 @@ public class FertileSoilBlock extends GrassBlock {
                                     : net.minecraft.sounds.SoundSource.BLOCKS,
                             1.0F, 1.0F);
                 }
-                return ModBlocks.FERTILE_DIRT.get().defaultBlockState();
+                return Blocks.DIRT.defaultBlockState();
             }
         }
         // Any other tool action → let vanilla/other mods handle it
@@ -46,7 +46,7 @@ public class FertileSoilBlock extends GrassBlock {
     @Override
     protected void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
         if (!canSurvive(level, pos)) {
-            level.setBlockAndUpdate(pos, ModBlocks.FERTILE_DIRT.get().defaultBlockState());
+            level.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
             return;
         }
 
@@ -57,7 +57,7 @@ public class FertileSoilBlock extends GrassBlock {
                         random.nextInt(5) - 3,
                         random.nextInt(3) - 1
                 );
-                if (level.getBlockState(targetPos).is(ModBlocks.FERTILE_DIRT.get()) || level.getBlockState(targetPos).is(Blocks.DIRT)) {
+                if (level.getBlockState(targetPos).is(Blocks.DIRT)) {
                     if (canSurvive(level, targetPos)) {
                         level.setBlockAndUpdate(pos, ModBlocks.FERTILE_SOIL.get().defaultBlockState());
                     }

@@ -5,11 +5,13 @@ import net.Bankgo.DistantDreams.worldgen.biome.ModBiomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 
 public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
-    private static final SurfaceRules.RuleSource FERTILE_DIRT = makeStateRule(ModBlocks.FERTILE_DIRT.get());
+    private static final SurfaceRules.RuleSource DEEPSLATE = makeStateRule(Blocks.DEEPSLATE);
+
     private static final SurfaceRules.RuleSource FERTILE_SOIL = makeStateRule(ModBlocks.FERTILE_SOIL.get());
 
     public static SurfaceRules.RuleSource makeRules() {
@@ -43,7 +45,15 @@ public class ModSurfaceRules {
                         // since addSurfaceDepth is set to true here, the rule adds the surface depth to the blocks
                         // replaced (0-4 blocks), or the distance from the top layer to the stone layer.
                         SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR),
-                        FERTILE_DIRT
+                        DIRT
+                ),
+                SurfaceRules.ifTrue(
+                        SurfaceRules.verticalGradient(
+                                "minecraft:deepslate",
+                                VerticalAnchor.aboveBottom(0),
+                                VerticalAnchor.belowTop(8)
+                        ),
+                        DEEPSLATE
                 )
 
         );

@@ -181,8 +181,6 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         MultiVariant moistFertilePlotVariant = plainVariant(CUSTOM_FARMLAND.create(TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_top_moist"), moistFertilePlotTextureMapping, modelOutput));
         blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.FERTILE_PLOT.get()).with(createEmptyOrFullDispatch(BlockStateProperties.MOISTURE, 7, moistFertilePlotVariant, dryFertilePlotVariant)));
 
-        createTrivialCube(ModBlocks.FERTILE_DIRT.get());
-
         // TODO: get rid of sapling items without getting "Missing item model definition" error
 
 
@@ -229,7 +227,6 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
 
         registerBlockItem(ModBlocks.FERTILE_SOIL.get());
         registerBlockItem(ModBlocks.FERTILE_PLOT.get());
-        registerBlockItem(ModBlocks.FERTILE_DIRT.get());
     }
 
     private void registerBlockItem(Block block) {

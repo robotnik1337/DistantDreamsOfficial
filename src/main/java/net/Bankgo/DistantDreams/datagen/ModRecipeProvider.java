@@ -257,12 +257,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(output);
 
         // Fertile Blocks
-        this.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FERTILE_DIRT.get(), 2)
-                .requires(ModBlocks.FERTILE_DIRT.get())
-                .requires(Blocks.DIRT)
-                .unlockedBy("has_fertile_dirt", has(ModBlocks.FERTILE_DIRT.get()))
-                .unlockedBy("has_dirt", has(Blocks.DIRT))
-                .save(output, getConversionRecipeName(ModBlocks.FERTILE_DIRT.get(), Blocks.DIRT));
     }
 
 
