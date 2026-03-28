@@ -35,6 +35,7 @@ public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> FERN_KEY = registerKey("fern");
 
+
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         register(context, ANCIENT_OAK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.ANCIENT_OAK_LOG.get()),
@@ -67,14 +68,19 @@ public class ModConfiguredFeatures {
                 new TwoLayersFeatureSize(1, 0, 2)).build()
         );
 
+
         register(context, FERN_KEY, Feature.RANDOM_PATCH,
                 grassPatch(
                         new WeightedStateProvider(
-                                WeightedList.<BlockState>builder().add(Blocks.FERN.defaultBlockState(), 4)
-                                        .add(Blocks.LARGE_FERN.defaultBlockState(), 4)
+                                WeightedList.<BlockState>builder()
+                                        .add(Blocks.SHORT_GRASS.defaultBlockState(), 5)
+                                        .add(Blocks.FERN.defaultBlockState(), 4)
+                                        .add(Blocks.LARGE_FERN.defaultBlockState(), 1)
                         ), 32
                 )
         );
+
+
     }
 
     private static RandomPatchConfiguration grassPatch(BlockStateProvider pStateProvider, int pTries) {

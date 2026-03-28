@@ -38,7 +38,7 @@ public class ModPlacedFeatures {
 
 
         register(context, FERN_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FERN_KEY),
-                List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+                List.of(CountPlacement.of(25), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 
     }
 

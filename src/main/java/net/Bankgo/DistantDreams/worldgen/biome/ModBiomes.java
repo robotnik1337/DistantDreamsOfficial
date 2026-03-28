@@ -33,12 +33,11 @@ public class ModBiomes {
     }
 
     private static Biome sequoiaForest(BootstrapContext<Biome> context) {
-        // OVERALL TO-DO FOR THE SEQUOIA FOREST
-        // TODO: change parameters in sequoia forest section of ModOverworldRegion.java to be more closely aligned with old growth taiga
-        // TODO: remove line of code in ModBiomes.java that spawns mossy cobblestone
-        // TODO: change values in ModPlacedFeatures.java to increase frequency of ferns in sequoia forest
-        /* TODO: fix dirt being placed in caves underneath the sequoia forest (may have to add deepslate rules like the
-            guide did to fix this issue.
+        // ! OVERALL TO-DO FOR THE SEQUOIA FOREST
+        // // TODO: change parameters in sequoia forest section of ModOverworldRegion.java to be more closely aligned with old growth taiga
+        // // TODO: remove line of code in ModBiomes.java that spawns mossy cobblestone
+        // // TODO: change values in ModPlacedFeatures.java to increase frequency of ferns in sequoia forest
+        /* TODO: fix dirt being placed in caves underneath the sequoia forest
          */
         // TODO: add more vegetation to sequoia forest
         /* TODO: find out how to get trees to grow with specific amounts of saplings, then make sequoia only generate
@@ -49,19 +48,18 @@ public class ModBiomes {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 4, 5));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.FOX, 2, 4));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.SALMON, 4, 8));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.GLOW_SQUID, 2, 4));
 
         BiomeDefaultFeatures.farmAnimals(spawnBuilder);
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
-        BiomeGenerationSettings.Builder biomeBuilder =
-                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
-        //we need to follow the same order as vanilla biomes for the BiomeDefaultFeatures
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
         globalOverworldGeneration(biomeBuilder);
-        BiomeDefaultFeatures.addMossyStoneBlock(biomeBuilder);
         BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addFerns(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
-        BiomeDefaultFeatures.addExtraGold(biomeBuilder);
 
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
 
