@@ -1,5 +1,6 @@
 package net.Bankgo.DistantDreams.datagen;
 
+import com.jcraft.jorbis.Block;
 import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.Bankgo.DistantDreams.util.ModTags;
@@ -64,6 +65,22 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.CHARRED_TRAPDOOR).add(ModBlocks.CHARRED_TRAPDOOR.get());
 
         // END MODDED BLOCK TAGS
+
+        // Modded Plant Tags
+        tag(BlockTags.DRY_VEGETATION_MAY_PLACE_ON)
+                .add(ModBlocks.XERIC_MOSS.get());
+
+        tag(BlockTags.TRIGGERS_AMBIENT_DESERT_DRY_VEGETATION_BLOCK_SOUNDS)
+                .add(ModBlocks.XERIC_MOSS.get());
+
+        tag(BlockTags.CAMELS_SPAWNABLE_ON)
+                .add(ModBlocks.XERIC_MOSS.get());
+
+        tag(BlockTags.ARMADILLO_SPAWNABLE_ON)
+                .add(ModBlocks.XERIC_MOSS.get());
+
+        tag(BlockTags.MINEABLE_WITH_HOE)
+                .add(ModBlocks.XERIC_MOSS.get());
 
 
         // Block tags for mining
