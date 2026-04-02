@@ -20,40 +20,33 @@ public class ModSurfaceRules {
                 SurfaceRules.ifTrue(
                         // abovePreliminarySurface() prevents the following rules from occurring in caves, etc.
                         SurfaceRules.abovePreliminarySurface(),
-                        SurfaceRules.ifTrue(
-                                /* stoneDepthChecK() limits rules to only being near the surface, noise caves, etc.
-                                 * addSurfaceDepth is false because we only want the top layer to be changed for this
-                                 * part of the rule. cave surface is set to floor because we want this rule to affect
-                                 * ground layer of the biome.
-                                 */
-                                SurfaceRules.stoneDepthCheck(0, false, CaveSurface.FLOOR),
-                                // short sequence to separate surface layer above water & underwater.
-                                SurfaceRules.sequence(
-                                        SurfaceRules.ifTrue(
-                                                // waterBlockCheck() ensures that is NO water where this rule attempts
-                                                // to generate the desired block.
-                                                SurfaceRules.waterBlockCheck(0, 0),
-                                                FERTILE_SOIL // generate fertile soil if above water.
-                                        ),
-                                        DIRT // generate regular dirt if not above water.
-                                )
+                        SurfaceRules.sequence(
+                            SurfaceRules.ifTrue(
+                                    /* stoneDepthChecK() limits rules to only being near the surface, noise caves, etc.
+                                     * addSurfaceDepth is false because we only want the top layer to be changed for this
+                                     * part of the rule. cave surface is set to floor because we want this rule to affect
+                                     * ground layer of the biome.
+                                     */
+                                    SurfaceRules.stoneDepthCheck(0, false, CaveSurface.FLOOR),
+                                    // short sequence to separate surface layer above water & underwater.
+                                    SurfaceRules.sequence(
+                                            SurfaceRules.ifTrue(
+                                                    // waterBlockCheck() ensures that is NO water where this rule attempts
+                                                    // to generate the desired block.
+                                                    SurfaceRules.waterBlockCheck(-1, 0),
+                                                    FERTILE_SOIL // generate fertile soil if above water.
+                                            ),
+                                            DIRT // generate regular dirt if not above water.
+                                    )
+                            ),
+                            SurfaceRules.ifTrue(
+                                    // since addSurfaceDepth is set to true here, the rule adds the surface depth to the blocks
+                                    // replaced (0-4 blocks), or the distance from the top layer to the stone layer.
+                                    SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR),
+                                    DIRT
+                            )
                         )
-                ),
-                SurfaceRules.ifTrue(
-                        // since addSurfaceDepth is set to true here, the rule adds the surface depth to the blocks
-                        // replaced (0-4 blocks), or the distance from the top layer to the stone layer.
-                        SurfaceRules.stoneDepthCheck(0, true, CaveSurface.FLOOR),
-                        DIRT
                 )
-//                SurfaceRules.ifTrue(
-//                        SurfaceRules.verticalGradient(
-//                                "minecraft:deepslate",
-//                                VerticalAnchor.aboveBottom(8),
-//                                VerticalAnchor.belowTop(0)
-//                        ),
-//                        DEEPSLATE
-//                )
-
         );
 
         return SurfaceRules.sequence(
