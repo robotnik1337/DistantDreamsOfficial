@@ -2,7 +2,6 @@ package net.Bankgo.DistantDreams.worldgen;
 
 import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.worldgen.biome.ModBiomes;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -19,6 +18,7 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_SEQUOIA_TREE = registerKey("add_tree_sequoia");
 
     public static final ResourceKey<BiomeModifier> ADD_FERN = registerKey("add_fern");
+    public static final ResourceKey<BiomeModifier> ADD_SEQUOIA_FLOWERS = registerKey("add_sequoia_flowers");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -40,6 +40,12 @@ public class ModBiomeModifiers {
         context.register(ADD_FERN, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(ModBiomes.SEQUOIA_FOREST)),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.FERN_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+
+        context.register(ADD_SEQUOIA_FLOWERS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(ModBiomes.SEQUOIA_FOREST)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SEQUOIA_FLOWERS_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
     }

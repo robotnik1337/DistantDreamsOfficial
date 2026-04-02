@@ -4,6 +4,7 @@ import net.Bankgo.DistantDreams.DistantDreams;
 import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.Bankgo.DistantDreams.worldgen.tree.custom.SequoiaFoliagePlacer;
 import net.Bankgo.DistantDreams.worldgen.tree.custom.SequoiaTrunkPlacer;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -16,10 +17,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
@@ -34,6 +32,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEQUOIA_KEY = registerKey("sequoia");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> FERN_KEY = registerKey("fern");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SEQUOIA_FLOWERS_KEY = registerKey("sequoia_flowers");
 
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
@@ -73,13 +72,39 @@ public class ModConfiguredFeatures {
                 grassPatch(
                         new WeightedStateProvider(
                                 WeightedList.<BlockState>builder()
-                                        .add(Blocks.SHORT_GRASS.defaultBlockState(), 5)
-                                        .add(Blocks.FERN.defaultBlockState(), 4)
+                                        .add(Blocks.SHORT_GRASS.defaultBlockState(), 10)
+                                        .add(Blocks.FERN.defaultBlockState(), 3)
                                         .add(Blocks.LARGE_FERN.defaultBlockState(), 1)
                         ), 32
                 )
         );
 
+        register(context, SEQUOIA_FLOWERS_KEY, Feature.SIMPLE_RANDOM_SELECTOR,
+                new SimpleRandomFeatureConfiguration(
+                        HolderSet.direct(
+                                PlacementUtils.inlinePlaced(
+                                        Feature.FLOWER, grassPatch(BlockStateProvider.simple(Blocks.ROSE_BUSH), 16)
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.FLOWER, grassPatch(BlockStateProvider.simple(Blocks.LILAC), 16)
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.FLOWER,
+                                        grassPatch(
+                                                new WeightedStateProvider(
+                                                        WeightedList.<BlockState>builder()
+                                                                .add(Blocks.CORNFLOWER.defaultBlockState(), 1)
+                                                                .add(Blocks.ORANGE_TULIP.defaultBlockState(), 1)
+                                                ),
+                                                32
+                                        )
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.FLOWER, grassPatch(BlockStateProvider.simple(Blocks.AZURE_BLUET), 32)
+                                )
+                        )
+                )
+        );
 
     }
 

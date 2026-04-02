@@ -20,6 +20,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SEQUOIA_PLACED_KEY = registerKey("sequoia_placed");
 
     public static final ResourceKey<PlacedFeature> FERN_PLACED_KEY = registerKey("fern_placed_key");
+    public static final ResourceKey<PlacedFeature> SEQUOIA_FLOWERS_PLACED_KEY = registerKey("sequoia_flowers_placed_key");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -39,6 +40,9 @@ public class ModPlacedFeatures {
 
         register(context, FERN_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.FERN_KEY),
                 List.of(CountPlacement.of(25), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+
+        register(context, SEQUOIA_FLOWERS_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.SEQUOIA_FLOWERS_KEY),
+                List.of(CountPlacement.of(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 
     }
 
