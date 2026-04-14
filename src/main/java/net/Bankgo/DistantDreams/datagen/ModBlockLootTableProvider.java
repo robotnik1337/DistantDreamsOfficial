@@ -165,6 +165,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get()));
         this.dropSelf(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
+
+        this.dropSelf(ModBlocks.OPEN_DREAMFLOWER.get());
+        this.dropSelf(ModBlocks.CLOSED_DREAMFLOWER.get());
+        this.dropPottedContents(ModBlocks.POTTED_OPEN_DREAMFLOWER.get());
+        this.dropPottedContents(ModBlocks.POTTED_CLOSED_DREAMFLOWER.get());
     }
 
     @Override

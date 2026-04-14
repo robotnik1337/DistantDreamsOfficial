@@ -128,6 +128,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
                         output.accept(ModItems.MUSIC_DISC_HYPNAGOGIA.get());
 
+                        output.accept(ModBlocks.OPEN_DREAMFLOWER.get());
+                        output.accept(ModBlocks.CLOSED_DREAMFLOWER.get());
+
                     }).build());
 
 

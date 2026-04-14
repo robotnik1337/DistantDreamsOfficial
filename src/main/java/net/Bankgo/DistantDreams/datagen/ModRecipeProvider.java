@@ -8,6 +8,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -256,7 +257,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_distant_stone_bricks", has(ModBlocks.DISTANT_STONE_BRICKS.get()))
                 .save(output);
 
-        // Fertile Blocks
+        // Dreamflower
+//        this.shapeless(RecipeCategory.MISC, ModBlocks.OPEN_DREAMFLOWER.get())
+//                .requires(ModBlocks.OPEN_DREAMFLOWER.get())
+//                .unlockedBy("has_open_dreamflower", has(ModBlocks.OPEN_DREAMFLOWER.get()))
+//                .save(output);
+        oneToOneConversionRecipe(Items.BLUE_DYE, ModBlocks.OPEN_DREAMFLOWER.get(), "blue_dye");
+        oneToOneConversionRecipe(Items.BLUE_DYE, ModBlocks.CLOSED_DREAMFLOWER.get(), "blue_dye");
     }
 
 

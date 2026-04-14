@@ -254,7 +254,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.TRAPDOORS)
                 .add(ModBlocks.CHARRED_TRAPDOOR.get());
 
-        // Block tags for stone
         tag(BlockTags.WALLS)
                 .add(ModBlocks.DISTANT_STONE_WALL.get())
                 .add(ModBlocks.POLISHED_DISTANT_STONE_WALL.get())
@@ -289,5 +288,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.DISTANT_STONE_BUTTON.get())
                 .add(ModBlocks.LIMESTONE_BUTTON.get());
 
+        tag(BlockTags.SMALL_FLOWERS)
+                .add(ModBlocks.OPEN_DREAMFLOWER.get())
+                .add(ModBlocks.CLOSED_DREAMFLOWER.get());
+
     }
+
 }

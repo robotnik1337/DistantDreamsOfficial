@@ -265,10 +265,16 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.FERTILE_SOIL.get().asItem(), "Fertile Soil");
         add(ModBlocks.FERTILE_PLOT.get().asItem(), "Fertile Plot");
 
+        // Dreamflower
+        add(ModBlocks.OPEN_DREAMFLOWER.get().asItem(), "Open Dreamflower");
+        add(ModBlocks.CLOSED_DREAMFLOWER.get().asItem(), "Closed Dreamflower");
+
 
         // ########## ITEMS ############
         add(ModItems.MUSIC_DISC_HYPNAGOGIA.get(), "Music Disc");
         add("item.distantdreams.music_disc_hypnagogia.desc", "TheAnonymousGhoul - Hypnagogia");
+
+
 
         // ########## MISCELLANEOUS ##########
         add("creativetab.distantdreams.distant_dreams_tab", "Distant Dreams");
