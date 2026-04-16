@@ -101,6 +101,9 @@ public class ModConfiguredFeatures {
                                 ),
                                 PlacementUtils.inlinePlaced(
                                         Feature.FLOWER, grassPatch(BlockStateProvider.simple(Blocks.AZURE_BLUET), 32)
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.FLOWER, grassPatch(BlockStateProvider.simple(ModBlocks.CLOSED_DREAMFLOWER.get()), 12)
                                 )
                         )
                 )
