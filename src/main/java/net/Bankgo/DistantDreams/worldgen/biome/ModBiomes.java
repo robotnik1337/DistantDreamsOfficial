@@ -76,7 +76,7 @@ public class ModBiomes {
                 .specialEffects((new BiomeSpecialEffects.Builder())
                         .waterColor(0x2d84a6)
                         .waterFogColor(0x3f6471)
-                        .skyColor(0x30c9d6)
+                        .skyColor(0x6cb4ce)
                         .grassColorOverride(0x39863d)
                         .foliageColorOverride(0x2e5d38)
                         .fogColor(0xa1d8dd)

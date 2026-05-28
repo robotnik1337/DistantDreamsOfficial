@@ -508,7 +508,7 @@ public class ModBlocks {
     // ===== END LIMESTONE ===== //
 
     public static final RegistryObject<FlowerBlock> OPEN_DREAMFLOWER = registerBlock("open_dreamflower",
-            () -> new DreamflowerBlock(DreamflowerBlock.Type.OPEN, setIdProperty("open_dreamflower", BlockBehaviour.Properties.ofFullCopy(Blocks.OPEN_EYEBLOSSOM))));
+            () -> new DreamflowerBlock(DreamflowerBlock.Type.OPEN, setIdProperty("open_dreamflower", BlockBehaviour.Properties.ofFullCopy(Blocks.OPEN_EYEBLOSSOM).lightLevel(state -> 5))));
 
     public static final RegistryObject<FlowerBlock> CLOSED_DREAMFLOWER = registerBlock("closed_dreamflower",
             () -> new DreamflowerBlock(DreamflowerBlock.Type.CLOSED, setIdProperty("closed_dreamflower", BlockBehaviour.Properties.ofFullCopy(Blocks.CLOSED_EYEBLOSSOM))));

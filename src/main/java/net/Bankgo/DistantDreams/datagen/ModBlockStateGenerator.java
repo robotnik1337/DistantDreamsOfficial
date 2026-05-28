@@ -31,7 +31,7 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         woodProvider(ModBlocks.ANCIENT_OAK_LOG.get()).logWithHorizontal(ModBlocks.ANCIENT_OAK_LOG.get()).wood(ModBlocks.ANCIENT_OAK_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get()).wood(ModBlocks.STRIPPED_ANCIENT_OAK_WOOD.get());
         createTrivialBlock(ModBlocks.ANCIENT_OAK_LEAVES.get(), TexturedModel.LEAVES);
-        createCutoutPlantWithItem(ModBlocks.ANCIENT_OAK_SAPLING.get(), ModBlocks.POTTED_ANCIENT_OAK_SAPLING.get());
+        createCutoutPlantWithItem(ModBlocks.ANCIENT_OAK_SAPLING.get(), ModBlocks.POTTED_ANCIENT_OAK_SAPLING.get(), PlantType.NOT_TINTED);
 
         family(ModBlocks.ANCIENT_OAK_PLANKS.get())
                 .fence(ModBlocks.ANCIENT_OAK_FENCE.get())
@@ -64,7 +64,7 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         woodProvider(ModBlocks.EUCALYPTUS_LOG.get()).logWithHorizontal(ModBlocks.EUCALYPTUS_LOG.get()).wood(ModBlocks.EUCALYPTUS_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()).wood(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get());
         createTrivialBlock(ModBlocks.EUCALYPTUS_LEAVES.get(), TexturedModel.LEAVES);
-        createCutoutPlantWithItem(ModBlocks.EUCALYPTUS_SAPLING.get(), ModBlocks.POTTED_EUCALYPTUS_SAPLING.get());
+        createCutoutPlantWithItem(ModBlocks.EUCALYPTUS_SAPLING.get(), ModBlocks.POTTED_EUCALYPTUS_SAPLING.get(), PlantType.NOT_TINTED);
 
         family(ModBlocks.EUCALYPTUS_PLANKS.get())
                 .fence(ModBlocks.EUCALYPTUS_FENCE.get())
@@ -81,7 +81,7 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         woodProvider(ModBlocks.SEQUOIA_LOG.get()).logWithHorizontal(ModBlocks.SEQUOIA_LOG.get()).wood(ModBlocks.SEQUOIA_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_SEQUOIA_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_SEQUOIA_LOG.get()).wood(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
         createTrivialBlock(ModBlocks.SEQUOIA_LEAVES.get(), TexturedModel.LEAVES);
-        createCutoutPlantWithItem(ModBlocks.SEQUOIA_SAPLING.get(), ModBlocks.POTTED_SEQUOIA_SAPLING.get());
+        createCutoutPlantWithItem(ModBlocks.SEQUOIA_SAPLING.get(), ModBlocks.POTTED_SEQUOIA_SAPLING.get(), PlantType.NOT_TINTED);
 
         family(ModBlocks.SEQUOIA_PLANKS.get())
                 .fence(ModBlocks.SEQUOIA_FENCE.get())
@@ -180,8 +180,8 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.FERTILE_PLOT.get()).with(createEmptyOrFullDispatch(BlockStateProperties.MOISTURE, 7, moistFertilePlotVariant, dryFertilePlotVariant)));
 
         // Dreamflower
-        createCutoutPlantWithItem(ModBlocks.OPEN_DREAMFLOWER.get(), ModBlocks.POTTED_OPEN_DREAMFLOWER.get());
-        createCutoutPlantWithItem(ModBlocks.CLOSED_DREAMFLOWER.get(), ModBlocks.POTTED_CLOSED_DREAMFLOWER.get());
+        createCutoutPlantWithItem(ModBlocks.OPEN_DREAMFLOWER.get(), ModBlocks.POTTED_OPEN_DREAMFLOWER.get(), PlantType.EMISSIVE_NOT_TINTED);
+        createCutoutPlantWithItem(ModBlocks.CLOSED_DREAMFLOWER.get(), ModBlocks.POTTED_CLOSED_DREAMFLOWER.get(), PlantType.NOT_TINTED);
 
 
 
@@ -230,9 +230,9 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         registerSimpleItemModel(block, ModelLocationUtils.getModelLocation(block));
     }
 
-    private void createCutoutPlantWithItem(Block saplingBlock, Block pottedBlock) {
-        TextureMapping saplingTextures = PlantType.NOT_TINTED.getTextureMapping(saplingBlock);
-        MultiVariant cutoutSaplingVariant = plainVariant(PlantType.NOT_TINTED.getCross().create(saplingBlock, saplingTextures, (name, model) -> {
+    private void createCutoutPlantWithItem(Block saplingBlock, Block pottedBlock, BlockModelGenerators.PlantType plantType) {
+        TextureMapping saplingTextures = plantType.getTextureMapping(saplingBlock);
+        MultiVariant cutoutSaplingVariant = plainVariant(plantType.getCross().create(saplingBlock, saplingTextures, (name, model) -> {
             var json = model.get().getAsJsonObject();
             json.addProperty("render_type", "minecraft:cutout");
             json.addProperty("render_type_fast", "minecraft:solid");
@@ -247,6 +247,26 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
 
         this.blockStateOutput.accept(createSimpleBlock(saplingBlock, cutoutSaplingVariant));
         this.blockStateOutput.accept(createSimpleBlock(pottedBlock, cutoutPottedSaplingVariant));
-        this.registerSimpleItemModel(saplingBlock.asItem(), PlantType.NOT_TINTED.createItemModel(this, saplingBlock));
+        this.registerSimpleItemModel(saplingBlock.asItem(), plantType.createItemModel(this, saplingBlock));
     }
+
+//    private void createCutoutSaplingWithItem(Block saplingBlock, Block pottedBlock) {
+//        TextureMapping saplingTextures = PlantType.EMISSIVE_NOT_TINTED.getTextureMapping(saplingBlock);
+//        MultiVariant cutoutSaplingVariant = plainVariant(PlantType.EMISSIVE_NOT_TINTED.getCross().create(saplingBlock, saplingTextures, (name, model) -> {
+//            var json = model.get().getAsJsonObject();
+//            json.addProperty("render_type", "minecraft:cutout");
+//            json.addProperty("render_type_fast", "minecraft:solid");
+//            this.modelOutput.accept(name, () -> json);
+//        }));
+//        MultiVariant cutoutPottedSaplingVariant = plainVariant(ModelTemplates.FLOWER_POT_CROSS.create(pottedBlock, TextureMapping.plant(saplingBlock), (name, model) -> {
+//            var json = model.get().getAsJsonObject();
+//            json.addProperty("render_type", "minecraft:cutout");
+//            json.addProperty("render_type_fast", "minecraft:solid");
+//            this.modelOutput.accept(name, () -> json);
+//        }));
+//
+//        this.blockStateOutput.accept(createSimpleBlock(saplingBlock, cutoutSaplingVariant));
+//        this.blockStateOutput.accept(createSimpleBlock(pottedBlock, cutoutPottedSaplingVariant));
+//        this.registerSimpleItemModel(saplingBlock.asItem(), PlantType.EMISSIVE_NOT_TINTED.createItemModel(this, saplingBlock));
+//    }
 }
