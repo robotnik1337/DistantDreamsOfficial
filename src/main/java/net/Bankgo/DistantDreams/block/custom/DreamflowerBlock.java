@@ -1,6 +1,7 @@
 package net.Bankgo.DistantDreams.block.custom;
 
 import net.Bankgo.DistantDreams.block.ModBlocks;
+import net.Bankgo.DistantDreams.particle.ModParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -9,6 +10,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
@@ -40,32 +42,51 @@ public class DreamflowerBlock extends FlowerBlock implements SimpleWaterloggedBl
     }
 
     @Override
-    protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
-        this.tryChangingState(pState, pLevel, pPos, pRandom);
+    public void animateTick(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
+        if (this.type.isOpen) {
+            if (pRandom.nextInt(10) == 0) {
+                double x = (double) pPos.getX() + 0.5D + (pRandom.nextDouble() - 0.5D) * 0.5D;
+                double y = (double) pPos.getY() + 1D;
+                double z = (double) pPos.getZ() + 0.5D + (pRandom.nextDouble() - 0.5D) * 0.5D;
+
+                pLevel.addParticle(ModParticles.DREAMFLOWER_PARTICLES.get(), x, y, z, 0.0D, 0.01D, 0.0D);
+            }
+        }
+    }
+
+    @Override
+    protected void tick(@NotNull BlockState pState, @NotNull ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
+        this.tryChangingState(pState, pLevel, pPos);
         super.tick(pState, pLevel, pPos, pRandom);
     }
 
     @Override
-    protected void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
-        this.tryChangingState(pState, pLevel, pPos, pRandom);
+    protected void randomTick(@NotNull BlockState pState, @NotNull ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
+        this.tryChangingState(pState, pLevel, pPos);
         super.randomTick(pState, pLevel, pPos, pRandom);
     }
 
     @Override
-    protected void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pMovedByPiston) {
+    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+        FluidState fluidstate = pContext.getLevel().getFluidState(pContext.getClickedPos());
+        boolean isWater = fluidstate.getType() == Fluids.WATER;
+        return this.defaultBlockState().setValue(WATERLOGGED, isWater);
+    }
+
+
+    @Override
+    protected void onPlace(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull BlockState pOldState, boolean pMovedByPiston) {
         super.onPlace(pState, pLevel, pPos, pOldState, pMovedByPiston);
 
         if (!pLevel.isClientSide()) { pLevel.scheduleTick(pPos, this, 40 + pLevel.getRandom().nextInt(61)); }
     }
 
-
-
-    private boolean tryChangingState(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+    private boolean tryChangingState(BlockState pState, ServerLevel pLevel, BlockPos pPos) {
         if (this.type.isOpen != isFlowerWet(pState, pLevel, pPos)) {
             Type dreamflowerBlock$type = this.type.transform();
             BlockState newDreamflowerState = dreamflowerBlock$type.state();
             if (newDreamflowerState.hasProperty(WATERLOGGED)) {
-                newDreamflowerState.setValue(WATERLOGGED, pState.getValue(WATERLOGGED));
+                newDreamflowerState = newDreamflowerState.setValue(WATERLOGGED, pState.getValue(WATERLOGGED));
             }
             pLevel.setBlock(pPos, newDreamflowerState, 3);
         }
@@ -88,21 +109,21 @@ public class DreamflowerBlock extends FlowerBlock implements SimpleWaterloggedBl
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+    protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> pBuilder) {
         super.createBlockStateDefinition(pBuilder);
         pBuilder.add(WATERLOGGED);
     }
 
     @Override
-    protected FluidState getFluidState(BlockState pState) {
+    protected @NotNull FluidState getFluidState(BlockState pState) {
         return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
     }
 
     @Override
-    protected BlockState updateShape(BlockState pState, @NotNull LevelReader pLevel,
-                                     @NotNull ScheduledTickAccess pScheduledTickAccess, @NotNull BlockPos pPos,
-                                     @NotNull Direction pDirection, @NotNull BlockPos pNeighborPos,
-                                     @NotNull BlockState pNeighborState, @NotNull RandomSource pRandom) {
+    protected @NotNull BlockState updateShape(BlockState pState, @NotNull LevelReader pLevel,
+                                              @NotNull ScheduledTickAccess pScheduledTickAccess, @NotNull BlockPos pPos,
+                                              @NotNull Direction pDirection, @NotNull BlockPos pNeighborPos,
+                                              @NotNull BlockState pNeighborState, @NotNull RandomSource pRandom) {
         if (pState.getValue(WATERLOGGED)) {
             pScheduledTickAccess.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
         }
