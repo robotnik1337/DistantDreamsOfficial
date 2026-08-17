@@ -357,6 +357,66 @@ public class ModBlocks {
     // ===== END CHARRED ===== //
 
 
+    // ===== START PETRIFIED ===== //
+
+    public static final RegistryObject<RotatedPillarBlock> PETRIFIED_WOOD = registerBlock("petrified_wood",
+            () -> new RotatedPillarBlock(setIdProperty("petrified_wood", BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_GRAY)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(1.5F)
+                    .sound(SoundType.WOOD)
+                    .requiresCorrectToolForDrops())));
+
+    public static final RegistryObject<RotatedPillarBlock> PETRIFIED_LOG = registerBlock("petrified_log",
+            () -> new RotatedPillarBlock(setIdProperty("petrified_log", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG))
+                    .mapColor(MapColor.COLOR_LIGHT_GRAY)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(1.5F)
+                    .sound(SoundType.WOOD)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> PETRIFIED_PLANKS = registerBlock("petrified_planks",
+            () -> new Block(setIdProperty("petrified_planks", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS))
+                    .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<StairBlock> PETRIFIED_STAIRS = registerBlock("petrified_stairs",
+            () -> new StairBlock(ModBlocks.PETRIFIED_PLANKS.get().defaultBlockState(),
+                    setIdProperty("petrified_stairs", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS))
+                            .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                            .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<SlabBlock> PETRIFIED_SLAB = registerBlock("petrified_slab",
+            () -> new SlabBlock(setIdProperty("petrified_slab", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB))
+                    .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<PressurePlateBlock> PETRIFIED_PRESSURE_PLATE = registerBlock("petrified_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.OAK,
+                    setIdProperty("petrified_pressure_plate", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE))
+                            .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                            .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<ButtonBlock> PETRIFIED_BUTTON = registerBlock("petrified_button",
+            () -> new ButtonBlock(BlockSetType.OAK,
+                    15,
+                    setIdProperty("petrified_button", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON))
+                            .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                            .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<FenceBlock> PETRIFIED_FENCE = registerBlock("petrified_fence",
+            () -> new FenceBlock(setIdProperty("petrified_fence", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE))
+                    .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<FenceGateBlock> PETRIFIED_FENCE_GATE = registerBlock("petrified_fence_gate",
+            () -> new FenceGateBlock(WoodType.OAK,
+                    setIdProperty("petrified_fence_gate", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE))
+                            .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                            .requiresCorrectToolForDrops()));
+
+    // ===== END PETRIFIED ===== //
+
 
     // ===== START FERTILE ===== //
     public static final RegistryObject<Block> FERTILE_SOIL = registerBlock("fertile_soil",
@@ -367,6 +427,49 @@ public class ModBlocks {
 
 
     // ===== END FERTILE ===== //
+
+
+    // ===== START PEAT ===== //
+    public static final RegistryObject<Block> PEAT = registerBlock("peat",
+            () -> new Block(setIdProperty("peat", BlockBehaviour.Properties.ofFullCopy(Blocks.MUD))));
+
+    public static final RegistryObject<Block> PEAT_WALL = registerBlock("peat_wall",
+            () -> new WallBlock(setIdProperty("peat_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_WALL))));
+
+    public static final RegistryObject<Block> PEAT_SLAB = registerBlock("peat_slab",
+            () -> new SlabBlock(setIdProperty("peat_slab", BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_SLAB))));
+
+    public static final RegistryObject<Block> PEAT_STAIRS = registerBlock("peat_stairs",
+            () -> new StairBlock(ModBlocks.PEAT.get().defaultBlockState(),
+                    setIdProperty("peat_stairs", BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_STAIRS))));
+
+    public static final RegistryObject<Block> PACKED_PEAT = registerBlock("packed_peat",
+            () -> new Block(setIdProperty("packed_peat", BlockBehaviour.Properties.ofFullCopy(Blocks.MUD))));
+
+    public static final RegistryObject<Block> PACKED_PEAT_WALL = registerBlock("packed_peat_wall",
+            () -> new WallBlock(setIdProperty("packed_peat_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_WALL))));
+
+    public static final RegistryObject<Block> PACKED_PEAT_SLAB = registerBlock("packed_peat_slab",
+            () -> new SlabBlock(setIdProperty("packed_peat_slab", BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_SLAB))));
+
+    public static final RegistryObject<Block> PACKED_PEAT_STAIRS = registerBlock("packed_peat_stairs",
+            () -> new StairBlock(ModBlocks.PACKED_PEAT.get().defaultBlockState(),
+                    setIdProperty("packed_peat_stairs", BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_STAIRS))));
+
+    public static final RegistryObject<Block> PEAT_BRICKS = registerBlock("peat_bricks",
+            () -> new Block(setIdProperty("peat_bricks", BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICKS))));
+
+    public static final RegistryObject<Block> PEAT_BRICK_WALL = registerBlock("peat_brick_wall",
+            () -> new WallBlock(setIdProperty("peat_brick_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_WALL))));
+
+    public static final RegistryObject<Block> PEAT_BRICK_SLAB = registerBlock("peat_brick_slab",
+            () -> new SlabBlock(setIdProperty("peat_brick_slab", BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_SLAB))));
+
+    public static final RegistryObject<Block> PEAT_BRICK_STAIRS = registerBlock("peat_brick_stairs",
+            () -> new StairBlock(ModBlocks.PEAT_BRICKS.get().defaultBlockState(),
+                    setIdProperty("peat_brick_stairs", BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_STAIRS))));
+
+    // ===== END PEAT ===== //
 
     // ===== START DISTANT STONE ===== //
     public static final RegistryObject<Block> DISTANT_STONE = registerBlock("distant_stone",

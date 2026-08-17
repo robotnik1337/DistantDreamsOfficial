@@ -59,6 +59,16 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         createTrapdoor(ModBlocks.CHARRED_TRAPDOOR.get());
         createCraftingTableLike(ModBlocks.CHARRED_CRAFTING_TABLE.get(), ModBlocks.CHARRED_PLANKS.get(), TextureMapping::craftingTable);
 
+        // Petrified Woodset
+        woodProvider(ModBlocks.PETRIFIED_LOG.get()).logWithHorizontal(ModBlocks.PETRIFIED_LOG.get()).wood(ModBlocks.PETRIFIED_WOOD.get());
+
+        family(ModBlocks.PETRIFIED_PLANKS.get())
+                .fence(ModBlocks.PETRIFIED_FENCE.get())
+                .fenceGate(ModBlocks.PETRIFIED_FENCE_GATE.get())
+                .stairs(ModBlocks.PETRIFIED_STAIRS.get())
+                .slab(ModBlocks.PETRIFIED_SLAB.get())
+                .button(ModBlocks.PETRIFIED_BUTTON.get())
+                .pressurePlate(ModBlocks.PETRIFIED_PRESSURE_PLATE.get());
 
         // Eucalyptus Woodset
         woodProvider(ModBlocks.EUCALYPTUS_LOG.get()).logWithHorizontal(ModBlocks.EUCALYPTUS_LOG.get()).wood(ModBlocks.EUCALYPTUS_WOOD.get());
@@ -179,6 +189,23 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         MultiVariant moistFertilePlotVariant = plainVariant(CUSTOM_FARMLAND.create(TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_top_moist"), moistFertilePlotTextureMapping, modelOutput));
         blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.FERTILE_PLOT.get()).with(createEmptyOrFullDispatch(BlockStateProperties.MOISTURE, 7, moistFertilePlotVariant, dryFertilePlotVariant)));
 
+
+        //Peat
+        family(ModBlocks.PEAT.get())
+                .wall(ModBlocks.PEAT_WALL.get())
+                .stairs(ModBlocks.PEAT_STAIRS.get())
+                .slab(ModBlocks.PEAT_SLAB.get());
+
+        family(ModBlocks.PACKED_PEAT.get())
+                .wall(ModBlocks.PACKED_PEAT_WALL.get())
+                .stairs(ModBlocks.PACKED_PEAT_STAIRS.get())
+                .slab(ModBlocks.PACKED_PEAT_SLAB.get());
+
+        family(ModBlocks.PEAT_BRICKS.get())
+                .wall(ModBlocks.PEAT_BRICK_WALL.get())
+                .stairs(ModBlocks.PEAT_BRICK_STAIRS.get())
+                .slab(ModBlocks.PEAT_BRICK_SLAB.get());
+
         // Dreamflower
         createCutoutPlantWithItem(ModBlocks.OPEN_DREAMFLOWER.get(), ModBlocks.POTTED_OPEN_DREAMFLOWER.get(), PlantType.EMISSIVE_NOT_TINTED);
         createCutoutPlantWithItem(ModBlocks.CLOSED_DREAMFLOWER.get(), ModBlocks.POTTED_CLOSED_DREAMFLOWER.get(), PlantType.NOT_TINTED);
@@ -195,6 +222,10 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         registerBlockItem(ModBlocks.CHARRED_CRAFTING_TABLE.get());
         registerBlockItem(ModBlocks.CHARRED_PRESSURE_PLATE.get());
         registerBlockItem(ModBlocks.CHARRED_FENCE_GATE.get());
+
+        registerBlockItem(ModBlocks.PETRIFIED_PLANKS.get());
+        registerBlockItem(ModBlocks.PETRIFIED_PRESSURE_PLATE.get());
+        registerBlockItem(ModBlocks.PETRIFIED_FENCE_GATE.get());
 
         registerBlockItem(ModBlocks.EUCALYPTUS_PLANKS.get());
         registerBlockItem(ModBlocks.EUCALYPTUS_PRESSURE_PLATE.get());
@@ -224,6 +255,10 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
 
         registerBlockItem(ModBlocks.FERTILE_SOIL.get());
         registerBlockItem(ModBlocks.FERTILE_PLOT.get());
+
+        registerBlockItem(ModBlocks.PEAT.get());
+        registerBlockItem(ModBlocks.PACKED_PEAT.get());
+        registerBlockItem(ModBlocks.PEAT_BRICKS.get());
     }
 
     private void registerBlockItem(Block block) {

@@ -109,11 +109,44 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.CHARRED_CRAFTING_TABLE.get());
 
 
+        // Petrified Wood Set
+        this.add(ModBlocks.PETRIFIED_LOG.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.CLAY_BALL, ConstantValue.exactly(4)));
+         this.add(ModBlocks.PETRIFIED_WOOD.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.CLAY_BALL, ConstantValue.exactly(4)));
+        this.dropSelf(ModBlocks.PETRIFIED_PLANKS.get());
+        this.dropSelf(ModBlocks.PETRIFIED_STAIRS.get());
+        this.add(ModBlocks.PETRIFIED_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.PETRIFIED_SLAB.get()));
+        this.dropSelf(ModBlocks.PETRIFIED_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.PETRIFIED_BUTTON.get());
+        this.dropSelf(ModBlocks.PETRIFIED_FENCE.get());
+        this.dropSelf(ModBlocks.PETRIFIED_FENCE_GATE.get());
+
         // Fertile Blocks
         this.add(ModBlocks.FERTILE_SOIL.get(),
                 block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         this.add(ModBlocks.FERTILE_PLOT.get(),
                 block -> createSingleItemTable(Blocks.DIRT));
+
+
+        // Peat Set
+        this.dropSelf(ModBlocks.PEAT.get());
+        this.dropSelf(ModBlocks.PEAT_WALL.get());
+        this.add(ModBlocks.PEAT_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.PEAT_SLAB.get()));
+        this.dropSelf(ModBlocks.PEAT_STAIRS.get());
+        this.dropSelf(ModBlocks.PACKED_PEAT.get());
+        this.dropSelf(ModBlocks.PACKED_PEAT_WALL.get());
+        this.add(ModBlocks.PACKED_PEAT_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.PACKED_PEAT_SLAB.get()));
+        this.dropSelf(ModBlocks.PACKED_PEAT_STAIRS.get());
+        this.dropSelf(ModBlocks.PEAT_BRICKS.get());
+        this.dropSelf(ModBlocks.PEAT_BRICK_WALL.get());
+        this.add(ModBlocks.PEAT_BRICK_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.PEAT_BRICK_SLAB.get()));
+        this.dropSelf(ModBlocks.PEAT_BRICK_STAIRS.get());
+
 
         // Distant Stone Set
         this.dropSelf(ModBlocks.DISTANT_STONE.get());

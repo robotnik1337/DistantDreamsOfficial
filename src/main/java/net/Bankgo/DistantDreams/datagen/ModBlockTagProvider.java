@@ -8,6 +8,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -50,6 +51,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_CHARRED_LOG.get())
                 .add(ModBlocks.STRIPPED_CHARRED_WOOD.get());
 
+        // Block tags for petrified logs (ensures that they function as wood)
+        tag(ModTags.Blocks.PETRIFIED_LOGS)
+                .add(ModBlocks.PETRIFIED_LOG.get())
+                .add(ModBlocks.PETRIFIED_WOOD.get());
+
 
         // Special tags for charred blocks that need to be mineable by pickaxe only.
         tag(ModTags.Blocks.CHARRED_PLANKS).add(ModBlocks.CHARRED_PLANKS.get());
@@ -61,6 +67,13 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.CHARRED_FENCE_GATE).add(ModBlocks.CHARRED_FENCE_GATE.get());
         tag(ModTags.Blocks.CHARRED_DOOR).add(ModBlocks.CHARRED_DOOR.get());
         tag(ModTags.Blocks.CHARRED_TRAPDOOR).add(ModBlocks.CHARRED_TRAPDOOR.get());
+        tag(ModTags.Blocks.PETRIFIED_PLANKS).add(ModBlocks.PETRIFIED_PLANKS.get());
+        tag(ModTags.Blocks.PETRIFIED_STAIRS).add(ModBlocks.PETRIFIED_STAIRS.get());
+        tag(ModTags.Blocks.PETRIFIED_SLAB).add(ModBlocks.PETRIFIED_SLAB.get());
+        tag(ModTags.Blocks.PETRIFIED_PRESSURE_PLATE).add(ModBlocks.PETRIFIED_PRESSURE_PLATE.get());
+        tag(ModTags.Blocks.PETRIFIED_BUTTON).add(ModBlocks.PETRIFIED_BUTTON.get());
+        tag(ModTags.Blocks.PETRIFIED_FENCE).add(ModBlocks.PETRIFIED_FENCE.get());
+        tag(ModTags.Blocks.PETRIFIED_FENCE_GATE).add(ModBlocks.PETRIFIED_FENCE_GATE.get());
 
         // END MODDED BLOCK TAGS
 
@@ -81,6 +94,15 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CHARRED_DOOR.get())
                 .add(ModBlocks.CHARRED_TRAPDOOR.get())
                 .add(ModBlocks.CHARRED_CRAFTING_TABLE.get())
+                .add(ModBlocks.PETRIFIED_LOG.get())
+                .add(ModBlocks.PETRIFIED_WOOD.get())
+                .add(ModBlocks.PETRIFIED_PLANKS.get())
+                .add(ModBlocks.PETRIFIED_STAIRS.get())
+                .add(ModBlocks.PETRIFIED_SLAB.get())
+                .add(ModBlocks.PETRIFIED_PRESSURE_PLATE.get())
+                .add(ModBlocks.PETRIFIED_BUTTON.get())
+                .add(ModBlocks.PETRIFIED_FENCE.get())
+                .add(ModBlocks.PETRIFIED_FENCE_GATE.get())
                 .add(ModBlocks.DISTANT_STONE.get())
                 .add(ModBlocks.DISTANT_STONE_STAIRS.get())
                 .add(ModBlocks.DISTANT_STONE_SLAB.get())
@@ -110,11 +132,23 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.LIMESTONE_BRICK_SLAB.get())
                 .add(ModBlocks.LIMESTONE_BRICK_WALL.get())
                 .add(ModBlocks.LIMESTONE_PILLAR.get())
-                .add(ModBlocks.LIMESTONE_POWDER.get());
+                .add(ModBlocks.LIMESTONE_POWDER.get())
+                .add(ModBlocks.PACKED_PEAT.get())
+                .add(ModBlocks.PACKED_PEAT_SLAB.get())
+                .add(ModBlocks.PACKED_PEAT_STAIRS.get())
+                .add(ModBlocks.PACKED_PEAT_WALL.get())
+                .add(ModBlocks.PEAT_BRICKS.get())
+                .add(ModBlocks.PEAT_BRICK_SLAB.get())
+                .add(ModBlocks.PEAT_BRICK_STAIRS.get())
+                .add(ModBlocks.PEAT_BRICK_WALL.get());
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ModBlocks.FERTILE_SOIL.get())
-                .add(ModBlocks.FERTILE_PLOT.get());
+                .add(ModBlocks.FERTILE_PLOT.get())
+                .add(ModBlocks.PEAT.get())
+                .add(ModBlocks.PEAT_SLAB.get())
+                .add(ModBlocks.PEAT_STAIRS.get())
+                .add(ModBlocks.PEAT_WALL.get());
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.CHARRED_LOG.get())
@@ -130,7 +164,17 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CHARRED_FENCE_GATE.get())
                 .add(ModBlocks.CHARRED_DOOR.get())
                 .add(ModBlocks.CHARRED_TRAPDOOR.get())
-                .add(ModBlocks.CHARRED_CRAFTING_TABLE.get());
+                .add(ModBlocks.CHARRED_CRAFTING_TABLE.get())
+                .add(ModBlocks.PETRIFIED_LOG.get())
+                .add(ModBlocks.PETRIFIED_WOOD.get())
+                .add(ModBlocks.PETRIFIED_PLANKS.get())
+                .add(ModBlocks.PETRIFIED_STAIRS.get())
+                .add(ModBlocks.PETRIFIED_SLAB.get())
+                .add(ModBlocks.PETRIFIED_PRESSURE_PLATE.get())
+                .add(ModBlocks.PETRIFIED_BUTTON.get())
+                .add(ModBlocks.PETRIFIED_FENCE.get())
+                .add(ModBlocks.PETRIFIED_FENCE_GATE.get());
+
 
         tag(BlockTags.NEEDS_IRON_TOOL);
         tag(BlockTags.NEEDS_DIAMOND_TOOL);
@@ -161,7 +205,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ANCIENT_OAK_PLANKS.get())
                 .add(ModBlocks.EUCALYPTUS_PLANKS.get())
                 .add(ModBlocks.SEQUOIA_PLANKS.get())
-                .add(ModBlocks.CHARRED_PLANKS.get());
+                .add(ModBlocks.CHARRED_PLANKS.get())
+                .add(ModBlocks.PETRIFIED_PLANKS.get());
 
         tag(BlockTags.WOODEN_STAIRS)
                 .add(ModBlocks.ANCIENT_OAK_STAIRS.get())
@@ -221,7 +266,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.POLISHED_LIMESTONE_STAIRS.get())
                 .add(ModBlocks.LIMESTONE_BRICK_STAIRS.get())
                 .add(ModBlocks.MOSSY_LIMESTONE_BRICK_STAIRS.get())
-                .add(ModBlocks.CHARRED_STAIRS.get());
+                .add(ModBlocks.CHARRED_STAIRS.get())
+                .add(ModBlocks.PETRIFIED_STAIRS.get())
+                .add(ModBlocks.PEAT_STAIRS.get())
+                .add(ModBlocks.PACKED_PEAT_STAIRS.get())
+                .add(ModBlocks.PEAT_BRICK_STAIRS.get());
 
         tag(BlockTags.SLABS)
                 .add(ModBlocks.DISTANT_STONE_SLAB.get())
@@ -232,21 +281,29 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.POLISHED_LIMESTONE_SLAB.get())
                 .add(ModBlocks.LIMESTONE_BRICK_SLAB.get())
                 .add(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get())
-                .add(ModBlocks.CHARRED_SLAB.get());
+                .add(ModBlocks.CHARRED_SLAB.get())
+                .add(ModBlocks.PETRIFIED_SLAB.get())
+                .add(ModBlocks.PEAT_SLAB.get())
+                .add(ModBlocks.PACKED_PEAT_SLAB.get())
+                .add(ModBlocks.PEAT_BRICK_SLAB.get());
 
         tag(BlockTags.PRESSURE_PLATES)
                 .add(ModBlocks.DISTANT_STONE_PRESSURE_PLATE.get())
                 .add(ModBlocks.LIMESTONE_PRESSURE_PLATE.get())
-                .add(ModBlocks.CHARRED_PRESSURE_PLATE.get());
+                .add(ModBlocks.CHARRED_PRESSURE_PLATE.get())
+                .add(ModBlocks.PETRIFIED_PRESSURE_PLATE.get());
 
         tag(BlockTags.BUTTONS)
-                .add(ModBlocks.CHARRED_BUTTON.get());
+                .add(ModBlocks.CHARRED_BUTTON.get())
+                .add(ModBlocks.PETRIFIED_BUTTON.get());
 
         tag(BlockTags.FENCES)
-                .add(ModBlocks.CHARRED_FENCE.get());
+                .add(ModBlocks.CHARRED_FENCE.get())
+                .add(ModBlocks.PETRIFIED_FENCE.get());
 
         tag(BlockTags.FENCE_GATES)
-                .add(ModBlocks.CHARRED_FENCE_GATE.get());
+                .add(ModBlocks.CHARRED_FENCE_GATE.get())
+                .add(ModBlocks.PETRIFIED_FENCE_GATE.get());
 
         tag(BlockTags.DOORS)
                 .add(ModBlocks.CHARRED_DOOR.get());
@@ -262,7 +319,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.LIMESTONE_WALL.get())
                 .add(ModBlocks.POLISHED_LIMESTONE_WALL.get())
                 .add(ModBlocks.LIMESTONE_BRICK_WALL.get())
-                .add(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
+                .add(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get())
+                .add((ModBlocks.PEAT_WALL.get()))
+                .add(ModBlocks.PACKED_PEAT_WALL.get())
+                .add(ModBlocks.PEAT_BRICK_WALL.get());
 
         tag(BlockTags.STONE_BRICKS)
                 .add(ModBlocks.DISTANT_STONE_BRICKS.get())
@@ -282,7 +342,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MOSSY_LIMESTONE_BRICKS.get())
                 .add(ModBlocks.MOSSY_LIMESTONE_BRICK_STAIRS.get())
                 .add(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get())
-                .add(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
+                .add(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get())
+                .add(ModBlocks.PEAT_BRICKS.get())
+                .add(ModBlocks.PEAT_BRICK_SLAB.get())
+                .add(ModBlocks.PEAT_BRICK_STAIRS.get())
+                .add(ModBlocks.PEAT_BRICK_WALL.get());
 
         tag(BlockTags.STONE_BUTTONS)
                 .add(ModBlocks.DISTANT_STONE_BUTTON.get())

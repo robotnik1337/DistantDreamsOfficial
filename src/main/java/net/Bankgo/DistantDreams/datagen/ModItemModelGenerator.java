@@ -18,5 +18,6 @@ public class ModItemModelGenerator extends ItemModelGenerators {
     @Override
     public void run() {
         generateFlatItem(ModItems.MUSIC_DISC_HYPNAGOGIA.get(), ModelTemplates.FLAT_ITEM);
+        generateFlatItem(ModItems.COPPER_BEETROOT_1.get(), ModelTemplates.FLAT_ITEM);
     }
 }
