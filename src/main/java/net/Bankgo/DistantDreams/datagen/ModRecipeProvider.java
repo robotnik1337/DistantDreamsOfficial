@@ -8,13 +8,16 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SuspiciousEffectHolder;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.NonNull;
 
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -255,6 +258,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModBlocks.DISTANT_STONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_DISTANT_STONE_BRICKS.get().asItem(), 0.1F, 200)
                 .unlockedBy("has_distant_stone_bricks", has(ModBlocks.DISTANT_STONE_BRICKS.get()))
                 .save(output);
+
+
+        oneToOneConversionRecipe(Items.BLUE_DYE, ModBlocks.OPEN_DREAMFLOWER.get(), "blue_dye");
+        oneToOneConversionRecipe(Items.BLUE_DYE, ModBlocks.CLOSED_DREAMFLOWER.get(), "blue_dye");
+        suspiciousStew(ModBlocks.OPEN_DREAMFLOWER.get().asItem(), Objects.requireNonNull(SuspiciousEffectHolder.tryGet(ModBlocks.OPEN_DREAMFLOWER.get())));
+        suspiciousStew(ModBlocks.CLOSED_DREAMFLOWER.get().asItem(), Objects.requireNonNull(SuspiciousEffectHolder.tryGet(ModBlocks.CLOSED_DREAMFLOWER.get())));
     }
 
 

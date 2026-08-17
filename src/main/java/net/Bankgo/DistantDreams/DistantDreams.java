@@ -4,10 +4,15 @@ import com.mojang.logging.LogUtils;
 import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.Bankgo.DistantDreams.item.ModCreativeModeTabs;
 import net.Bankgo.DistantDreams.item.ModItems;
+import net.Bankgo.DistantDreams.particle.DreamflowerParticles;
+import net.Bankgo.DistantDreams.particle.ModParticles;
 import net.Bankgo.DistantDreams.sound.ModSounds;
+import net.Bankgo.DistantDreams.worldgen.biome.ModTerrablender;
+import net.Bankgo.DistantDreams.worldgen.biome.surface.ModSurfaceRules;
 import net.Bankgo.DistantDreams.worldgen.tree.ModFoliagePlacers;
 import net.Bankgo.DistantDreams.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
@@ -17,7 +22,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-
+import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(DistantDreams.MODID)
@@ -40,13 +45,17 @@ public class DistantDreams
         ModTrunkPlacerTypes.register(modBusGroup);
         ModSounds.register(modBusGroup);
         ModFoliagePlacers.register(modBusGroup);
+        ModParticles.register(modBusGroup);
+        ModTerrablender.registerBiomes();
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     @SubscribeEvent
-    private static void commonSetup(final FMLCommonSetupEvent event) {}
+    private static void commonSetup(final FMLCommonSetupEvent event) {
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MODID, ModSurfaceRules.makeRules());
+    }
 
     // Add the example block item to the building blocks tab
     @SubscribeEvent
@@ -62,5 +71,10 @@ public class DistantDreams
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {}
+
+        @SubscribeEvent
+        public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(ModParticles.DREAMFLOWER_PARTICLES.get(), DreamflowerParticles.Provider::new);
+        }
     }
 }

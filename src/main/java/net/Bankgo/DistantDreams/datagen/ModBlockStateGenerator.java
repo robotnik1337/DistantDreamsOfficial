@@ -31,7 +31,7 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         woodProvider(ModBlocks.ANCIENT_OAK_LOG.get()).logWithHorizontal(ModBlocks.ANCIENT_OAK_LOG.get()).wood(ModBlocks.ANCIENT_OAK_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_ANCIENT_OAK_LOG.get()).wood(ModBlocks.STRIPPED_ANCIENT_OAK_WOOD.get());
         createTrivialBlock(ModBlocks.ANCIENT_OAK_LEAVES.get(), TexturedModel.LEAVES);
-        createCutoutSaplingWithItem(ModBlocks.ANCIENT_OAK_SAPLING.get(), ModBlocks.POTTED_ANCIENT_OAK_SAPLING.get());
+        createCutoutPlantWithItem(ModBlocks.ANCIENT_OAK_SAPLING.get(), ModBlocks.POTTED_ANCIENT_OAK_SAPLING.get(), PlantType.NOT_TINTED);
 
         family(ModBlocks.ANCIENT_OAK_PLANKS.get())
                 .fence(ModBlocks.ANCIENT_OAK_FENCE.get())
@@ -59,12 +59,22 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         createTrapdoor(ModBlocks.CHARRED_TRAPDOOR.get());
         createCraftingTableLike(ModBlocks.CHARRED_CRAFTING_TABLE.get(), ModBlocks.CHARRED_PLANKS.get(), TextureMapping::craftingTable);
 
+        // Petrified Woodset
+        woodProvider(ModBlocks.PETRIFIED_LOG.get()).logWithHorizontal(ModBlocks.PETRIFIED_LOG.get()).wood(ModBlocks.PETRIFIED_WOOD.get());
+
+        family(ModBlocks.PETRIFIED_PLANKS.get())
+                .fence(ModBlocks.PETRIFIED_FENCE.get())
+                .fenceGate(ModBlocks.PETRIFIED_FENCE_GATE.get())
+                .stairs(ModBlocks.PETRIFIED_STAIRS.get())
+                .slab(ModBlocks.PETRIFIED_SLAB.get())
+                .button(ModBlocks.PETRIFIED_BUTTON.get())
+                .pressurePlate(ModBlocks.PETRIFIED_PRESSURE_PLATE.get());
 
         // Eucalyptus Woodset
         woodProvider(ModBlocks.EUCALYPTUS_LOG.get()).logWithHorizontal(ModBlocks.EUCALYPTUS_LOG.get()).wood(ModBlocks.EUCALYPTUS_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_EUCALYPTUS_LOG.get()).wood(ModBlocks.STRIPPED_EUCALYPTUS_WOOD.get());
         createTrivialBlock(ModBlocks.EUCALYPTUS_LEAVES.get(), TexturedModel.LEAVES);
-        createCutoutSaplingWithItem(ModBlocks.EUCALYPTUS_SAPLING.get(), ModBlocks.POTTED_EUCALYPTUS_SAPLING.get());
+        createCutoutPlantWithItem(ModBlocks.EUCALYPTUS_SAPLING.get(), ModBlocks.POTTED_EUCALYPTUS_SAPLING.get(), PlantType.NOT_TINTED);
 
         family(ModBlocks.EUCALYPTUS_PLANKS.get())
                 .fence(ModBlocks.EUCALYPTUS_FENCE.get())
@@ -81,7 +91,7 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         woodProvider(ModBlocks.SEQUOIA_LOG.get()).logWithHorizontal(ModBlocks.SEQUOIA_LOG.get()).wood(ModBlocks.SEQUOIA_WOOD.get());
         woodProvider(ModBlocks.STRIPPED_SEQUOIA_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_SEQUOIA_LOG.get()).wood(ModBlocks.STRIPPED_SEQUOIA_WOOD.get());
         createTrivialBlock(ModBlocks.SEQUOIA_LEAVES.get(), TexturedModel.LEAVES);
-        createCutoutSaplingWithItem(ModBlocks.SEQUOIA_SAPLING.get(), ModBlocks.POTTED_SEQUOIA_SAPLING.get());
+        createCutoutPlantWithItem(ModBlocks.SEQUOIA_SAPLING.get(), ModBlocks.POTTED_SEQUOIA_SAPLING.get(), PlantType.NOT_TINTED);
 
         family(ModBlocks.SEQUOIA_PLANKS.get())
                 .fence(ModBlocks.SEQUOIA_FENCE.get())
@@ -148,7 +158,7 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         createTrivialCube(ModBlocks.CRACKED_DISTANT_STONE_BRICKS.get());
 
 
-        // Soil & Farmland
+        // Fertile Blocks
         TextureMapping fertileSoilTextureMapping = new TextureMapping()
                 .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModBlocks.FERTILE_SOIL.get(), "_bottom"))
                 .copyForced(TextureSlot.BOTTOM, TextureSlot.PARTICLE)
@@ -180,31 +190,52 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.FERTILE_PLOT.get()).with(createEmptyOrFullDispatch(BlockStateProperties.MOISTURE, 7, moistFertilePlotVariant, dryFertilePlotVariant)));
 
 
-        // TODO: get rid of sapling items without getting "Missing item model definition" error
+        //Peat
+        family(ModBlocks.PEAT.get())
+                .wall(ModBlocks.PEAT_WALL.get())
+                .stairs(ModBlocks.PEAT_STAIRS.get())
+                .slab(ModBlocks.PEAT_SLAB.get());
+
+        family(ModBlocks.PACKED_PEAT.get())
+                .wall(ModBlocks.PACKED_PEAT_WALL.get())
+                .stairs(ModBlocks.PACKED_PEAT_STAIRS.get())
+                .slab(ModBlocks.PACKED_PEAT_SLAB.get());
+
+        family(ModBlocks.PEAT_BRICKS.get())
+                .wall(ModBlocks.PEAT_BRICK_WALL.get())
+                .stairs(ModBlocks.PEAT_BRICK_STAIRS.get())
+                .slab(ModBlocks.PEAT_BRICK_SLAB.get());
+
+        // Dreamflower
+        createCutoutPlantWithItem(ModBlocks.OPEN_DREAMFLOWER.get(), ModBlocks.POTTED_OPEN_DREAMFLOWER.get(), PlantType.EMISSIVE_NOT_TINTED);
+        createCutoutPlantWithItem(ModBlocks.CLOSED_DREAMFLOWER.get(), ModBlocks.POTTED_CLOSED_DREAMFLOWER.get(), PlantType.NOT_TINTED);
+
+
 
         // ########## BLOCK ITEMS ########## //
         registerBlockItem(ModBlocks.ANCIENT_OAK_PLANKS.get());
         registerBlockItem(ModBlocks.ANCIENT_OAK_PRESSURE_PLATE.get());
         registerBlockItem(ModBlocks.ANCIENT_OAK_FENCE_GATE.get());
         registerBlockItem(ModBlocks.ANCIENT_OAK_LEAVES.get());
-        registerBlockItem(ModBlocks.POTTED_ANCIENT_OAK_SAPLING.get());
 
         registerBlockItem(ModBlocks.CHARRED_PLANKS.get());
         registerBlockItem(ModBlocks.CHARRED_CRAFTING_TABLE.get());
         registerBlockItem(ModBlocks.CHARRED_PRESSURE_PLATE.get());
         registerBlockItem(ModBlocks.CHARRED_FENCE_GATE.get());
 
+        registerBlockItem(ModBlocks.PETRIFIED_PLANKS.get());
+        registerBlockItem(ModBlocks.PETRIFIED_PRESSURE_PLATE.get());
+        registerBlockItem(ModBlocks.PETRIFIED_FENCE_GATE.get());
+
         registerBlockItem(ModBlocks.EUCALYPTUS_PLANKS.get());
         registerBlockItem(ModBlocks.EUCALYPTUS_PRESSURE_PLATE.get());
         registerBlockItem(ModBlocks.EUCALYPTUS_FENCE_GATE.get());
         registerBlockItem(ModBlocks.EUCALYPTUS_LEAVES.get());
-        registerBlockItem(ModBlocks.POTTED_EUCALYPTUS_SAPLING.get());
 
         registerBlockItem(ModBlocks.SEQUOIA_PLANKS.get());
         registerBlockItem(ModBlocks.SEQUOIA_PRESSURE_PLATE.get());
         registerBlockItem(ModBlocks.SEQUOIA_FENCE_GATE.get());
         registerBlockItem(ModBlocks.SEQUOIA_LEAVES.get());
-        registerBlockItem(ModBlocks.POTTED_SEQUOIA_SAPLING.get());
 
         registerBlockItem(ModBlocks.LIMESTONE.get());
         registerBlockItem(ModBlocks.LIMESTONE_BRICKS.get());
@@ -224,15 +255,19 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
 
         registerBlockItem(ModBlocks.FERTILE_SOIL.get());
         registerBlockItem(ModBlocks.FERTILE_PLOT.get());
+
+        registerBlockItem(ModBlocks.PEAT.get());
+        registerBlockItem(ModBlocks.PACKED_PEAT.get());
+        registerBlockItem(ModBlocks.PEAT_BRICKS.get());
     }
 
     private void registerBlockItem(Block block) {
         registerSimpleItemModel(block, ModelLocationUtils.getModelLocation(block));
     }
 
-    private void createCutoutSaplingWithItem(Block saplingBlock, Block pottedBlock) {
-        TextureMapping saplingTextures = PlantType.NOT_TINTED.getTextureMapping(saplingBlock);
-        MultiVariant cutoutSaplingVariant = plainVariant(PlantType.NOT_TINTED.getCross().create(saplingBlock, saplingTextures, (name, model) -> {
+    private void createCutoutPlantWithItem(Block saplingBlock, Block pottedBlock, BlockModelGenerators.PlantType plantType) {
+        TextureMapping saplingTextures = plantType.getTextureMapping(saplingBlock);
+        MultiVariant cutoutSaplingVariant = plainVariant(plantType.getCross().create(saplingBlock, saplingTextures, (name, model) -> {
             var json = model.get().getAsJsonObject();
             json.addProperty("render_type", "minecraft:cutout");
             json.addProperty("render_type_fast", "minecraft:solid");
@@ -247,6 +282,26 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
 
         this.blockStateOutput.accept(createSimpleBlock(saplingBlock, cutoutSaplingVariant));
         this.blockStateOutput.accept(createSimpleBlock(pottedBlock, cutoutPottedSaplingVariant));
-        this.registerSimpleItemModel(saplingBlock.asItem(), PlantType.NOT_TINTED.createItemModel(this, saplingBlock));
+        this.registerSimpleItemModel(saplingBlock.asItem(), plantType.createItemModel(this, saplingBlock));
     }
+
+//    private void createCutoutSaplingWithItem(Block saplingBlock, Block pottedBlock) {
+//        TextureMapping saplingTextures = PlantType.EMISSIVE_NOT_TINTED.getTextureMapping(saplingBlock);
+//        MultiVariant cutoutSaplingVariant = plainVariant(PlantType.EMISSIVE_NOT_TINTED.getCross().create(saplingBlock, saplingTextures, (name, model) -> {
+//            var json = model.get().getAsJsonObject();
+//            json.addProperty("render_type", "minecraft:cutout");
+//            json.addProperty("render_type_fast", "minecraft:solid");
+//            this.modelOutput.accept(name, () -> json);
+//        }));
+//        MultiVariant cutoutPottedSaplingVariant = plainVariant(ModelTemplates.FLOWER_POT_CROSS.create(pottedBlock, TextureMapping.plant(saplingBlock), (name, model) -> {
+//            var json = model.get().getAsJsonObject();
+//            json.addProperty("render_type", "minecraft:cutout");
+//            json.addProperty("render_type_fast", "minecraft:solid");
+//            this.modelOutput.accept(name, () -> json);
+//        }));
+//
+//        this.blockStateOutput.accept(createSimpleBlock(saplingBlock, cutoutSaplingVariant));
+//        this.blockStateOutput.accept(createSimpleBlock(pottedBlock, cutoutPottedSaplingVariant));
+//        this.registerSimpleItemModel(saplingBlock.asItem(), PlantType.EMISSIVE_NOT_TINTED.createItemModel(this, saplingBlock));
+//    }
 }

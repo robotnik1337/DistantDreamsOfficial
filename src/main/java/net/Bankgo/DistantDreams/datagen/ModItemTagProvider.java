@@ -171,7 +171,6 @@ public class ModItemTagProvider extends VanillaItemTagsProvider {
         tag(ItemTags.TRAPDOORS)
                 .add(ModBlocks.CHARRED_TRAPDOOR.get().asItem());
 
-        // Block tags for stone
         tag(ItemTags.WALLS)
                 .add(ModBlocks.DISTANT_STONE_WALL.get().asItem())
                 .add(ModBlocks.POLISHED_DISTANT_STONE_WALL.get().asItem())
@@ -205,6 +204,10 @@ public class ModItemTagProvider extends VanillaItemTagsProvider {
         tag(ItemTags.STONE_BUTTONS)
                 .add(ModBlocks.DISTANT_STONE_BUTTON.get().asItem())
                 .add(ModBlocks.LIMESTONE_BUTTON.get().asItem());
+
+        tag(ItemTags.SMALL_FLOWERS)
+                .add(ModBlocks.OPEN_DREAMFLOWER.get().asItem())
+                .add(ModBlocks.CLOSED_DREAMFLOWER.get().asItem());
 
 
         // END VANILLA ITEM TAGS //
