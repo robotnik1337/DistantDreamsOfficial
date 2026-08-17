@@ -49,6 +49,17 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.CHARRED_BUTTON.get(), "Charred Button");
         add(ModBlocks.CHARRED_CRAFTING_TABLE.get(), "Charred Crafting Table");
 
+        // Petrified Woodset
+        add(ModBlocks.PETRIFIED_LOG.get(), "Petrified Log");
+        add(ModBlocks.PETRIFIED_WOOD.get(), "Petrified Wood");
+        add(ModBlocks.PETRIFIED_PLANKS.get(), "Petrified Planks");
+        add(ModBlocks.PETRIFIED_STAIRS.get(), "Petrified Stairs");
+        add(ModBlocks.PETRIFIED_SLAB.get(), "Petrified Slab");
+        add(ModBlocks.PETRIFIED_FENCE.get(), "Petrified Fence");
+        add(ModBlocks.PETRIFIED_FENCE_GATE.get(), "Petrified Fence Gate");
+        add(ModBlocks.PETRIFIED_PRESSURE_PLATE.get(), "Petrified Pressure Plate");
+        add(ModBlocks.PETRIFIED_BUTTON.get(), "Petrified Button");
+
         // Eucalyptus Woodset
         add(ModBlocks.EUCALYPTUS_LOG.get(), "Eucalyptus Log");
         add(ModBlocks.EUCALYPTUS_WOOD.get(), "Eucalyptus Wood");
@@ -139,6 +150,21 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.FERTILE_SOIL.get(), "Fertile Soil");
         add(ModBlocks.FERTILE_PLOT.get(), "Fertile Plot");
 
+        // Peat
+        add(ModBlocks.PEAT.get(),"Peat");
+        add(ModBlocks.PEAT_WALL.get(),"Peat Wall");
+        add(ModBlocks.PEAT_SLAB.get(),"Peat Slab");
+        add(ModBlocks.PEAT_STAIRS.get(),"Peat Stairs");
+
+        add(ModBlocks.PACKED_PEAT.get(),"Packed Peat");
+        add(ModBlocks.PACKED_PEAT_SLAB.get(),"Packed Peat Slab");
+        add(ModBlocks.PACKED_PEAT_STAIRS.get(),"Packed Peat Stairs");
+        add(ModBlocks.PACKED_PEAT_WALL.get(),"Packed Peat Wall");
+
+        add(ModBlocks.PEAT_BRICKS.get(),"Peat Bricks");
+        add(ModBlocks.PEAT_BRICK_WALL.get(),"Peat Brick Wall");
+        add(ModBlocks.PEAT_BRICK_SLAB.get(),"Peat Brick Slab");
+        add(ModBlocks.PEAT_BRICK_STAIRS.get(),"Peat Brick Stairs");
 
         // ########## ITEMS ##########
 
@@ -174,6 +200,17 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.CHARRED_PRESSURE_PLATE.get().asItem(), "Charred Pressure Plate");
         add(ModBlocks.CHARRED_BUTTON.get().asItem(), "Charred Button");
         add(ModBlocks.CHARRED_CRAFTING_TABLE.get().asItem(), "Charred Crafting Table");
+
+        // Petrified Woodset
+        add(ModBlocks.PETRIFIED_LOG.get().asItem(), "Petrified Log");
+        add(ModBlocks.PETRIFIED_WOOD.get().asItem(), "Petrified Wood");
+        add(ModBlocks.PETRIFIED_PLANKS.get().asItem(), "Petrified Planks");
+        add(ModBlocks.PETRIFIED_STAIRS.get().asItem(), "Petrified Stairs");
+        add(ModBlocks.PETRIFIED_SLAB.get().asItem(), "Petrified Slab");
+        add(ModBlocks.PETRIFIED_FENCE.get().asItem(), "Petrified Fence");
+        add(ModBlocks.PETRIFIED_FENCE_GATE.get().asItem(), "Petrified Fence Gate");
+        add(ModBlocks.PETRIFIED_PRESSURE_PLATE.get().asItem(), "Petrified Pressure Plate");
+        add(ModBlocks.PETRIFIED_BUTTON.get().asItem(), "Petrified Button");
 
         // Eucalyptus Woodset
         add(ModBlocks.EUCALYPTUS_LOG.get().asItem(), "Eucalyptus Log");
@@ -265,6 +302,22 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.FERTILE_SOIL.get().asItem(), "Fertile Soil");
         add(ModBlocks.FERTILE_PLOT.get().asItem(), "Fertile Plot");
 
+        //Peat
+        add(ModBlocks.PEAT.get().asItem(),"Peat");
+        add(ModBlocks.PEAT_WALL.get().asItem(),"Peat Wall");
+        add(ModBlocks.PEAT_SLAB.get().asItem(),"Peat Slab");
+        add(ModBlocks.PEAT_STAIRS.get().asItem(),"Peat Stairs");
+
+        add(ModBlocks.PACKED_PEAT.get().asItem(),"Packed Peat");
+        add(ModBlocks.PACKED_PEAT_WALL.get().asItem(),"Packed Peat Wall");
+        add(ModBlocks.PACKED_PEAT_SLAB.get().asItem(),"Packed Peat Slab");
+        add(ModBlocks.PACKED_PEAT_STAIRS.get().asItem(),"Packed Peat Stairs");
+
+        add(ModBlocks.PEAT_BRICKS.get().asItem(),"Peat Bricks");
+        add(ModBlocks.PEAT_BRICK_WALL.get().asItem(),"Peat Brick Wall");
+        add(ModBlocks.PEAT_BRICK_SLAB.get().asItem(),"Peat Brick Slab");
+        add(ModBlocks.PEAT_BRICK_STAIRS.get().asItem(),"Peat Brick Stairs");
+
         // Dreamflower
         add(ModBlocks.OPEN_DREAMFLOWER.get().asItem(), "Open Dreamflower");
         add(ModBlocks.CLOSED_DREAMFLOWER.get().asItem(), "Closed Dreamflower");
@@ -273,7 +326,7 @@ public class ModLanguageProvider extends LanguageProvider {
         // ########## ITEMS ############
         add(ModItems.MUSIC_DISC_HYPNAGOGIA.get(), "Music Disc");
         add("item.distantdreams.music_disc_hypnagogia.desc", "TheAnonymousGhoul - Hypnagogia");
-
+        add(ModItems.COPPER_BEETROOT_1.get(),"Copper Beetroot");
 
 
         // ########## MISCELLANEOUS ##########

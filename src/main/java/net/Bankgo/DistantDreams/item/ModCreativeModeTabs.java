@@ -82,8 +82,31 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CHARRED_BUTTON.get());
                         output.accept(ModBlocks.CHARRED_CRAFTING_TABLE.get());
 
+                        output.accept(ModBlocks.PETRIFIED_LOG.get());
+                        output.accept(ModBlocks.PETRIFIED_WOOD.get());
+                        output.accept(ModBlocks.PETRIFIED_PLANKS.get());
+                        output.accept(ModBlocks.PETRIFIED_STAIRS.get());
+                        output.accept(ModBlocks.PETRIFIED_SLAB.get());
+                        output.accept(ModBlocks.PETRIFIED_FENCE.get());
+                        output.accept(ModBlocks.PETRIFIED_FENCE_GATE.get());
+                        output.accept(ModBlocks.PETRIFIED_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.PETRIFIED_BUTTON.get());
+
                         output.accept(ModBlocks.FERTILE_SOIL.get());
                         output.accept(ModBlocks.FERTILE_PLOT.get());
+
+                        output.accept(ModBlocks.PEAT.get());
+                        output.accept(ModBlocks.PEAT_WALL.get());
+                        output.accept(ModBlocks.PEAT_SLAB.get());
+                        output.accept(ModBlocks.PEAT_STAIRS.get());
+                        output.accept(ModBlocks.PACKED_PEAT.get());
+                        output.accept(ModBlocks.PACKED_PEAT_WALL.get());
+                        output.accept(ModBlocks.PACKED_PEAT_SLAB.get());
+                        output.accept(ModBlocks.PACKED_PEAT_STAIRS.get());
+                        output.accept(ModBlocks.PEAT_BRICKS.get());
+                        output.accept(ModBlocks.PEAT_BRICK_WALL.get());
+                        output.accept(ModBlocks.PEAT_BRICK_SLAB.get());
+                        output.accept(ModBlocks.PEAT_BRICK_STAIRS.get());
 
                         output.accept(ModBlocks.DISTANT_STONE.get());
                         output.accept(ModBlocks.DISTANT_STONE_STAIRS.get());
@@ -127,6 +150,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get());
                         output.accept(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
                         output.accept(ModItems.MUSIC_DISC_HYPNAGOGIA.get());
+                        output.accept(ModItems.COPPER_BEETROOT_1.get());
 
                         output.accept(ModBlocks.OPEN_DREAMFLOWER.get());
                         output.accept(ModBlocks.CLOSED_DREAMFLOWER.get());

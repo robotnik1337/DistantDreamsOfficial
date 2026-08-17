@@ -21,6 +21,10 @@ public class  ModItems {
     public static final RegistryObject<Item> MUSIC_DISC_HYPNAGOGIA = ITEMS.register("music_disc_hypnagogia",
             () -> new Item(new Item.Properties().setId(ITEMS.key("music_disc_hypnagogia")).jukeboxPlayable(ModSounds.HYPNAGOGIA_KEY).stacksTo(1).rarity(Rarity.RARE)));
 
+    // Copper Beetroot
+    public static final RegistryObject<Item> COPPER_BEETROOT_1 = ITEMS.register("copper_beetroot_1",
+            () -> new Item(new Item.Properties().setId(ITEMS.key("copper_beetroot_1")).food(ModFoodProperties.COPPER_BEETROOT_1).stacksTo(64).rarity(Rarity.UNCOMMON)));
+
     // Dreamcatcher
 //    public static final RegistryObject<Item> DREAMCATCHER = ITEMS.register("dreamcatcher",
 //            () -> new Item(new Item.Properties().setId(ITEMS.key("dreamcatcher"))));

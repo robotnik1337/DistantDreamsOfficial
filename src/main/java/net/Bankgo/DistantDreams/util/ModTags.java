@@ -14,6 +14,8 @@ public class ModTags {
         public static final TagKey<Block> CHARRED_LOGS = createTag("charred_logs");
         public static final TagKey<Block> EUCALYPTUS_LOGS = createTag("eucalyptus_logs");
         public static final TagKey<Block> SEQUOIA_LOGS = createTag("sequoia_logs");
+        public static final TagKey<Block> PETRIFIED_LOGS = createTag("petrified_logs");
+
 
         public static final TagKey<Block> CHARRED_PLANKS = createTag("charred_planks");
         public static final TagKey<Block> CHARRED_STAIRS = createTag("charred_stairs");
@@ -24,6 +26,15 @@ public class ModTags {
         public static final TagKey<Block> CHARRED_FENCE_GATE = createTag("charred_fence_gate");
         public static final TagKey<Block> CHARRED_DOOR = createTag("charred_door");
         public static final TagKey<Block> CHARRED_TRAPDOOR = createTag("charred_trapdoor");
+
+        public static final TagKey<Block> PETRIFIED_PLANKS = createTag("petrified_planks");
+        public static final TagKey<Block> PETRIFIED_STAIRS = createTag("petrified_stairs");
+        public static final TagKey<Block> PETRIFIED_SLAB = createTag("petrified_slab");
+        public static final TagKey<Block> PETRIFIED_PRESSURE_PLATE = createTag("petrified_pressure_plate");
+        public static final TagKey<Block> PETRIFIED_BUTTON = createTag("petrified_button");
+        public static final TagKey<Block> PETRIFIED_FENCE = createTag("petrified_fence");
+        public static final TagKey<Block> PETRIFIED_FENCE_GATE = createTag("petrified_fence_gate");
+
 
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(DistantDreams.MODID, name));
