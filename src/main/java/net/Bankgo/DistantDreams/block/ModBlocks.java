@@ -423,7 +423,7 @@ public class ModBlocks {
             () -> new FertileSoilBlock(setIdProperty("fertile_soil", BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK))));
 
     public static final RegistryObject<FarmBlock> FERTILE_PLOT = registerBlock("fertile_plot",
-            () -> new ModFarmBlock(setIdProperty("fertile_plot", BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND))));
+            () -> new FertilePlotBlock(setIdProperty("fertile_plot", BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND))));
 
 
     // ===== END FERTILE ===== //
