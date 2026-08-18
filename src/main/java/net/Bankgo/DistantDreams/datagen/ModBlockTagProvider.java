@@ -8,7 +8,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -133,6 +132,20 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.LIMESTONE_BRICK_WALL.get())
                 .add(ModBlocks.LIMESTONE_PILLAR.get())
                 .add(ModBlocks.LIMESTONE_POWDER.get())
+                .add(ModBlocks.RHYOLITE.get())
+                .add(ModBlocks.RHYOLITE_STAIRS.get())
+                .add(ModBlocks.RHYOLITE_SLAB.get())
+                .add(ModBlocks.RHYOLITE_WALL.get())
+                .add(ModBlocks.RHYOLITE_BUTTON.get())
+                .add(ModBlocks.RHYOLITE_PRESSURE_PLATE.get())
+                .add(ModBlocks.RHYOLITE_BRICKS.get())
+                .add(ModBlocks.RHYOLITE_BRICK_STAIRS.get())
+                .add(ModBlocks.RHYOLITE_BRICK_SLAB.get())
+                .add(ModBlocks.RHYOLITE_BRICK_WALL.get())
+                .add(ModBlocks.RHYOLITE_TILES.get())
+                .add(ModBlocks.RHYOLITE_TILE_STAIRS.get())
+                .add(ModBlocks.RHYOLITE_TILE_SLAB.get())
+                .add(ModBlocks.RHYOLITE_TILE_WALL.get())
                 .add(ModBlocks.PACKED_PEAT.get())
                 .add(ModBlocks.PACKED_PEAT_SLAB.get())
                 .add(ModBlocks.PACKED_PEAT_STAIRS.get())
@@ -255,7 +268,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.DIRT)
                 .add(ModBlocks.FERTILE_SOIL.get())
-                .add(ModBlocks.FERTILE_PLOT.get());
+                .add(ModBlocks.FERTILE_PLOT.get())
+                .add((ModBlocks.DISTANT_DIRT.get()))
+                .add((ModBlocks.DISTANT_GRASS.get()));
 
         tag(BlockTags.STAIRS)
                 .add(ModBlocks.DISTANT_STONE_STAIRS.get())
@@ -266,6 +281,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.POLISHED_LIMESTONE_STAIRS.get())
                 .add(ModBlocks.LIMESTONE_BRICK_STAIRS.get())
                 .add(ModBlocks.MOSSY_LIMESTONE_BRICK_STAIRS.get())
+                .add(ModBlocks.RHYOLITE_STAIRS.get())
+                .add(ModBlocks.RHYOLITE_BRICK_STAIRS.get())
+                .add(ModBlocks.RHYOLITE_TILE_STAIRS.get())
                 .add(ModBlocks.CHARRED_STAIRS.get())
                 .add(ModBlocks.PETRIFIED_STAIRS.get())
                 .add(ModBlocks.PEAT_STAIRS.get())
@@ -281,6 +299,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.POLISHED_LIMESTONE_SLAB.get())
                 .add(ModBlocks.LIMESTONE_BRICK_SLAB.get())
                 .add(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get())
+                .add(ModBlocks.RHYOLITE_SLAB.get())
+                .add(ModBlocks.RHYOLITE_BRICK_SLAB.get())
+                .add(ModBlocks.RHYOLITE_TILE_SLAB.get())
                 .add(ModBlocks.CHARRED_SLAB.get())
                 .add(ModBlocks.PETRIFIED_SLAB.get())
                 .add(ModBlocks.PEAT_SLAB.get())
@@ -290,6 +311,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.PRESSURE_PLATES)
                 .add(ModBlocks.DISTANT_STONE_PRESSURE_PLATE.get())
                 .add(ModBlocks.LIMESTONE_PRESSURE_PLATE.get())
+                .add(ModBlocks.RHYOLITE_PRESSURE_PLATE.get())
                 .add(ModBlocks.CHARRED_PRESSURE_PLATE.get())
                 .add(ModBlocks.PETRIFIED_PRESSURE_PLATE.get());
 
@@ -306,10 +328,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.PETRIFIED_FENCE_GATE.get());
 
         tag(BlockTags.DOORS)
-                .add(ModBlocks.CHARRED_DOOR.get());
+                .add(ModBlocks.CHARRED_DOOR.get())
+                .add(ModBlocks.PETRIFIED_DOOR.get());
 
         tag(BlockTags.TRAPDOORS)
-                .add(ModBlocks.CHARRED_TRAPDOOR.get());
+                .add(ModBlocks.CHARRED_TRAPDOOR.get())
+                .add(ModBlocks.PETRIFIED_TRAPDOOR.get());
 
         tag(BlockTags.WALLS)
                 .add(ModBlocks.DISTANT_STONE_WALL.get())
@@ -320,6 +344,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.POLISHED_LIMESTONE_WALL.get())
                 .add(ModBlocks.LIMESTONE_BRICK_WALL.get())
                 .add(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get())
+                .add(ModBlocks.RHYOLITE_WALL.get())
+                .add(ModBlocks.RHYOLITE_BRICK_WALL.get())
+                .add(ModBlocks.RHYOLITE_TILE_WALL.get())
                 .add((ModBlocks.PEAT_WALL.get()))
                 .add(ModBlocks.PACKED_PEAT_WALL.get())
                 .add(ModBlocks.PEAT_BRICK_WALL.get());
@@ -343,6 +370,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MOSSY_LIMESTONE_BRICK_STAIRS.get())
                 .add(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get())
                 .add(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get())
+                .add(ModBlocks.RHYOLITE_BRICKS.get())
+                .add(ModBlocks.RHYOLITE_BRICK_STAIRS.get())
+                .add(ModBlocks.RHYOLITE_BRICK_SLAB.get())
+                .add(ModBlocks.RHYOLITE_BRICK_WALL.get())
                 .add(ModBlocks.PEAT_BRICKS.get())
                 .add(ModBlocks.PEAT_BRICK_SLAB.get())
                 .add(ModBlocks.PEAT_BRICK_STAIRS.get())
@@ -350,7 +381,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.STONE_BUTTONS)
                 .add(ModBlocks.DISTANT_STONE_BUTTON.get())
-                .add(ModBlocks.LIMESTONE_BUTTON.get());
+                .add(ModBlocks.LIMESTONE_BUTTON.get())
+                .add(ModBlocks.RHYOLITE_BUTTON.get());
 
         tag(BlockTags.SMALL_FLOWERS)
                 .add(ModBlocks.OPEN_DREAMFLOWER.get())

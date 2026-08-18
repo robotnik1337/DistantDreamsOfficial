@@ -112,7 +112,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         // Petrified Wood Set
         this.add(ModBlocks.PETRIFIED_LOG.get(),
                 block -> createSingleItemTableWithSilkTouch(block, Items.CLAY_BALL, ConstantValue.exactly(4)));
+        this.add(ModBlocks.STRIPPED_PETRIFIED_LOG.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.CLAY_BALL, ConstantValue.exactly(4)));
          this.add(ModBlocks.PETRIFIED_WOOD.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.CLAY_BALL, ConstantValue.exactly(4)));
+        this.add(ModBlocks.STRIPPED_PETRIFIED_WOOD.get(),
                 block -> createSingleItemTableWithSilkTouch(block, Items.CLAY_BALL, ConstantValue.exactly(4)));
         this.dropSelf(ModBlocks.PETRIFIED_PLANKS.get());
         this.dropSelf(ModBlocks.PETRIFIED_STAIRS.get());
@@ -122,12 +126,18 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.PETRIFIED_BUTTON.get());
         this.dropSelf(ModBlocks.PETRIFIED_FENCE.get());
         this.dropSelf(ModBlocks.PETRIFIED_FENCE_GATE.get());
+        this.add(ModBlocks.PETRIFIED_DOOR.get(),
+                block -> createDoorTable(ModBlocks.PETRIFIED_DOOR.get()));
+        this.dropSelf(ModBlocks.PETRIFIED_TRAPDOOR.get());
 
         // Fertile Blocks
         this.add(ModBlocks.FERTILE_SOIL.get(),
                 block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         this.add(ModBlocks.FERTILE_PLOT.get(),
                 block -> createSingleItemTable(Blocks.DIRT));
+        this.dropSelf(ModBlocks.DISTANT_DIRT.get());
+        this.add(ModBlocks.DISTANT_GRASS.get(),
+                block -> createSingleItemTable(ModBlocks.DISTANT_DIRT.get()));
 
 
         // Peat Set
@@ -172,6 +182,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get()));
         this.dropSelf(ModBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get());
+
         // Limestone Set
         this.dropSelf(ModBlocks.LIMESTONE.get());
         this.dropSelf(ModBlocks.LIMESTONE_STAIRS.get());
@@ -198,6 +209,27 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get()));
         this.dropSelf(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
+
+        // Rhyolite
+        this.dropSelf(ModBlocks.RHYOLITE.get());
+        this.dropSelf(ModBlocks.RHYOLITE_STAIRS.get());
+        this.add(ModBlocks.RHYOLITE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.RHYOLITE_SLAB.get()));
+        this.dropSelf(ModBlocks.RHYOLITE_BUTTON.get());
+        this.dropSelf(ModBlocks.RHYOLITE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.RHYOLITE_WALL.get());
+        this.dropSelf(ModBlocks.RHYOLITE_BRICKS.get());
+        this.dropSelf(ModBlocks.RHYOLITE_BRICK_STAIRS.get());
+        this.add(ModBlocks.RHYOLITE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.RHYOLITE_BRICK_SLAB.get()));
+        this.dropSelf(ModBlocks.RHYOLITE_BRICK_WALL.get());
+        this.dropSelf(ModBlocks.RHYOLITE_TILES.get());
+        this.dropSelf(ModBlocks.RHYOLITE_TILE_STAIRS.get());
+        this.add(ModBlocks.RHYOLITE_TILE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.RHYOLITE_TILE_SLAB.get()));
+        this.dropSelf(ModBlocks.RHYOLITE_TILE_WALL.get());
+
+        // Misc
 
         this.dropSelf(ModBlocks.OPEN_DREAMFLOWER.get());
         this.dropSelf(ModBlocks.CLOSED_DREAMFLOWER.get());

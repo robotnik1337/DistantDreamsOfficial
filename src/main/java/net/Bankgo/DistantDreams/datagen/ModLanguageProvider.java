@@ -52,6 +52,8 @@ public class ModLanguageProvider extends LanguageProvider {
         // Petrified Woodset
         add(ModBlocks.PETRIFIED_LOG.get(), "Petrified Log");
         add(ModBlocks.PETRIFIED_WOOD.get(), "Petrified Wood");
+        add(ModBlocks.STRIPPED_PETRIFIED_LOG.get(), "Stripped Petrified Log");
+        add(ModBlocks.STRIPPED_PETRIFIED_WOOD.get(), "Stripped Petrified Wood");
         add(ModBlocks.PETRIFIED_PLANKS.get(), "Petrified Planks");
         add(ModBlocks.PETRIFIED_STAIRS.get(), "Petrified Stairs");
         add(ModBlocks.PETRIFIED_SLAB.get(), "Petrified Slab");
@@ -59,6 +61,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.PETRIFIED_FENCE_GATE.get(), "Petrified Fence Gate");
         add(ModBlocks.PETRIFIED_PRESSURE_PLATE.get(), "Petrified Pressure Plate");
         add(ModBlocks.PETRIFIED_BUTTON.get(), "Petrified Button");
+        add(ModBlocks.PETRIFIED_DOOR.get(), "Petrified Door");
+        add(ModBlocks.PETRIFIED_TRAPDOOR.get(), "Petrified Trapdoor");
 
         // Eucalyptus Woodset
         add(ModBlocks.EUCALYPTUS_LOG.get(), "Eucalyptus Log");
@@ -146,9 +150,29 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModBlocks.CRACKED_DISTANT_STONE_BRICKS.get(), "Cracked Distant Stone Bricks");
 
+        // RHYOLITE
+        add(ModBlocks.RHYOLITE.get(), "Rhyolite");
+        add(ModBlocks.RHYOLITE_STAIRS.get(), "Rhyolite Stairs");
+        add(ModBlocks.RHYOLITE_SLAB.get(), "Rhyolite Slab");
+        add(ModBlocks.RHYOLITE_WALL.get(), "Rhyolite Wall");
+        add(ModBlocks.RHYOLITE_PRESSURE_PLATE.get(), "Rhyolite Pressure Plate");
+        add(ModBlocks.RHYOLITE_BUTTON.get(), "Rhyolite Button");
+
+        add(ModBlocks.RHYOLITE_BRICKS.get(), "Rhyolite Bricks");
+        add(ModBlocks.RHYOLITE_BRICK_STAIRS.get(), "Rhyolite Brick Stairs");
+        add(ModBlocks.RHYOLITE_BRICK_SLAB.get(), "Rhyolite Brick Slab");
+        add(ModBlocks.RHYOLITE_BRICK_WALL.get(), "Rhyolite Brick Wall");
+
+        add(ModBlocks.RHYOLITE_TILES.get(), "Rhyolite Tiles");
+        add(ModBlocks.RHYOLITE_TILE_STAIRS.get(), "Rhyolite Tile Stairs");
+        add(ModBlocks.RHYOLITE_TILE_SLAB.get(), "Rhyolite Tile Slab");
+        add(ModBlocks.RHYOLITE_TILE_WALL.get(), "Rhyolite Tile Wall");
+
         // Soil
         add(ModBlocks.FERTILE_SOIL.get(), "Fertile Soil");
         add(ModBlocks.FERTILE_PLOT.get(), "Fertile Plot");
+        add(ModBlocks.DISTANT_DIRT.get(),"Distant Dirt");
+        add(ModBlocks.DISTANT_GRASS.get(),"Distant Grass");
 
         // Peat
         add(ModBlocks.PEAT.get(),"Peat");
@@ -204,6 +228,8 @@ public class ModLanguageProvider extends LanguageProvider {
         // Petrified Woodset
         add(ModBlocks.PETRIFIED_LOG.get().asItem(), "Petrified Log");
         add(ModBlocks.PETRIFIED_WOOD.get().asItem(), "Petrified Wood");
+        add(ModBlocks.STRIPPED_PETRIFIED_LOG.get().asItem(), "Stripped Petrified Log");
+        add(ModBlocks.STRIPPED_PETRIFIED_WOOD.get().asItem(), "Stripped Petrified Wood");
         add(ModBlocks.PETRIFIED_PLANKS.get().asItem(), "Petrified Planks");
         add(ModBlocks.PETRIFIED_STAIRS.get().asItem(), "Petrified Stairs");
         add(ModBlocks.PETRIFIED_SLAB.get().asItem(), "Petrified Slab");
@@ -211,6 +237,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.PETRIFIED_FENCE_GATE.get().asItem(), "Petrified Fence Gate");
         add(ModBlocks.PETRIFIED_PRESSURE_PLATE.get().asItem(), "Petrified Pressure Plate");
         add(ModBlocks.PETRIFIED_BUTTON.get().asItem(), "Petrified Button");
+        add(ModBlocks.PETRIFIED_DOOR.get().asItem(), "Petrified Door");
+        add(ModBlocks.PETRIFIED_TRAPDOOR.get().asItem(), "Petrified Trapdoor");
 
         // Eucalyptus Woodset
         add(ModBlocks.EUCALYPTUS_LOG.get().asItem(), "Eucalyptus Log");
@@ -298,9 +326,29 @@ public class ModLanguageProvider extends LanguageProvider {
 
         add(ModBlocks.CRACKED_DISTANT_STONE_BRICKS.get().asItem(), "Cracked Distant Stone Bricks");
 
+        // Rhyolite
+        add(ModBlocks.RHYOLITE.get().asItem(), "Rhyolite");
+        add(ModBlocks.RHYOLITE_STAIRS.get().asItem(), "Rhyolite Stairs");
+        add(ModBlocks.RHYOLITE_SLAB.get().asItem(), "Rhyolite Slab");
+        add(ModBlocks.RHYOLITE_WALL.get().asItem(), "Rhyolite Wall");
+        add(ModBlocks.RHYOLITE_PRESSURE_PLATE.get().asItem(), "Rhyolite Pressure Plate");
+        add(ModBlocks.RHYOLITE_BUTTON.get().asItem(), "Rhyolite Button");
+
+        add(ModBlocks.RHYOLITE_BRICKS.get().asItem(), "Rhyolite Bricks");
+        add(ModBlocks.RHYOLITE_BRICK_STAIRS.get().asItem(), "Rhyolite Brick Stairs");
+        add(ModBlocks.RHYOLITE_BRICK_SLAB.get().asItem(), "Rhyolite Brick Slab");
+        add(ModBlocks.RHYOLITE_BRICK_WALL.get().asItem(), "Rhyolite Brick Wall");
+
+        add(ModBlocks.RHYOLITE_TILES.get().asItem(), "Rhyolite Tiles");
+        add(ModBlocks.RHYOLITE_TILE_STAIRS.get().asItem(), "Rhyolite Tile Stairs");
+        add(ModBlocks.RHYOLITE_TILE_SLAB.get().asItem(), "Rhyolite Tile Slab");
+        add(ModBlocks.RHYOLITE_TILE_WALL.get().asItem(), "Rhyolite Tile Wall");
+
         // Soil
         add(ModBlocks.FERTILE_SOIL.get().asItem(), "Fertile Soil");
         add(ModBlocks.FERTILE_PLOT.get().asItem(), "Fertile Plot");
+        add(ModBlocks.DISTANT_DIRT.get().asItem(),"Distant Dirt");
+        add(ModBlocks.DISTANT_GRASS.get().asItem(),"Distant Grass");
 
         //Peat
         add(ModBlocks.PEAT.get().asItem(),"Peat");

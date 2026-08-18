@@ -61,6 +61,7 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
 
         // Petrified Woodset
         woodProvider(ModBlocks.PETRIFIED_LOG.get()).logWithHorizontal(ModBlocks.PETRIFIED_LOG.get()).wood(ModBlocks.PETRIFIED_WOOD.get());
+        woodProvider(ModBlocks.STRIPPED_PETRIFIED_LOG.get()).logWithHorizontal(ModBlocks.STRIPPED_PETRIFIED_LOG.get()).wood(ModBlocks.STRIPPED_PETRIFIED_WOOD.get());
 
         family(ModBlocks.PETRIFIED_PLANKS.get())
                 .fence(ModBlocks.PETRIFIED_FENCE.get())
@@ -69,6 +70,8 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
                 .slab(ModBlocks.PETRIFIED_SLAB.get())
                 .button(ModBlocks.PETRIFIED_BUTTON.get())
                 .pressurePlate(ModBlocks.PETRIFIED_PRESSURE_PLATE.get());
+        createDoor(ModBlocks.PETRIFIED_DOOR.get());
+        createTrapdoor(ModBlocks.PETRIFIED_TRAPDOOR.get());
 
         // Eucalyptus Woodset
         woodProvider(ModBlocks.EUCALYPTUS_LOG.get()).logWithHorizontal(ModBlocks.EUCALYPTUS_LOG.get()).wood(ModBlocks.EUCALYPTUS_WOOD.get());
@@ -158,6 +161,25 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         createTrivialCube(ModBlocks.CRACKED_DISTANT_STONE_BRICKS.get());
 
 
+        // Rhyolite
+        family(ModBlocks.RHYOLITE.get())
+                .wall(ModBlocks.RHYOLITE_WALL.get())
+                .stairs(ModBlocks.RHYOLITE_STAIRS.get())
+                .slab(ModBlocks.RHYOLITE_SLAB.get())
+                .button(ModBlocks.RHYOLITE_BUTTON.get())
+                .pressurePlate(ModBlocks.RHYOLITE_PRESSURE_PLATE.get());
+
+        family(ModBlocks.RHYOLITE_BRICKS.get())
+                .wall(ModBlocks.RHYOLITE_BRICK_WALL.get())
+                .stairs(ModBlocks.RHYOLITE_BRICK_STAIRS.get())
+                .slab(ModBlocks.RHYOLITE_BRICK_SLAB.get());
+
+        family(ModBlocks.RHYOLITE_TILES.get())
+                .wall(ModBlocks.RHYOLITE_TILE_WALL.get())
+                .stairs(ModBlocks.RHYOLITE_TILE_STAIRS.get())
+                .slab(ModBlocks.RHYOLITE_TILE_SLAB.get());
+
+
         // Fertile Blocks
         TextureMapping fertileSoilTextureMapping = new TextureMapping()
                 .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModBlocks.FERTILE_SOIL.get(), "_bottom"))
@@ -189,6 +211,15 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         MultiVariant moistFertilePlotVariant = plainVariant(CUSTOM_FARMLAND.create(TextureMapping.getBlockTexture(ModBlocks.FERTILE_PLOT.get(), "_top_moist"), moistFertilePlotTextureMapping, modelOutput));
         blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.FERTILE_PLOT.get()).with(createEmptyOrFullDispatch(BlockStateProperties.MOISTURE, 7, moistFertilePlotVariant, dryFertilePlotVariant)));
 
+        TextureMapping distantGrassTextureMapping = new TextureMapping()
+                .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(ModBlocks.DISTANT_GRASS.get(), "_bottom"))
+                .copyForced(TextureSlot.BOTTOM, TextureSlot.PARTICLE)
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(ModBlocks.DISTANT_GRASS.get(), "_top"))
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(ModBlocks.DISTANT_GRASS.get(), "_side"));
+        Variant plainDistantGrassVariant = plainModel(ModelTemplates.CUBE_BOTTOM_TOP.create(ModBlocks.DISTANT_GRASS.get(), distantGrassTextureMapping, modelOutput));
+        blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.DISTANT_GRASS.get(), createRotatedVariants(plainDistantGrassVariant)));
+
+        createTrivialCube(ModBlocks.DISTANT_DIRT.get());
 
         //Peat
         family(ModBlocks.PEAT.get())
@@ -253,8 +284,15 @@ public class ModBlockStateGenerator extends BlockModelGenerators {
         registerBlockItem(ModBlocks.CRACKED_DISTANT_STONE_BRICKS.get());
         registerBlockItem(ModBlocks.DISTANT_STONE_PRESSURE_PLATE.get());
 
+        registerBlockItem(ModBlocks.RHYOLITE.get());
+        registerBlockItem(ModBlocks.RHYOLITE_BRICKS.get());
+        registerBlockItem(ModBlocks.RHYOLITE_TILES.get());
+        registerBlockItem(ModBlocks.RHYOLITE_PRESSURE_PLATE.get());
+
         registerBlockItem(ModBlocks.FERTILE_SOIL.get());
         registerBlockItem(ModBlocks.FERTILE_PLOT.get());
+        registerBlockItem(ModBlocks.DISTANT_DIRT.get());
+        registerBlockItem(ModBlocks.DISTANT_GRASS.get());
 
         registerBlockItem(ModBlocks.PEAT.get());
         registerBlockItem(ModBlocks.PACKED_PEAT.get());

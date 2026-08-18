@@ -84,6 +84,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.PETRIFIED_LOG.get());
                         output.accept(ModBlocks.PETRIFIED_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_PETRIFIED_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_PETRIFIED_WOOD.get());
                         output.accept(ModBlocks.PETRIFIED_PLANKS.get());
                         output.accept(ModBlocks.PETRIFIED_STAIRS.get());
                         output.accept(ModBlocks.PETRIFIED_SLAB.get());
@@ -91,9 +93,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PETRIFIED_FENCE_GATE.get());
                         output.accept(ModBlocks.PETRIFIED_PRESSURE_PLATE.get());
                         output.accept(ModBlocks.PETRIFIED_BUTTON.get());
+                        output.accept(ModBlocks.PETRIFIED_DOOR.get());
+                        output.accept(ModBlocks.PETRIFIED_TRAPDOOR.get());
 
                         output.accept(ModBlocks.FERTILE_SOIL.get());
                         output.accept(ModBlocks.FERTILE_PLOT.get());
+                        output.accept(ModBlocks.DISTANT_DIRT.get());
+                        output.accept(ModBlocks.DISTANT_GRASS.get());
+
 
                         output.accept(ModBlocks.PEAT.get());
                         output.accept(ModBlocks.PEAT_WALL.get());
@@ -149,6 +156,22 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MOSSY_LIMESTONE_BRICK_STAIRS.get());
                         output.accept(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get());
                         output.accept(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
+
+                        output.accept(ModBlocks.RHYOLITE.get());
+                        output.accept(ModBlocks.RHYOLITE_STAIRS.get());
+                        output.accept(ModBlocks.RHYOLITE_SLAB.get());
+                        output.accept(ModBlocks.RHYOLITE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.RHYOLITE_BUTTON.get());
+                        output.accept(ModBlocks.RHYOLITE_WALL.get());
+                        output.accept(ModBlocks.RHYOLITE_BRICKS.get());
+                        output.accept(ModBlocks.RHYOLITE_BRICK_STAIRS.get());
+                        output.accept(ModBlocks.RHYOLITE_BRICK_SLAB.get());
+                        output.accept(ModBlocks.RHYOLITE_BRICK_WALL.get());
+                        output.accept(ModBlocks.RHYOLITE_TILES.get());
+                        output.accept(ModBlocks.RHYOLITE_TILE_STAIRS.get());
+                        output.accept(ModBlocks.RHYOLITE_TILE_SLAB.get());
+                        output.accept(ModBlocks.RHYOLITE_TILE_WALL.get());
+
                         output.accept(ModItems.MUSIC_DISC_HYPNAGOGIA.get());
                         output.accept(ModItems.COPPER_BEETROOT_1.get());
 

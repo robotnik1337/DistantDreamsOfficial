@@ -367,6 +367,14 @@ public class ModBlocks {
                     .sound(SoundType.WOOD)
                     .requiresCorrectToolForDrops())));
 
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_PETRIFIED_WOOD = registerBlock("stripped_petrified_wood",
+            () -> new RotatedPillarBlock(setIdProperty("stripped_petrified_wood", BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD))
+                    .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(1.5F)
+                    .sound(SoundType.WOOD)
+                    .requiresCorrectToolForDrops()));
+
     public static final RegistryObject<RotatedPillarBlock> PETRIFIED_LOG = registerBlock("petrified_log",
             () -> new RotatedPillarBlock(setIdProperty("petrified_log", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG))
                     .mapColor(MapColor.COLOR_LIGHT_GRAY)
@@ -375,45 +383,67 @@ public class ModBlocks {
                     .sound(SoundType.WOOD)
                     .requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_PETRIFIED_LOG = registerBlock("stripped_petrified_log",
+            () -> new RotatedPillarBlock(setIdProperty("stripped_petrified_log", BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG))
+                    .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(1.5F)
+                    .sound(SoundType.WOOD)
+                    .requiresCorrectToolForDrops()));
+
     public static final RegistryObject<Block> PETRIFIED_PLANKS = registerBlock("petrified_planks",
             () -> new Block(setIdProperty("petrified_planks", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS))
-                    .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                    .mapColor(ModBlocks.STRIPPED_PETRIFIED_LOG.get().defaultMapColor())
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<StairBlock> PETRIFIED_STAIRS = registerBlock("petrified_stairs",
             () -> new StairBlock(ModBlocks.PETRIFIED_PLANKS.get().defaultBlockState(),
                     setIdProperty("petrified_stairs", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS))
-                            .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                            .mapColor(ModBlocks.STRIPPED_PETRIFIED_LOG.get().defaultMapColor())
                             .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> PETRIFIED_SLAB = registerBlock("petrified_slab",
             () -> new SlabBlock(setIdProperty("petrified_slab", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB))
-                    .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                    .mapColor(ModBlocks.STRIPPED_PETRIFIED_LOG.get().defaultMapColor())
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<PressurePlateBlock> PETRIFIED_PRESSURE_PLATE = registerBlock("petrified_pressure_plate",
             () -> new PressurePlateBlock(BlockSetType.OAK,
                     setIdProperty("petrified_pressure_plate", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE))
-                            .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                            .mapColor(ModBlocks.STRIPPED_PETRIFIED_LOG.get().defaultMapColor())
                             .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<ButtonBlock> PETRIFIED_BUTTON = registerBlock("petrified_button",
             () -> new ButtonBlock(BlockSetType.OAK,
                     15,
                     setIdProperty("petrified_button", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON))
-                            .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                            .mapColor(ModBlocks.STRIPPED_PETRIFIED_LOG.get().defaultMapColor())
                             .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<FenceBlock> PETRIFIED_FENCE = registerBlock("petrified_fence",
             () -> new FenceBlock(setIdProperty("petrified_fence", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE))
-                    .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                    .mapColor(ModBlocks.STRIPPED_PETRIFIED_LOG.get().defaultMapColor())
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<FenceGateBlock> PETRIFIED_FENCE_GATE = registerBlock("petrified_fence_gate",
             () -> new FenceGateBlock(WoodType.OAK,
                     setIdProperty("petrified_fence_gate", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE))
-                            .mapColor(ModBlocks.PETRIFIED_LOG.get().defaultMapColor())
+                            .mapColor(ModBlocks.STRIPPED_PETRIFIED_LOG.get().defaultMapColor())
                             .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<DoorBlock> PETRIFIED_DOOR = registerBlock("petrified_door",
+            () -> new DoorBlock(BlockSetType.OAK,
+                    setIdProperty("petrified_door", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR))
+                            .mapColor(ModBlocks.STRIPPED_PETRIFIED_LOG.get().defaultMapColor())
+                            .requiresCorrectToolForDrops()
+                            .noOcclusion()));
+
+    public static final RegistryObject<TrapDoorBlock> PETRIFIED_TRAPDOOR = registerBlock("petrified_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.OAK,
+                    setIdProperty("petrified_trapdoor", BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR))
+                            .mapColor(ModBlocks.STRIPPED_PETRIFIED_LOG.get().defaultMapColor())
+                            .requiresCorrectToolForDrops()
+                            .noOcclusion()));
 
     // ===== END PETRIFIED ===== //
 
@@ -423,10 +453,18 @@ public class ModBlocks {
             () -> new FertileSoilBlock(setIdProperty("fertile_soil", BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK))));
 
     public static final RegistryObject<FarmBlock> FERTILE_PLOT = registerBlock("fertile_plot",
-            () -> new ModFarmBlock(setIdProperty("fertile_plot", BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND))));
-
+            () -> new FertilePlotBlock(setIdProperty("fertile_plot", BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND))));
 
     // ===== END FERTILE ===== //
+
+    // ===== START DISTANT DIRT ===== //
+    public static final RegistryObject<Block> DISTANT_DIRT = registerBlock("distant_dirt",
+            () -> new Block(setIdProperty("distant_dirt", BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT))));
+
+    public static final RegistryObject<Block> DISTANT_GRASS = registerBlock("distant_grass",
+            () -> new GrassBlock(setIdProperty("distant_grass", BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK))));
+
+    // ===== END DISTANT DIRT ===== //
 
 
     // ===== START PEAT ===== //
@@ -609,6 +647,58 @@ public class ModBlocks {
     public static final RegistryObject<WallBlock> MOSSY_LIMESTONE_BRICK_WALL = registerBlock("mossy_limestone_brick_wall",
             () -> new WallBlock(setIdProperty("mossy_limestone_brick_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_STONE_BRICK_WALL))));
     // ===== END LIMESTONE ===== //
+
+    // ===== START RHYOLITE ===== //
+    public static final RegistryObject<Block> RHYOLITE = registerBlock("rhyolite",
+            () -> new Block(setIdProperty("rhyolite", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE))));
+
+    public static final RegistryObject<StairBlock> RHYOLITE_STAIRS = registerBlock("rhyolite_stairs",
+            () -> new StairBlock(ModBlocks.RHYOLITE.get().defaultBlockState(),
+                    setIdProperty("rhyolite_stairs", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_STAIRS))));
+
+    public static final RegistryObject<SlabBlock> RHYOLITE_SLAB = registerBlock("rhyolite_slab",
+            () -> new SlabBlock(setIdProperty("rhyolite_slab", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_SLAB))));
+
+    public static final RegistryObject<PressurePlateBlock> RHYOLITE_PRESSURE_PLATE = registerBlock("rhyolite_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.POLISHED_BLACKSTONE,
+                    setIdProperty("rhyolite_pressure_plate", BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_BLACKSTONE_PRESSURE_PLATE))));
+
+    public static final RegistryObject<ButtonBlock> RHYOLITE_BUTTON = registerBlock("rhyolite_button",
+            () -> new ButtonBlock(BlockSetType.POLISHED_BLACKSTONE,
+                    10,
+                    setIdProperty("rhyolite_button", BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_BLACKSTONE_BUTTON))));
+
+    public static final RegistryObject<WallBlock> RHYOLITE_WALL = registerBlock("rhyolite_wall",
+            () -> new WallBlock(setIdProperty("rhyolite_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_WALL))));
+
+    public static final RegistryObject<Block> RHYOLITE_BRICKS = registerBlock("rhyolite_bricks",
+            () -> new Block(setIdProperty("rhyolite_bricks", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE))));
+
+    public static final RegistryObject<StairBlock> RHYOLITE_BRICK_STAIRS = registerBlock("rhyolite_brick_stairs",
+            () -> new StairBlock(ModBlocks.RHYOLITE_BRICKS.get().defaultBlockState(),
+                    setIdProperty("rhyolite_brick_stairs", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_STAIRS))));
+
+    public static final RegistryObject<SlabBlock> RHYOLITE_BRICK_SLAB = registerBlock("rhyolite_brick_slab",
+            () -> new SlabBlock(setIdProperty("rhyolite_brick_slab", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_SLAB))));
+
+    public static final RegistryObject<WallBlock> RHYOLITE_BRICK_WALL = registerBlock("rhyolite_brick_wall",
+            () -> new WallBlock(setIdProperty("rhyolite_brick_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_WALL))));
+
+    public static final RegistryObject<Block> RHYOLITE_TILES = registerBlock("rhyolite_tiles",
+            () -> new Block(setIdProperty("rhyolite_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE))));
+
+    public static final RegistryObject<StairBlock> RHYOLITE_TILE_STAIRS = registerBlock("rhyolite_tile_stairs",
+            () -> new StairBlock(ModBlocks.RHYOLITE_TILES.get().defaultBlockState(),
+                    setIdProperty("rhyolite_tile_stairs", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_STAIRS))));
+
+    public static final RegistryObject<SlabBlock> RHYOLITE_TILE_SLAB = registerBlock("rhyolite_tile_slab",
+            () -> new SlabBlock(setIdProperty("rhyolite_tile_slab", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_SLAB))));
+
+    public static final RegistryObject<WallBlock> RHYOLITE_TILE_WALL = registerBlock("rhyolite_tile_wall",
+            () -> new WallBlock(setIdProperty("rhyolite_tile_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_WALL))));
+
+
+    // ===== END RHYOLITE ===== //
 
     public static final RegistryObject<FlowerBlock> OPEN_DREAMFLOWER = registerBlock("open_dreamflower",
             () -> new DreamflowerBlock(DreamflowerBlock.Type.OPEN, setIdProperty("open_dreamflower", BlockBehaviour.Properties.ofFullCopy(Blocks.OPEN_EYEBLOSSOM).lightLevel(state -> 5))));
