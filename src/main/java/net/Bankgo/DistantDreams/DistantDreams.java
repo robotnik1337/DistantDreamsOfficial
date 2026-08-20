@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.Bankgo.DistantDreams.item.ModCreativeModeTabs;
 import net.Bankgo.DistantDreams.item.ModItems;
+import net.Bankgo.DistantDreams.loot.ModLootModifiers;
 import net.Bankgo.DistantDreams.particle.DreamflowerParticles;
 import net.Bankgo.DistantDreams.particle.ModParticles;
 import net.Bankgo.DistantDreams.sound.ModSounds;
@@ -46,6 +47,7 @@ public class DistantDreams
         ModSounds.register(modBusGroup);
         ModFoliagePlacers.register(modBusGroup);
         ModParticles.register(modBusGroup);
+        ModLootModifiers.register(modBusGroup);
         ModTerrablender.registerBiomes();
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
