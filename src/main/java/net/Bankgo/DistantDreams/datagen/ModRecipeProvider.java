@@ -261,6 +261,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         oneToOneConversionRecipe(Items.BLUE_DYE, ModBlocks.OPEN_DREAMFLOWER.get(), "blue_dye");
         oneToOneConversionRecipe(Items.BLUE_DYE, ModBlocks.CLOSED_DREAMFLOWER.get(), "blue_dye");
+
+
         shapeless(RecipeCategory.FOOD, ModItems.BROTH_OF_STYX.get())
                 .requires(Items.BOWL)
                 .requires(Items.SOUL_SOIL)
@@ -269,8 +271,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_soul_soil", has(Items.SOUL_SOIL))
                 .unlockedBy("has_open_dreamflower", has(ModBlocks.OPEN_DREAMFLOWER.get().asItem()))
                 .save(output);
-
-
     }
 
 

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ModConsumables extends Consumables {
     public static final Consumable COPPER_BEETROOT_1 = defaultFood()
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE,1800)))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE,4800)))
             .build();
 
     public static final Consumable BROTH_OF_STYX = defaultFood()
