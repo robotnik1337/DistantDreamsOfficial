@@ -266,7 +266,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.SOUL_SOIL)
                 .requires(ModBlocks.OPEN_DREAMFLOWER.get().asItem())
                 .unlockedBy("has_bowl", has(Items.BOWL))
-                .unlockedBy("has_soul_soil", has(Items.BROWN_MUSHROOM))
+                .unlockedBy("has_soul_soil", has(Items.SOUL_SOIL))
                 .unlockedBy("has_open_dreamflower", has(ModBlocks.OPEN_DREAMFLOWER.get().asItem()))
                 .save(output);
 
