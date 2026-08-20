@@ -327,6 +327,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.MUSIC_DISC_HYPNAGOGIA.get(), "Music Disc");
         add("item.distantdreams.music_disc_hypnagogia.desc", "TheAnonymousGhoul - Hypnagogia");
         add(ModItems.COPPER_BEETROOT_1.get(),"Copper Beetroot");
+        add(ModItems.BROTH_OF_STYX.get(), "Broth of Styx");
 
 
         // ########## MISCELLANEOUS ##########

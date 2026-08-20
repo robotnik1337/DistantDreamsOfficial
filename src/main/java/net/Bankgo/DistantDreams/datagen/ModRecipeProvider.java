@@ -1,6 +1,7 @@
 package net.Bankgo.DistantDreams.datagen;
 
 import net.Bankgo.DistantDreams.block.ModBlocks;
+import net.Bankgo.DistantDreams.item.ModItems;
 import net.Bankgo.DistantDreams.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -12,12 +13,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SuspiciousEffectHolder;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.NonNull;
 
-import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -262,8 +261,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         oneToOneConversionRecipe(Items.BLUE_DYE, ModBlocks.OPEN_DREAMFLOWER.get(), "blue_dye");
         oneToOneConversionRecipe(Items.BLUE_DYE, ModBlocks.CLOSED_DREAMFLOWER.get(), "blue_dye");
-        suspiciousStew(ModBlocks.OPEN_DREAMFLOWER.get().asItem(), Objects.requireNonNull(SuspiciousEffectHolder.tryGet(ModBlocks.OPEN_DREAMFLOWER.get())));
-        suspiciousStew(ModBlocks.CLOSED_DREAMFLOWER.get().asItem(), Objects.requireNonNull(SuspiciousEffectHolder.tryGet(ModBlocks.CLOSED_DREAMFLOWER.get())));
+        shapeless(RecipeCategory.FOOD, ModItems.BROTH_OF_STYX.get())
+                .requires(Items.BOWL)
+                .requires(Items.SOUL_SOIL)
+                .requires(ModBlocks.OPEN_DREAMFLOWER.get().asItem())
+                .unlockedBy("has_bowl", has(Items.BOWL))
+                .unlockedBy("has_soul_soil", has(Items.BROWN_MUSHROOM))
+                .unlockedBy("has_open_dreamflower", has(ModBlocks.OPEN_DREAMFLOWER.get().asItem()))
+                .save(output);
+
+
     }
 
 

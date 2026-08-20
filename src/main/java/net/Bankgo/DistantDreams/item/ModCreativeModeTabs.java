@@ -150,7 +150,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get());
                         output.accept(ModBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
                         output.accept(ModItems.MUSIC_DISC_HYPNAGOGIA.get());
+
                         output.accept(ModItems.COPPER_BEETROOT_1.get());
+                        output.accept(ModItems.BROTH_OF_STYX.get());
 
                         output.accept(ModBlocks.OPEN_DREAMFLOWER.get());
                         output.accept(ModBlocks.CLOSED_DREAMFLOWER.get());
