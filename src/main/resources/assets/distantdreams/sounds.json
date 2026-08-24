@@ -1,0 +1,11 @@
+{
+  "hypnagogia": {
+    "subtitle": "Music Disc - Hypnagogia",
+    "sounds": [
+      {
+        "name": "distantdreams:hypnagogia",
+        "stream": true
+      }
+    ]
+  }
+}
