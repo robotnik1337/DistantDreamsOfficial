@@ -17,8 +17,7 @@ public class ModConsumables extends Consumables {
             .onConsume(
                     new ApplyStatusEffectsConsumeEffect(
                             List.of(
-                                    new MobEffectInstance(MobEffects.RESISTANCE, 600, 4),
-                                    new MobEffectInstance(MobEffects.POISON, 700)
+                                    new MobEffectInstance(MobEffects.RESISTANCE, 600, 4)
                             )
                     )
             ).build();

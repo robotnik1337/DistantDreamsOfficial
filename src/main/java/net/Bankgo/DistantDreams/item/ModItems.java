@@ -33,7 +33,7 @@ public class  ModItems {
 
     public static final RegistryObject<Item> BROTH_OF_STYX = ITEMS.register("broth_of_styx",
             () -> new Item(new Item.Properties().setId(ITEMS.key("broth_of_styx"))
-                    .food(Foods.SUSPICIOUS_STEW, ModConsumables.BROTH_OF_STYX)
+                    .food(ModFoodProperties.BROTH_OF_STYX, ModConsumables.BROTH_OF_STYX)
                     .stacksTo(1)
                     .usingConvertsTo(Items.BOWL))
             {

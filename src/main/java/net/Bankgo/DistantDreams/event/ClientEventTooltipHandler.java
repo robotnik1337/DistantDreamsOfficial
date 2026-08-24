@@ -17,8 +17,7 @@ public class ClientEventTooltipHandler {
     public static void onTooltip(ItemTooltipEvent event) {
         if (event.getItemStack().is(ModItems.BROTH_OF_STYX.get())) {
             List<MobEffectInstance> effects = List.of(
-                    new MobEffectInstance(MobEffects.RESISTANCE, 600, 4),
-                    new MobEffectInstance(MobEffects.POISON, 700)
+                    new MobEffectInstance(MobEffects.RESISTANCE, 600, 4)
             );
 
             // Automatically formats the text, colors, levels, and durations
