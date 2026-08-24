@@ -210,6 +210,7 @@ public class ModItemTagProvider extends VanillaItemTagsProvider {
                 .add(ModBlocks.CLOSED_DREAMFLOWER.get().asItem());
 
 
+
         // END VANILLA ITEM TAGS //
     }
 }
