@@ -1,12 +1,11 @@
-# Distant Dreams: From The Ground Up
+# Distant Dreams
 
 [![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21-brightgreen.svg)](https://minecraft.net/)
 [![Forge Version](https://img.shields.io/badge/Forge-51.0.33-orange.svg)](https://files.minecraftforge.net/)
 [![Mod Version](https://img.shields.io/badge/Version-0.0.1-blue.svg)]()
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Distant Dreams** is a Minecraft mod that adds biomes, dinosaurs, and a dream dimension to expand your Minecraft experience. This first release, "From The Ground Up," focuses on establishing the foundation with new wood types, building blocks, and farming mechanics.
-
+A new Minecraft mod adding a new dimension for you to explore, the Distant Realm. This dimension is filled with sights familiar and new, and inhabited by prehistoric fauna of all sizes. Will you immerse yourself in this worlds fauna or hunker down and protect yourself from what lurks in the shadows... its up to you to decide.
 ---
 
 ## 📋 Table of Contents
