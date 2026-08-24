@@ -4,26 +4,20 @@ import com.mojang.logging.LogUtils;
 import net.Bankgo.DistantDreams.block.ModBlocks;
 import net.Bankgo.DistantDreams.item.ModCreativeModeTabs;
 import net.Bankgo.DistantDreams.item.ModItems;
-import net.Bankgo.DistantDreams.loot.ModLootModifiers;
-import net.Bankgo.DistantDreams.particle.DreamflowerParticles;
-import net.Bankgo.DistantDreams.particle.ModParticles;
-import net.Bankgo.DistantDreams.sound.ModSounds;
-import net.Bankgo.DistantDreams.worldgen.biome.ModTerrablender;
-import net.Bankgo.DistantDreams.worldgen.biome.surface.ModSurfaceRules;
-import net.Bankgo.DistantDreams.worldgen.tree.ModFoliagePlacers;
-import net.Bankgo.DistantDreams.worldgen.tree.ModTrunkPlacerTypes;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(DistantDreams.MODID)
@@ -35,48 +29,55 @@ public class DistantDreams
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public DistantDreams(FMLJavaModLoadingContext context)
+    public DistantDreams()
     {
-        var modBusGroup = context.getModBusGroup();
-        FMLCommonSetupEvent.getBus(modBusGroup).addListener(DistantDreams::commonSetup);
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        // Register the commonSetup method for modloading
+        modEventBus.addListener(this::commonSetup);
+        // Register ourselves for server and other game events we are interested in
+        MinecraftForge.EVENT_BUS.register(this);
 
-        ModCreativeModeTabs.register(modBusGroup);
-        ModItems.register(modBusGroup);
-        ModBlocks.register(modBusGroup);
-        ModTrunkPlacerTypes.register(modBusGroup);
-        ModSounds.register(modBusGroup);
-        ModFoliagePlacers.register(modBusGroup);
-        ModParticles.register(modBusGroup);
-        ModLootModifiers.register(modBusGroup);
-        ModTerrablender.registerBiomes();
+        // Register the creative mode tabs
+        ModCreativeModeTabs.register(modEventBus);
+
+        // Register the mod items
+        ModItems.register(modEventBus);
+
+        // Register the mod blocks
+        ModBlocks.register(modEventBus);
+
+        // Register the item to a creative tab
+        // modEventBus.addListener(this::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    @SubscribeEvent
-    private static void commonSetup(final FMLCommonSetupEvent event) {
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MODID, ModSurfaceRules.makeRules());
+    private void commonSetup(final FMLCommonSetupEvent event)
+    {
+
     }
 
     // Add the example block item to the building blocks tab
-    @SubscribeEvent
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {}
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+
+    }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {}
+    public void onServerStarting(ServerStartingEvent event)
+    {
+
+    }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {}
+        public static void onClientSetup(FMLClientSetupEvent event)
+        {
 
-        @SubscribeEvent
-        public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
-            event.registerSpriteSet(ModParticles.DREAMFLOWER_PARTICLES.get(), DreamflowerParticles.Provider::new);
         }
     }
 }
