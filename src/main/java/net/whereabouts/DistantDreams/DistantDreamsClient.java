@@ -1,4 +1,4 @@
-package net.whereabouts.distantdreams;
+package net.whereabouts.DistantDreams;
 
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;

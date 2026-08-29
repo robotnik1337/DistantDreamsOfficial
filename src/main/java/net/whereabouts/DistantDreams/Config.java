@@ -1,4 +1,4 @@
-package net.whereabouts.distantdreams;
+package net.whereabouts.DistantDreams;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;

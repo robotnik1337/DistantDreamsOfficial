@@ -1,6 +1,7 @@
-package net.whereabouts.distantdreams;
+package net.whereabouts.DistantDreams;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.resources.Identifier;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -10,6 +11,9 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.whereabouts.DistantDreams.block.DDBlocks;
+import net.whereabouts.DistantDreams.creativemodetab.DDCreativeModeTabs;
+import net.whereabouts.DistantDreams.item.DDItems;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -26,6 +30,10 @@ public class DistantDreams {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        DDCreativeModeTabs.register(modEventBus);
+        DDBlocks.register(modEventBus);
+        DDItems.register(modEventBus);
+
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (DistantDreams) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
@@ -36,6 +44,10 @@ public class DistantDreams {
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
+
+    public static Identifier prefix(String name) {
+        return Identifier.fromNamespaceAndPath(MOD_ID, name);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {}

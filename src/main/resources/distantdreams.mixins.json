@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "net.whereabouts.distantdreams.mixin",
+  "package": "net.whereabouts.DistantDreams.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [],
   "injectors": {
