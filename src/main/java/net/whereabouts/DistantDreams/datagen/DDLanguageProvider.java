@@ -331,7 +331,7 @@ public class DDLanguageProvider extends LanguageProvider {
 
 
         // ########## MISCELLANEOUS ##########
-        add("creativetab.distantdreams.distant_dreams", "Distant Dreams");
+        add("itemGroup.distantdreams", "Distant Dreams");
         add("biome.distantdreams.sequoia_forest", "Sequoia Forest");
 
 

@@ -19,7 +19,7 @@ public class DDCreativeModeTabs {
     public static final Supplier<CreativeModeTab> DISTANT_DREAMS_TAB = CREATIVE_MODE_TABS.register(
             "distant_dreams_tab", () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(DDItems.MUSIC_DISC_HYPNAGOGIA.get()))
-                    .title(Component.translatable("creativetab.distantdreams.distant_dreams"))
+                    .title(Component.translatable("itemGroup.distantdreams"))
                     .displayItems((itemDisplayParameters, output) -> {
 
                         output.accept(DDBlocks.ANCIENT_OAK_PLANKS.get().asItem());
