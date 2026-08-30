@@ -27,5 +27,7 @@ public class DDRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void buildRecipes() {}
+    protected void buildRecipes() {
+        // Sequoia
+    }
 }

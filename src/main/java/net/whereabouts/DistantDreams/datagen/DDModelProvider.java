@@ -18,7 +18,13 @@ public class DDModelProvider extends ModelProvider {
     @Override
     protected void registerModels(@NonNull BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         // *** BLOCKS ***
+
+        // Ancient Oak
         blockModels.createTrivialCube(DDBlocks.ANCIENT_OAK_PLANKS.get());
+
+        // Sequoia
+        blockModels.woodProvider(DDBlocks.SEQUOIA_LOG.get()).logWithHorizontal(DDBlocks.SEQUOIA_LOG.get());
+        blockModels.woodProvider(DDBlocks.STRIPPED_SEQUOIA_LOG.get()).logWithHorizontal(DDBlocks.STRIPPED_SEQUOIA_LOG.get());
 
 
 

@@ -23,6 +23,10 @@ public class DDCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
 
                         output.accept(DDBlocks.ANCIENT_OAK_PLANKS.get().asItem());
+
+                        output.accept(DDBlocks.SEQUOIA_LOG.get().asItem());
+                        output.accept(DDBlocks.STRIPPED_SEQUOIA_LOG.get().asItem());
+
                         output.accept(DDItems.MUSIC_DISC_HYPNAGOGIA.get());
 
                     }).build()

@@ -19,6 +19,9 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(DDBlocks.ANCIENT_OAK_PLANKS.get());
+
+        dropSelf(DDBlocks.SEQUOIA_LOG.get());
+        dropSelf(DDBlocks.STRIPPED_SEQUOIA_LOG.get());
     }
 
     @Override
