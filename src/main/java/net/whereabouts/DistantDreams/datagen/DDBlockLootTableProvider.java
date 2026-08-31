@@ -21,7 +21,24 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(DDBlocks.ANCIENT_OAK_PLANKS.get());
 
         dropSelf(DDBlocks.SEQUOIA_LOG.get());
+        dropSelf(DDBlocks.SEQUOIA_WOOD.get());
         dropSelf(DDBlocks.STRIPPED_SEQUOIA_LOG.get());
+        dropSelf(DDBlocks.STRIPPED_SEQUOIA_WOOD.get());
+        dropSelf(DDBlocks.SEQUOIA_PLANKS.get());
+        dropSelf(DDBlocks.SEQUOIA_STAIRS.get());
+        add(DDBlocks.SEQUOIA_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.SEQUOIA_SLAB.get()));
+        dropSelf(DDBlocks.SEQUOIA_PRESSURE_PLATE.get());
+        dropSelf(DDBlocks.SEQUOIA_BUTTON.get());
+        dropSelf(DDBlocks.SEQUOIA_FENCE.get());
+        dropSelf(DDBlocks.SEQUOIA_FENCE_GATE.get());
+        add(DDBlocks.SEQUOIA_DOOR.get(),
+                _ -> createDoorTable(DDBlocks.SEQUOIA_DOOR.get()));
+        dropSelf(DDBlocks.SEQUOIA_TRAPDOOR.get());
+        add(DDBlocks.SEQUOIA_LEAVES.get(),
+                block -> createLeavesDrops(block, DDBlocks.SEQUOIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(DDBlocks.SEQUOIA_SAPLING.get());
+        dropPottedContents(DDBlocks.POTTED_SEQUOIA_SAPLING.get());
     }
 
     @Override

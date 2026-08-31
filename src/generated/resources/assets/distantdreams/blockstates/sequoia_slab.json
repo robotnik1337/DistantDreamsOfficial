@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "distantdreams:block/sequoia_slab"
+    },
+    "type=double": {
+      "model": "distantdreams:block/sequoia_planks"
+    },
+    "type=top": {
+      "model": "distantdreams:block/sequoia_slab_top"
+    }
+  }
+}

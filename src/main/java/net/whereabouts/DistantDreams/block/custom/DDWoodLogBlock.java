@@ -40,6 +40,7 @@ public class DDWoodLogBlock extends RotatedPillarBlock {
     public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
         if (context.getItemInHand().getItem() instanceof AxeItem) {
             if (state.is(DDBlocks.SEQUOIA_LOG.get())) { return DDBlocks.STRIPPED_SEQUOIA_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS)); }
+            if (state.is(DDBlocks.SEQUOIA_WOOD.get())) { return DDBlocks.STRIPPED_SEQUOIA_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS)); }
         }
         return super.getToolModifiedState(state, context, itemAbility, simulate);
     }

@@ -8,10 +8,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import net.whereabouts.DistantDreams.datagen.DDBlockLootTableProvider;
-import net.whereabouts.DistantDreams.datagen.DDBlockTagsProvider;
-import net.whereabouts.DistantDreams.datagen.DDLanguageProvider;
-import net.whereabouts.DistantDreams.datagen.DDModelProvider;
+import net.whereabouts.DistantDreams.datagen.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -30,5 +27,8 @@ public class DistantDreamsDataGen {
         dataGenerator.addProvider(true, new DDBlockTagsProvider(packOutput, lookupProvider));
         dataGenerator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(DDBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
+
+        dataGenerator.addProvider(true, new DDRecipeProvider.Runner(packOutput, lookupProvider));
+        dataGenerator.addProvider(true, new DDItemTagsProvider(packOutput, lookupProvider));
     }
 }

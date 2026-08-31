@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "sequoia",
+  "ingredients": [
+    "distantdreams:sequoia_planks"
+  ],
+  "result": {
+    "id": "distantdreams:sequoia_button"
+  }
+}

@@ -77,22 +77,22 @@ public class DDLanguageProvider extends LanguageProvider {
 //        add(DDBlocks.EUCALYPTUS_PRESSURE_PLATE.get(), "Eucalyptus Pressure Plate");
 //        add(DDBlocks.EUCALYPTUS_BUTTON.get(), "Eucalyptus Button");
 //
-        // Sequoia Woodset
+        // Sequoia
         add(DDBlocks.SEQUOIA_LOG.get(), "Sequoia Log");
-//        add(DDBlocks.SEQUOIA_WOOD.get(), "Sequoia Wood");
+        add(DDBlocks.SEQUOIA_WOOD.get(), "Sequoia Wood");
         add(DDBlocks.STRIPPED_SEQUOIA_LOG.get(), "Stripped Sequoia Log");
-//        add(DDBlocks.STRIPPED_SEQUOIA_WOOD.get(), "Stripped Sequoia Wood");
-//        add(DDBlocks.SEQUOIA_PLANKS.get(), "Sequoia Planks");
-//        add(DDBlocks.SEQUOIA_LEAVES.get(), "Sequoia Leaves");
-//        add(DDBlocks.SEQUOIA_SAPLING.get(), "Sequoia Sapling");
-//        add(DDBlocks.SEQUOIA_STAIRS.get(), "Sequoia Stairs");
-//        add(DDBlocks.SEQUOIA_SLAB.get(), "Sequoia Slab");
-//        add(DDBlocks.SEQUOIA_FENCE.get(), "Sequoia Fence");
-//        add(DDBlocks.SEQUOIA_FENCE_GATE.get(), "Sequoia Fence Gate");
-//        add(DDBlocks.SEQUOIA_DOOR.get(), "Sequoia Door");
-//        add(DDBlocks.SEQUOIA_TRAPDOOR.get(), "Sequoia Trapdoor");
-//        add(DDBlocks.SEQUOIA_PRESSURE_PLATE.get(), "Sequoia Pressure Plate");
-//        add(DDBlocks.SEQUOIA_BUTTON.get(), "Sequoia Button");
+        add(DDBlocks.STRIPPED_SEQUOIA_WOOD.get(), "Stripped Sequoia Wood");
+        add(DDBlocks.SEQUOIA_PLANKS.get(), "Sequoia Planks");
+        add(DDBlocks.SEQUOIA_LEAVES.get(), "Sequoia Leaves");
+        add(DDBlocks.SEQUOIA_SAPLING.get(), "Sequoia Sapling");
+        add(DDBlocks.SEQUOIA_STAIRS.get(), "Sequoia Stairs");
+        add(DDBlocks.SEQUOIA_SLAB.get(), "Sequoia Slab");
+        add(DDBlocks.SEQUOIA_FENCE.get(), "Sequoia Fence");
+        add(DDBlocks.SEQUOIA_FENCE_GATE.get(), "Sequoia Fence Gate");
+        add(DDBlocks.SEQUOIA_DOOR.get(), "Sequoia Door");
+        add(DDBlocks.SEQUOIA_TRAPDOOR.get(), "Sequoia Trapdoor");
+        add(DDBlocks.SEQUOIA_PRESSURE_PLATE.get(), "Sequoia Pressure Plate");
+        add(DDBlocks.SEQUOIA_BUTTON.get(), "Sequoia Button");
 //
 //        // Limestone
 //        add(DDBlocks.LIMESTONE.get(), "Limestone");

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    "#distantdreams:sequoia_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "distantdreams:sequoia_planks"
+  }
+}

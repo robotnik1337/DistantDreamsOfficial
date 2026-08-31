@@ -25,7 +25,20 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.ANCIENT_OAK_PLANKS.get().asItem());
 
                         output.accept(DDBlocks.SEQUOIA_LOG.get().asItem());
+                        output.accept(DDBlocks.SEQUOIA_WOOD.get().asItem());
                         output.accept(DDBlocks.STRIPPED_SEQUOIA_LOG.get().asItem());
+                        output.accept(DDBlocks.STRIPPED_SEQUOIA_WOOD.get().asItem());
+                        output.accept(DDBlocks.SEQUOIA_PLANKS.get().asItem());
+                        output.accept(DDBlocks.SEQUOIA_STAIRS.get());
+                        output.accept(DDBlocks.SEQUOIA_SLAB.get());
+                        output.accept(DDBlocks.SEQUOIA_FENCE.get());
+                        output.accept(DDBlocks.SEQUOIA_FENCE_GATE.get());
+                        output.accept(DDBlocks.SEQUOIA_DOOR.get());
+                        output.accept(DDBlocks.SEQUOIA_TRAPDOOR.get());
+                        output.accept(DDBlocks.SEQUOIA_PRESSURE_PLATE.get());
+                        output.accept(DDBlocks.SEQUOIA_BUTTON.get());
+                        output.accept(DDBlocks.SEQUOIA_LEAVES.get());
+                        output.accept(DDBlocks.SEQUOIA_SAPLING.get());
 
                         output.accept(DDItems.MUSIC_DISC_HYPNAGOGIA.get());
 

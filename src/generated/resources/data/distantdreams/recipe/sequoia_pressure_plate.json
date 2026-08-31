@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "distantdreams:sequoia_planks"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "distantdreams:sequoia_pressure_plate"
+  }
+}

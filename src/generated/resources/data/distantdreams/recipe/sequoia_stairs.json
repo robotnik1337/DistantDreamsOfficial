@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "sequoia",
+  "key": {
+    "#": "distantdreams:sequoia_planks"
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "distantdreams:sequoia_stairs"
+  }
+}

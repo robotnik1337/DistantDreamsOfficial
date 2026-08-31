@@ -21,7 +21,9 @@ public class DDItemTagsProvider extends ItemTagsProvider {
         // *** MODDED ITEM TAGS ***
         tag(DDTags.Items.SEQUOIA_LOGS)
                 .add(DDBlocks.SEQUOIA_LOG.get().asItem())
-                .add(DDBlocks.STRIPPED_SEQUOIA_LOG.get().asItem());
+                .add(DDBlocks.SEQUOIA_WOOD.get().asItem())
+                .add(DDBlocks.STRIPPED_SEQUOIA_LOG.get().asItem())
+                .add(DDBlocks.STRIPPED_SEQUOIA_WOOD.get().asItem());
 
 
         // *** VANILLA ITEM TAGS ***
