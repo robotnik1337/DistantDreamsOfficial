@@ -23,6 +23,21 @@ public class DDModelProvider extends ModelProvider {
         // Ancient Oak
         blockModels.createTrivialCube(DDBlocks.ANCIENT_OAK_PLANKS.get());
 
+        // Eucalyptus
+        blockModels.woodProvider(DDBlocks.EUCALYPTUS_LOG.get()).logWithHorizontal(DDBlocks.EUCALYPTUS_LOG.get()).wood(DDBlocks.EUCALYPTUS_WOOD.get());
+        blockModels.woodProvider(DDBlocks.STRIPPED_EUCALYPTUS_LOG.get()).logWithHorizontal(DDBlocks.STRIPPED_EUCALYPTUS_LOG.get()).wood(DDBlocks.STRIPPED_EUCALYPTUS_WOOD.get());
+        blockModels.family(DDBlocks.EUCALYPTUS_PLANKS.get())
+                .fence(DDBlocks.EUCALYPTUS_FENCE.get())
+                .fenceGate(DDBlocks.EUCALYPTUS_FENCE_GATE.get())
+                .stairs(DDBlocks.EUCALYPTUS_STAIRS.get())
+                .slab(DDBlocks.EUCALYPTUS_SLAB.get())
+                .button(DDBlocks.EUCALYPTUS_BUTTON.get())
+                .pressurePlate(DDBlocks.EUCALYPTUS_PRESSURE_PLATE.get());
+        blockModels.createDoor(DDBlocks.EUCALYPTUS_DOOR.get());
+        blockModels.createTrapdoor(DDBlocks.EUCALYPTUS_TRAPDOOR.get());
+        blockModels.createTrivialBlock(DDBlocks.EUCALYPTUS_LEAVES.get(), TexturedModel.LEAVES);
+        blockModels.createPlantWithDefaultItem(DDBlocks.EUCALYPTUS_SAPLING.get(), DDBlocks.POTTED_EUCALYPTUS_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
+
         // Sequoia
         blockModels.woodProvider(DDBlocks.SEQUOIA_LOG.get()).logWithHorizontal(DDBlocks.SEQUOIA_LOG.get()).wood(DDBlocks.SEQUOIA_WOOD.get());
         blockModels.woodProvider(DDBlocks.STRIPPED_SEQUOIA_LOG.get()).logWithHorizontal(DDBlocks.STRIPPED_SEQUOIA_LOG.get()).wood(DDBlocks.STRIPPED_SEQUOIA_WOOD.get());

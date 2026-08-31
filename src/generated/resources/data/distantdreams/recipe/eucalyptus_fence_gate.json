@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "sequoia",
+  "key": {
+    "#": "minecraft:stick",
+    "W": "distantdreams:eucalyptus_planks"
+  },
+  "pattern": [
+    "#W#",
+    "#W#"
+  ],
+  "result": {
+    "id": "distantdreams:eucalyptus_fence_gate"
+  }
+}

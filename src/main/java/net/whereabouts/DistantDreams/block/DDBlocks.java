@@ -8,7 +8,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -32,6 +31,64 @@ public class DDBlocks {
     );
 
     // Eucalyptus
+    public static final DeferredBlock<DDWoodLogBlock> EUCALYPTUS_LOG = registerBlockItem("eucalyptus_log", DDWoodLogBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+
+    public static final DeferredBlock<DDWoodLogBlock> STRIPPED_EUCALYPTUS_LOG = registerBlockItem("stripped_eucalyptus_log", DDWoodLogBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG));
+
+    public static final DeferredBlock<DDWoodLogBlock> EUCALYPTUS_WOOD = registerBlockItem("eucalyptus_wood", DDWoodLogBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+
+    public static final DeferredBlock<DDWoodLogBlock> STRIPPED_EUCALYPTUS_WOOD = registerBlockItem("stripped_eucalyptus_wood", DDWoodLogBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD));
+
+    public static final DeferredBlock<Block> EUCALYPTUS_PLANKS = registerBlockItem("eucalyptus_planks", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+
+    public static final DeferredBlock<StairBlock> EUCALYPTUS_STAIRS = registerBlockItem("eucalyptus_stairs",
+            properties -> new StairBlock(EUCALYPTUS_PLANKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(EUCALYPTUS_PLANKS.get()));
+
+    public static final DeferredBlock<SlabBlock> EUCALYPTUS_SLAB = registerBlockItem("eucalyptus_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
+
+    public static final DeferredBlock<PressurePlateBlock> EUCALYPTUS_PRESSURE_PLATE = registerBlockItem("eucalyptus_pressure_plate",
+            properties -> new PressurePlateBlock(DDWoods.EUCALYPTUS_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
+
+    public static final DeferredBlock<ButtonBlock> EUCALYPTUS_BUTTON = registerBlockItem("eucalyptus_button",
+            properties -> new ButtonBlock(DDWoods.EUCALYPTUS_WOOD_SET, 30, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
+
+    public static final DeferredBlock<FenceBlock> EUCALYPTUS_FENCE = registerBlockItem("eucalyptus_fence", FenceBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
+
+    public static final DeferredBlock<FenceGateBlock> EUCALYPTUS_FENCE_GATE = registerBlockItem("eucalyptus_fence_gate",
+            properties -> new FenceGateBlock(DDWoods.EUCALYPTUS_WOOD_TYPE, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
+
+    public static final DeferredBlock<DoorBlock> EUCALYPTUS_DOOR = registerBlockItem("eucalyptus_door",
+            properties -> new DoorBlock(DDWoods.EUCALYPTUS_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
+
+    public static final DeferredBlock<TrapDoorBlock> EUCALYPTUS_TRAPDOOR = registerBlockItem("eucalyptus_trapdoor",
+            properties -> new TrapDoorBlock(DDWoods.EUCALYPTUS_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
+
+    public static final DeferredBlock<UntintedParticleLeavesBlock> EUCALYPTUS_LEAVES = registerBlockItem("eucalyptus_leaves",
+            properties -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x2e5d38), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES));
+
+    public static final DeferredBlock<SaplingBlock> EUCALYPTUS_SAPLING = registerBlockItem("eucalyptus_sapling",
+            properties -> new SaplingBlock(DDTreeGrowers.EUCALYPTUS, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
+
+    public static final DeferredBlock<FlowerPotBlock> POTTED_EUCALYPTUS_SAPLING = registerBlockItem("potted_eucalyptus_sapling",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, EUCALYPTUS_SAPLING, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT));
+
+
 
     // Sequoia
     public static final DeferredBlock<DDWoodLogBlock> SEQUOIA_LOG = registerBlockItem("sequoia_log", DDWoodLogBlock::new,

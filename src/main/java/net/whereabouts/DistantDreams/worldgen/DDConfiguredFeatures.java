@@ -10,6 +10,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.whereabouts.DistantDreams.DistantDreams;
 
 public class DDConfiguredFeatures {
+    public static final ResourceKey<ConfiguredFeature<?, ?>> EUCALYPTUS_KEY = registerKey("eucalyptus");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEQUOIA_KEY = registerKey("sequoia");
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

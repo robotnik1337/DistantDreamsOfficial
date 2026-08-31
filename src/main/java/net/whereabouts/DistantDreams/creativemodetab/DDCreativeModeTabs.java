@@ -24,11 +24,27 @@ public class DDCreativeModeTabs {
 
                         output.accept(DDBlocks.ANCIENT_OAK_PLANKS.get().asItem());
 
-                        output.accept(DDBlocks.SEQUOIA_LOG.get().asItem());
-                        output.accept(DDBlocks.SEQUOIA_WOOD.get().asItem());
-                        output.accept(DDBlocks.STRIPPED_SEQUOIA_LOG.get().asItem());
-                        output.accept(DDBlocks.STRIPPED_SEQUOIA_WOOD.get().asItem());
-                        output.accept(DDBlocks.SEQUOIA_PLANKS.get().asItem());
+                        output.accept(DDBlocks.EUCALYPTUS_LOG.get());
+                        output.accept(DDBlocks.EUCALYPTUS_WOOD.get());
+                        output.accept(DDBlocks.STRIPPED_EUCALYPTUS_LOG.get());
+                        output.accept(DDBlocks.STRIPPED_EUCALYPTUS_WOOD.get());
+                        output.accept(DDBlocks.EUCALYPTUS_PLANKS.get());
+                        output.accept(DDBlocks.EUCALYPTUS_STAIRS.get());
+                        output.accept(DDBlocks.EUCALYPTUS_SLAB.get());
+                        output.accept(DDBlocks.EUCALYPTUS_FENCE.get());
+                        output.accept(DDBlocks.EUCALYPTUS_FENCE_GATE.get());
+                        output.accept(DDBlocks.EUCALYPTUS_DOOR.get());
+                        output.accept(DDBlocks.EUCALYPTUS_TRAPDOOR.get());
+                        output.accept(DDBlocks.EUCALYPTUS_PRESSURE_PLATE.get());
+                        output.accept(DDBlocks.EUCALYPTUS_BUTTON.get());
+                        output.accept(DDBlocks.EUCALYPTUS_LEAVES.get());
+                        output.accept(DDBlocks.EUCALYPTUS_SAPLING.get());
+
+                        output.accept(DDBlocks.SEQUOIA_LOG.get());
+                        output.accept(DDBlocks.SEQUOIA_WOOD.get());
+                        output.accept(DDBlocks.STRIPPED_SEQUOIA_LOG.get());
+                        output.accept(DDBlocks.STRIPPED_SEQUOIA_WOOD.get());
+                        output.accept(DDBlocks.SEQUOIA_PLANKS.get());
                         output.accept(DDBlocks.SEQUOIA_STAIRS.get());
                         output.accept(DDBlocks.SEQUOIA_SLAB.get());
                         output.accept(DDBlocks.SEQUOIA_FENCE.get());

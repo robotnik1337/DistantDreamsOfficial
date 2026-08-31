@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "distantdreams:block/stripped_eucalyptus_log",
+    "side": "distantdreams:block/stripped_eucalyptus_log"
+  }
+}

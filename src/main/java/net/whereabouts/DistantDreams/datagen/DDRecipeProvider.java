@@ -33,6 +33,24 @@ public class DDRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
+        // Eucalyptus
+        woodFromLogs(DDBlocks.EUCALYPTUS_WOOD.get(), DDBlocks.EUCALYPTUS_LOG);
+        woodFromLogs(DDBlocks.STRIPPED_EUCALYPTUS_WOOD.get(), DDBlocks.STRIPPED_EUCALYPTUS_LOG.get());
+        planksFromLog(DDBlocks.EUCALYPTUS_PLANKS, DDTags.Items.EUCALYPTUS_LOGS, 4);
+        woodRecipes(
+                this.output,
+                DDBlocks.EUCALYPTUS_PLANKS.get(),
+                DDBlocks.EUCALYPTUS_STAIRS.get(),
+                DDBlocks.EUCALYPTUS_SLAB.get(),
+                DDBlocks.EUCALYPTUS_PRESSURE_PLATE.get(),
+                DDBlocks.EUCALYPTUS_BUTTON.get(),
+                DDBlocks.EUCALYPTUS_FENCE.get(),
+                DDBlocks.EUCALYPTUS_FENCE_GATE.get(),
+                DDBlocks.EUCALYPTUS_DOOR.get(),
+                DDBlocks.EUCALYPTUS_TRAPDOOR.get(),
+                "eucalyptus"
+        );
+
         // Sequoia
         woodFromLogs(DDBlocks.SEQUOIA_WOOD.get(), DDBlocks.SEQUOIA_LOG);
         woodFromLogs(DDBlocks.STRIPPED_SEQUOIA_WOOD.get(), DDBlocks.STRIPPED_SEQUOIA_LOG.get());

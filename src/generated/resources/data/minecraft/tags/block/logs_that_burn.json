@@ -1,5 +1,7 @@
 {
   "values": [
+    "distantdreams:eucalyptus_log",
+    "distantdreams:stripped_eucalyptus_log",
     "distantdreams:sequoia_log",
     "distantdreams:stripped_sequoia_log"
   ]
