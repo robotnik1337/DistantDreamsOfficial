@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "distantdreams:block/ancient_oak_sapling"
+  }
+}

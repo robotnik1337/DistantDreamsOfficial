@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "distantdreams:block/ancient_oak_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "distantdreams:block/ancient_oak_wood"
+    },
+    "axis=z": {
+      "model": "distantdreams:block/ancient_oak_wood",
+      "x": 90
+    }
+  }
+}

@@ -17,39 +17,57 @@ public class DDLanguageProvider extends LanguageProvider {
         // *** BLOCKS ***
 
         // Ancient Oak Woodset
-//        add(DDBlocks.ANCIENT_OAK_LOG.get(), "Ancient Oak Log");
-//        add(DDBlocks.ANCIENT_OAK_WOOD.get(), "Ancient Oak Wood");
-//        add(DDBlocks.STRIPPED_ANCIENT_OAK_LOG.get(), "Stripped Ancient Oak Log");
-//        add(DDBlocks.STRIPPED_ANCIENT_OAK_WOOD.get(), "Stripped Ancient Oak Wood");
+        add(DDBlocks.ANCIENT_OAK_LOG.get(), "Ancient Oak Log");
+        add(DDBlocks.ANCIENT_OAK_WOOD.get(), "Ancient Oak Wood");
+        add(DDBlocks.STRIPPED_ANCIENT_OAK_LOG.get(), "Stripped Ancient Oak Log");
+        add(DDBlocks.STRIPPED_ANCIENT_OAK_WOOD.get(), "Stripped Ancient Oak Wood");
         addBlock(DDBlocks.ANCIENT_OAK_PLANKS, "Ancient Oak Planks");
-//        add(DDBlocks.ANCIENT_OAK_LEAVES.get(), "Ancient Oak Leaves");
-//        add(DDBlocks.ANCIENT_OAK_SAPLING.get(), "Ancient Oak Sapling");
-//        add(DDBlocks.ANCIENT_OAK_STAIRS.get(), "Ancient Oak Stairs");
-//        add(DDBlocks.ANCIENT_OAK_SLAB.get(), "Ancient Oak Slab");
-//        add(DDBlocks.ANCIENT_OAK_FENCE.get(), "Ancient Oak Fence");
-//        add(DDBlocks.ANCIENT_OAK_FENCE_GATE.get(), "Ancient Oak Fence Gate");
-//        add(DDBlocks.ANCIENT_OAK_DOOR.get(), "Ancient Oak Door");
-//        add(DDBlocks.ANCIENT_OAK_TRAPDOOR.get(), "Ancient Oak Trapdoor");
-//        add(DDBlocks.ANCIENT_OAK_PRESSURE_PLATE.get(), "Ancient Oak Pressure Plate");
-//        add(DDBlocks.ANCIENT_OAK_BUTTON.get(), "Ancient Oak Button");
+        add(DDBlocks.ANCIENT_OAK_LEAVES.get(), "Ancient Oak Leaves");
+        add(DDBlocks.ANCIENT_OAK_SAPLING.get(), "Ancient Oak Sapling");
+        add(DDBlocks.ANCIENT_OAK_STAIRS.get(), "Ancient Oak Stairs");
+        add(DDBlocks.ANCIENT_OAK_SLAB.get(), "Ancient Oak Slab");
+        add(DDBlocks.ANCIENT_OAK_FENCE.get(), "Ancient Oak Fence");
+        add(DDBlocks.ANCIENT_OAK_FENCE_GATE.get(), "Ancient Oak Fence Gate");
+        add(DDBlocks.ANCIENT_OAK_DOOR.get(), "Ancient Oak Door");
+        add(DDBlocks.ANCIENT_OAK_TRAPDOOR.get(), "Ancient Oak Trapdoor");
+        add(DDBlocks.ANCIENT_OAK_PRESSURE_PLATE.get(), "Ancient Oak Pressure Plate");
+        add(DDBlocks.ANCIENT_OAK_BUTTON.get(), "Ancient Oak Button");
 //
         // Charred Woodset
-//        add(DDBlocks.CHARRED_LOG.get(), "Charred Log");
-//        add(DDBlocks.CHARRED_WOOD.get(), "Charred Wood");
-//        add(DDBlocks.STRIPPED_CHARRED_LOG.get(), "Stripped Charred Log");
-//        add(DDBlocks.STRIPPED_CHARRED_WOOD.get(), "Stripped Charred Wood");
-//        add(DDBlocks.CHARRED_PLANKS.get(), "Charred Planks");
-//        add(DDBlocks.CHARRED_STAIRS.get(), "Charred Stairs");
-//        add(DDBlocks.CHARRED_SLAB.get(), "Charred Slab");
-//        add(DDBlocks.CHARRED_FENCE.get(), "Charred Fence");
-//        add(DDBlocks.CHARRED_FENCE_GATE.get(), "Charred Fence Gate");
-//        add(DDBlocks.CHARRED_DOOR.get(), "Charred Door");
-//        add(DDBlocks.CHARRED_TRAPDOOR.get(), "Charred Trapdoor");
-//        add(DDBlocks.CHARRED_PRESSURE_PLATE.get(), "Charred Pressure Plate");
-//        add(DDBlocks.CHARRED_BUTTON.get(), "Charred Button");
+        add(DDBlocks.CHARRED_LOG.get(), "Charred Log");
+        add(DDBlocks.CHARRED_WOOD.get(), "Charred Wood");
+        add(DDBlocks.STRIPPED_CHARRED_LOG.get(), "Stripped Charred Log");
+        add(DDBlocks.STRIPPED_CHARRED_WOOD.get(), "Stripped Charred Wood");
+        add(DDBlocks.CHARRED_PLANKS.get(), "Charred Planks");
+        add(DDBlocks.CHARRED_STAIRS.get(), "Charred Stairs");
+        add(DDBlocks.CHARRED_SLAB.get(), "Charred Slab");
+        add(DDBlocks.CHARRED_FENCE.get(), "Charred Fence");
+        add(DDBlocks.CHARRED_FENCE_GATE.get(), "Charred Fence Gate");
+        add(DDBlocks.CHARRED_DOOR.get(), "Charred Door");
+        add(DDBlocks.CHARRED_TRAPDOOR.get(), "Charred Trapdoor");
+        add(DDBlocks.CHARRED_PRESSURE_PLATE.get(), "Charred Pressure Plate");
+        add(DDBlocks.CHARRED_BUTTON.get(), "Charred Button");
 //        add(DDBlocks.CHARRED_CRAFTING_TABLE.get(), "Charred Crafting Table");
-//
-//        // Petrified Woodset
+
+
+        // Eucalyptus Woodset
+        add(DDBlocks.EUCALYPTUS_LOG.get(), "Eucalyptus Log");
+        add(DDBlocks.EUCALYPTUS_WOOD.get(), "Eucalyptus Wood");
+        add(DDBlocks.STRIPPED_EUCALYPTUS_LOG.get(), "Stripped Eucalyptus Log");
+        add(DDBlocks.STRIPPED_EUCALYPTUS_WOOD.get(), "Stripped Eucalyptus Wood");
+        add(DDBlocks.EUCALYPTUS_PLANKS.get(), "Eucalyptus Planks");
+        add(DDBlocks.EUCALYPTUS_LEAVES.get(), "Eucalyptus Leaves");
+        add(DDBlocks.EUCALYPTUS_SAPLING.get(), "Eucalyptus Sapling");
+        add(DDBlocks.EUCALYPTUS_STAIRS.get(), "Eucalyptus Stairs");
+        add(DDBlocks.EUCALYPTUS_SLAB.get(), "Eucalyptus Slab");
+        add(DDBlocks.EUCALYPTUS_FENCE.get(), "Eucalyptus Fence");
+        add(DDBlocks.EUCALYPTUS_FENCE_GATE.get(), "Eucalyptus Fence Gate");
+        add(DDBlocks.EUCALYPTUS_DOOR.get(), "Eucalyptus Door");
+        add(DDBlocks.EUCALYPTUS_TRAPDOOR.get(), "Eucalyptus Trapdoor");
+        add(DDBlocks.EUCALYPTUS_PRESSURE_PLATE.get(), "Eucalyptus Pressure Plate");
+        add(DDBlocks.EUCALYPTUS_BUTTON.get(), "Eucalyptus Button");
+
+        //        // Petrified Woodset
 //        add(DDBlocks.PETRIFIED_LOG.get(), "Petrified Log");
 //        add(DDBlocks.PETRIFIED_WOOD.get(), "Petrified Wood");
 //        add(DDBlocks.PETRIFIED_PLANKS.get(), "Petrified Planks");
@@ -59,24 +77,7 @@ public class DDLanguageProvider extends LanguageProvider {
 //        add(DDBlocks.PETRIFIED_FENCE_GATE.get(), "Petrified Fence Gate");
 //        add(DDBlocks.PETRIFIED_PRESSURE_PLATE.get(), "Petrified Pressure Plate");
 //        add(DDBlocks.PETRIFIED_BUTTON.get(), "Petrified Button");
-//
-//        // Eucalyptus Woodset
-//        add(DDBlocks.EUCALYPTUS_LOG.get(), "Eucalyptus Log");
-//        add(DDBlocks.EUCALYPTUS_WOOD.get(), "Eucalyptus Wood");
-//        add(DDBlocks.STRIPPED_EUCALYPTUS_LOG.get(), "Stripped Eucalyptus Log");
-//        add(DDBlocks.STRIPPED_EUCALYPTUS_WOOD.get(), "Stripped Eucalyptus Wood");
-//        add(DDBlocks.EUCALYPTUS_PLANKS.get(), "Eucalyptus Planks");
-//        add(DDBlocks.EUCALYPTUS_LEAVES.get(), "Eucalyptus Leaves");
-//        add(DDBlocks.EUCALYPTUS_SAPLING.get(), "Eucalyptus Sapling");
-//        add(DDBlocks.EUCALYPTUS_STAIRS.get(), "Eucalyptus Stairs");
-//        add(DDBlocks.EUCALYPTUS_SLAB.get(), "Eucalyptus Slab");
-//        add(DDBlocks.EUCALYPTUS_FENCE.get(), "Eucalyptus Fence");
-//        add(DDBlocks.EUCALYPTUS_FENCE_GATE.get(), "Eucalyptus Fence Gate");
-//        add(DDBlocks.EUCALYPTUS_DOOR.get(), "Eucalyptus Door");
-//        add(DDBlocks.EUCALYPTUS_TRAPDOOR.get(), "Eucalyptus Trapdoor");
-//        add(DDBlocks.EUCALYPTUS_PRESSURE_PLATE.get(), "Eucalyptus Pressure Plate");
-//        add(DDBlocks.EUCALYPTUS_BUTTON.get(), "Eucalyptus Button");
-//
+
         // Sequoia
         add(DDBlocks.SEQUOIA_LOG.get(), "Sequoia Log");
         add(DDBlocks.SEQUOIA_WOOD.get(), "Sequoia Wood");
@@ -193,7 +194,21 @@ public class DDLanguageProvider extends LanguageProvider {
 //        add(DDBlocks.CHARRED_PLANKS.get().asItem(), "Charred Planks");
 //        add(DDBlocks.CHARRED_STAIRS.get().asItem(), "Charred Stairs");
 //        add(DDBlocks.CHARRED_SLAB.get().asItem(), "Charred Slab");
-//        add(DDBlocks.CHARRED_FENCE.get().asItem(), "Charred Fence");
+//        add(DDBlocks.CHARRED_FENCE.get().asItem(), "Charred Fence");lyptus Log");
+////        add(DDBlocks.EUCALYPTUS_WOOD.get().asItem(), "Eucalyptus Wood");
+////        add(DDBlocks.STRIPPED_EUCALYPTUS_LOG.get().asItem(), "Stripped Eucalyptus Log");
+////        add(DDBlocks.STRIPPED_EUCALYPTUS_WOOD.get().asItem(), "Stripped Eucalyptus Wood");
+////        add(DDBlocks.EUCALYPTUS_PLANKS.get().asItem(), "Eucalyptus Planks");
+////        add(DDBlocks.EUCALYPTUS_LEAVES.get().asItem(), "Eucalyptus Leaves");
+////        add(DDBlocks.EUCALYPTUS_SAPLING.get().asItem(), "Eucalyptus Sapling");
+////        add(DDBlocks.EUCALYPTUS_STAIRS.get().asItem(), "Eucalyptus Stairs");
+////        add(DDBlocks.EUCALYPTUS_SLAB.get().asItem(), "Eucalyptus Slab");
+////        add(DDBlocks.EUCALYPTUS_FENCE.get().asItem(), "Eucalyptus Fence");
+////        add(DDBlocks.EUCALYPTUS_FENCE_GATE.get().asItem(), "Eucalyptus Fence Gate");
+////        add(DDBlocks.EUCALYPTUS_DOOR.get().asItem(), "Eucalyptus Door");
+////        add(DDBlocks.EUCALYPTUS_TRAPDOOR.get().asItem(), "Eucalyptus Trapdoor");
+////        add(DDBlocks.EUCALYPTUS_PRESSURE_PLATE.get().asItem(), "Eucalyptus Pressure Plate");
+////        add(DDBlocks.EUCALYPTUS_BUTTON.get().asItem(), "Eucalyptus Button");
 //        add(DDBlocks.CHARRED_FENCE_GATE.get().asItem(), "Charred Fence Gate");
 //        add(DDBlocks.CHARRED_DOOR.get().asItem(), "Charred Door");
 //        add(DDBlocks.CHARRED_TRAPDOOR.get().asItem(), "Charred Trapdoor");
@@ -213,21 +228,7 @@ public class DDLanguageProvider extends LanguageProvider {
 //        add(DDBlocks.PETRIFIED_BUTTON.get().asItem(), "Petrified Button");
 //
 //        // Eucalyptus Woodset
-        add(DDBlocks.EUCALYPTUS_LOG.get().asItem(), "Eucalyptus Log");
-        add(DDBlocks.EUCALYPTUS_WOOD.get().asItem(), "Eucalyptus Wood");
-        add(DDBlocks.STRIPPED_EUCALYPTUS_LOG.get().asItem(), "Stripped Eucalyptus Log");
-        add(DDBlocks.STRIPPED_EUCALYPTUS_WOOD.get().asItem(), "Stripped Eucalyptus Wood");
-        add(DDBlocks.EUCALYPTUS_PLANKS.get().asItem(), "Eucalyptus Planks");
-        add(DDBlocks.EUCALYPTUS_LEAVES.get().asItem(), "Eucalyptus Leaves");
-        add(DDBlocks.EUCALYPTUS_SAPLING.get().asItem(), "Eucalyptus Sapling");
-        add(DDBlocks.EUCALYPTUS_STAIRS.get().asItem(), "Eucalyptus Stairs");
-        add(DDBlocks.EUCALYPTUS_SLAB.get().asItem(), "Eucalyptus Slab");
-        add(DDBlocks.EUCALYPTUS_FENCE.get().asItem(), "Eucalyptus Fence");
-        add(DDBlocks.EUCALYPTUS_FENCE_GATE.get().asItem(), "Eucalyptus Fence Gate");
-        add(DDBlocks.EUCALYPTUS_DOOR.get().asItem(), "Eucalyptus Door");
-        add(DDBlocks.EUCALYPTUS_TRAPDOOR.get().asItem(), "Eucalyptus Trapdoor");
-        add(DDBlocks.EUCALYPTUS_PRESSURE_PLATE.get().asItem(), "Eucalyptus Pressure Plate");
-        add(DDBlocks.EUCALYPTUS_BUTTON.get().asItem(), "Eucalyptus Button");
+//        add(DDBlocks.EUCALYPTUS_LOG.get().asItem(), "Euca
 //
 //        // Sequoia Woodset
 //        add(DDBlocks.SEQUOIA_LOG.get().asItem(), "Sequoia Log");

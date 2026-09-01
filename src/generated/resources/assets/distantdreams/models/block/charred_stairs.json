@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "distantdreams:block/charred_planks",
+    "side": "distantdreams:block/charred_planks",
+    "top": "distantdreams:block/charred_planks"
+  }
+}

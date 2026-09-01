@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "ancient_oak",
+  "key": {
+    "#": "minecraft:stick",
+    "W": "distantdreams:ancient_oak_planks"
+  },
+  "pattern": [
+    "#W#",
+    "#W#"
+  ],
+  "result": {
+    "id": "distantdreams:ancient_oak_fence_gate"
+  }
+}

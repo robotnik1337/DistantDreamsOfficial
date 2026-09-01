@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "distantdreams:block/ancient_oak_slab"
+    },
+    "type=double": {
+      "model": "distantdreams:block/ancient_oak_planks"
+    },
+    "type=top": {
+      "model": "distantdreams:block/ancient_oak_slab_top"
+    }
+  }
+}

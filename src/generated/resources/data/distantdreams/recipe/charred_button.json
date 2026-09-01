@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "charred",
+  "ingredients": [
+    "distantdreams:charred_planks"
+  ],
+  "result": {
+    "id": "distantdreams:charred_button"
+  }
+}

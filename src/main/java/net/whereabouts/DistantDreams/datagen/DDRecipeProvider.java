@@ -33,6 +33,42 @@ public class DDRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
+        // Ancient Oak
+        woodFromLogs(DDBlocks.ANCIENT_OAK_WOOD.get(), DDBlocks.ANCIENT_OAK_LOG);
+        woodFromLogs(DDBlocks.STRIPPED_ANCIENT_OAK_WOOD.get(), DDBlocks.STRIPPED_ANCIENT_OAK_LOG.get());
+        planksFromLog(DDBlocks.ANCIENT_OAK_PLANKS, DDTags.Items.ANCIENT_OAK_LOGS, 4);
+        woodRecipes(
+                this.output,
+                DDBlocks.ANCIENT_OAK_PLANKS.get(),
+                DDBlocks.ANCIENT_OAK_STAIRS.get(),
+                DDBlocks.ANCIENT_OAK_SLAB.get(),
+                DDBlocks.ANCIENT_OAK_PRESSURE_PLATE.get(),
+                DDBlocks.ANCIENT_OAK_BUTTON.get(),
+                DDBlocks.ANCIENT_OAK_FENCE.get(),
+                DDBlocks.ANCIENT_OAK_FENCE_GATE.get(),
+                DDBlocks.ANCIENT_OAK_DOOR.get(),
+                DDBlocks.ANCIENT_OAK_TRAPDOOR.get(),
+                "ancient_oak"
+        );
+
+        // Charred
+        woodFromLogs(DDBlocks.CHARRED_WOOD.get(), DDBlocks.CHARRED_LOG);
+        woodFromLogs(DDBlocks.STRIPPED_CHARRED_WOOD.get(), DDBlocks.STRIPPED_CHARRED_LOG.get());
+        planksFromLog(DDBlocks.CHARRED_PLANKS, DDTags.Items.CHARRED_LOGS, 4);
+        woodRecipes(
+                this.output,
+                DDBlocks.CHARRED_PLANKS.get(),
+                DDBlocks.CHARRED_STAIRS.get(),
+                DDBlocks.CHARRED_SLAB.get(),
+                DDBlocks.CHARRED_PRESSURE_PLATE.get(),
+                DDBlocks.CHARRED_BUTTON.get(),
+                DDBlocks.CHARRED_FENCE.get(),
+                DDBlocks.CHARRED_FENCE_GATE.get(),
+                DDBlocks.CHARRED_DOOR.get(),
+                DDBlocks.CHARRED_TRAPDOOR.get(),
+                "charred"
+        );
+
         // Eucalyptus
         woodFromLogs(DDBlocks.EUCALYPTUS_WOOD.get(), DDBlocks.EUCALYPTUS_LOG);
         woodFromLogs(DDBlocks.STRIPPED_EUCALYPTUS_WOOD.get(), DDBlocks.STRIPPED_EUCALYPTUS_LOG.get());

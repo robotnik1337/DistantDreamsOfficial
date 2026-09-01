@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "sequoia",
+  "group": "eucalyptus",
   "key": {
     "#": "distantdreams:eucalyptus_planks"
   },

@@ -22,7 +22,35 @@ public class DDCreativeModeTabs {
                     .title(Component.translatable("itemGroup.distantdreams"))
                     .displayItems((itemDisplayParameters, output) -> {
 
-                        output.accept(DDBlocks.ANCIENT_OAK_PLANKS.get().asItem());
+                        output.accept(DDBlocks.ANCIENT_OAK_LOG.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_WOOD.get());
+                        output.accept(DDBlocks.STRIPPED_ANCIENT_OAK_LOG.get());
+                        output.accept(DDBlocks.STRIPPED_ANCIENT_OAK_WOOD.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_PLANKS.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_STAIRS.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_SLAB.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_FENCE.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_FENCE_GATE.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_DOOR.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_TRAPDOOR.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_PRESSURE_PLATE.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_BUTTON.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_LEAVES.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_SAPLING.get());
+
+                        output.accept(DDBlocks.CHARRED_LOG.get());
+                        output.accept(DDBlocks.CHARRED_WOOD.get());
+                        output.accept(DDBlocks.STRIPPED_CHARRED_LOG.get());
+                        output.accept(DDBlocks.STRIPPED_CHARRED_WOOD.get());
+                        output.accept(DDBlocks.CHARRED_PLANKS.get());
+                        output.accept(DDBlocks.CHARRED_STAIRS.get());
+                        output.accept(DDBlocks.CHARRED_SLAB.get());
+                        output.accept(DDBlocks.CHARRED_FENCE.get());
+                        output.accept(DDBlocks.CHARRED_FENCE_GATE.get());
+                        output.accept(DDBlocks.CHARRED_DOOR.get());
+                        output.accept(DDBlocks.CHARRED_TRAPDOOR.get());
+                        output.accept(DDBlocks.CHARRED_PRESSURE_PLATE.get());
+                        output.accept(DDBlocks.CHARRED_BUTTON.get());
 
                         output.accept(DDBlocks.EUCALYPTUS_LOG.get());
                         output.accept(DDBlocks.EUCALYPTUS_WOOD.get());

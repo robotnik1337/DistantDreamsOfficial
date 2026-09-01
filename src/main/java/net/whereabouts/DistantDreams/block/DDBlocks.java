@@ -12,6 +12,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.whereabouts.DistantDreams.DistantDreams;
+import net.whereabouts.DistantDreams.block.custom.AncientOakBlock;
 import net.whereabouts.DistantDreams.block.custom.DDWoodLogBlock;
 import net.whereabouts.DistantDreams.block.wood.DDWoods;
 import net.whereabouts.DistantDreams.item.DDItems;
@@ -25,10 +26,116 @@ public class DDBlocks {
             DeferredRegister.createBlocks(DistantDreams.MOD_ID);
 
     // Ancient Oak
-    public static final DeferredBlock<Block> ANCIENT_OAK_PLANKS = registerBlockItem(
-            "ancient_oak_planks", Block::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.PALE_OAK_PLANKS)
-    );
+    public static final DeferredBlock<AncientOakBlock> ANCIENT_OAK_LOG = registerBlockItem("ancient_oak_log", AncientOakBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+
+    public static final DeferredBlock<AncientOakBlock> STRIPPED_ANCIENT_OAK_LOG = registerBlockItem("stripped_ancient_oak_log", AncientOakBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG));
+
+    public static final DeferredBlock<AncientOakBlock> ANCIENT_OAK_WOOD = registerBlockItem("ancient_oak_wood", AncientOakBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+
+    public static final DeferredBlock<AncientOakBlock> STRIPPED_ANCIENT_OAK_WOOD = registerBlockItem("stripped_ancient_oak_wood", AncientOakBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD));
+
+    public static final DeferredBlock<Block> ANCIENT_OAK_PLANKS = registerBlockItem("ancient_oak_planks", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+
+    public static final DeferredBlock<StairBlock> ANCIENT_OAK_STAIRS = registerBlockItem("ancient_oak_stairs",
+            properties -> new StairBlock(ANCIENT_OAK_PLANKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(ANCIENT_OAK_PLANKS.get()));
+
+    public static final DeferredBlock<SlabBlock> ANCIENT_OAK_SLAB = registerBlockItem("ancient_oak_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
+
+    public static final DeferredBlock<PressurePlateBlock> ANCIENT_OAK_PRESSURE_PLATE = registerBlockItem("ancient_oak_pressure_plate",
+            properties -> new PressurePlateBlock(DDWoods.ANCIENT_OAK_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
+
+    public static final DeferredBlock<ButtonBlock> ANCIENT_OAK_BUTTON = registerBlockItem("ancient_oak_button",
+            properties -> new ButtonBlock(DDWoods.ANCIENT_OAK_WOOD_SET, 30, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
+
+    public static final DeferredBlock<FenceBlock> ANCIENT_OAK_FENCE = registerBlockItem("ancient_oak_fence", FenceBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
+
+    public static final DeferredBlock<FenceGateBlock> ANCIENT_OAK_FENCE_GATE = registerBlockItem("ancient_oak_fence_gate",
+            properties -> new FenceGateBlock(DDWoods.ANCIENT_OAK_WOOD_TYPE, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
+
+    public static final DeferredBlock<DoorBlock> ANCIENT_OAK_DOOR = registerBlockItem("ancient_oak_door",
+            properties -> new DoorBlock(DDWoods.ANCIENT_OAK_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
+
+    public static final DeferredBlock<TrapDoorBlock> ANCIENT_OAK_TRAPDOOR = registerBlockItem("ancient_oak_trapdoor",
+            properties -> new TrapDoorBlock(DDWoods.ANCIENT_OAK_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
+
+    public static final DeferredBlock<UntintedParticleLeavesBlock> ANCIENT_OAK_LEAVES = registerBlockItem("ancient_oak_leaves",
+            properties -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x2e5d38), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES));
+
+    public static final DeferredBlock<SaplingBlock> ANCIENT_OAK_SAPLING = registerBlockItem("ancient_oak_sapling",
+            properties -> new SaplingBlock(DDTreeGrowers.ANCIENT_OAK, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
+
+    public static final DeferredBlock<FlowerPotBlock> POTTED_ANCIENT_OAK_SAPLING = registerBlockItem("potted_ancient_oak_sapling",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ANCIENT_OAK_SAPLING, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT));
+
+
+
+    // Charred
+    public static final DeferredBlock<DDWoodLogBlock> CHARRED_LOG = registerBlockItem("charred_log",
+            properties -> new DDWoodLogBlock(properties, 0, 0),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+
+    public static final DeferredBlock<DDWoodLogBlock> STRIPPED_CHARRED_LOG = registerBlockItem("stripped_charred_log",
+            properties -> new DDWoodLogBlock(properties, 0, 0),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG));
+
+    public static final DeferredBlock<DDWoodLogBlock> CHARRED_WOOD = registerBlockItem("charred_wood",
+            properties -> new DDWoodLogBlock(properties, 0, 0),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+
+    public static final DeferredBlock<DDWoodLogBlock> STRIPPED_CHARRED_WOOD = registerBlockItem("stripped_charred_wood",
+            properties -> new DDWoodLogBlock(properties, 0, 0),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD));
+
+    public static final DeferredBlock<Block> CHARRED_PLANKS = registerBlockItem("charred_planks", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+
+    public static final DeferredBlock<StairBlock> CHARRED_STAIRS = registerBlockItem("charred_stairs",
+            properties -> new StairBlock(CHARRED_PLANKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(CHARRED_PLANKS.get()));
+
+    public static final DeferredBlock<SlabBlock> CHARRED_SLAB = registerBlockItem("charred_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
+
+    public static final DeferredBlock<PressurePlateBlock> CHARRED_PRESSURE_PLATE = registerBlockItem("charred_pressure_plate",
+            properties -> new PressurePlateBlock(DDWoods.CHARRED_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
+
+    public static final DeferredBlock<ButtonBlock> CHARRED_BUTTON = registerBlockItem("charred_button",
+            properties -> new ButtonBlock(DDWoods.CHARRED_WOOD_SET, 30, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
+
+    public static final DeferredBlock<FenceBlock> CHARRED_FENCE = registerBlockItem("charred_fence", FenceBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
+
+    public static final DeferredBlock<FenceGateBlock> CHARRED_FENCE_GATE = registerBlockItem("charred_fence_gate",
+            properties -> new FenceGateBlock(DDWoods.CHARRED_WOOD_TYPE, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
+
+    public static final DeferredBlock<DoorBlock> CHARRED_DOOR = registerBlockItem("charred_door",
+            properties -> new DoorBlock(DDWoods.CHARRED_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
+
+    public static final DeferredBlock<TrapDoorBlock> CHARRED_TRAPDOOR = registerBlockItem("charred_trapdoor",
+            properties -> new TrapDoorBlock(DDWoods.CHARRED_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
+
+
 
     // Eucalyptus
     public static final DeferredBlock<DDWoodLogBlock> EUCALYPTUS_LOG = registerBlockItem("eucalyptus_log", DDWoodLogBlock::new,

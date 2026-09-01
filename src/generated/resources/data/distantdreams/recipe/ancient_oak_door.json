@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "ancient_oak",
+  "key": {
+    "#": "distantdreams:ancient_oak_planks"
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "distantdreams:ancient_oak_door"
+  }
+}

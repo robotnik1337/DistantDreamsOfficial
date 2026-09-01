@@ -4,7 +4,9 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.whereabouts.DistantDreams.block.DDBlocks;
 import org.jetbrains.annotations.NotNull;
 
@@ -18,7 +20,49 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+
+        dropSelf(DDBlocks.ANCIENT_OAK_LOG.get());
+        dropSelf(DDBlocks.ANCIENT_OAK_WOOD.get());
+        dropSelf(DDBlocks.STRIPPED_ANCIENT_OAK_LOG.get());
+        dropSelf(DDBlocks.STRIPPED_ANCIENT_OAK_WOOD.get());
         dropSelf(DDBlocks.ANCIENT_OAK_PLANKS.get());
+        dropSelf(DDBlocks.ANCIENT_OAK_STAIRS.get());
+        add(DDBlocks.ANCIENT_OAK_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.ANCIENT_OAK_SLAB.get()));
+        dropSelf(DDBlocks.ANCIENT_OAK_PRESSURE_PLATE.get());
+        dropSelf(DDBlocks.ANCIENT_OAK_BUTTON.get());
+        dropSelf(DDBlocks.ANCIENT_OAK_FENCE.get());
+        dropSelf(DDBlocks.ANCIENT_OAK_FENCE_GATE.get());
+        add(DDBlocks.ANCIENT_OAK_DOOR.get(),
+                _ -> createDoorTable(DDBlocks.ANCIENT_OAK_DOOR.get()));
+        dropSelf(DDBlocks.ANCIENT_OAK_TRAPDOOR.get());
+        add(DDBlocks.ANCIENT_OAK_LEAVES.get(),
+                block -> createLeavesDrops(block, DDBlocks.ANCIENT_OAK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(DDBlocks.ANCIENT_OAK_SAPLING.get());
+        dropPottedContents(DDBlocks.POTTED_ANCIENT_OAK_SAPLING.get());
+
+
+        // Charred logs and wood will drop 4 pieces of charcoal if they are not broken with silk touch.
+        add(DDBlocks.CHARRED_LOG.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.CHARCOAL, ConstantValue.exactly(4)));
+        add(DDBlocks.STRIPPED_CHARRED_LOG.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.CHARCOAL, ConstantValue.exactly(4)));
+        add(DDBlocks.CHARRED_WOOD.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.CHARCOAL, ConstantValue.exactly(4)));
+        add(DDBlocks.STRIPPED_CHARRED_WOOD.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.CHARCOAL, ConstantValue.exactly(4)));
+        dropSelf(DDBlocks.CHARRED_PLANKS.get());
+        dropSelf(DDBlocks.CHARRED_STAIRS.get());
+        add(DDBlocks.CHARRED_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.CHARRED_SLAB.get()));
+        dropSelf(DDBlocks.CHARRED_PRESSURE_PLATE.get());
+        dropSelf(DDBlocks.CHARRED_BUTTON.get());
+        dropSelf(DDBlocks.CHARRED_FENCE.get());
+        dropSelf(DDBlocks.CHARRED_FENCE_GATE.get());
+        add(DDBlocks.CHARRED_DOOR.get(),
+                _ -> createDoorTable(DDBlocks.CHARRED_DOOR.get()));
+        dropSelf(DDBlocks.CHARRED_TRAPDOOR.get());
+
 
         dropSelf(DDBlocks.EUCALYPTUS_LOG.get());
         dropSelf(DDBlocks.EUCALYPTUS_WOOD.get());
@@ -40,6 +84,7 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(DDBlocks.EUCALYPTUS_SAPLING.get());
         dropPottedContents(DDBlocks.POTTED_EUCALYPTUS_SAPLING.get());
 
+
         dropSelf(DDBlocks.SEQUOIA_LOG.get());
         dropSelf(DDBlocks.SEQUOIA_WOOD.get());
         dropSelf(DDBlocks.STRIPPED_SEQUOIA_LOG.get());
@@ -59,6 +104,8 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createLeavesDrops(block, DDBlocks.SEQUOIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         dropSelf(DDBlocks.SEQUOIA_SAPLING.get());
         dropPottedContents(DDBlocks.POTTED_SEQUOIA_SAPLING.get());
+
+
     }
 
     @Override

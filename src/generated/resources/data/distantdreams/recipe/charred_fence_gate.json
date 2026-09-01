@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "charred",
+  "key": {
+    "#": "minecraft:stick",
+    "W": "distantdreams:charred_planks"
+  },
+  "pattern": [
+    "#W#",
+    "#W#"
+  ],
+  "result": {
+    "id": "distantdreams:charred_fence_gate"
+  }
+}

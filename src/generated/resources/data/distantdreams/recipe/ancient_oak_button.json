@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "ancient_oak",
+  "ingredients": [
+    "distantdreams:ancient_oak_planks"
+  ],
+  "result": {
+    "id": "distantdreams:ancient_oak_button"
+  }
+}
