@@ -30,5 +30,6 @@ public class DistantDreamsDataGen {
 
         dataGenerator.addProvider(true, new DDRecipeProvider.Runner(packOutput, lookupProvider));
         dataGenerator.addProvider(true, new DDItemTagsProvider(packOutput, lookupProvider));
+        dataGenerator.addProvider(true, new DDDatapackProvider(packOutput, lookupProvider));
     }
 }

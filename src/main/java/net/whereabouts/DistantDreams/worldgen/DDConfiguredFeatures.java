@@ -4,15 +4,35 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.whereabouts.DistantDreams.DistantDreams;
+import net.whereabouts.DistantDreams.block.DDBlocks;
+import net.whereabouts.DistantDreams.worldgen.tree.custom.SequoiaFoliagePlacer;
+import net.whereabouts.DistantDreams.worldgen.tree.custom.SequoiaTrunkPlacer;
 
 public class DDConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_OAK_KEY = registerKey("ancient_oak");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EUCALYPTUS_KEY = registerKey("eucalyptus");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEQUOIA_KEY = registerKey("sequoia");
+
+    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+
+        register(context, SEQUOIA_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(DDBlocks.SEQUOIA_LOG.get()),
+                new SequoiaTrunkPlacer(32, 8, 24),
+
+                BlockStateProvider.simple(DDBlocks.SEQUOIA_LEAVES.get()),
+                new SequoiaFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+
+                new TwoLayersFeatureSize(1, 0, 2)).build()
+        );
+    }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, name));

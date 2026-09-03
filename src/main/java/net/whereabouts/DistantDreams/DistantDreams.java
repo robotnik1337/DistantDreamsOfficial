@@ -14,6 +14,8 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.whereabouts.DistantDreams.block.DDBlocks;
 import net.whereabouts.DistantDreams.creativemodetab.DDCreativeModeTabs;
 import net.whereabouts.DistantDreams.item.DDItems;
+import net.whereabouts.DistantDreams.worldgen.tree.DDFoliagePlacers;
+import net.whereabouts.DistantDreams.worldgen.tree.DDTrunkPlacerTypes;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -33,6 +35,8 @@ public class DistantDreams {
         DDCreativeModeTabs.register(modEventBus);
         DDBlocks.register(modEventBus);
         DDItems.register(modEventBus);
+        DDFoliagePlacers.register(modEventBus);
+        DDTrunkPlacerTypes.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (DistantDreams) to respond directly to events.
