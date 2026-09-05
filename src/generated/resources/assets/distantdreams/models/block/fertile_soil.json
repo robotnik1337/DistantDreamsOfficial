@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "distantdreams:block/fertile_soil_bottom",
+    "particle": "distantdreams:block/fertile_soil_bottom",
+    "side": "distantdreams:block/fertile_soil_side",
+    "top": "distantdreams:block/fertile_soil_top"
+  }
+}

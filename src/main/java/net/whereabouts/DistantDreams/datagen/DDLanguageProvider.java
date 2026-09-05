@@ -5,6 +5,7 @@ import net.whereabouts.DistantDreams.DistantDreams;
 import net.whereabouts.DistantDreams.block.DDBlocks;
 import net.whereabouts.DistantDreams.item.DDItems;
 import net.minecraft.data.PackOutput;
+import net.whereabouts.DistantDreams.worldgen.biome.DDBiomes;
 
 public class DDLanguageProvider extends LanguageProvider {
 
@@ -148,7 +149,7 @@ public class DDLanguageProvider extends LanguageProvider {
 //        add(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get(), "Cracked Distant Stone Bricks");
 //
 //        // Soil
-//        add(DDBlocks.FERTILE_SOIL.get(), "Fertile Soil");
+        add(DDBlocks.FERTILE_SOIL.get(), "Fertile Soil");
 //        add(DDBlocks.FERTILE_PLOT.get(), "Fertile Plot");
 //
 //        // Peat
@@ -333,7 +334,8 @@ public class DDLanguageProvider extends LanguageProvider {
 
         // ########## MISCELLANEOUS ##########
         add("itemGroup.distantdreams", "Distant Dreams");
-        add("biome.distantdreams.sequoia_forest", "Sequoia Forest");
+        addBiome(DDBiomes.SEQUOIA_FOREST, "Sequoia Forest");
+//        add("biome.distantdreams.sequoia_forest", "Sequoia Forest");
 
 
 

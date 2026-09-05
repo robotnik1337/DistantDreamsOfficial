@@ -63,6 +63,9 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .remove(DDBlocks.CHARRED_FENCE.get());
 
+        tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(DDBlocks.FERTILE_SOIL.get());
+
         tag(BlockTags.PLANKS)
                 .add(DDBlocks.ANCIENT_OAK_PLANKS.get())
                 .add(DDBlocks.EUCALYPTUS_PLANKS.get())
@@ -122,6 +125,9 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.LEAVES)
                 .add(DDBlocks.EUCALYPTUS_LEAVES.get())
                 .add(DDBlocks.SEQUOIA_LEAVES.get());
+
+        tag(BlockTags.DIRT)
+                .add(DDBlocks.FERTILE_SOIL.get());
 
         tag(BlockTags.STAIRS)
                 .add(DDBlocks.CHARRED_STAIRS.get());

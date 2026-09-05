@@ -3,8 +3,12 @@ package net.whereabouts.DistantDreams.datagen;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.renderer.block.dispatch.Variant;
 import net.minecraft.data.PackOutput;
 import net.whereabouts.DistantDreams.DistantDreams;
 import net.whereabouts.DistantDreams.block.DDBlocks;
@@ -77,6 +81,15 @@ public class DDModelProvider extends ModelProvider {
         blockModels.createTrapdoor(DDBlocks.SEQUOIA_TRAPDOOR.get());
         blockModels.createTrivialBlock(DDBlocks.SEQUOIA_LEAVES.get(), TexturedModel.LEAVES);
         blockModels.createPlantWithDefaultItem(DDBlocks.SEQUOIA_SAPLING.get(), DDBlocks.POTTED_SEQUOIA_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
+
+        // Fertile
+        TextureMapping fertileSoilTextureMapping = new TextureMapping()
+                .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(DDBlocks.FERTILE_SOIL.get(), "_bottom"))
+                .copyForced(TextureSlot.BOTTOM, TextureSlot.PARTICLE)
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(DDBlocks.FERTILE_SOIL.get(), "_top"))
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(DDBlocks.FERTILE_SOIL.get(), "_side"));
+        Variant plainFertileSoilVariant = BlockModelGenerators.plainModel(ModelTemplates.CUBE_BOTTOM_TOP.create(DDBlocks.FERTILE_SOIL.get(), fertileSoilTextureMapping, blockModels.modelOutput));
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(DDBlocks.FERTILE_SOIL.get(), BlockModelGenerators.createRotatedVariants(plainFertileSoilVariant)));
 
 
 

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "distantdreams:block/fertile_soil"
+      },
+      {
+        "model": "distantdreams:block/fertile_soil",
+        "y": 90
+      },
+      {
+        "model": "distantdreams:block/fertile_soil",
+        "y": 180
+      },
+      {
+        "model": "distantdreams:block/fertile_soil",
+        "y": 270
+      }
+    ]
+  }
+}

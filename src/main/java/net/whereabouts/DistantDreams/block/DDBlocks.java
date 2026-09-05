@@ -14,6 +14,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.whereabouts.DistantDreams.DistantDreams;
 import net.whereabouts.DistantDreams.block.custom.AncientOakBlock;
 import net.whereabouts.DistantDreams.block.custom.DDWoodLogBlock;
+import net.whereabouts.DistantDreams.block.custom.FertileSoilBlock;
 import net.whereabouts.DistantDreams.block.wood.DDWoods;
 import net.whereabouts.DistantDreams.item.DDItems;
 import net.whereabouts.DistantDreams.worldgen.tree.DDTreeGrowers;
@@ -254,6 +255,12 @@ public class DDBlocks {
     public static final DeferredBlock<FlowerPotBlock> POTTED_SEQUOIA_SAPLING = registerBlockItem("potted_sequoia_sapling",
             properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SEQUOIA_SAPLING, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT));
+
+
+
+    // Fertile
+    public static final DeferredBlock<FertileSoilBlock> FERTILE_SOIL = registerBlockItem("fertile_soil", FertileSoilBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK));
 
 
 

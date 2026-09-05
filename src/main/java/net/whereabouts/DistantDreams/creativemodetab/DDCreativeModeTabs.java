@@ -84,6 +84,8 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.SEQUOIA_LEAVES.get());
                         output.accept(DDBlocks.SEQUOIA_SAPLING.get());
 
+                        output.accept(DDBlocks.FERTILE_SOIL.get());
+
                         output.accept(DDItems.MUSIC_DISC_HYPNAGOGIA.get());
 
                     }).build()
