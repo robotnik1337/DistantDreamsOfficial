@@ -124,27 +124,32 @@ public class DDLanguageProvider extends LanguageProvider {
 //        add(DDBlocks.LIMESTONE_PILLAR.get(), "Limestone Pillar");
 //
 //        // Distant Stone
-//        add(DDBlocks.DISTANT_STONE.get(), "Distant Stone");
-//        add(DDBlocks.DISTANT_STONE_STAIRS.get(), "Distant Stone Stairs");
-//        add(DDBlocks.DISTANT_STONE_SLAB.get(), "Distant Stone Slab");
-//        add(DDBlocks.DISTANT_STONE_WALL.get(), "Distant Stone Wall");
+        add(DDBlocks.DISTANT_STONE.get(), "Distant Stone");
+        add(DDBlocks.DISTANT_STONE_STAIRS.get(), "Distant Stone Stairs");
+        add(DDBlocks.DISTANT_STONE_SLAB.get(), "Distant Stone Slab");
+        add(DDBlocks.DISTANT_STONE_WALL.get(), "Distant Stone Wall");
 //        add(DDBlocks.DISTANT_STONE_PRESSURE_PLATE.get(), "Distant Stone Pressure Plate");
 //        add(DDBlocks.DISTANT_STONE_BUTTON.get(), "Distant Stone Button");
 //
-//        add(DDBlocks.DISTANT_STONE_BRICKS.get(), "Distant Stone Bricks");
-//        add(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get(), "Distant Stone Brick Stairs");
-//        add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get(), "Distant Stone Brick Slab");
-//        add(DDBlocks.DISTANT_STONE_BRICK_WALL.get(), "Distant Stone Brick Wall");
+        add(DDBlocks.DISTANT_COBBLE.get(), "Distant Cobblestone");
+        add(DDBlocks.DISTANT_COBBLE_STAIRS.get(), "Distant Cobblestone Stairs");
+        add(DDBlocks.DISTANT_COBBLE_SLAB.get(), "Distant Cobblestone Slab");
+        add(DDBlocks.DISTANT_COBBLE_WALL.get(), "Distant Cobblestone Wall");
+
+        add(DDBlocks.DISTANT_STONE_BRICKS.get(), "Distant Stone Bricks");
+        add(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get(), "Distant Stone Brick Stairs");
+        add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get(), "Distant Stone Brick Slab");
+        add(DDBlocks.DISTANT_STONE_BRICK_WALL.get(), "Distant Stone Brick Wall");
 //
 //        add(DDBlocks.MOSSY_DISTANT_STONE_BRICKS.get(), "Mossy Distant Stone Bricks");
 //        add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_STAIRS.get(), "Mossy Distant Stone Brick Stairs");
 //        add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get(), "Mossy Distant Stone Brick Slab");
 //        add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get(), "Mossy Distant Stone Brick Wall");
-//
-//        add(DDBlocks.POLISHED_DISTANT_STONE.get(), "Polished Distant Stone");
-//        add(DDBlocks.POLISHED_DISTANT_STONE_STAIRS.get(), "Polished Distant Stone Stairs");
-//        add(DDBlocks.POLISHED_DISTANT_STONE_SLAB.get(), "Polished Distant Stone Slab");
-//        add(DDBlocks.POLISHED_DISTANT_STONE_WALL.get(), "Polished Distant Stone Wall");
+
+        add(DDBlocks.DISTANT_STONE_POLISHED.get(), "Polished Distant Stone");
+        add(DDBlocks.DISTANT_STONE_POLISHED_STAIRS.get(), "Polished Distant Stone Stairs");
+        add(DDBlocks.DISTANT_STONE_POLISHED_SLAB.get(), "Polished Distant Stone Slab");
+        add(DDBlocks.DISTANT_STONE_POLISHED_WALL.get(), "Polished Distant Stone Wall");
 //
 //        add(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get(), "Cracked Distant Stone Bricks");
 //

@@ -86,6 +86,23 @@ public class DDCreativeModeTabs {
 
                         output.accept(DDBlocks.FERTILE_SOIL.get());
 
+                        output.accept(DDBlocks.DISTANT_STONE.get());
+                        output.accept(DDBlocks.DISTANT_STONE_STAIRS.get());
+                        output.accept(DDBlocks.DISTANT_STONE_SLAB.get());
+                        output.accept(DDBlocks.DISTANT_STONE_WALL.get());
+                        output.accept(DDBlocks.DISTANT_COBBLE.get());
+                        output.accept(DDBlocks.DISTANT_COBBLE_STAIRS.get());
+                        output.accept(DDBlocks.DISTANT_COBBLE_SLAB.get());
+                        output.accept(DDBlocks.DISTANT_COBBLE_WALL.get());
+                        output.accept(DDBlocks.DISTANT_STONE_POLISHED.get());
+                        output.accept(DDBlocks.DISTANT_STONE_POLISHED_STAIRS.get());
+                        output.accept(DDBlocks.DISTANT_STONE_POLISHED_SLAB.get());
+                        output.accept(DDBlocks.DISTANT_STONE_POLISHED_WALL.get());
+                        output.accept(DDBlocks.DISTANT_STONE_BRICKS.get());
+                        output.accept(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get());
+                        output.accept(DDBlocks.DISTANT_STONE_BRICK_SLAB.get());
+                        output.accept(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
+
                         output.accept(DDItems.MUSIC_DISC_HYPNAGOGIA.get());
 
                     }).build()

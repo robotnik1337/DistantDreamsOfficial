@@ -12,6 +12,22 @@
     "distantdreams:charred_fence",
     "distantdreams:charred_fence_gate",
     "distantdreams:charred_door",
-    "distantdreams:charred_trapdoor"
+    "distantdreams:charred_trapdoor",
+    "distantdreams:distant_stone",
+    "distantdreams:distant_stone_stairs",
+    "distantdreams:distant_stone_slab",
+    "distantdreams:distant_stone_wall",
+    "distantdreams:distant_cobble",
+    "distantdreams:distant_cobble_stairs",
+    "distantdreams:distant_cobble_slab",
+    "distantdreams:distant_cobble_wall",
+    "distantdreams:distant_stone_polished",
+    "distantdreams:distant_stone_polished_stairs",
+    "distantdreams:distant_stone_polished_slab",
+    "distantdreams:distant_stone_polished_wall",
+    "distantdreams:distant_stone_bricks",
+    "distantdreams:distant_stone_brick_stairs",
+    "distantdreams:distant_stone_brick_slab",
+    "distantdreams:distant_stone_brick_wall"
   ]
 }

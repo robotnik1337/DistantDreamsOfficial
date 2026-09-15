@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "distantdreams:block/distant_stone_bricks"
+  }
+}

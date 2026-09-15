@@ -91,6 +91,32 @@ public class DDModelProvider extends ModelProvider {
         Variant plainFertileSoilVariant = BlockModelGenerators.plainModel(ModelTemplates.CUBE_BOTTOM_TOP.create(DDBlocks.FERTILE_SOIL.get(), fertileSoilTextureMapping, blockModels.modelOutput));
         blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(DDBlocks.FERTILE_SOIL.get(), BlockModelGenerators.createRotatedVariants(plainFertileSoilVariant)));
 
+        // Distant Stone
+        blockModels.family(DDBlocks.DISTANT_STONE.get())
+                .stairs(DDBlocks.DISTANT_STONE_STAIRS.get())
+                .slab(DDBlocks.DISTANT_STONE_SLAB.get())
+                .wall(DDBlocks.DISTANT_STONE_WALL.get());
+
+        blockModels.family(DDBlocks.DISTANT_COBBLE.get())
+                .stairs(DDBlocks.DISTANT_COBBLE_STAIRS.get())
+                .slab(DDBlocks.DISTANT_COBBLE_SLAB.get())
+                .wall(DDBlocks.DISTANT_COBBLE_WALL.get());
+
+        blockModels.family(DDBlocks.DISTANT_STONE_POLISHED.get())
+                .stairs(DDBlocks.DISTANT_STONE_POLISHED_STAIRS.get())
+                .slab(DDBlocks.DISTANT_STONE_POLISHED_SLAB.get())
+                .wall(DDBlocks.DISTANT_STONE_POLISHED_WALL.get());
+
+        blockModels.family(DDBlocks.DISTANT_STONE_BRICKS.get())
+                .stairs(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get())
+                .slab(DDBlocks.DISTANT_STONE_BRICK_SLAB.get())
+                .wall(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
+
+        // Limestone
+
+        // Islate
+
+        // Rhyolite
 
 
         // *** ITEMS ***

@@ -108,6 +108,27 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
 
         add(DDBlocks.FERTILE_SOIL.get(),
                 block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
+
+        dropSelf(DDBlocks.DISTANT_STONE.get());
+        dropSelf(DDBlocks.DISTANT_STONE_STAIRS.get());
+        add(DDBlocks.DISTANT_STONE_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.DISTANT_STONE_SLAB.get()));
+        dropSelf(DDBlocks.DISTANT_STONE_WALL.get());
+        dropSelf(DDBlocks.DISTANT_COBBLE.get());
+        dropSelf(DDBlocks.DISTANT_COBBLE_STAIRS.get());
+        add(DDBlocks.DISTANT_COBBLE_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.DISTANT_COBBLE_SLAB.get()));
+        dropSelf(DDBlocks.DISTANT_COBBLE_WALL.get());
+        dropSelf(DDBlocks.DISTANT_STONE_POLISHED.get());
+        dropSelf(DDBlocks.DISTANT_STONE_POLISHED_STAIRS.get());
+        add(DDBlocks.DISTANT_STONE_POLISHED_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.DISTANT_STONE_POLISHED_SLAB.get()));
+        dropSelf(DDBlocks.DISTANT_STONE_POLISHED_WALL.get());
+        dropSelf(DDBlocks.DISTANT_STONE_BRICKS.get());
+        dropSelf(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get());
+        add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.DISTANT_STONE_BRICK_SLAB.get()));
+        dropSelf(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
     }
 
     @Override

@@ -1,5 +1,9 @@
 {
   "values": [
-    "distantdreams:charred_slab"
+    "distantdreams:charred_slab",
+    "distantdreams:distant_stone_slab",
+    "distantdreams:distant_cobble_slab",
+    "distantdreams:distant_stone_polished_slab",
+    "distantdreams:distant_stone_brick_slab"
   ]
 }

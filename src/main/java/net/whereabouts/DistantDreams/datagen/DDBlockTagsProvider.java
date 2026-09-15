@@ -58,7 +58,23 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.CHARRED_FENCE.get())
                 .add(DDBlocks.CHARRED_FENCE_GATE.get())
                 .add(DDBlocks.CHARRED_DOOR.get())
-                .add(DDBlocks.CHARRED_TRAPDOOR.get());
+                .add(DDBlocks.CHARRED_TRAPDOOR.get())
+                .add(DDBlocks.DISTANT_STONE.get())
+                .add(DDBlocks.DISTANT_STONE_STAIRS.get())
+                .add(DDBlocks.DISTANT_STONE_SLAB.get())
+                .add(DDBlocks.DISTANT_STONE_WALL.get())
+                .add(DDBlocks.DISTANT_COBBLE.get())
+                .add(DDBlocks.DISTANT_COBBLE_STAIRS.get())
+                .add(DDBlocks.DISTANT_COBBLE_SLAB.get())
+                .add(DDBlocks.DISTANT_COBBLE_WALL.get())
+                .add(DDBlocks.DISTANT_STONE_POLISHED.get())
+                .add(DDBlocks.DISTANT_STONE_POLISHED_STAIRS.get())
+                .add(DDBlocks.DISTANT_STONE_POLISHED_SLAB.get())
+                .add(DDBlocks.DISTANT_STONE_POLISHED_WALL.get())
+                .add(DDBlocks.DISTANT_STONE_BRICKS.get())
+                .add(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get())
+                .add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get())
+                .add(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
 
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .remove(DDBlocks.CHARRED_FENCE.get());
@@ -130,10 +146,18 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.FERTILE_SOIL.get());
 
         tag(BlockTags.STAIRS)
-                .add(DDBlocks.CHARRED_STAIRS.get());
+                .add(DDBlocks.CHARRED_STAIRS.get())
+                .add(DDBlocks.DISTANT_STONE_STAIRS.get())
+                .add(DDBlocks.DISTANT_COBBLE_STAIRS.get())
+                .add(DDBlocks.DISTANT_STONE_POLISHED_STAIRS.get())
+                .add(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get());
 
         tag(BlockTags.SLABS)
-                .add(DDBlocks.CHARRED_SLAB.get());
+                .add(DDBlocks.CHARRED_SLAB.get())
+                .add(DDBlocks.DISTANT_STONE_SLAB.get())
+                .add(DDBlocks.DISTANT_COBBLE_SLAB.get())
+                .add(DDBlocks.DISTANT_STONE_POLISHED_SLAB.get())
+                .add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get());
 
         tag(BlockTags.PRESSURE_PLATES)
                 .add(DDBlocks.CHARRED_PRESSURE_PLATE.get());
@@ -152,5 +176,10 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.TRAPDOORS)
                 .add(DDBlocks.CHARRED_TRAPDOOR.get());
+        tag(BlockTags.WALLS)
+                .add(DDBlocks.DISTANT_STONE_WALL.get())
+                .add(DDBlocks.DISTANT_COBBLE_WALL.get())
+                .add(DDBlocks.DISTANT_STONE_POLISHED_WALL.get())
+                .add(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
     }
 }

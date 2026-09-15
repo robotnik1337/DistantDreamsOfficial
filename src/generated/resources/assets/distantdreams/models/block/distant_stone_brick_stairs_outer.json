@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "distantdreams:block/distant_stone_bricks",
+    "side": "distantdreams:block/distant_stone_bricks",
+    "top": "distantdreams:block/distant_stone_bricks"
+  }
+}

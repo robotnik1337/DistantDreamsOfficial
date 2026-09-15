@@ -262,7 +262,65 @@ public class DDBlocks {
     public static final DeferredBlock<FertileSoilBlock> FERTILE_SOIL = registerBlockItem("fertile_soil", FertileSoilBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK));
 
+    // Distant Stone
+    public static final DeferredBlock<Block> DISTANT_STONE = registerBlockItem("distant_stone",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
 
+    public static final DeferredBlock<StairBlock> DISTANT_STONE_STAIRS = registerBlockItem("distant_stone_stairs",
+            properties -> new StairBlock(DISTANT_STONE.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(DISTANT_STONE.get()));
+
+    public static final DeferredBlock<SlabBlock> DISTANT_STONE_SLAB = registerBlockItem("distant_stone_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB));
+
+    public static final DeferredBlock<WallBlock> DISTANT_STONE_WALL = registerBlockItem("distant_stone_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_WALL));
+
+    public static final DeferredBlock<Block> DISTANT_COBBLE = registerBlockItem("distant_cobble",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE));
+
+    public static final DeferredBlock<StairBlock> DISTANT_COBBLE_STAIRS = registerBlockItem("distant_cobble_stairs",
+            properties -> new StairBlock(DISTANT_COBBLE.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(DISTANT_COBBLE.get()));
+
+    public static final DeferredBlock<SlabBlock> DISTANT_COBBLE_SLAB = registerBlockItem("distant_cobble_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_SLAB));
+
+    public static final DeferredBlock<WallBlock> DISTANT_COBBLE_WALL = registerBlockItem("distant_cobble_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_WALL));
+
+    public static final DeferredBlock<Block> DISTANT_STONE_POLISHED = registerBlockItem("distant_stone_polished",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
+
+    public static final DeferredBlock<StairBlock> DISTANT_STONE_POLISHED_STAIRS = registerBlockItem("distant_stone_polished_stairs",
+            properties -> new StairBlock(DISTANT_STONE_POLISHED.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(DISTANT_STONE_POLISHED.get()));
+
+    public static final DeferredBlock<SlabBlock> DISTANT_STONE_POLISHED_SLAB = registerBlockItem("distant_stone_polished_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB));
+
+    public static final DeferredBlock<WallBlock> DISTANT_STONE_POLISHED_WALL = registerBlockItem("distant_stone_polished_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
+
+    public static final DeferredBlock<Block> DISTANT_STONE_BRICKS = registerBlockItem("distant_stone_bricks",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
+
+    public static final DeferredBlock<StairBlock> DISTANT_STONE_BRICK_STAIRS = registerBlockItem("distant_stone_brick_stairs",
+            properties -> new StairBlock(DISTANT_STONE_BRICKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(DISTANT_STONE_BRICKS.get()));
+
+    public static final DeferredBlock<SlabBlock> DISTANT_STONE_BRICK_SLAB = registerBlockItem("distant_stone_brick_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
+
+    public static final DeferredBlock<WallBlock> DISTANT_STONE_BRICK_WALL = registerBlockItem("distant_stone_brick_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
+
+
+    // Limestone
+
+    // Islate
+
+    // Rhyolite
 
 
     // *** HELPER METHODS ***
