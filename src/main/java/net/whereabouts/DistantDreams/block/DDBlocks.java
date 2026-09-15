@@ -300,7 +300,7 @@ public class DDBlocks {
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB));
 
     public static final DeferredBlock<WallBlock> DISTANT_STONE_POLISHED_WALL = registerBlockItem("distant_stone_polished_wall", WallBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_WALL));
 
     public static final DeferredBlock<Block> DISTANT_STONE_BRICKS = registerBlockItem("distant_stone_bricks",Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
@@ -319,6 +319,58 @@ public class DDBlocks {
     // Limestone
 
     // Islate
+    public static final DeferredBlock<Block> ISLATE = registerBlockItem("islate",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE));
+
+    public static final DeferredBlock<StairBlock> ISLATE_STAIRS = registerBlockItem("islate_stairs",
+            properties -> new StairBlock(ISLATE.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(ISLATE.get()));
+
+    public static final DeferredBlock<SlabBlock> ISLATE_SLAB = registerBlockItem("islate_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLED_DEEPSLATE_SLAB));
+
+    public static final DeferredBlock<WallBlock> ISLATE_WALL = registerBlockItem("islate_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLED_DEEPSLATE_WALL));
+
+    public static final DeferredBlock<Block> ISLATE_COBBLED = registerBlockItem("islate_cobbled",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLED_DEEPSLATE));
+
+    public static final DeferredBlock<StairBlock> ISLATE_COBBLED_STAIRS = registerBlockItem("islate_cobbled_stairs",
+            properties -> new StairBlock(ISLATE_COBBLED.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(ISLATE_COBBLED.get()));
+
+    public static final DeferredBlock<SlabBlock> ISLATE_COBBLED_SLAB = registerBlockItem("islate_cobbled_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLED_DEEPSLATE_SLAB));
+
+    public static final DeferredBlock<WallBlock> ISLATE_COBBLED_WALL = registerBlockItem("islate_cobbled_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLED_DEEPSLATE_WALL));
+
+    public static final DeferredBlock<Block> ISLATE_POLISHED = registerBlockItem("islate_polished",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_DEEPSLATE));
+
+    public static final DeferredBlock<StairBlock> ISLATE_POLISHED_STAIRS = registerBlockItem("islate_polished_stairs",
+            properties -> new StairBlock(ISLATE_POLISHED.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(ISLATE_POLISHED.get()));
+
+    public static final DeferredBlock<SlabBlock> ISLATE_POLISHED_SLAB = registerBlockItem("islate_polished_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_DEEPSLATE_SLAB));
+
+    public static final DeferredBlock<WallBlock> ISLATE_POLISHED_WALL = registerBlockItem("islate_polished_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_DEEPSLATE_WALL));
+
+    public static final DeferredBlock<Block> ISLATE_BRICKS = registerBlockItem("islate_bricks",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_BRICKS));
+
+    public static final DeferredBlock<StairBlock> ISLATE_BRICK_STAIRS = registerBlockItem("islate_brick_stairs",
+            properties -> new StairBlock(ISLATE_BRICKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(ISLATE_BRICKS.get()));
+
+    public static final DeferredBlock<SlabBlock> ISLATE_BRICK_SLAB = registerBlockItem("islate_brick_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_BRICK_SLAB));
+
+    public static final DeferredBlock<WallBlock> ISLATE_BRICK_WALL = registerBlockItem("islate_brick_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_BRICK_WALL));
+
 
     // Rhyolite
 

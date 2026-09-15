@@ -103,6 +103,23 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.DISTANT_STONE_BRICK_SLAB.get());
                         output.accept(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
 
+                        output.accept(DDBlocks.ISLATE.get());
+                        output.accept(DDBlocks.ISLATE_STAIRS.get());
+                        output.accept(DDBlocks.ISLATE_SLAB.get());
+                        output.accept(DDBlocks.ISLATE_WALL.get());
+                        output.accept(DDBlocks.ISLATE_COBBLED.get());
+                        output.accept(DDBlocks.ISLATE_COBBLED_STAIRS.get());
+                        output.accept(DDBlocks.ISLATE_COBBLED_SLAB.get());
+                        output.accept(DDBlocks.ISLATE_COBBLED_WALL.get());
+                        output.accept(DDBlocks.ISLATE_POLISHED.get());
+                        output.accept(DDBlocks.ISLATE_POLISHED_STAIRS.get());
+                        output.accept(DDBlocks.ISLATE_POLISHED_SLAB.get());
+                        output.accept(DDBlocks.ISLATE_POLISHED_WALL.get());
+                        output.accept(DDBlocks.ISLATE_BRICKS.get());
+                        output.accept(DDBlocks.ISLATE_BRICK_STAIRS.get());
+                        output.accept(DDBlocks.ISLATE_BRICK_SLAB.get());
+                        output.accept(DDBlocks.ISLATE_BRICK_WALL.get());
+
                         output.accept(DDItems.MUSIC_DISC_HYPNAGOGIA.get());
 
                     }).build()

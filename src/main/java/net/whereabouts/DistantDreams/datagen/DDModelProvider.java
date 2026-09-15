@@ -115,6 +115,25 @@ public class DDModelProvider extends ModelProvider {
         // Limestone
 
         // Islate
+        blockModels.family(DDBlocks.ISLATE.get())
+                .stairs(DDBlocks.ISLATE_STAIRS.get())
+                .slab(DDBlocks.ISLATE_SLAB.get())
+                .wall(DDBlocks.ISLATE_WALL.get());
+
+        blockModels.family(DDBlocks.ISLATE_COBBLED.get())
+                .stairs(DDBlocks.ISLATE_COBBLED_STAIRS.get())
+                .slab(DDBlocks.ISLATE_COBBLED_SLAB.get())
+                .wall(DDBlocks.ISLATE_COBBLED_WALL.get());
+
+        blockModels.family(DDBlocks.ISLATE_POLISHED.get())
+                .stairs(DDBlocks.ISLATE_POLISHED_STAIRS.get())
+                .slab(DDBlocks.ISLATE_POLISHED_SLAB.get())
+                .wall(DDBlocks.ISLATE_POLISHED_WALL.get());
+
+        blockModels.family(DDBlocks.ISLATE_BRICKS.get())
+                .stairs(DDBlocks.ISLATE_BRICK_STAIRS.get())
+                .slab(DDBlocks.ISLATE_BRICK_SLAB.get())
+                .wall(DDBlocks.ISLATE_BRICK_WALL.get());
 
         // Rhyolite
 

@@ -28,6 +28,22 @@
     "distantdreams:distant_stone_bricks",
     "distantdreams:distant_stone_brick_stairs",
     "distantdreams:distant_stone_brick_slab",
-    "distantdreams:distant_stone_brick_wall"
+    "distantdreams:distant_stone_brick_wall",
+    "distantdreams:islate",
+    "distantdreams:islate_stairs",
+    "distantdreams:islate_slab",
+    "distantdreams:islate_wall",
+    "distantdreams:islate_cobbled",
+    "distantdreams:islate_cobbled_stairs",
+    "distantdreams:islate_cobbled_slab",
+    "distantdreams:islate_cobbled_wall",
+    "distantdreams:islate_polished",
+    "distantdreams:islate_polished_stairs",
+    "distantdreams:islate_polished_slab",
+    "distantdreams:islate_polished_wall",
+    "distantdreams:islate_bricks",
+    "distantdreams:islate_brick_stairs",
+    "distantdreams:islate_brick_slab",
+    "distantdreams:islate_brick_wall"
   ]
 }

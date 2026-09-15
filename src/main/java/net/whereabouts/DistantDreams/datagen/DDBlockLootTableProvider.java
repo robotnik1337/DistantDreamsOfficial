@@ -129,6 +129,27 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get(),
                 _ -> createSlabItemTable(DDBlocks.DISTANT_STONE_BRICK_SLAB.get()));
         dropSelf(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
+
+        dropSelf(DDBlocks.ISLATE.get());
+        dropSelf(DDBlocks.ISLATE_STAIRS.get());
+        add(DDBlocks.ISLATE_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.ISLATE_SLAB.get()));
+        dropSelf(DDBlocks.ISLATE_WALL.get());
+        dropSelf(DDBlocks.ISLATE_COBBLED.get());
+        dropSelf(DDBlocks.ISLATE_COBBLED_STAIRS.get());
+        add(DDBlocks.ISLATE_COBBLED_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.ISLATE_COBBLED_SLAB.get()));
+        dropSelf(DDBlocks.ISLATE_COBBLED_WALL.get());
+        dropSelf(DDBlocks.ISLATE_POLISHED.get());
+        dropSelf(DDBlocks.ISLATE_POLISHED_STAIRS.get());
+        add(DDBlocks.ISLATE_POLISHED_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.ISLATE_POLISHED_SLAB.get()));
+        dropSelf(DDBlocks.ISLATE_POLISHED_WALL.get());
+        dropSelf(DDBlocks.ISLATE_BRICKS.get());
+        dropSelf(DDBlocks.ISLATE_BRICK_STAIRS.get());
+        add(DDBlocks.ISLATE_BRICK_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.ISLATE_BRICK_SLAB.get()));
+        dropSelf(DDBlocks.ISLATE_BRICK_WALL.get());
     }
 
     @Override

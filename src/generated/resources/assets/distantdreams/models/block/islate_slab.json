@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "distantdreams:block/islate",
+    "side": "distantdreams:block/islate",
+    "top": "distantdreams:block/islate"
+  }
+}

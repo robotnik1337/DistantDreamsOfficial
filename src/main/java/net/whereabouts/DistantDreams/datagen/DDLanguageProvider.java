@@ -153,6 +153,28 @@ public class DDLanguageProvider extends LanguageProvider {
 //
 //        add(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get(), "Cracked Distant Stone Bricks");
 //
+         // Islate
+        add(DDBlocks.ISLATE.get(), "Islate");
+        add(DDBlocks.ISLATE_STAIRS.get(), "Islate Stairs");
+        add(DDBlocks.ISLATE_SLAB.get(), "Islate Slab");
+        add(DDBlocks.ISLATE_WALL.get(), "Islate Wall");
+
+        add(DDBlocks.ISLATE_COBBLED.get(), "Cobbled Islate");
+        add(DDBlocks.ISLATE_COBBLED_STAIRS.get(), "Cobbled Islate Stairs");
+        add(DDBlocks.ISLATE_COBBLED_SLAB.get(), "Cobbled Islate Slab");
+        add(DDBlocks.ISLATE_COBBLED_WALL.get(), "Cobbled Islate Wall");
+
+
+        add(DDBlocks.ISLATE_POLISHED.get(), "Polished Islate");
+        add(DDBlocks.ISLATE_POLISHED_STAIRS.get(), "Polished Islate Stairs");
+        add(DDBlocks.ISLATE_POLISHED_SLAB.get(), "Polished Islate Slab");
+        add(DDBlocks.ISLATE_POLISHED_WALL.get(), "Polished Islate Wall");
+
+        add(DDBlocks.ISLATE_BRICKS.get(), "Islate Bricks");
+        add(DDBlocks.ISLATE_BRICK_STAIRS.get(), "Islate Brick Stairs");
+        add(DDBlocks.ISLATE_BRICK_SLAB.get(), "Islate Brick Slab");
+        add(DDBlocks.ISLATE_BRICK_WALL.get(), "Islate Brick Wall");
+//
 //        // Soil
         add(DDBlocks.FERTILE_SOIL.get(), "Fertile Soil");
 //        add(DDBlocks.FERTILE_PLOT.get(), "Fertile Plot");

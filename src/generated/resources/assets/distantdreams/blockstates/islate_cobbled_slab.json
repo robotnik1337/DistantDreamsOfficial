@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "distantdreams:block/islate_cobbled_slab"
+    },
+    "type=double": {
+      "model": "distantdreams:block/islate_cobbled"
+    },
+    "type=top": {
+      "model": "distantdreams:block/islate_cobbled_slab_top"
+    }
+  }
+}

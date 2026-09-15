@@ -4,6 +4,10 @@
     "distantdreams:distant_stone_stairs",
     "distantdreams:distant_cobble_stairs",
     "distantdreams:distant_stone_polished_stairs",
-    "distantdreams:distant_stone_brick_stairs"
+    "distantdreams:distant_stone_brick_stairs",
+    "distantdreams:islate_stairs",
+    "distantdreams:islate_cobbled_stairs",
+    "distantdreams:islate_polished_stairs",
+    "distantdreams:islate_brick_stairs"
   ]
 }

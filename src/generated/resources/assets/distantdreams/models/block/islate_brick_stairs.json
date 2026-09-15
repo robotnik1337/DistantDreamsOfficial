@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "distantdreams:block/islate_bricks",
+    "side": "distantdreams:block/islate_bricks",
+    "top": "distantdreams:block/islate_bricks"
+  }
+}

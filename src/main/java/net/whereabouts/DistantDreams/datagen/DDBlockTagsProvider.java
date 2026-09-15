@@ -74,7 +74,23 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.DISTANT_STONE_BRICKS.get())
                 .add(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get())
                 .add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get())
-                .add(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
+                .add(DDBlocks.DISTANT_STONE_BRICK_WALL.get())
+                .add(DDBlocks.ISLATE.get())
+                .add(DDBlocks.ISLATE_STAIRS.get())
+                .add(DDBlocks.ISLATE_SLAB.get())
+                .add(DDBlocks.ISLATE_WALL.get())
+                .add(DDBlocks.ISLATE_COBBLED.get())
+                .add(DDBlocks.ISLATE_COBBLED_STAIRS.get())
+                .add(DDBlocks.ISLATE_COBBLED_SLAB.get())
+                .add(DDBlocks.ISLATE_COBBLED_WALL.get())
+                .add(DDBlocks.ISLATE_POLISHED.get())
+                .add(DDBlocks.ISLATE_POLISHED_STAIRS.get())
+                .add(DDBlocks.ISLATE_POLISHED_SLAB.get())
+                .add(DDBlocks.ISLATE_POLISHED_WALL.get())
+                .add(DDBlocks.ISLATE_BRICKS.get())
+                .add(DDBlocks.ISLATE_BRICK_STAIRS.get())
+                .add(DDBlocks.ISLATE_BRICK_SLAB.get())
+                .add(DDBlocks.ISLATE_BRICK_WALL.get());;
 
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .remove(DDBlocks.CHARRED_FENCE.get());
@@ -150,14 +166,22 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.DISTANT_STONE_STAIRS.get())
                 .add(DDBlocks.DISTANT_COBBLE_STAIRS.get())
                 .add(DDBlocks.DISTANT_STONE_POLISHED_STAIRS.get())
-                .add(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get());
+                .add(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get())
+                .add(DDBlocks.ISLATE_STAIRS.get())
+                .add(DDBlocks.ISLATE_COBBLED_STAIRS.get())
+                .add(DDBlocks.ISLATE_POLISHED_STAIRS.get())
+                .add(DDBlocks.ISLATE_BRICK_STAIRS.get());
 
         tag(BlockTags.SLABS)
                 .add(DDBlocks.CHARRED_SLAB.get())
                 .add(DDBlocks.DISTANT_STONE_SLAB.get())
                 .add(DDBlocks.DISTANT_COBBLE_SLAB.get())
                 .add(DDBlocks.DISTANT_STONE_POLISHED_SLAB.get())
-                .add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get());
+                .add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get())
+                .add(DDBlocks.ISLATE_SLAB.get())
+                .add(DDBlocks.ISLATE_COBBLED_SLAB.get())
+                .add(DDBlocks.ISLATE_POLISHED_SLAB.get())
+                .add(DDBlocks.ISLATE_BRICK_SLAB.get());
 
         tag(BlockTags.PRESSURE_PLATES)
                 .add(DDBlocks.CHARRED_PRESSURE_PLATE.get());
@@ -180,6 +204,10 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.DISTANT_STONE_WALL.get())
                 .add(DDBlocks.DISTANT_COBBLE_WALL.get())
                 .add(DDBlocks.DISTANT_STONE_POLISHED_WALL.get())
-                .add(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
+                .add(DDBlocks.DISTANT_STONE_BRICK_WALL.get())
+                .add(DDBlocks.ISLATE_WALL.get())
+                .add(DDBlocks.ISLATE_COBBLED_WALL.get())
+                .add(DDBlocks.ISLATE_POLISHED_WALL.get())
+                .add(DDBlocks.ISLATE_BRICK_WALL.get());
     }
 }
