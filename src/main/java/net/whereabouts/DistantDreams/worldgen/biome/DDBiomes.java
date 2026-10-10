@@ -23,14 +23,25 @@ public class DDBiomes {
     public static final ResourceKey<Biome> SEQUOIA_FOREST = ResourceKey.create(Registries.BIOME,
             Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "sequoia_forest"));
 
+    public static final ResourceKey<Biome> DISTANT_FOREST = ResourceKey.create(Registries.BIOME,
+            Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "distant_forest"));
+
     public static void bootstrap(BootstrapContext<Biome> context) {
         context.register(SEQUOIA_FOREST, sequoiaForest(context));
+        context.register(DISTANT_FOREST, distantForest(context));
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
+        BiomeDefaultFeatures.addDefaultSprings(builder);
+        BiomeDefaultFeatures.addSurfaceFreezing(builder);
+    }
+
+    public static void globalDistantRealmGeneration(BiomeGenerationSettings.Builder builder) {
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
         BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
         BiomeDefaultFeatures.addDefaultSprings(builder);
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
@@ -78,6 +89,53 @@ public class DDBiomes {
                         .set(EnvironmentAttributes.WATER_FOG_COLOR, 0x2d84a6)
                         .set(EnvironmentAttributes.SKY_COLOR, 0x6cb4ce)
                         .set(EnvironmentAttributes.FOG_COLOR, 0xa1d8dd)
+                        .set(EnvironmentAttributes.AMBIENT_SOUNDS, AmbientSounds.LEGACY_CAVE_SETTINGS)
+                        .build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(0x2d84a6)
+                        .grassColorOverride(0x39863d)
+                        .foliageColorOverride(0x2e5d38)
+                        .build())
+//                        .backgroundMusic(Musics.createGameMusic(ModSounds.HYPNAGOGIA.getHolder().get())).build())
+                .build();
+
+    }
+
+    private static Biome distantForest(BootstrapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 4, 5));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.ELDER_GUARDIAN, 2, 4));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.PUFFERFISH, 4, 8));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.AXOLOTL, 2, 4));
+
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalDistantRealmGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+//        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES)
+        BiomeDefaultFeatures.addBirchForestFlowers(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder, true);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.8f)
+                .temperature(0.7f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .putAttributes(EnvironmentAttributeMap.builder()
+                        .set(EnvironmentAttributes.WATER_FOG_COLOR, 0x2d84a6)
+                        .set(EnvironmentAttributes.SKY_COLOR, 0xB0D4CA)
+                        .set(EnvironmentAttributes.FOG_COLOR, 0xDAF5ED)
                         .set(EnvironmentAttributes.AMBIENT_SOUNDS, AmbientSounds.LEGACY_CAVE_SETTINGS)
                         .build())
                 .specialEffects((new BiomeSpecialEffects.Builder())

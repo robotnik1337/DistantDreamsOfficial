@@ -11,6 +11,7 @@ import net.whereabouts.DistantDreams.worldgen.DDBiomeModifiers;
 import net.whereabouts.DistantDreams.worldgen.DDConfiguredFeatures;
 import net.whereabouts.DistantDreams.worldgen.DDPlacedFeatures;
 import net.whereabouts.DistantDreams.worldgen.biome.DDBiomes;
+import net.whereabouts.DistantDreams.worldgen.dimension.DDDimension;
 
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -20,7 +21,9 @@ public class DDDatapackProvider extends DatapackBuiltinEntriesProvider {
             .add(Registries.CONFIGURED_FEATURE, DDConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, DDPlacedFeatures::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, DDBiomeModifiers::bootstrap)
-            .add(Registries.BIOME, DDBiomes::bootstrap);
+            .add(Registries.BIOME, DDBiomes::bootstrap)
+            .add(Registries.DIMENSION_TYPE, DDDimension::bootstrapType)
+            .add(Registries.LEVEL_STEM, DDDimension::bootstrapStem);
 
     public DDDatapackProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(DistantDreams.MOD_ID));
