@@ -117,8 +117,6 @@ public class SequoiaTrunkPlacer extends TrunkPlacer {
         }
         // store the current branch position to add to the list of foliage attachment locations, then return that position.
         return currentBranchPosition;
-
-        // store the current branch position to add to the list of foliage attachment locations, then return that position.
     }
 
 //    private void placeLogIfFreeWithOffset(

@@ -17,7 +17,6 @@ import net.whereabouts.DistantDreams.item.DDItems;
 import net.whereabouts.DistantDreams.worldgen.biome.DDTerrablender;
 import net.whereabouts.DistantDreams.worldgen.biome.surface.DDSurfaceRules;
 import net.whereabouts.DistantDreams.worldgen.tree.DDFoliagePlacers;
-import net.whereabouts.DistantDreams.worldgen.tree.DDRootPlacerTypes;
 import net.whereabouts.DistantDreams.worldgen.tree.DDTrunkPlacerTypes;
 import org.slf4j.Logger;
 import terrablender.api.SurfaceRuleManager;
@@ -42,7 +41,6 @@ public class DistantDreams {
 
         DDFoliagePlacers.register(modEventBus);
         DDTrunkPlacerTypes.register(modEventBus);
-        DDRootPlacerTypes.register(modEventBus);
         DDTerrablender.registerBiomes();
 
         // Register ourselves for server and other game events we are interested in.

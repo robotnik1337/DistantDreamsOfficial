@@ -1,33 +1,20 @@
 package net.whereabouts.DistantDreams.worldgen;
 
-import net.minecraft.core.HolderGetter;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.rootplacers.AboveRootPlacement;
-import net.minecraft.world.level.levelgen.feature.rootplacers.MangroveRootPlacement;
-import net.minecraft.world.level.levelgen.feature.rootplacers.MangroveRootPlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.whereabouts.DistantDreams.DistantDreams;
 import net.whereabouts.DistantDreams.block.DDBlocks;
 import net.whereabouts.DistantDreams.worldgen.tree.custom.SequoiaFoliagePlacer;
-import net.whereabouts.DistantDreams.worldgen.tree.custom.SequoiaRootPlacement;
-import net.whereabouts.DistantDreams.worldgen.tree.custom.SequoiaRootPlacer;
 import net.whereabouts.DistantDreams.worldgen.tree.custom.SequoiaTrunkPlacer;
-
-import java.util.Optional;
 
 public class DDConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_OAK_KEY = registerKey("ancient_oak");
@@ -36,8 +23,6 @@ public class DDConfiguredFeatures {
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
-        HolderGetter<Block> blocks = context.lookup(Registries.BLOCK);
-
         register(context, SEQUOIA_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(DDBlocks.SEQUOIA_LOG.get()),
                 new SequoiaTrunkPlacer(32, 8, 24),
@@ -45,18 +30,8 @@ public class DDConfiguredFeatures {
                 BlockStateProvider.simple(DDBlocks.SEQUOIA_LEAVES.get()),
                 new SequoiaFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
 
-                new SequoiaRootPlacer(
-                        UniformInt.of(1, 3),
-                        BlockStateProvider.simple(DDBlocks.SEQUOIA_LOG.get()),
-                        Optional.of(new AboveRootPlacement(BlockStateProvider.simple(Blocks.MOSS_CARPET), 0.5F)),
-                        new SequoiaRootPlacement(
-                                8,
-                                15,
-                                0.2F
-                        )
-                ),
-
-                new TwoLayersFeatureSize(1, 0, 2)
+                new TwoLayersFeatureSize(1, 0, 2)).build()
+        );
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
