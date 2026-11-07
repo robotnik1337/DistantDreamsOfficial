@@ -95,7 +95,32 @@ public class DDLanguageProvider extends LanguageProvider {
         add(DDBlocks.SEQUOIA_TRAPDOOR.get(), "Sequoia Trapdoor");
         add(DDBlocks.SEQUOIA_PRESSURE_PLATE.get(), "Sequoia Pressure Plate");
         add(DDBlocks.SEQUOIA_BUTTON.get(), "Sequoia Button");
-//
+
+        // Dendranthos
+        add(DDBlocks.DENDRANTHOS_LOG.get(), "Dendranthos Log");
+        add(DDBlocks.DENDRANTHOS_WOOD.get(), "Dendranthos Wood");
+        add(DDBlocks.DENDRANTHOS_PLANKS.get(), "Dendranthos Planks");
+        add(DDBlocks.DENDRANTHOS_STAIRS.get(), "Dendranthos Stairs");
+        add(DDBlocks.DENDRANTHOS_SLAB.get(), "Dendranthos Slab");
+        add(DDBlocks.DENDRANTHOS_FENCE.get(), "Dendranthos Fence");
+        add(DDBlocks.DENDRANTHOS_FENCE_GATE.get(), "Dendranthos Fence Gate");
+        add(DDBlocks.DENDRANTHOS_PRESSURE_PLATE.get(), "Dendranthos Pressure Plate");
+        add(DDBlocks.DENDRANTHOS_BUTTON.get(), "Dendranthos Button");
+
+        // Dendrymycos
+        add(DDBlocks.DENDRYMYCOS_LOG.get(), "Dendrymycos Log");
+        add(DDBlocks.DENDRYMYCOS_WOOD.get(), "Dendrymycos Wood");
+        add(DDBlocks.DENDRYMYCOS_PLANKS.get(), "Dendrymycos Planks");
+        add(DDBlocks.DENDRYMYCOS_STAIRS.get(), "Dendrymycos Stairs");
+        add(DDBlocks.DENDRYMYCOS_SLAB.get(), "Dendrymycos Slab");
+        add(DDBlocks.DENDRYMYCOS_FENCE.get(), "Dendrymycos Fence");
+        add(DDBlocks.DENDRYMYCOS_FENCE_GATE.get(), "Dendrymycos Fence Gate");
+        add(DDBlocks.DENDRYMYCOS_PRESSURE_PLATE.get(), "Dendrymycos Pressure Plate");
+        add(DDBlocks.DENDRYMYCOS_BUTTON.get(), "Dendrymycos Button");
+        add(DDBlocks.DENDRYMYCOS_CAP_BLUE.get(), "Dendrymycos Cap Blue");
+        add(DDBlocks.DENDRYMYCOS_CAP_GREEN.get(), "Dendrymycos Cap Green");
+
+
 //        // Limestone
 //        add(DDBlocks.LIMESTONE.get(), "Limestone");
 //        add(DDBlocks.LIMESTONE_STAIRS.get(), "Limestone Stairs");
@@ -175,6 +200,23 @@ public class DDLanguageProvider extends LanguageProvider {
         add(DDBlocks.ISLATE_BRICK_SLAB.get(), "Islate Brick Slab");
         add(DDBlocks.ISLATE_BRICK_WALL.get(), "Islate Brick Wall");
 //
+         // Rhyolite
+        add(DDBlocks.RHYOLITE.get(), "Rhyolite");
+        add(DDBlocks.RHYOLITE_STAIRS.get(), "Rhyolite Stairs");
+        add(DDBlocks.RHYOLITE_SLAB.get(), "Rhyolite Slab");
+        add(DDBlocks.RHYOLITE_WALL.get(), "Rhyolite Wall");
+
+        add(DDBlocks.RHYOLITE_BRICKS.get(), "Rhyolite Bricks");
+        add(DDBlocks.RHYOLITE_BRICK_STAIRS.get(), "Rhyolite Brick Stairs");
+        add(DDBlocks.RHYOLITE_BRICK_SLAB.get(), "Rhyolite Brick Slab");
+        add(DDBlocks.RHYOLITE_BRICK_WALL.get(), "Rhyolite Brick Wall");
+
+        add(DDBlocks.RHYOLITE_TILES.get(), "Rhyolite Tiles");
+        add(DDBlocks.RHYOLITE_TILE_STAIRS.get(), "Rhyolite Tile Stairs");
+        add(DDBlocks.RHYOLITE_TILE_SLAB.get(), "Rhyolite Tile Slab");
+        add(DDBlocks.RHYOLITE_TILE_WALL.get(), "Rhyolite Tile Wall");
+
+
 //        // Soil
         add(DDBlocks.FERTILE_SOIL.get(), "Fertile Soil");
 //        add(DDBlocks.FERTILE_PLOT.get(), "Fertile Plot");

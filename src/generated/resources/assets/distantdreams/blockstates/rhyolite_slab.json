@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "distantdreams:block/rhyolite_slab"
+    },
+    "type=double": {
+      "model": "distantdreams:block/rhyolite"
+    },
+    "type=top": {
+      "model": "distantdreams:block/rhyolite_slab_top"
+    }
+  }
+}

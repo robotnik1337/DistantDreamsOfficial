@@ -106,6 +106,31 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(DDBlocks.SEQUOIA_SAPLING.get());
         dropPottedContents(DDBlocks.POTTED_SEQUOIA_SAPLING.get());
 
+        dropSelf(DDBlocks.DENDRANTHOS_LOG.get());
+        dropSelf(DDBlocks.DENDRANTHOS_WOOD.get());
+        dropSelf(DDBlocks.DENDRANTHOS_PLANKS.get());
+        dropSelf(DDBlocks.DENDRANTHOS_STAIRS.get());
+        add(DDBlocks.DENDRANTHOS_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.DENDRANTHOS_SLAB.get()));
+        dropSelf(DDBlocks.DENDRANTHOS_PRESSURE_PLATE.get());
+        dropSelf(DDBlocks.DENDRANTHOS_BUTTON.get());
+        dropSelf(DDBlocks.DENDRANTHOS_FENCE.get());
+        dropSelf(DDBlocks.DENDRANTHOS_FENCE_GATE.get());
+
+        dropSelf(DDBlocks.DENDRYMYCOS_LOG.get());
+        dropSelf(DDBlocks.DENDRYMYCOS_WOOD.get());
+        dropSelf(DDBlocks.DENDRYMYCOS_PLANKS.get());
+        dropSelf(DDBlocks.DENDRYMYCOS_STAIRS.get());
+        add(DDBlocks.DENDRYMYCOS_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.DENDRYMYCOS_SLAB.get()));
+        dropSelf(DDBlocks.DENDRYMYCOS_PRESSURE_PLATE.get());
+        dropSelf(DDBlocks.DENDRYMYCOS_BUTTON.get());
+        dropSelf(DDBlocks.DENDRYMYCOS_FENCE.get());
+        dropSelf(DDBlocks.DENDRYMYCOS_FENCE_GATE.get());
+        dropSelf(DDBlocks.DENDRYMYCOS_CAP_BLUE.get());
+        dropSelf(DDBlocks.DENDRYMYCOS_CAP_GREEN.get());
+
+
         add(DDBlocks.FERTILE_SOIL.get(),
                 block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
 
@@ -150,6 +175,23 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         add(DDBlocks.ISLATE_BRICK_SLAB.get(),
                 _ -> createSlabItemTable(DDBlocks.ISLATE_BRICK_SLAB.get()));
         dropSelf(DDBlocks.ISLATE_BRICK_WALL.get());
+
+        dropSelf(DDBlocks.RHYOLITE.get());
+        dropSelf(DDBlocks.RHYOLITE_STAIRS.get());
+        add(DDBlocks.RHYOLITE_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.RHYOLITE_SLAB.get()));
+        dropSelf(DDBlocks.RHYOLITE_WALL.get());
+        dropSelf(DDBlocks.RHYOLITE_BRICKS.get());
+        dropSelf(DDBlocks.RHYOLITE_BRICK_STAIRS.get());
+        add(DDBlocks.RHYOLITE_BRICK_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.RHYOLITE_BRICK_SLAB.get()));
+        dropSelf(DDBlocks.RHYOLITE_BRICK_WALL.get());
+        dropSelf(DDBlocks.RHYOLITE_TILES.get());
+        dropSelf(DDBlocks.RHYOLITE_TILE_STAIRS.get());
+        add(DDBlocks.RHYOLITE_TILE_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.RHYOLITE_TILE_SLAB.get()));
+        dropSelf(DDBlocks.RHYOLITE_TILE_WALL.get());
+
     }
 
     @Override

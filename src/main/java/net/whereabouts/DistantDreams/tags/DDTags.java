@@ -27,6 +27,7 @@ public class DDTags {
         public static final TagKey<Item> CHARRED_LOGS = createTag("charred_logs");
         public static final TagKey<Item> EUCALYPTUS_LOGS = createTag("eucalyptus_logs");
         public static final TagKey<Item> SEQUOIA_LOGS = createTag("sequoia_logs");
+        public static final TagKey<Item> PETRIFIED_LOGS = createTag("petrified_logs");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, name));
