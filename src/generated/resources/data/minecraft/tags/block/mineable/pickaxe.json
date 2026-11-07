@@ -44,6 +44,18 @@
     "distantdreams:islate_bricks",
     "distantdreams:islate_brick_stairs",
     "distantdreams:islate_brick_slab",
-    "distantdreams:islate_brick_wall"
+    "distantdreams:islate_brick_wall",
+    "distantdreams:rhyolite",
+    "distantdreams:rhyolite_stairs",
+    "distantdreams:rhyolite_slab",
+    "distantdreams:rhyolite_wall",
+    "distantdreams:rhyolite_bricks",
+    "distantdreams:rhyolite_brick_stairs",
+    "distantdreams:rhyolite_brick_slab",
+    "distantdreams:rhyolite_brick_wall",
+    "distantdreams:rhyolite_tiles",
+    "distantdreams:rhyolite_tile_stairs",
+    "distantdreams:rhyolite_tile_slab",
+    "distantdreams:rhyolite_tile_wall"
   ]
 }

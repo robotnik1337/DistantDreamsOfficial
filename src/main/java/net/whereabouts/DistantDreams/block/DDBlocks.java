@@ -261,7 +261,75 @@ public class DDBlocks {
             properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SEQUOIA_SAPLING, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT));
 
+    // Dendranthos
+    public static final DeferredBlock<DDWoodLogBlock> DENDRANTHOS_LOG = registerBlockItem("dendranthos_log", DDWoodLogBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
 
+    public static final DeferredBlock<DDWoodLogBlock> DENDRANTHOS_WOOD = registerBlockItem("dendranthos_wood", DDWoodLogBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+
+    public static final DeferredBlock<Block> DENDRANTHOS_PLANKS = registerBlockItem("dendranthos_planks", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+
+    public static final DeferredBlock<StairBlock> DENDRANTHOS_STAIRS = registerBlockItem("dendranthos_stairs",
+            properties -> new StairBlock(DENDRANTHOS_PLANKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(DENDRANTHOS_PLANKS.get()));
+
+    public static final DeferredBlock<SlabBlock> DENDRANTHOS_SLAB = registerBlockItem("dendranthos_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
+
+    public static final DeferredBlock<PressurePlateBlock> DENDRANTHOS_PRESSURE_PLATE = registerBlockItem("dendranthos_pressure_plate",
+            properties -> new PressurePlateBlock(DDWoods.DENDRANTHOS_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
+
+    public static final DeferredBlock<ButtonBlock> DENDRANTHOS_BUTTON = registerBlockItem("dendranthos_button",
+            properties -> new ButtonBlock(DDWoods.DENDRANTHOS_WOOD_SET, 30, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
+
+    public static final DeferredBlock<FenceBlock> DENDRANTHOS_FENCE = registerBlockItem("dendranthos_fence", FenceBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
+
+    public static final DeferredBlock<FenceGateBlock> DENDRANTHOS_FENCE_GATE = registerBlockItem("dendranthos_fence_gate",
+            properties -> new FenceGateBlock(DDWoods.DENDRANTHOS_WOOD_TYPE, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
+
+    // Dendrymycos
+    public static final DeferredBlock<DDWoodLogBlock> DENDRYMYCOS_LOG = registerBlockItem("dendrymycos_log", DDWoodLogBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+
+    public static final DeferredBlock<DDWoodLogBlock> DENDRYMYCOS_WOOD = registerBlockItem("dendrymycos_wood", DDWoodLogBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+
+    public static final DeferredBlock<Block> DENDRYMYCOS_PLANKS = registerBlockItem("dendrymycos_planks", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+
+    public static final DeferredBlock<StairBlock> DENDRYMYCOS_STAIRS = registerBlockItem("dendrymycos_stairs",
+            properties -> new StairBlock(DENDRYMYCOS_PLANKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(DENDRYMYCOS_PLANKS.get()));
+
+    public static final DeferredBlock<SlabBlock> DENDRYMYCOS_SLAB = registerBlockItem("dendrymycos_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
+
+    public static final DeferredBlock<PressurePlateBlock> DENDRYMYCOS_PRESSURE_PLATE = registerBlockItem("dendrymycos_pressure_plate",
+            properties -> new PressurePlateBlock(DDWoods.DENDRYMYCOS_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
+
+    public static final DeferredBlock<ButtonBlock> DENDRYMYCOS_BUTTON = registerBlockItem("dendrymycos_button",
+            properties -> new ButtonBlock(DDWoods.DENDRYMYCOS_WOOD_SET, 30, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
+
+    public static final DeferredBlock<FenceBlock> DENDRYMYCOS_FENCE = registerBlockItem("dendrymycos_fence", FenceBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
+
+    public static final DeferredBlock<FenceGateBlock> DENDRYMYCOS_FENCE_GATE = registerBlockItem("dendrymycos_fence_gate",
+            properties -> new FenceGateBlock(DDWoods.DENDRYMYCOS_WOOD_TYPE, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
+
+    public static final DeferredBlock<Block> DENDRYMYCOS_CAP_BLUE = registerBlockItem("dendrymycos_cap_blue", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
+
+    public static final DeferredBlock<Block> DENDRYMYCOS_CAP_GREEN = registerBlockItem("dendrymycos_cap_green", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
 
     // Fertile
     public static final DeferredBlock<@NotNull FertileSoilBlock> FERTILE_SOIL = registerBlockItem("fertile_soil", FertileSoilBlock::new,
@@ -417,7 +485,44 @@ public class DDBlocks {
 
 
     // Rhyolite
+    public static final DeferredBlock<Block> RHYOLITE = registerBlockItem("rhyolite",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE));
 
+    public static final DeferredBlock<StairBlock> RHYOLITE_STAIRS = registerBlockItem("rhyolite_stairs",
+            properties -> new StairBlock(RHYOLITE.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(RHYOLITE.get()));
+
+    public static final DeferredBlock<SlabBlock> RHYOLITE_SLAB = registerBlockItem("rhyolite_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_SLAB));
+
+    public static final DeferredBlock<WallBlock> RHYOLITE_WALL = registerBlockItem("rhyolite_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_WALL));
+
+    public static final DeferredBlock<Block> RHYOLITE_BRICKS = registerBlockItem("rhyolite_bricks",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE));
+
+    public static final DeferredBlock<StairBlock> RHYOLITE_BRICK_STAIRS = registerBlockItem("rhyolite_brick_stairs",
+            properties -> new StairBlock(RHYOLITE_BRICKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(RHYOLITE_BRICKS.get()));
+
+    public static final DeferredBlock<SlabBlock> RHYOLITE_BRICK_SLAB = registerBlockItem("rhyolite_brick_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_SLAB));
+
+    public static final DeferredBlock<WallBlock> RHYOLITE_BRICK_WALL = registerBlockItem("rhyolite_brick_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_WALL));
+
+    public static final DeferredBlock<Block> RHYOLITE_TILES = registerBlockItem("rhyolite_tiles",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_TILES));
+
+    public static final DeferredBlock<StairBlock> RHYOLITE_TILE_STAIRS = registerBlockItem("rhyolite_tile_stairs",
+            properties -> new StairBlock(RHYOLITE_TILES.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(RHYOLITE_TILES.get()));
+
+    public static final DeferredBlock<SlabBlock> RHYOLITE_TILE_SLAB = registerBlockItem("rhyolite_tile_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_TILE_SLAB));
+
+    public static final DeferredBlock<WallBlock> RHYOLITE_TILE_WALL = registerBlockItem("rhyolite_tile_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_TILE_WALL));
 
     // *** HELPER METHODS ***
     private static <T extends Block> DeferredBlock<@NotNull T> registerBlock(String name, Function<BlockBehaviour.Properties, T> block,

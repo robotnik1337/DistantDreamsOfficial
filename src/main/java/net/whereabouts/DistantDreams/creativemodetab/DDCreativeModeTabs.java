@@ -84,6 +84,26 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.SEQUOIA_LEAVES.get());
                         output.accept(DDBlocks.SEQUOIA_SAPLING.get());
 
+                        output.accept(DDBlocks.DENDRANTHOS_LOG.get());
+                        output.accept(DDBlocks.DENDRANTHOS_WOOD.get());
+                        output.accept(DDBlocks.DENDRANTHOS_PLANKS.get());
+                        output.accept(DDBlocks.DENDRANTHOS_STAIRS.get());
+                        output.accept(DDBlocks.DENDRANTHOS_SLAB.get());
+                        output.accept(DDBlocks.DENDRANTHOS_FENCE.get());
+                        output.accept(DDBlocks.DENDRANTHOS_FENCE_GATE.get());
+                        output.accept(DDBlocks.DENDRANTHOS_PRESSURE_PLATE.get());
+
+                        output.accept(DDBlocks.DENDRYMYCOS_LOG.get());
+                        output.accept(DDBlocks.DENDRYMYCOS_WOOD.get());
+                        output.accept(DDBlocks.DENDRYMYCOS_PLANKS.get());
+                        output.accept(DDBlocks.DENDRYMYCOS_STAIRS.get());
+                        output.accept(DDBlocks.DENDRYMYCOS_SLAB.get());
+                        output.accept(DDBlocks.DENDRYMYCOS_FENCE.get());
+                        output.accept(DDBlocks.DENDRYMYCOS_FENCE_GATE.get());
+                        output.accept(DDBlocks.DENDRYMYCOS_PRESSURE_PLATE.get());
+                        output.accept(DDBlocks.DENDRYMYCOS_CAP_BLUE.get());
+                        output.accept(DDBlocks.DENDRYMYCOS_CAP_GREEN.get());
+
                         output.accept(DDBlocks.FERTILE_SOIL.get());
 
                         output.accept(DDBlocks.DISTANT_GRASS.get());
@@ -122,6 +142,19 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.ISLATE_BRICK_STAIRS.get());
                         output.accept(DDBlocks.ISLATE_BRICK_SLAB.get());
                         output.accept(DDBlocks.ISLATE_BRICK_WALL.get());
+
+                        output.accept(DDBlocks.RHYOLITE.get());
+                        output.accept(DDBlocks.RHYOLITE_STAIRS.get());
+                        output.accept(DDBlocks.RHYOLITE_SLAB.get());
+                        output.accept(DDBlocks.RHYOLITE_WALL.get());
+                        output.accept(DDBlocks.RHYOLITE_BRICKS.get());
+                        output.accept(DDBlocks.RHYOLITE_BRICK_STAIRS.get());
+                        output.accept(DDBlocks.RHYOLITE_BRICK_SLAB.get());
+                        output.accept(DDBlocks.RHYOLITE_BRICK_WALL.get());
+                        output.accept(DDBlocks.RHYOLITE_TILES.get());
+                        output.accept(DDBlocks.RHYOLITE_TILE_STAIRS.get());
+                        output.accept(DDBlocks.RHYOLITE_TILE_SLAB.get());
+                        output.accept(DDBlocks.RHYOLITE_TILE_WALL.get());
 
                         output.accept(DDItems.MUSIC_DISC_HYPNAGOGIA.get());
 

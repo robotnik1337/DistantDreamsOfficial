@@ -117,6 +117,28 @@ public class DDModelProvider extends ModelProvider {
         blockModels.createTrivialBlock(DDBlocks.SEQUOIA_LEAVES.get(), TexturedModel.LEAVES);
         blockModels.createPlantWithDefaultItem(DDBlocks.SEQUOIA_SAPLING.get(), DDBlocks.POTTED_SEQUOIA_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
 
+        // Dendranthos
+        blockModels.woodProvider(DDBlocks.DENDRANTHOS_LOG.get()).logWithHorizontal(DDBlocks.DENDRANTHOS_LOG.get()).wood(DDBlocks.DENDRANTHOS_WOOD.get());
+        blockModels.family(DDBlocks.DENDRANTHOS_PLANKS.get())
+                .fence(DDBlocks.DENDRANTHOS_FENCE.get())
+                .fenceGate(DDBlocks.DENDRANTHOS_FENCE_GATE.get())
+                .stairs(DDBlocks.DENDRANTHOS_STAIRS.get())
+                .slab(DDBlocks.DENDRANTHOS_SLAB.get())
+                .button(DDBlocks.DENDRANTHOS_BUTTON.get())
+                .pressurePlate(DDBlocks.DENDRANTHOS_PRESSURE_PLATE.get());
+
+        // Dendrymycos
+        blockModels.woodProvider(DDBlocks.DENDRYMYCOS_LOG.get()).logWithHorizontal(DDBlocks.DENDRYMYCOS_LOG.get()).wood(DDBlocks.DENDRYMYCOS_WOOD.get());
+        blockModels.family(DDBlocks.DENDRYMYCOS_PLANKS.get())
+                .fence(DDBlocks.DENDRYMYCOS_FENCE.get())
+                .fenceGate(DDBlocks.DENDRYMYCOS_FENCE_GATE.get())
+                .stairs(DDBlocks.DENDRYMYCOS_STAIRS.get())
+                .slab(DDBlocks.DENDRYMYCOS_SLAB.get())
+                .button(DDBlocks.DENDRYMYCOS_BUTTON.get())
+                .pressurePlate(DDBlocks.DENDRYMYCOS_PRESSURE_PLATE.get());
+        blockModels.createTrivialBlock(DDBlocks.DENDRYMYCOS_CAP_BLUE.get(), TexturedModel.LEAVES);
+        blockModels.createTrivialBlock(DDBlocks.DENDRYMYCOS_CAP_GREEN.get(), TexturedModel.LEAVES);
+
         // Fertile
         TextureMapping fertileSoilTextureMapping = new TextureMapping()
                 .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(DDBlocks.FERTILE_SOIL.get(), "_bottom"))
@@ -184,6 +206,20 @@ public class DDModelProvider extends ModelProvider {
                 .wall(DDBlocks.ISLATE_BRICK_WALL.get());
 
         // Rhyolite
+        blockModels.family(DDBlocks.RHYOLITE.get())
+                .stairs(DDBlocks.RHYOLITE_STAIRS.get())
+                .slab(DDBlocks.RHYOLITE_SLAB.get())
+                .wall(DDBlocks.RHYOLITE_WALL.get());
+
+        blockModels.family(DDBlocks.RHYOLITE_BRICKS.get())
+                .stairs(DDBlocks.RHYOLITE_BRICK_STAIRS.get())
+                .slab(DDBlocks.RHYOLITE_BRICK_SLAB.get())
+                .wall(DDBlocks.RHYOLITE_BRICK_WALL.get());
+
+        blockModels.family(DDBlocks.RHYOLITE_TILES.get())
+                .stairs(DDBlocks.RHYOLITE_TILE_STAIRS.get())
+                .slab(DDBlocks.RHYOLITE_TILE_SLAB.get())
+                .wall(DDBlocks.RHYOLITE_TILE_WALL.get());
 
 
         // *** ITEMS ***
