@@ -90,7 +90,19 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.ISLATE_BRICKS.get())
                 .add(DDBlocks.ISLATE_BRICK_STAIRS.get())
                 .add(DDBlocks.ISLATE_BRICK_SLAB.get())
-                .add(DDBlocks.ISLATE_BRICK_WALL.get());;
+                .add(DDBlocks.ISLATE_BRICK_WALL.get())
+                .add(DDBlocks.RHYOLITE.get())
+                .add(DDBlocks.RHYOLITE_STAIRS.get())
+                .add(DDBlocks.RHYOLITE_SLAB.get())
+                .add(DDBlocks.RHYOLITE_WALL.get())
+                .add(DDBlocks.RHYOLITE_BRICKS.get())
+                .add(DDBlocks.RHYOLITE_BRICK_STAIRS.get())
+                .add(DDBlocks.RHYOLITE_BRICK_SLAB.get())
+                .add(DDBlocks.RHYOLITE_BRICK_WALL.get())
+                .add(DDBlocks.RHYOLITE_TILES.get())
+                .add(DDBlocks.RHYOLITE_TILE_STAIRS.get())
+                .add(DDBlocks.RHYOLITE_TILE_SLAB.get())
+                .add(DDBlocks.RHYOLITE_TILE_WALL.get());
 
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .remove(DDBlocks.CHARRED_FENCE.get());
@@ -101,13 +113,17 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.PLANKS)
                 .add(DDBlocks.ANCIENT_OAK_PLANKS.get())
                 .add(DDBlocks.EUCALYPTUS_PLANKS.get())
-                .add(DDBlocks.SEQUOIA_PLANKS.get());
+                .add(DDBlocks.SEQUOIA_PLANKS.get())
+                .add(DDBlocks.DENDRANTHOS_PLANKS.get())
+                .add(DDBlocks.DENDRYMYCOS_PLANKS.get());
 
         tag(BlockTags.LOGS_THAT_BURN)
                 .add(DDBlocks.EUCALYPTUS_LOG.get())
                 .add(DDBlocks.STRIPPED_EUCALYPTUS_LOG.get())
                 .add(DDBlocks.SEQUOIA_LOG.get())
-                .add(DDBlocks.STRIPPED_SEQUOIA_LOG.get());
+                .add(DDBlocks.STRIPPED_SEQUOIA_LOG.get())
+                .add(DDBlocks.DENDRANTHOS_LOG.get())
+                .add(DDBlocks.DENDRYMYCOS_LOG.get());
 
         tag(BlockTags.OVERWORLD_NATURAL_LOGS)
                 .add(DDBlocks.EUCALYPTUS_LOG.get())
@@ -116,22 +132,30 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.WOODEN_STAIRS)
                 .add(DDBlocks.ANCIENT_OAK_STAIRS.get())
                 .add(DDBlocks.EUCALYPTUS_STAIRS.get())
-                .add(DDBlocks.SEQUOIA_STAIRS.get());
+                .add(DDBlocks.SEQUOIA_STAIRS.get())
+                .add(DDBlocks.DENDRANTHOS_STAIRS.get())
+                .add(DDBlocks.DENDRYMYCOS_STAIRS.get());;
 
         tag(BlockTags.WOODEN_SLABS)
                 .add(DDBlocks.ANCIENT_OAK_SLAB.get())
                 .add(DDBlocks.EUCALYPTUS_SLAB.get())
-                .add(DDBlocks.SEQUOIA_SLAB.get());
+                .add(DDBlocks.SEQUOIA_SLAB.get())
+                .add(DDBlocks.DENDRANTHOS_SLAB.get())
+                .add(DDBlocks.DENDRYMYCOS_SLAB.get());;
 
         tag(BlockTags.WOODEN_PRESSURE_PLATES)
                 .add(DDBlocks.ANCIENT_OAK_PRESSURE_PLATE.get())
                 .add(DDBlocks.EUCALYPTUS_PRESSURE_PLATE.get())
-                .add(DDBlocks.SEQUOIA_PRESSURE_PLATE.get());
+                .add(DDBlocks.SEQUOIA_PRESSURE_PLATE.get())
+                .add(DDBlocks.DENDRANTHOS_PRESSURE_PLATE.get())
+                .add(DDBlocks.DENDRYMYCOS_PRESSURE_PLATE.get());;
 
         tag(BlockTags.WOODEN_BUTTONS)
                 .add(DDBlocks.ANCIENT_OAK_BUTTON.get())
                 .add(DDBlocks.EUCALYPTUS_BUTTON.get())
-                .add(DDBlocks.SEQUOIA_BUTTON.get());
+                .add(DDBlocks.SEQUOIA_BUTTON.get())
+                .add(DDBlocks.DENDRANTHOS_BUTTON.get())
+                .add(DDBlocks.DENDRYMYCOS_BUTTON.get());
 
         tag(BlockTags.WOODEN_FENCES)
                 .add(DDBlocks.ANCIENT_OAK_FENCE.get())
@@ -142,7 +166,9 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.FENCE_GATES)
                 .add(DDBlocks.ANCIENT_OAK_FENCE_GATE.get())
                 .add(DDBlocks.EUCALYPTUS_FENCE_GATE.get())
-                .add(DDBlocks.SEQUOIA_FENCE_GATE.get());
+                .add(DDBlocks.SEQUOIA_FENCE_GATE.get())
+                .add(DDBlocks.DENDRANTHOS_FENCE_GATE.get())
+                .add(DDBlocks.DENDRYMYCOS_FENCE_GATE.get());
 
         tag(BlockTags.WOODEN_DOORS)
                 .add(DDBlocks.ANCIENT_OAK_DOOR.get())
@@ -157,6 +183,10 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.LEAVES)
                 .add(DDBlocks.EUCALYPTUS_LEAVES.get())
                 .add(DDBlocks.SEQUOIA_LEAVES.get());
+
+        tag(BlockTags.WART_BLOCKS)
+                .add(DDBlocks.DENDRYMYCOS_CAP_GREEN.get())
+                .add(DDBlocks.DENDRYMYCOS_CAP_BLUE.get());
 
         tag(BlockTags.DIRT)
                 .add(DDBlocks.FERTILE_SOIL.get());
