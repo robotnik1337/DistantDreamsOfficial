@@ -1,14 +1,25 @@
 package net.whereabouts.DistantDreams;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.color.block.BlockTintSource;
+import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.block.BlockAndTintGetter;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.ARGB;
+import net.minecraft.world.level.GrassColor;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.whereabouts.DistantDreams.block.DDBlocks;
+
+import java.util.List;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = DistantDreams.MOD_ID, dist = Dist.CLIENT)
@@ -27,5 +38,19 @@ public class DistantDreamsClient {
         // Some client setup code
         DistantDreams.LOGGER.info("HELLO FROM CLIENT SETUP");
         DistantDreams.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+    }
+
+    @SubscribeEvent
+    static void registerBlockTints(RegisterColorHandlersEvent.BlockTintSources event) {
+        event.register(
+                List.of(new BlockTintSource() {
+                    @Override
+                    public int color(BlockState state) { return ARGB.opaque(GrassColor.getDefaultColor()); }
+
+                    @Override
+                    public int colorInWorld(BlockState state, BlockAndTintGetter level, BlockPos pos) { return ARGB.opaque(BiomeColors.getAverageGrassColor(level, pos)); }
+                }),
+                DDBlocks.DISTANT_GRASS.get()
+        );
     }
 }

@@ -1,24 +1,59 @@
 package net.whereabouts.DistantDreams.datagen;
 
+import net.minecraft.client.color.item.GrassColorSource;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
-import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.block.dispatch.Variant;
+import net.minecraft.client.renderer.item.CuboidItemModelWrapper;
+import net.minecraft.client.resources.model.sprite.Material;
+import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplateBuilder;
 import net.whereabouts.DistantDreams.DistantDreams;
 import net.whereabouts.DistantDreams.block.DDBlocks;
 import net.whereabouts.DistantDreams.item.DDItems;
 import org.jspecify.annotations.NonNull;
 
+import java.util.List;
+import java.util.Optional;
+
 public class DDModelProvider extends ModelProvider {
     public DDModelProvider(PackOutput output) {
         super(output, DistantDreams.MOD_ID);
     }
+
+    public static final TextureSlot OVERLAY = TextureSlot.create("overlay");
+    public static final ModelTemplate TINTED_GRASS_BLOCK = ExtendedModelTemplateBuilder.builder()
+            .parent(Identifier.withDefaultNamespace("block/block"))
+//            .requiredTextureSlot(TextureSlot.PARTICLE)
+            .requiredTextureSlot(TextureSlot.BOTTOM)
+            .requiredTextureSlot(TextureSlot.TOP)
+            .requiredTextureSlot(TextureSlot.SIDE)
+            .requiredTextureSlot(OVERLAY)
+
+            // dirt bottom, grass top (tinted), dirt-with-grass-edge sides
+            .element(e -> e.from(0, 0, 0).to(16, 16, 16)
+                    .face(Direction.DOWN, f -> f.texture(TextureSlot.BOTTOM).cullface(Direction.DOWN))
+                    .face(Direction.UP,    f -> f.texture(TextureSlot.TOP).cullface(Direction.UP).tintindex(0))
+                    .face(Direction.NORTH, f -> f.texture(TextureSlot.SIDE).cullface(Direction.NORTH))
+                    .face(Direction.SOUTH, f -> f.texture(TextureSlot.SIDE).cullface(Direction.SOUTH))
+                    .face(Direction.WEST,  f -> f.texture(TextureSlot.SIDE).cullface(Direction.WEST))
+                    .face(Direction.EAST,  f -> f.texture(TextureSlot.SIDE).cullface(Direction.EAST)))
+
+            // Overlay cube: the grayscale grass fringe on the sides (tinted)
+            .element(e -> e.from(0, 0, 0).to(16, 16, 16)
+                    .face(Direction.NORTH, f -> f.texture(OVERLAY).cullface(Direction.NORTH).tintindex(0))
+                    .face(Direction.SOUTH, f -> f.texture(OVERLAY).cullface(Direction.SOUTH).tintindex(0))
+                    .face(Direction.WEST,  f -> f.texture(OVERLAY).cullface(Direction.WEST).tintindex(0))
+                    .face(Direction.EAST,  f -> f.texture(OVERLAY).cullface(Direction.EAST).tintindex(0)))
+            .build();
 
     @Override
     protected void registerModels(@NonNull BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -91,6 +126,19 @@ public class DDModelProvider extends ModelProvider {
         Variant plainFertileSoilVariant = BlockModelGenerators.plainModel(ModelTemplates.CUBE_BOTTOM_TOP.create(DDBlocks.FERTILE_SOIL.get(), fertileSoilTextureMapping, blockModels.modelOutput));
         blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(DDBlocks.FERTILE_SOIL.get(), BlockModelGenerators.createRotatedVariants(plainFertileSoilVariant)));
 
+
+        // Distant
+        TextureMapping distantGrassTextureMapping = new TextureMapping()
+                .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(DDBlocks.DISTANT_DIRT.get()))
+                .copyForced(TextureSlot.BOTTOM, TextureSlot.PARTICLE)
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(DDBlocks.DISTANT_GRASS.get(), "_top"))
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(DDBlocks.DISTANT_GRASS.get(), "_side"))
+                .put(OVERLAY, TextureMapping.getBlockTexture(DDBlocks.DISTANT_GRASS.get(), "_side_overlay"));
+        Variant plainDistantGrassVariant = BlockModelGenerators.plainModel(TINTED_GRASS_BLOCK.create(DDBlocks.DISTANT_GRASS.get(), distantGrassTextureMapping, blockModels.modelOutput));
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(DDBlocks.DISTANT_GRASS.get(), BlockModelGenerators.createRotatedVariants(plainDistantGrassVariant)));
+        blockModels.createItemWithGrassTint(DDBlocks.DISTANT_GRASS.get());
+        blockModels.createTrivialCube(DDBlocks.DISTANT_DIRT.get());
+
         // Distant Stone
         blockModels.family(DDBlocks.DISTANT_STONE.get())
                 .stairs(DDBlocks.DISTANT_STONE_STAIRS.get())
@@ -140,5 +188,36 @@ public class DDModelProvider extends ModelProvider {
 
         // *** ITEMS ***
         itemModels.generateFlatItem(DDItems.MUSIC_DISC_HYPNAGOGIA.get(), ModelTemplates.FLAT_ITEM);
+
+
+    }
+
+    // *** HELPERS ***
+    private void createTintedGrassBlockWithItem(@NonNull BlockModelGenerators blockModels, ItemModelGenerators itemModels, Block grassBlock) {
+        String grassBlockName = BuiltInRegistries.BLOCK.getKey(grassBlock).getPath();
+        Identifier modelLoc = TINTED_GRASS_BLOCK.create(
+                grassBlock,
+                new TextureMapping()
+                        .put(TextureSlot.PARTICLE, new Material(modLocation("block/" + grassBlockName + "_bottom")))
+                        .put(TextureSlot.BOTTOM,   new Material(modLocation("block/" + grassBlockName + "_bottom")))
+                        .put(TextureSlot.TOP,      new Material(modLocation("block/" + grassBlockName + "_top")))
+                        .put(TextureSlot.SIDE,     new Material(modLocation("block/" + grassBlockName + "_side")))
+                        .put(OVERLAY,              new Material(modLocation("block/" + grassBlockName + "_side_overlay"))),
+                blockModels.modelOutput);
+
+        // Blockstate pointing at that model
+        blockModels.blockStateOutput.accept(
+                MultiVariantGenerator.dispatch(grassBlock,
+                        BlockModelGenerators.variant(new Variant(modelLoc))));
+
+        itemModels.itemModelOutput.accept(
+                DDBlocks.DISTANT_GRASS.asItem(),
+                new CuboidItemModelWrapper.Unbaked(
+                        modelLoc,                       // the block model from step 1
+                        Optional.empty(),
+                        List.of(/* vanilla grass ItemTintSource, e.g. new GrassColorSource(0.5F, 1.0F) */)
+                )
+        );
+
     }
 }

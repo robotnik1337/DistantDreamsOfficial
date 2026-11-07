@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "distantdreams:block/distant_grass"
+      },
+      {
+        "model": "distantdreams:block/distant_grass",
+        "y": 90
+      },
+      {
+        "model": "distantdreams:block/distant_grass",
+        "y": 180
+      },
+      {
+        "model": "distantdreams:block/distant_grass",
+        "y": 270
+      }
+    ]
+  }
+}

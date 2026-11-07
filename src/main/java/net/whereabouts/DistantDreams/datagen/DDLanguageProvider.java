@@ -178,6 +178,9 @@ public class DDLanguageProvider extends LanguageProvider {
 //        // Soil
         add(DDBlocks.FERTILE_SOIL.get(), "Fertile Soil");
 //        add(DDBlocks.FERTILE_PLOT.get(), "Fertile Plot");
+
+        add(DDBlocks.DISTANT_GRASS.get(), "Distant Grass");
+        add(DDBlocks.DISTANT_DIRT.get(), "Distant Dirt");
 //
 //        // Peat
 //        add(DDBlocks.PEAT.get(),"Peat");

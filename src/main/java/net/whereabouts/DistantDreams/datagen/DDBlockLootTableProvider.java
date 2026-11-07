@@ -109,6 +109,10 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         add(DDBlocks.FERTILE_SOIL.get(),
                 block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
 
+        add(DDBlocks.DISTANT_GRASS.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
+        dropSelf(DDBlocks.DISTANT_DIRT.get());
+
         dropSelf(DDBlocks.DISTANT_STONE.get());
         dropSelf(DDBlocks.DISTANT_STONE_STAIRS.get());
         add(DDBlocks.DISTANT_STONE_SLAB.get(),

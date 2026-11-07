@@ -86,6 +86,9 @@ public class DDCreativeModeTabs {
 
                         output.accept(DDBlocks.FERTILE_SOIL.get());
 
+                        output.accept(DDBlocks.DISTANT_GRASS.get());
+                        output.accept(DDBlocks.DISTANT_DIRT.get());
+
                         output.accept(DDBlocks.DISTANT_STONE.get());
                         output.accept(DDBlocks.DISTANT_STONE_STAIRS.get());
                         output.accept(DDBlocks.DISTANT_STONE_SLAB.get());
