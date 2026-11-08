@@ -78,9 +78,12 @@ public class DDDimension {
         NoiseBasedChunkGenerator multiBiomeGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(
-                                Pair.of(Climate.parameters(0f, 0f, 0f, 0f, 0f, 0f, 0f), biomes.getOrThrow(Biomes.FOREST)),
-                                Pair.of(Climate.parameters(0f, 0.5f, 0f, 0f, 0f, 1f, 0f), biomes.getOrThrow(DDBiomes.SEQUOIA_FOREST)),
-                                Pair.of(Climate.parameters(0.1f, 0.1f, 0f, 0f, 0f, 0f, 0f), biomes.getOrThrow(DDBiomes.DISTANT_FOREST))
+                                Pair.of(Climate.parameters(0.1f, 0.1f, 0.7f, 0.5f, 0f, 0.2f, 0f), biomes.getOrThrow(DDBiomes.DISTANT_FOREST)),
+                                Pair.of(Climate.parameters(-0.5f, -0.8f, 0.5f, 0.1f, 0f, 0f, 0f), biomes.getOrThrow(DDBiomes.TIMEWORN_MEADOWS)),
+                                Pair.of(Climate.parameters(1f, -0.5f, 0.25f, 0f, 0f, 1f, 0f), biomes.getOrThrow(DDBiomes.ECHOING_DUNES)),
+                                Pair.of(Climate.parameters(0f, -0.3f, 0.2f, 0.3f, 0f, 1f, 0f), biomes.getOrThrow(DDBiomes.ANCESTRAL_PLAINS)),
+                                Pair.of(Climate.parameters(0.8f, 0.8f, 0.05f, 0f, 0f, 1f, 0f), biomes.getOrThrow(DDBiomes.FOREVER_GLADES))
+
                         ))),
                 noiseGenSettings.getOrThrow(NoiseGeneratorSettings.OVERWORLD));
 

@@ -20,7 +20,7 @@
   "downfall": 0.8,
   "effects": {
     "foliage_color": "#2e5d38",
-    "grass_color": "#39863d",
+    "grass_color": "#7dcb52",
     "water_color": "#2d84a6"
   },
   "features": [
@@ -73,12 +73,12 @@
       "minecraft:glow_lichen",
       "minecraft:forest_flowers",
       "minecraft:wildflowers_birch_forest",
-      "minecraft:trees_plains",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_pumpkin",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_firefly_bush_near_water"
+      "minecraft:patch_firefly_bush_near_water",
+      "distantdreams:ancient_oak_placed"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -15,6 +15,7 @@ public class DDTags {
         public static final TagKey<Block> EUCALYPTUS_LOGS = createTag("eucalyptus_logs");
         public static final TagKey<Block> SEQUOIA_LOGS = createTag("sequoia_logs");
         public static final TagKey<Block> PETRIFIED_LOGS = createTag("petrified_logs");
+        public static final TagKey<Block> DD_LOGS = createTag("dd_logs");
 
 
         private static TagKey<Block> createTag(String name) {

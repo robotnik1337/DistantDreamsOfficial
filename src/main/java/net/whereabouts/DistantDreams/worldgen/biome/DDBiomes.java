@@ -20,15 +20,33 @@ import net.whereabouts.DistantDreams.DistantDreams;
 import net.whereabouts.DistantDreams.worldgen.DDPlacedFeatures;
 
 public class DDBiomes {
+    // Overworld Biomes
     public static final ResourceKey<Biome> SEQUOIA_FOREST = ResourceKey.create(Registries.BIOME,
             Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "sequoia_forest"));
 
+    // Distant Realm Biomes
     public static final ResourceKey<Biome> DISTANT_FOREST = ResourceKey.create(Registries.BIOME,
             Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "distant_forest"));
+
+    public static final ResourceKey<Biome> TIMEWORN_MEADOWS = ResourceKey.create(Registries.BIOME,
+            Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "timeworn_meadows"));
+
+    public static final ResourceKey<Biome> ECHOING_DUNES = ResourceKey.create(Registries.BIOME,
+            Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "echoing_dunes"));
+
+    public static final ResourceKey<Biome> ANCESTRAL_PLAINS = ResourceKey.create(Registries.BIOME,
+            Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "ancestral_plains"));
+
+    public static final ResourceKey<Biome> FOREVER_GLADES = ResourceKey.create(Registries.BIOME,
+            Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "forever_glades"));
 
     public static void bootstrap(BootstrapContext<Biome> context) {
         context.register(SEQUOIA_FOREST, sequoiaForest(context));
         context.register(DISTANT_FOREST, distantForest(context));
+        context.register(TIMEWORN_MEADOWS, timewornMeadows(context));
+        context.register(ECHOING_DUNES, echoingDunes(context));
+        context.register(ANCESTRAL_PLAINS, ancestralPlains(context));
+        context.register(FOREVER_GLADES, foreverGlades(context));
     }
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
@@ -121,10 +139,11 @@ public class DDBiomes {
 //        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES)
         BiomeDefaultFeatures.addBirchForestFlowers(biomeBuilder);
 
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
 
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder, true);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DDPlacedFeatures.ANCIENT_OAK_PLACED_KEY);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -140,7 +159,199 @@ public class DDBiomes {
                         .build())
                 .specialEffects((new BiomeSpecialEffects.Builder())
                         .waterColor(0x2d84a6)
-                        .grassColorOverride(0x39863d)
+                        .grassColorOverride(0x7dcb52)
+                        .foliageColorOverride(0x2e5d38)
+                        .build())
+//                        .backgroundMusic(Musics.createGameMusic(ModSounds.HYPNAGOGIA.getHolder().get())).build())
+                .build();
+
+    }
+
+    private static Biome timewornMeadows(BootstrapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 4, 5));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.ELDER_GUARDIAN, 2, 4));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.PUFFERFISH, 4, 8));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.AXOLOTL, 2, 4));
+
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalDistantRealmGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+//        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES)
+        BiomeDefaultFeatures.addBirchForestFlowers(biomeBuilder);
+
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder, true);
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DDPlacedFeatures.ANCIENT_OAK_PLACED_KEY);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.8f)
+                .temperature(0.7f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .putAttributes(EnvironmentAttributeMap.builder()
+                        .set(EnvironmentAttributes.WATER_FOG_COLOR, 0xf6ebbd)
+                        .set(EnvironmentAttributes.SKY_COLOR, 0xB0D4CA)
+                        .set(EnvironmentAttributes.FOG_COLOR, 0xDAF5ED)
+                        .set(EnvironmentAttributes.AMBIENT_SOUNDS, AmbientSounds.LEGACY_CAVE_SETTINGS)
+                        .build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(0x2d84a6)
+                        .grassColorOverride(0xdec663)
+                        .foliageColorOverride(0x2e5d38)
+                        .build())
+//                        .backgroundMusic(Musics.createGameMusic(ModSounds.HYPNAGOGIA.getHolder().get())).build())
+                .build();
+
+    }
+
+    private static Biome echoingDunes(BootstrapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 4, 5));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.ELDER_GUARDIAN, 2, 4));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.PUFFERFISH, 4, 8));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.AXOLOTL, 2, 4));
+
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalDistantRealmGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+//        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES)
+        BiomeDefaultFeatures.addBirchForestFlowers(biomeBuilder);
+
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder, true);
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DDPlacedFeatures.ANCIENT_OAK_PLACED_KEY);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.8f)
+                .temperature(0.7f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .putAttributes(EnvironmentAttributeMap.builder()
+                        .set(EnvironmentAttributes.WATER_FOG_COLOR, 0x2d84a6)
+                        .set(EnvironmentAttributes.SKY_COLOR, 0xB0D4CA)
+                        .set(EnvironmentAttributes.FOG_COLOR, 0xDAF5ED)
+                        .set(EnvironmentAttributes.AMBIENT_SOUNDS, AmbientSounds.LEGACY_CAVE_SETTINGS)
+                        .build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(0x2d84a6)
+                        .grassColorOverride(0x6fd80e)
+                        .foliageColorOverride(0x2e5d38)
+                        .build())
+//                        .backgroundMusic(Musics.createGameMusic(ModSounds.HYPNAGOGIA.getHolder().get())).build())
+                .build();
+
+    }
+
+    private static Biome ancestralPlains(BootstrapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 4, 5));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.ELDER_GUARDIAN, 2, 4));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.PUFFERFISH, 4, 8));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.AXOLOTL, 2, 4));
+
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalDistantRealmGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+//        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES)
+        BiomeDefaultFeatures.addBirchForestFlowers(biomeBuilder);
+
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder, true);
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DDPlacedFeatures.ANCIENT_OAK_PLACED_KEY);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.8f)
+                .temperature(0.7f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .putAttributes(EnvironmentAttributeMap.builder()
+                        .set(EnvironmentAttributes.WATER_FOG_COLOR, 0x2d84a6)
+                        .set(EnvironmentAttributes.SKY_COLOR, 0xB0D4CA)
+                        .set(EnvironmentAttributes.FOG_COLOR, 0xDAF5ED)
+                        .set(EnvironmentAttributes.AMBIENT_SOUNDS, AmbientSounds.LEGACY_CAVE_SETTINGS)
+                        .build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(0x2d84a6)
+                        .grassColorOverride(0x358a2c)
+                        .foliageColorOverride(0x2e5d38)
+                        .build())
+//                        .backgroundMusic(Musics.createGameMusic(ModSounds.HYPNAGOGIA.getHolder().get())).build())
+                .build();
+
+    }
+
+    private static Biome foreverGlades(BootstrapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 4, 5));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.ELDER_GUARDIAN, 2, 4));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.PUFFERFISH, 4, 8));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.AXOLOTL, 2, 4));
+
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalDistantRealmGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+//        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES)
+        BiomeDefaultFeatures.addBirchForestFlowers(biomeBuilder);
+
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder, true);
+//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DDPlacedFeatures.ANCIENT_OAK_PLACED_KEY);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .downfall(0.8f)
+                .temperature(0.7f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .putAttributes(EnvironmentAttributeMap.builder()
+                        .set(EnvironmentAttributes.WATER_FOG_COLOR, 0x357947)
+                        .set(EnvironmentAttributes.SKY_COLOR, 0xB0D4CA)
+                        .set(EnvironmentAttributes.FOG_COLOR, 0xDAF5ED)
+                        .set(EnvironmentAttributes.AMBIENT_SOUNDS, AmbientSounds.LEGACY_CAVE_SETTINGS)
+                        .build())
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .waterColor(0x2d84a6)
+                        .grassColorOverride(0x357947)
                         .foliageColorOverride(0x2e5d38)
                         .build())
 //                        .backgroundMusic(Musics.createGameMusic(ModSounds.HYPNAGOGIA.getHolder().get())).build())

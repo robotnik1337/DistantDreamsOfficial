@@ -7,7 +7,7 @@ import net.whereabouts.DistantDreams.worldgen.DDConfiguredFeatures;
 import java.util.Optional;
 
 public class DDTreeGrowers {
-    public static final TreeGrower ANCIENT_OAK = new TreeGrower(DistantDreams.MOD_ID + "ANCIENT_OAK",
+    public static final TreeGrower ANCIENT_OAK = new TreeGrower(DistantDreams.MOD_ID + "ancient_oak",
             Optional.empty(), Optional.of(DDConfiguredFeatures.ANCIENT_OAK_KEY), Optional.empty());
 
     public static final TreeGrower EUCALYPTUS = new TreeGrower(DistantDreams.MOD_ID + "eucalyptus",

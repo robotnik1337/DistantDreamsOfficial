@@ -43,6 +43,11 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.STRIPPED_SEQUOIA_LOG.get())
                 .add(DDBlocks.STRIPPED_SEQUOIA_WOOD.get());
 
+        tag(DDTags.Blocks.DD_LOGS)
+                .addTag(DDTags.Blocks.ANCIENT_OAK_LOGS)
+                .addTag(DDTags.Blocks.EUCALYPTUS_LOGS)
+                .addTag(DDTags.Blocks.SEQUOIA_LOGS);
+
 
         // *** VANILLA BLOCK TAGS ***
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
@@ -108,7 +113,9 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .remove(DDBlocks.CHARRED_FENCE.get());
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
-                .add(DDBlocks.FERTILE_SOIL.get());
+                .add(DDBlocks.FERTILE_SOIL.get())
+                .add(DDBlocks.DISTANT_GRASS.get())
+                .add(DDBlocks.DISTANT_DIRT.get());
 
         tag(BlockTags.PLANKS)
                 .add(DDBlocks.ANCIENT_OAK_PLANKS.get())
@@ -128,6 +135,8 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.OVERWORLD_NATURAL_LOGS)
                 .add(DDBlocks.EUCALYPTUS_LOG.get())
                 .add(DDBlocks.SEQUOIA_LOG.get());
+
+        tag(BlockTags.PREVENTS_NEARBY_LEAF_DECAY).addTag(DDTags.Blocks.DD_LOGS);
 
         tag(BlockTags.WOODEN_STAIRS)
                 .add(DDBlocks.ANCIENT_OAK_STAIRS.get())
@@ -189,7 +198,12 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.DENDRYMYCOS_CAP_BLUE.get());
 
         tag(BlockTags.DIRT)
-                .add(DDBlocks.FERTILE_SOIL.get());
+                .add(DDBlocks.FERTILE_SOIL.get())
+                .add(DDBlocks.DISTANT_GRASS.get())
+                .add(DDBlocks.DISTANT_DIRT.get());
+
+
+
 
         tag(BlockTags.STAIRS)
                 .add(DDBlocks.CHARRED_STAIRS.get())
