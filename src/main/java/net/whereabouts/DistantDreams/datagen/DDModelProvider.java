@@ -157,8 +157,9 @@ public class DDModelProvider extends ModelProvider {
                 .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(DDBlocks.DISTANT_GRASS.get(), "_side"))
                 .put(OVERLAY, TextureMapping.getBlockTexture(DDBlocks.DISTANT_GRASS.get(), "_side_overlay"));
         Variant plainDistantGrassVariant = BlockModelGenerators.plainModel(TINTED_GRASS_BLOCK.create(DDBlocks.DISTANT_GRASS.get(), distantGrassTextureMapping, blockModels.modelOutput));
+        Identifier plainDistantGrassModel = ModelLocationUtils.getModelLocation(DDBlocks.DISTANT_GRASS.get());
         blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(DDBlocks.DISTANT_GRASS.get(), BlockModelGenerators.createRotatedVariants(plainDistantGrassVariant)));
-        blockModels.createItemWithGrassTint(DDBlocks.DISTANT_GRASS.get());
+        blockModels.registerSimpleTintedItemModel(DDBlocks.DISTANT_GRASS.get(), plainDistantGrassModel, new GrassColorSource());
         blockModels.createTrivialCube(DDBlocks.DISTANT_DIRT.get());
 
         // Distant Stone

@@ -1,7 +1,7 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "distantdreams:item/distant_grass",
+    "model": "distantdreams:block/distant_grass",
     "tints": [
       {
         "type": "minecraft:grass",
