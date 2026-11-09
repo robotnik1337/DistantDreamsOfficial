@@ -265,8 +265,14 @@ public class DDBlocks {
     public static final DeferredBlock<DDWoodLogBlock> DENDRANTHOS_LOG = registerBlockItem("dendranthos_log", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
 
+    public static final DeferredBlock<@NotNull DDWoodLogBlock> STRIPPED_DENDRANTHOS_LOG = registerBlockItem("stripped_dendranthos_log", DDWoodLogBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG));
+
     public static final DeferredBlock<DDWoodLogBlock> DENDRANTHOS_WOOD = registerBlockItem("dendranthos_wood", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+
+    public static final DeferredBlock<@NotNull DDWoodLogBlock> STRIPPED_DENDRANTHOS_WOOD = registerBlockItem("stripped_dendranthos_wood", DDWoodLogBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD));
 
     public static final DeferredBlock<Block> DENDRANTHOS_PLANKS = registerBlockItem("dendranthos_planks", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
@@ -293,12 +299,32 @@ public class DDBlocks {
             properties -> new FenceGateBlock(DDWoods.DENDRANTHOS_WOOD_TYPE, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
 
+    public static final DeferredBlock<@NotNull DoorBlock> DENDRANTHOS_DOOR = registerBlockItem("dendranthos_door",
+            properties -> new DoorBlock(DDWoods.DENDRANTHOS_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
+
+    public static final DeferredBlock<@NotNull TrapDoorBlock> DENDRANTHOS_TRAPDOOR = registerBlockItem("dendranthos_trapdoor",
+            properties -> new TrapDoorBlock(DDWoods.DENDRANTHOS_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
+
+    public static final DeferredBlock<Block> DENDRANTHOS_ANTHER = registerBlockItem("dendranthos_anther", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SHROOMLIGHT));
+
+    public static final DeferredBlock<Block> DENDRANTHOS_PETALS = registerBlockItem("dendranthos_petals", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES));
+
     // Dendrymycos
     public static final DeferredBlock<DDWoodLogBlock> DENDRYMYCOS_LOG = registerBlockItem("dendrymycos_log", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
 
+    public static final DeferredBlock<@NotNull DDWoodLogBlock> STRIPPED_DENDRYMYCOS_LOG = registerBlockItem("stripped_dendrymycos_log", DDWoodLogBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG));
+
     public static final DeferredBlock<DDWoodLogBlock> DENDRYMYCOS_WOOD = registerBlockItem("dendrymycos_wood", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+
+    public static final DeferredBlock<@NotNull DDWoodLogBlock> STRIPPED_DENDRYMYCOS_WOOD = registerBlockItem("stripped_dendrymycos_wood", DDWoodLogBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD));
 
     public static final DeferredBlock<Block> DENDRYMYCOS_PLANKS = registerBlockItem("dendrymycos_planks", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
@@ -324,6 +350,14 @@ public class DDBlocks {
     public static final DeferredBlock<FenceGateBlock> DENDRYMYCOS_FENCE_GATE = registerBlockItem("dendrymycos_fence_gate",
             properties -> new FenceGateBlock(DDWoods.DENDRYMYCOS_WOOD_TYPE, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
+
+    public static final DeferredBlock<@NotNull DoorBlock> DENDRYMYCOS_DOOR = registerBlockItem("dendrymycos_door",
+            properties -> new DoorBlock(DDWoods.DENDRYMYCOS_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
+
+    public static final DeferredBlock<@NotNull TrapDoorBlock> DENDRYMYCOS_TRAPDOOR = registerBlockItem("dendrymycos_trapdoor",
+            properties -> new TrapDoorBlock(DDWoods.DENDRYMYCOS_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
 
     public static final DeferredBlock<Block> DENDRYMYCOS_CAP_BLUE = registerBlockItem("dendrymycos_cap_blue", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));

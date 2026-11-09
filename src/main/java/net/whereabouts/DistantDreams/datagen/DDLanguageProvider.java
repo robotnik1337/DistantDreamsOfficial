@@ -99,6 +99,8 @@ public class DDLanguageProvider extends LanguageProvider {
         // Dendranthos
         add(DDBlocks.DENDRANTHOS_LOG.get(), "Dendranthos Log");
         add(DDBlocks.DENDRANTHOS_WOOD.get(), "Dendranthos Wood");
+        add(DDBlocks.STRIPPED_DENDRANTHOS_LOG.get(), "Stripped Dendranthos Log");
+        add(DDBlocks.STRIPPED_DENDRANTHOS_WOOD.get(), "Stripped Dendranthos Wood");
         add(DDBlocks.DENDRANTHOS_PLANKS.get(), "Dendranthos Planks");
         add(DDBlocks.DENDRANTHOS_STAIRS.get(), "Dendranthos Stairs");
         add(DDBlocks.DENDRANTHOS_SLAB.get(), "Dendranthos Slab");
@@ -106,10 +108,16 @@ public class DDLanguageProvider extends LanguageProvider {
         add(DDBlocks.DENDRANTHOS_FENCE_GATE.get(), "Dendranthos Fence Gate");
         add(DDBlocks.DENDRANTHOS_PRESSURE_PLATE.get(), "Dendranthos Pressure Plate");
         add(DDBlocks.DENDRANTHOS_BUTTON.get(), "Dendranthos Button");
+        add(DDBlocks.DENDRANTHOS_DOOR.get(), "Dendranthos Door");
+        add(DDBlocks.DENDRANTHOS_TRAPDOOR.get(), "Dendranthos Trapdoor");
+        add(DDBlocks.DENDRANTHOS_ANTHER.get(), "Dendranthos Anther");
+        add(DDBlocks.DENDRANTHOS_PETALS.get(), "Dendranthos Petals");
 
         // Dendrymycos
         add(DDBlocks.DENDRYMYCOS_LOG.get(), "Dendrymycos Log");
         add(DDBlocks.DENDRYMYCOS_WOOD.get(), "Dendrymycos Wood");
+        add(DDBlocks.STRIPPED_DENDRYMYCOS_LOG.get(), "Stripped Dendrymycos Log");
+        add(DDBlocks.STRIPPED_DENDRYMYCOS_WOOD.get(), "Stripped Dendrymycos Wood");
         add(DDBlocks.DENDRYMYCOS_PLANKS.get(), "Dendrymycos Planks");
         add(DDBlocks.DENDRYMYCOS_STAIRS.get(), "Dendrymycos Stairs");
         add(DDBlocks.DENDRYMYCOS_SLAB.get(), "Dendrymycos Slab");
@@ -117,6 +125,8 @@ public class DDLanguageProvider extends LanguageProvider {
         add(DDBlocks.DENDRYMYCOS_FENCE_GATE.get(), "Dendrymycos Fence Gate");
         add(DDBlocks.DENDRYMYCOS_PRESSURE_PLATE.get(), "Dendrymycos Pressure Plate");
         add(DDBlocks.DENDRYMYCOS_BUTTON.get(), "Dendrymycos Button");
+        add(DDBlocks.DENDRYMYCOS_DOOR.get(), "Dendrymycos Door");
+        add(DDBlocks.DENDRYMYCOS_TRAPDOOR.get(), "Dendrymycos Trapdoor");
         add(DDBlocks.DENDRYMYCOS_CAP_BLUE.get(), "Dendrymycos Cap Blue");
         add(DDBlocks.DENDRYMYCOS_CAP_GREEN.get(), "Dendrymycos Cap Green");
 

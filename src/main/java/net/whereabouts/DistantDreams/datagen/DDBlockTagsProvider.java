@@ -43,10 +43,24 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.STRIPPED_SEQUOIA_LOG.get())
                 .add(DDBlocks.STRIPPED_SEQUOIA_WOOD.get());
 
+        tag(DDTags.Blocks.DENDRANTHOS_LOGS)
+                .add(DDBlocks.DENDRANTHOS_LOG.get())
+                .add(DDBlocks.DENDRANTHOS_WOOD.get())
+                .add(DDBlocks.STRIPPED_DENDRANTHOS_LOG.get())
+                .add(DDBlocks.STRIPPED_DENDRANTHOS_WOOD.get());
+
+        tag(DDTags.Blocks.DENDRYMYCOS_LOGS)
+                .add(DDBlocks.DENDRYMYCOS_LOG.get())
+                .add(DDBlocks.DENDRYMYCOS_WOOD.get())
+                .add(DDBlocks.STRIPPED_DENDRYMYCOS_LOG.get())
+                .add(DDBlocks.STRIPPED_DENDRYMYCOS_WOOD.get());
+
         tag(DDTags.Blocks.DD_LOGS)
                 .addTag(DDTags.Blocks.ANCIENT_OAK_LOGS)
                 .addTag(DDTags.Blocks.EUCALYPTUS_LOGS)
-                .addTag(DDTags.Blocks.SEQUOIA_LOGS);
+                .addTag(DDTags.Blocks.SEQUOIA_LOGS)
+                .addTag(DDTags.Blocks.DENDRANTHOS_LOGS)
+                .addTag(DDTags.Blocks.DENDRYMYCOS_LOGS);
 
 
         // *** VANILLA BLOCK TAGS ***
@@ -182,16 +196,21 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.WOODEN_DOORS)
                 .add(DDBlocks.ANCIENT_OAK_DOOR.get())
                 .add(DDBlocks.EUCALYPTUS_DOOR.get())
-                .add(DDBlocks.SEQUOIA_DOOR.get());
+                .add(DDBlocks.SEQUOIA_DOOR.get())
+                .add(DDBlocks.DENDRANTHOS_DOOR.get())
+                .add(DDBlocks.DENDRYMYCOS_DOOR.get());
 
         tag(BlockTags.WOODEN_TRAPDOORS)
                 .add(DDBlocks.ANCIENT_OAK_TRAPDOOR.get())
                 .add(DDBlocks.EUCALYPTUS_TRAPDOOR.get())
-                .add(DDBlocks.SEQUOIA_TRAPDOOR.get());
+                .add(DDBlocks.SEQUOIA_TRAPDOOR.get())
+                .add(DDBlocks.DENDRANTHOS_TRAPDOOR.get())
+                .add(DDBlocks.DENDRYMYCOS_TRAPDOOR.get());
 
         tag(BlockTags.LEAVES)
                 .add(DDBlocks.EUCALYPTUS_LEAVES.get())
-                .add(DDBlocks.SEQUOIA_LEAVES.get());
+                .add(DDBlocks.SEQUOIA_LEAVES.get())
+                .add(DDBlocks.DENDRANTHOS_PETALS.get());
 
         tag(BlockTags.WART_BLOCKS)
                 .add(DDBlocks.DENDRYMYCOS_CAP_GREEN.get())

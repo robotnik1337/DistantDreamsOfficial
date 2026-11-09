@@ -108,6 +108,8 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(DDBlocks.DENDRANTHOS_LOG.get());
         dropSelf(DDBlocks.DENDRANTHOS_WOOD.get());
+        dropSelf(DDBlocks.STRIPPED_DENDRANTHOS_LOG.get());
+        dropSelf(DDBlocks.STRIPPED_DENDRANTHOS_WOOD.get());
         dropSelf(DDBlocks.DENDRANTHOS_PLANKS.get());
         dropSelf(DDBlocks.DENDRANTHOS_STAIRS.get());
         add(DDBlocks.DENDRANTHOS_SLAB.get(),
@@ -116,9 +118,17 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(DDBlocks.DENDRANTHOS_BUTTON.get());
         dropSelf(DDBlocks.DENDRANTHOS_FENCE.get());
         dropSelf(DDBlocks.DENDRANTHOS_FENCE_GATE.get());
+        add(DDBlocks.DENDRANTHOS_DOOR.get(),
+                _ -> createDoorTable(DDBlocks.DENDRANTHOS_DOOR.get()));
+        dropSelf(DDBlocks.DENDRANTHOS_TRAPDOOR.get());
+        dropSelf(DDBlocks.DENDRANTHOS_ANTHER.get());
+        add(DDBlocks.DENDRANTHOS_PETALS.get(),
+                block -> createLeavesDrops(block, DDBlocks.SEQUOIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         dropSelf(DDBlocks.DENDRYMYCOS_LOG.get());
         dropSelf(DDBlocks.DENDRYMYCOS_WOOD.get());
+        dropSelf(DDBlocks.STRIPPED_DENDRYMYCOS_LOG.get());
+        dropSelf(DDBlocks.STRIPPED_DENDRYMYCOS_WOOD.get());
         dropSelf(DDBlocks.DENDRYMYCOS_PLANKS.get());
         dropSelf(DDBlocks.DENDRYMYCOS_STAIRS.get());
         add(DDBlocks.DENDRYMYCOS_SLAB.get(),
@@ -127,6 +137,9 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(DDBlocks.DENDRYMYCOS_BUTTON.get());
         dropSelf(DDBlocks.DENDRYMYCOS_FENCE.get());
         dropSelf(DDBlocks.DENDRYMYCOS_FENCE_GATE.get());
+        add(DDBlocks.DENDRYMYCOS_DOOR.get(),
+                _ -> createDoorTable(DDBlocks.DENDRYMYCOS_DOOR.get()));
+        dropSelf(DDBlocks.DENDRYMYCOS_TRAPDOOR.get());
         dropSelf(DDBlocks.DENDRYMYCOS_CAP_BLUE.get());
         dropSelf(DDBlocks.DENDRYMYCOS_CAP_GREEN.get());
 

@@ -119,6 +119,7 @@ public class DDModelProvider extends ModelProvider {
 
         // Dendranthos
         blockModels.woodProvider(DDBlocks.DENDRANTHOS_LOG.get()).logWithHorizontal(DDBlocks.DENDRANTHOS_LOG.get()).wood(DDBlocks.DENDRANTHOS_WOOD.get());
+        blockModels.woodProvider(DDBlocks.STRIPPED_DENDRANTHOS_LOG.get()).logWithHorizontal(DDBlocks.STRIPPED_DENDRANTHOS_LOG.get()).wood(DDBlocks.STRIPPED_DENDRANTHOS_WOOD.get());
         blockModels.family(DDBlocks.DENDRANTHOS_PLANKS.get())
                 .fence(DDBlocks.DENDRANTHOS_FENCE.get())
                 .fenceGate(DDBlocks.DENDRANTHOS_FENCE_GATE.get())
@@ -126,9 +127,14 @@ public class DDModelProvider extends ModelProvider {
                 .slab(DDBlocks.DENDRANTHOS_SLAB.get())
                 .button(DDBlocks.DENDRANTHOS_BUTTON.get())
                 .pressurePlate(DDBlocks.DENDRANTHOS_PRESSURE_PLATE.get());
+        blockModels.createDoor(DDBlocks.DENDRANTHOS_DOOR.get());
+        blockModels.createTrapdoor(DDBlocks.DENDRANTHOS_TRAPDOOR.get());
+        blockModels.family(DDBlocks.DENDRANTHOS_ANTHER.get());
+        blockModels.createTrivialBlock(DDBlocks.DENDRANTHOS_PETALS.get(), TexturedModel.LEAVES);
 
         // Dendrymycos
         blockModels.woodProvider(DDBlocks.DENDRYMYCOS_LOG.get()).logWithHorizontal(DDBlocks.DENDRYMYCOS_LOG.get()).wood(DDBlocks.DENDRYMYCOS_WOOD.get());
+        blockModels.woodProvider(DDBlocks.STRIPPED_DENDRYMYCOS_LOG.get()).logWithHorizontal(DDBlocks.STRIPPED_DENDRYMYCOS_LOG.get()).wood(DDBlocks.STRIPPED_DENDRYMYCOS_WOOD.get());
         blockModels.family(DDBlocks.DENDRYMYCOS_PLANKS.get())
                 .fence(DDBlocks.DENDRYMYCOS_FENCE.get())
                 .fenceGate(DDBlocks.DENDRYMYCOS_FENCE_GATE.get())
@@ -136,6 +142,8 @@ public class DDModelProvider extends ModelProvider {
                 .slab(DDBlocks.DENDRYMYCOS_SLAB.get())
                 .button(DDBlocks.DENDRYMYCOS_BUTTON.get())
                 .pressurePlate(DDBlocks.DENDRYMYCOS_PRESSURE_PLATE.get());
+        blockModels.createDoor(DDBlocks.DENDRYMYCOS_DOOR.get());
+        blockModels.createTrapdoor(DDBlocks.DENDRYMYCOS_TRAPDOOR.get());
         blockModels.createTrivialBlock(DDBlocks.DENDRYMYCOS_CAP_BLUE.get(), TexturedModel.LEAVES);
         blockModels.createTrivialBlock(DDBlocks.DENDRYMYCOS_CAP_GREEN.get(), TexturedModel.LEAVES);
 

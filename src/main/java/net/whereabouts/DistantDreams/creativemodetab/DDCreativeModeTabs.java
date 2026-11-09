@@ -86,21 +86,31 @@ public class DDCreativeModeTabs {
 
                         output.accept(DDBlocks.DENDRANTHOS_LOG.get());
                         output.accept(DDBlocks.DENDRANTHOS_WOOD.get());
+                        output.accept(DDBlocks.STRIPPED_DENDRANTHOS_LOG.get());
+                        output.accept(DDBlocks.STRIPPED_DENDRANTHOS_WOOD.get());
                         output.accept(DDBlocks.DENDRANTHOS_PLANKS.get());
                         output.accept(DDBlocks.DENDRANTHOS_STAIRS.get());
                         output.accept(DDBlocks.DENDRANTHOS_SLAB.get());
                         output.accept(DDBlocks.DENDRANTHOS_FENCE.get());
                         output.accept(DDBlocks.DENDRANTHOS_FENCE_GATE.get());
                         output.accept(DDBlocks.DENDRANTHOS_PRESSURE_PLATE.get());
+                        output.accept(DDBlocks.DENDRANTHOS_DOOR.get());
+                        output.accept(DDBlocks.DENDRANTHOS_TRAPDOOR.get());
+                        output.accept(DDBlocks.DENDRANTHOS_ANTHER.get());
+                        output.accept(DDBlocks.DENDRANTHOS_PETALS.get());
 
                         output.accept(DDBlocks.DENDRYMYCOS_LOG.get());
                         output.accept(DDBlocks.DENDRYMYCOS_WOOD.get());
+                        output.accept(DDBlocks.STRIPPED_DENDRYMYCOS_LOG.get());
+                        output.accept(DDBlocks.STRIPPED_DENDRYMYCOS_WOOD.get());
                         output.accept(DDBlocks.DENDRYMYCOS_PLANKS.get());
                         output.accept(DDBlocks.DENDRYMYCOS_STAIRS.get());
                         output.accept(DDBlocks.DENDRYMYCOS_SLAB.get());
                         output.accept(DDBlocks.DENDRYMYCOS_FENCE.get());
                         output.accept(DDBlocks.DENDRYMYCOS_FENCE_GATE.get());
                         output.accept(DDBlocks.DENDRYMYCOS_PRESSURE_PLATE.get());
+                        output.accept(DDBlocks.DENDRYMYCOS_DOOR.get());
+                        output.accept(DDBlocks.DENDRYMYCOS_TRAPDOOR.get());
                         output.accept(DDBlocks.DENDRYMYCOS_CAP_BLUE.get());
                         output.accept(DDBlocks.DENDRYMYCOS_CAP_GREEN.get());
 
