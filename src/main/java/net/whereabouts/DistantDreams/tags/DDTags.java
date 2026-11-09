@@ -14,8 +14,11 @@ public class DDTags {
         public static final TagKey<Block> CHARRED_LOGS = createTag("charred_logs");
         public static final TagKey<Block> EUCALYPTUS_LOGS = createTag("eucalyptus_logs");
         public static final TagKey<Block> SEQUOIA_LOGS = createTag("sequoia_logs");
+        public static final TagKey<Block> DENDRANTHOS_LOGS =  createTag("dendranthos_logs");
+        public static final TagKey<Block> DENDRYMYCOS_LOGS =  createTag("dendrymycos_logs");
         public static final TagKey<Block> PETRIFIED_LOGS = createTag("petrified_logs");
         public static final TagKey<Block> DD_LOGS = createTag("dd_logs");
+
 
 
         private static TagKey<Block> createTag(String name) {
@@ -28,6 +31,8 @@ public class DDTags {
         public static final TagKey<Item> CHARRED_LOGS = createTag("charred_logs");
         public static final TagKey<Item> EUCALYPTUS_LOGS = createTag("eucalyptus_logs");
         public static final TagKey<Item> SEQUOIA_LOGS = createTag("sequoia_logs");
+        public static final TagKey<Item> DENDRANTHOS_LOGS = createTag("dendranthos_logs");
+        public static final TagKey<Item> DENDRYMYCOS_LOGS = createTag("dendrymycos_logs");
         public static final TagKey<Item> PETRIFIED_LOGS = createTag("petrified_logs");
 
         private static TagKey<Item> createTag(String name) {
