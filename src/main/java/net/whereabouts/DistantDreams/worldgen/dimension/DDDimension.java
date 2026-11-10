@@ -85,7 +85,7 @@ public class DDDimension {
                                 Pair.of(Climate.parameters(0.8f, 0.8f, 0.05f, 0f, 0f, 1f, 0f), biomes.getOrThrow(DDBiomes.FOREVER_GLADES))
 
                         ))),
-                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.OVERWORLD));
+                noiseGenSettings.getOrThrow(DDNoiseGeneratorSettings.DISTANT_REALM));
 
         context.register(DDDIM_KEY, new LevelStem(dimensionTypes.getOrThrow(DDDimension.DDDIM_TYPE_KEY), multiBiomeGenerator));
     }
