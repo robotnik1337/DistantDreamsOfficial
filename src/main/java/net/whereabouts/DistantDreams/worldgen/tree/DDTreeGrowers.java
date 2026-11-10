@@ -13,6 +13,12 @@ public class DDTreeGrowers {
     public static final TreeGrower ANCIENT_BIRCH = new TreeGrower(DistantDreams.MOD_ID + "ancient_birch",
             Optional.empty(), Optional.of(DDConfiguredFeatures.ANCIENT_BIRCH_KEY), Optional.empty());
 
+    public static final TreeGrower ANCIENT_ACACIA = new TreeGrower(DistantDreams.MOD_ID + "ancient_acacia",
+            Optional.empty(), Optional.of(DDConfiguredFeatures.ANCIENT_ACACIA_KEY), Optional.empty());
+
+    public static final TreeGrower ANCIENT_MANGROVE = new TreeGrower(DistantDreams.MOD_ID + "ancient_mangrove",
+            Optional.empty(), Optional.of(DDConfiguredFeatures.ANCIENT_MANGROVE_KEY), Optional.empty());
+
     public static final TreeGrower EUCALYPTUS = new TreeGrower(DistantDreams.MOD_ID + "eucalyptus",
                 Optional.empty(), Optional.of(DDConfiguredFeatures.EUCALYPTUS_KEY), Optional.empty());
 

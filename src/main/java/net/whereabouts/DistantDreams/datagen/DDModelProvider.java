@@ -75,7 +75,7 @@ public class DDModelProvider extends ModelProvider {
         blockModels.createTrivialBlock(DDBlocks.ANCIENT_OAK_LEAVES.get(), TexturedModel.LEAVES);
         blockModels.createPlantWithDefaultItem(DDBlocks.ANCIENT_OAK_SAPLING.get(), DDBlocks.POTTED_ANCIENT_OAK_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
 
-        // Ancient Birch
+        // Ancient Acacia
         blockModels.woodProvider(DDBlocks.ANCIENT_BIRCH_LOG.get()).logWithHorizontal(DDBlocks.ANCIENT_BIRCH_LOG.get()).wood(DDBlocks.ANCIENT_BIRCH_WOOD.get());
         blockModels.woodProvider(DDBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get()).logWithHorizontal(DDBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get()).wood(DDBlocks.STRIPPED_ANCIENT_BIRCH_WOOD.get());
         blockModels.family(DDBlocks.ANCIENT_BIRCH_PLANKS.get())
@@ -89,6 +89,36 @@ public class DDModelProvider extends ModelProvider {
         blockModels.createTrapdoor(DDBlocks.ANCIENT_BIRCH_TRAPDOOR.get());
         blockModels.createTrivialBlock(DDBlocks.ANCIENT_BIRCH_LEAVES.get(), TexturedModel.LEAVES);
         blockModels.createPlantWithDefaultItem(DDBlocks.ANCIENT_BIRCH_SAPLING.get(), DDBlocks.POTTED_ANCIENT_BIRCH_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
+
+        // Ancient Acacia
+        blockModels.woodProvider(DDBlocks.ANCIENT_ACACIA_LOG.get()).logWithHorizontal(DDBlocks.ANCIENT_ACACIA_LOG.get()).wood(DDBlocks.ANCIENT_ACACIA_WOOD.get());
+        blockModels.woodProvider(DDBlocks.STRIPPED_ANCIENT_ACACIA_LOG.get()).logWithHorizontal(DDBlocks.STRIPPED_ANCIENT_ACACIA_LOG.get()).wood(DDBlocks.STRIPPED_ANCIENT_ACACIA_WOOD.get());
+        blockModels.family(DDBlocks.ANCIENT_ACACIA_PLANKS.get())
+                .fence(DDBlocks.ANCIENT_ACACIA_FENCE.get())
+                .fenceGate(DDBlocks.ANCIENT_ACACIA_FENCE_GATE.get())
+                .stairs(DDBlocks.ANCIENT_ACACIA_STAIRS.get())
+                .slab(DDBlocks.ANCIENT_ACACIA_SLAB.get())
+                .button(DDBlocks.ANCIENT_ACACIA_BUTTON.get())
+                .pressurePlate(DDBlocks.ANCIENT_ACACIA_PRESSURE_PLATE.get());
+        blockModels.createDoor(DDBlocks.ANCIENT_ACACIA_DOOR.get());
+        blockModels.createTrapdoor(DDBlocks.ANCIENT_ACACIA_TRAPDOOR.get());
+        blockModels.createTrivialBlock(DDBlocks.ANCIENT_ACACIA_LEAVES.get(), TexturedModel.LEAVES);
+        blockModels.createPlantWithDefaultItem(DDBlocks.ANCIENT_ACACIA_SAPLING.get(), DDBlocks.POTTED_ANCIENT_ACACIA_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
+
+
+        // Ancient Mangrove
+        blockModels.woodProvider(DDBlocks.ANCIENT_MANGROVE_LOG.get()).logWithHorizontal(DDBlocks.ANCIENT_MANGROVE_LOG.get()).wood(DDBlocks.ANCIENT_MANGROVE_WOOD.get());
+        blockModels.woodProvider(DDBlocks.STRIPPED_ANCIENT_MANGROVE_LOG.get()).logWithHorizontal(DDBlocks.STRIPPED_ANCIENT_MANGROVE_LOG.get()).wood(DDBlocks.STRIPPED_ANCIENT_MANGROVE_WOOD.get());
+        blockModels.family(DDBlocks.ANCIENT_MANGROVE_PLANKS.get())
+                .fence(DDBlocks.ANCIENT_MANGROVE_FENCE.get())
+                .fenceGate(DDBlocks.ANCIENT_MANGROVE_FENCE_GATE.get())
+                .stairs(DDBlocks.ANCIENT_MANGROVE_STAIRS.get())
+                .slab(DDBlocks.ANCIENT_MANGROVE_SLAB.get())
+                .button(DDBlocks.ANCIENT_MANGROVE_BUTTON.get())
+                .pressurePlate(DDBlocks.ANCIENT_MANGROVE_PRESSURE_PLATE.get());
+        blockModels.createDoor(DDBlocks.ANCIENT_MANGROVE_DOOR.get());
+        blockModels.createTrapdoor(DDBlocks.ANCIENT_MANGROVE_TRAPDOOR.get());
+        blockModels.createTrivialBlock(DDBlocks.ANCIENT_MANGROVE_LEAVES.get(), TexturedModel.LEAVES);
 
         // Charred
         blockModels.woodProvider(DDBlocks.CHARRED_LOG.get()).logWithHorizontal(DDBlocks.CHARRED_LOG.get()).wood(DDBlocks.CHARRED_WOOD.get());
@@ -206,6 +236,19 @@ public class DDModelProvider extends ModelProvider {
                 .stairs(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get())
                 .slab(DDBlocks.DISTANT_STONE_BRICK_SLAB.get())
                 .wall(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
+
+        // Distant Sandstone
+        blockModels.createTrivialCube(DDBlocks.DISTANT_SAND.get());
+        blockModels.createRotatedPillarWithHorizontalVariant(DDBlocks.DISTANT_SANDSTONE.get(), TexturedModel.COLUMN_ALT, TexturedModel.COLUMN_HORIZONTAL_ALT );
+        blockModels.family(DDBlocks.SMOOTH_DISTANT_SANDSTONE.get())
+                .stairs(DDBlocks.SMOOTH_DISTANT_SANDSTONE_STAIRS.get())
+                .slab(DDBlocks.SMOOTH_DISTANT_SANDSTONE_SLAB.get())
+                .wall(DDBlocks.SMOOTH_DISTANT_SANDSTONE_WALL.get());
+
+        blockModels.family(DDBlocks.DISTANT_SANDSTONE_BRICKS.get())
+                .stairs(DDBlocks.DISTANT_SANDSTONE_BRICK_STAIRS.get())
+                .slab(DDBlocks.DISTANT_SANDSTONE_BRICK_SLAB.get())
+                .wall(DDBlocks.DISTANT_SANDSTONE_BRICK_WALL.get());
 
         // Limestone
 

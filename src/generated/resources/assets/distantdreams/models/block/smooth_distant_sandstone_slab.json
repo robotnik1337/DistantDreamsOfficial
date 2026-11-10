@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "distantdreams:block/smooth_distant_sandstone",
+    "side": "distantdreams:block/smooth_distant_sandstone",
+    "top": "distantdreams:block/smooth_distant_sandstone"
+  }
+}
