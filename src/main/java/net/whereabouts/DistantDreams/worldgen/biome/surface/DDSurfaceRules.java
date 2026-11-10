@@ -30,7 +30,8 @@ public class DDSurfaceRules {
         SurfaceRules.RuleSource distantRealmSurface = grassDirtStoneSurfaceRules(DISTANT_GRASS, DISTANT_DIRT, DISTANT_STONE);
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.DISTANT_FOREST), distantRealmSurface),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.TIMEWORN_MEADOWS), distantRealmSurface)
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.TIMEWORN_MEADOWS), distantRealmSurface),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.ANCESTRAL_PLAINS), distantRealmSurface)
         );
     }
 

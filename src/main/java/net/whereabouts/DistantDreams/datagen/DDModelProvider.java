@@ -15,6 +15,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ChainBlock;
 import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplateBuilder;
 import net.whereabouts.DistantDreams.DistantDreams;
 import net.whereabouts.DistantDreams.block.DDBlocks;
@@ -74,6 +75,21 @@ public class DDModelProvider extends ModelProvider {
         blockModels.createTrivialBlock(DDBlocks.ANCIENT_OAK_LEAVES.get(), TexturedModel.LEAVES);
         blockModels.createPlantWithDefaultItem(DDBlocks.ANCIENT_OAK_SAPLING.get(), DDBlocks.POTTED_ANCIENT_OAK_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
 
+        // Ancient Birch
+        blockModels.woodProvider(DDBlocks.ANCIENT_BIRCH_LOG.get()).logWithHorizontal(DDBlocks.ANCIENT_BIRCH_LOG.get()).wood(DDBlocks.ANCIENT_BIRCH_WOOD.get());
+        blockModels.woodProvider(DDBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get()).logWithHorizontal(DDBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get()).wood(DDBlocks.STRIPPED_ANCIENT_BIRCH_WOOD.get());
+        blockModels.family(DDBlocks.ANCIENT_BIRCH_PLANKS.get())
+                .fence(DDBlocks.ANCIENT_BIRCH_FENCE.get())
+                .fenceGate(DDBlocks.ANCIENT_BIRCH_FENCE_GATE.get())
+                .stairs(DDBlocks.ANCIENT_BIRCH_STAIRS.get())
+                .slab(DDBlocks.ANCIENT_BIRCH_SLAB.get())
+                .button(DDBlocks.ANCIENT_BIRCH_BUTTON.get())
+                .pressurePlate(DDBlocks.ANCIENT_BIRCH_PRESSURE_PLATE.get());
+        blockModels.createDoor(DDBlocks.ANCIENT_BIRCH_DOOR.get());
+        blockModels.createTrapdoor(DDBlocks.ANCIENT_BIRCH_TRAPDOOR.get());
+        blockModels.createTrivialBlock(DDBlocks.ANCIENT_BIRCH_LEAVES.get(), TexturedModel.LEAVES);
+        blockModels.createPlantWithDefaultItem(DDBlocks.ANCIENT_BIRCH_SAPLING.get(), DDBlocks.POTTED_ANCIENT_BIRCH_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
+
         // Charred
         blockModels.woodProvider(DDBlocks.CHARRED_LOG.get()).logWithHorizontal(DDBlocks.CHARRED_LOG.get()).wood(DDBlocks.CHARRED_WOOD.get());
         blockModels.woodProvider(DDBlocks.STRIPPED_CHARRED_LOG.get()).logWithHorizontal(DDBlocks.STRIPPED_CHARRED_LOG.get()).wood(DDBlocks.STRIPPED_CHARRED_WOOD.get());
@@ -119,6 +135,7 @@ public class DDModelProvider extends ModelProvider {
 
         // Dendranthos
         blockModels.woodProvider(DDBlocks.DENDRANTHOS_LOG.get()).logWithHorizontal(DDBlocks.DENDRANTHOS_LOG.get()).wood(DDBlocks.DENDRANTHOS_WOOD.get());
+        blockModels.woodProvider(DDBlocks.STRIPPED_DENDRANTHOS_LOG.get()).logWithHorizontal(DDBlocks.STRIPPED_DENDRANTHOS_LOG.get()).wood(DDBlocks.STRIPPED_DENDRANTHOS_WOOD.get());
         blockModels.family(DDBlocks.DENDRANTHOS_PLANKS.get())
                 .fence(DDBlocks.DENDRANTHOS_FENCE.get())
                 .fenceGate(DDBlocks.DENDRANTHOS_FENCE_GATE.get())
@@ -126,9 +143,14 @@ public class DDModelProvider extends ModelProvider {
                 .slab(DDBlocks.DENDRANTHOS_SLAB.get())
                 .button(DDBlocks.DENDRANTHOS_BUTTON.get())
                 .pressurePlate(DDBlocks.DENDRANTHOS_PRESSURE_PLATE.get());
+        blockModels.createDoor(DDBlocks.DENDRANTHOS_DOOR.get());
+        blockModels.createTrapdoor(DDBlocks.DENDRANTHOS_TRAPDOOR.get());
+        blockModels.family(DDBlocks.DENDRANTHOS_ANTHER.get());
+        blockModels.createTrivialBlock(DDBlocks.DENDRANTHOS_PETALS.get(), TexturedModel.LEAVES);
 
         // Dendrymycos
         blockModels.woodProvider(DDBlocks.DENDRYMYCOS_LOG.get()).logWithHorizontal(DDBlocks.DENDRYMYCOS_LOG.get()).wood(DDBlocks.DENDRYMYCOS_WOOD.get());
+        blockModels.woodProvider(DDBlocks.STRIPPED_DENDRYMYCOS_LOG.get()).logWithHorizontal(DDBlocks.STRIPPED_DENDRYMYCOS_LOG.get()).wood(DDBlocks.STRIPPED_DENDRYMYCOS_WOOD.get());
         blockModels.family(DDBlocks.DENDRYMYCOS_PLANKS.get())
                 .fence(DDBlocks.DENDRYMYCOS_FENCE.get())
                 .fenceGate(DDBlocks.DENDRYMYCOS_FENCE_GATE.get())
@@ -136,6 +158,8 @@ public class DDModelProvider extends ModelProvider {
                 .slab(DDBlocks.DENDRYMYCOS_SLAB.get())
                 .button(DDBlocks.DENDRYMYCOS_BUTTON.get())
                 .pressurePlate(DDBlocks.DENDRYMYCOS_PRESSURE_PLATE.get());
+        blockModels.createDoor(DDBlocks.DENDRYMYCOS_DOOR.get());
+        blockModels.createTrapdoor(DDBlocks.DENDRYMYCOS_TRAPDOOR.get());
         blockModels.createTrivialBlock(DDBlocks.DENDRYMYCOS_CAP_BLUE.get(), TexturedModel.LEAVES);
         blockModels.createTrivialBlock(DDBlocks.DENDRYMYCOS_CAP_GREEN.get(), TexturedModel.LEAVES);
 
@@ -205,6 +229,25 @@ public class DDModelProvider extends ModelProvider {
                 .stairs(DDBlocks.ISLATE_BRICK_STAIRS.get())
                 .slab(DDBlocks.ISLATE_BRICK_SLAB.get())
                 .wall(DDBlocks.ISLATE_BRICK_WALL.get());
+
+        // Peat
+
+        blockModels.family(DDBlocks.PEAT.get())
+                .stairs(DDBlocks.PEAT_STAIRS.get())
+                .slab(DDBlocks.PEAT_SLAB.get())
+                .wall(DDBlocks.PEAT_WALL.get());
+
+        blockModels.family(DDBlocks.PACKED_PEAT.get())
+                .stairs(DDBlocks.PACKED_PEAT_STAIRS.get())
+                .slab(DDBlocks.PACKED_PEAT_SLAB.get())
+                .wall(DDBlocks.PACKED_PEAT_WALL.get());
+
+        blockModels.family(DDBlocks.PEAT_BRICKS.get())
+                .stairs(DDBlocks.PEAT_BRICK_STAIRS.get())
+                .slab(DDBlocks.PEAT_BRICK_SLAB.get())
+                .wall(DDBlocks.PEAT_BRICK_WALL.get());
+
+        blockModels.createRotatedPillarWithHorizontalVariant(DDBlocks.CHISELED_PEAT.get(), TexturedModel.COLUMN_ALT, TexturedModel.COLUMN_HORIZONTAL_ALT );
 
         // Rhyolite
         blockModels.family(DDBlocks.RHYOLITE.get())

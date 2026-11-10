@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "distantdreams:block/dendranthos_door_bottom",
+    "top": "distantdreams:block/dendranthos_door_top"
+  }
+}

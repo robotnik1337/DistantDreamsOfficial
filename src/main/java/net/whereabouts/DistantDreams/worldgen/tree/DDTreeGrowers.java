@@ -10,6 +10,9 @@ public class DDTreeGrowers {
     public static final TreeGrower ANCIENT_OAK = new TreeGrower(DistantDreams.MOD_ID + "ancient_oak",
             Optional.empty(), Optional.of(DDConfiguredFeatures.ANCIENT_OAK_KEY), Optional.empty());
 
+    public static final TreeGrower ANCIENT_BIRCH = new TreeGrower(DistantDreams.MOD_ID + "ancient_birch",
+            Optional.empty(), Optional.of(DDConfiguredFeatures.ANCIENT_BIRCH_KEY), Optional.empty());
+
     public static final TreeGrower EUCALYPTUS = new TreeGrower(DistantDreams.MOD_ID + "eucalyptus",
                 Optional.empty(), Optional.of(DDConfiguredFeatures.EUCALYPTUS_KEY), Optional.empty());
 

@@ -17,14 +17,19 @@ import java.util.List;
 
 public class DDPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ANCIENT_OAK_PLACED_KEY = registerKey("ancient_oak_placed");
+    public static final ResourceKey<PlacedFeature> ANCIENT_BIRCH_PLACED_KEY = registerKey("ancient_birch_placed");
     public static final ResourceKey<PlacedFeature> SEQUOIA_PLACED_KEY = registerKey("sequoia_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, ANCIENT_OAK_PLACED_KEY, configuredFeatures.getOrThrow(DDConfiguredFeatures.ANCIENT_OAK_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 1),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.2f, 1),
                         DDBlocks.ANCIENT_OAK_SAPLING.get()));
+
+        register(context, ANCIENT_BIRCH_PLACED_KEY, configuredFeatures.getOrThrow(DDConfiguredFeatures.ANCIENT_BIRCH_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.01f, 1),
+                        DDBlocks.ANCIENT_BIRCH_SAPLING.get()));
 
         register(context, SEQUOIA_PLACED_KEY, configuredFeatures.getOrThrow(DDConfiguredFeatures.SEQUOIA_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),

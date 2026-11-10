@@ -42,6 +42,25 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(DDBlocks.ANCIENT_OAK_SAPLING.get());
         dropPottedContents(DDBlocks.POTTED_ANCIENT_OAK_SAPLING.get());
 
+        dropSelf(DDBlocks.ANCIENT_BIRCH_LOG.get());
+        dropSelf(DDBlocks.ANCIENT_BIRCH_WOOD.get());
+        dropSelf(DDBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
+        dropSelf(DDBlocks.STRIPPED_ANCIENT_BIRCH_WOOD.get());
+        dropSelf(DDBlocks.ANCIENT_BIRCH_PLANKS.get());
+        dropSelf(DDBlocks.ANCIENT_BIRCH_STAIRS.get());
+        add(DDBlocks.ANCIENT_BIRCH_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.ANCIENT_BIRCH_SLAB.get()));
+        dropSelf(DDBlocks.ANCIENT_BIRCH_PRESSURE_PLATE.get());
+        dropSelf(DDBlocks.ANCIENT_BIRCH_BUTTON.get());
+        dropSelf(DDBlocks.ANCIENT_BIRCH_FENCE.get());
+        dropSelf(DDBlocks.ANCIENT_BIRCH_FENCE_GATE.get());
+        add(DDBlocks.ANCIENT_BIRCH_DOOR.get(),
+                _ -> createDoorTable(DDBlocks.ANCIENT_BIRCH_DOOR.get()));
+        dropSelf(DDBlocks.ANCIENT_BIRCH_TRAPDOOR.get());
+        add(DDBlocks.ANCIENT_BIRCH_LEAVES.get(),
+                block -> createLeavesDrops(block, DDBlocks.ANCIENT_BIRCH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(DDBlocks.ANCIENT_BIRCH_SAPLING.get());
+        dropPottedContents(DDBlocks.POTTED_ANCIENT_BIRCH_SAPLING.get());
 
         // Charred logs and wood will drop 4 pieces of charcoal if they are not broken with silk touch.
         add(DDBlocks.CHARRED_LOG.get(),
@@ -108,6 +127,8 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(DDBlocks.DENDRANTHOS_LOG.get());
         dropSelf(DDBlocks.DENDRANTHOS_WOOD.get());
+        dropSelf(DDBlocks.STRIPPED_DENDRANTHOS_LOG.get());
+        dropSelf(DDBlocks.STRIPPED_DENDRANTHOS_WOOD.get());
         dropSelf(DDBlocks.DENDRANTHOS_PLANKS.get());
         dropSelf(DDBlocks.DENDRANTHOS_STAIRS.get());
         add(DDBlocks.DENDRANTHOS_SLAB.get(),
@@ -116,9 +137,17 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(DDBlocks.DENDRANTHOS_BUTTON.get());
         dropSelf(DDBlocks.DENDRANTHOS_FENCE.get());
         dropSelf(DDBlocks.DENDRANTHOS_FENCE_GATE.get());
+        add(DDBlocks.DENDRANTHOS_DOOR.get(),
+                _ -> createDoorTable(DDBlocks.DENDRANTHOS_DOOR.get()));
+        dropSelf(DDBlocks.DENDRANTHOS_TRAPDOOR.get());
+        dropSelf(DDBlocks.DENDRANTHOS_ANTHER.get());
+        add(DDBlocks.DENDRANTHOS_PETALS.get(),
+                block -> createLeavesDrops(block, DDBlocks.SEQUOIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         dropSelf(DDBlocks.DENDRYMYCOS_LOG.get());
         dropSelf(DDBlocks.DENDRYMYCOS_WOOD.get());
+        dropSelf(DDBlocks.STRIPPED_DENDRYMYCOS_LOG.get());
+        dropSelf(DDBlocks.STRIPPED_DENDRYMYCOS_WOOD.get());
         dropSelf(DDBlocks.DENDRYMYCOS_PLANKS.get());
         dropSelf(DDBlocks.DENDRYMYCOS_STAIRS.get());
         add(DDBlocks.DENDRYMYCOS_SLAB.get(),
@@ -127,6 +156,9 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(DDBlocks.DENDRYMYCOS_BUTTON.get());
         dropSelf(DDBlocks.DENDRYMYCOS_FENCE.get());
         dropSelf(DDBlocks.DENDRYMYCOS_FENCE_GATE.get());
+        add(DDBlocks.DENDRYMYCOS_DOOR.get(),
+                _ -> createDoorTable(DDBlocks.DENDRYMYCOS_DOOR.get()));
+        dropSelf(DDBlocks.DENDRYMYCOS_TRAPDOOR.get());
         dropSelf(DDBlocks.DENDRYMYCOS_CAP_BLUE.get());
         dropSelf(DDBlocks.DENDRYMYCOS_CAP_GREEN.get());
 
@@ -179,6 +211,23 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         add(DDBlocks.ISLATE_BRICK_SLAB.get(),
                 _ -> createSlabItemTable(DDBlocks.ISLATE_BRICK_SLAB.get()));
         dropSelf(DDBlocks.ISLATE_BRICK_WALL.get());
+
+        dropSelf(DDBlocks.PEAT.get());
+        dropSelf(DDBlocks.PEAT_STAIRS.get());
+        add(DDBlocks.PEAT_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.PEAT_SLAB.get()));
+        dropSelf(DDBlocks.PEAT_WALL.get());
+        dropSelf(DDBlocks.PACKED_PEAT.get());
+        dropSelf(DDBlocks.PACKED_PEAT_STAIRS.get());
+        add(DDBlocks.PACKED_PEAT_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.PACKED_PEAT_SLAB.get()));
+        dropSelf(DDBlocks.PACKED_PEAT_WALL.get());
+        dropSelf(DDBlocks.PEAT_BRICKS.get());
+        dropSelf(DDBlocks.PEAT_BRICK_STAIRS.get());
+        add(DDBlocks.PEAT_BRICK_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.PEAT_BRICK_SLAB.get()));
+        dropSelf(DDBlocks.PEAT_BRICK_WALL.get());
+        dropSelf(DDBlocks.CHISELED_PEAT.get());
 
         dropSelf(DDBlocks.RHYOLITE.get());
         dropSelf(DDBlocks.RHYOLITE_STAIRS.get());

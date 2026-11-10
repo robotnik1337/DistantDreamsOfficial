@@ -1,8 +1,11 @@
 {
   "values": [
     "distantdreams:ancient_oak_fence",
+    "distantdreams:ancient_birch_fence",
     "distantdreams:charred_fence",
     "distantdreams:eucalyptus_fence",
-    "distantdreams:sequoia_fence"
+    "distantdreams:sequoia_fence",
+    "distantdreams:dendranthos_fence",
+    "distantdreams:dendrymycos_fence"
   ]
 }

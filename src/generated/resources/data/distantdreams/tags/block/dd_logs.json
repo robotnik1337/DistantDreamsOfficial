@@ -1,7 +1,10 @@
 {
   "values": [
     "#distantdreams:ancient_oak_logs",
+    "#distantdreams:ancient_birchlogs",
     "#distantdreams:eucalyptus_logs",
-    "#distantdreams:sequoia_logs"
+    "#distantdreams:sequoia_logs",
+    "#distantdreams:dendranthos_logs",
+    "#distantdreams:dendrymycos_logs"
   ]
 }
