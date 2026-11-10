@@ -8,27 +8,20 @@
         "tick_delay": 6000
       }
     },
-    "minecraft:visual/fog_color": "#daf5ed",
+    "minecraft:visual/fog_color": "#93dec8",
     "minecraft:visual/sky_color": "#b0d4ca",
     "minecraft:visual/water_fog_color": "#2d84a6"
   },
-  "carvers": [
-    "minecraft:cave",
-    "minecraft:cave_extra_underground",
-    "minecraft:canyon"
-  ],
+  "carvers": [],
   "downfall": 0.8,
   "effects": {
-    "foliage_color": "#2e5d38",
-    "grass_color": "#358a2c",
+    "foliage_color": "#63b75b",
+    "grass_color": "#63b75b",
     "water_color": "#2d84a6"
   },
   "features": [
     [],
-    [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
-    ],
+    [],
     [],
     [],
     [],
@@ -71,7 +64,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:forest_flowers",
+      "minecraft:patch_grass_savanna",
+      "minecraft:patch_grass_jungle",
       "minecraft:wildflowers_birch_forest",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",

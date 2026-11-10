@@ -58,7 +58,8 @@ public class DDSurfaceRules {
                 // only run this sequence if we are in the sequoia forest.
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.SEQUOIA_FOREST), fertileSurface),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.DISTANT_FOREST), distantRealmSurface),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.TIMEWORN_MEADOWS), distantRealmSurface)
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.TIMEWORN_MEADOWS), distantRealmSurface),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.ANCESTRAL_PLAINS), distantRealmSurface)
         );
     }
 

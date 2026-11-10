@@ -34,6 +34,25 @@ public class DDLanguageProvider extends LanguageProvider {
         add(DDBlocks.ANCIENT_OAK_PRESSURE_PLATE.get(), "Ancient Oak Pressure Plate");
         add(DDBlocks.ANCIENT_OAK_BUTTON.get(), "Ancient Oak Button");
 //
+        // Ancient Birch
+
+        add(DDBlocks.ANCIENT_BIRCH_LOG.get(), "Ancient Birch Log");
+        add(DDBlocks.ANCIENT_BIRCH_WOOD.get(), "Ancient Birch Wood");
+        add(DDBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get(), "Stripped Ancient Birch Log");
+        add(DDBlocks.STRIPPED_ANCIENT_BIRCH_WOOD.get(), "Stripped Ancient Birch Wood");
+        addBlock(DDBlocks.ANCIENT_BIRCH_PLANKS, "Ancient Birch Planks");
+        add(DDBlocks.ANCIENT_BIRCH_LEAVES.get(), "Ancient Birch Leaves");
+        add(DDBlocks.ANCIENT_BIRCH_SAPLING.get(), "Ancient Birch Sapling");
+        add(DDBlocks.ANCIENT_BIRCH_STAIRS.get(), "Ancient Birch Stairs");
+        add(DDBlocks.ANCIENT_BIRCH_SLAB.get(), "Ancient Birch Slab");
+        add(DDBlocks.ANCIENT_BIRCH_FENCE.get(), "Ancient Birch Fence");
+        add(DDBlocks.ANCIENT_BIRCH_FENCE_GATE.get(), "Ancient Birch Fence Gate");
+        add(DDBlocks.ANCIENT_BIRCH_DOOR.get(), "Ancient Birch Door");
+        add(DDBlocks.ANCIENT_BIRCH_TRAPDOOR.get(), "Ancient Birch Trapdoor");
+        add(DDBlocks.ANCIENT_BIRCH_PRESSURE_PLATE.get(), "Ancient Birch Pressure Plate");
+        add(DDBlocks.ANCIENT_BIRCH_BUTTON.get(), "Ancient Birch Button");
+//
+
         // Charred Woodset
         add(DDBlocks.CHARRED_LOG.get(), "Charred Log");
         add(DDBlocks.CHARRED_WOOD.get(), "Charred Wood");
@@ -233,22 +252,24 @@ public class DDLanguageProvider extends LanguageProvider {
 
         add(DDBlocks.DISTANT_GRASS.get(), "Distant Grass");
         add(DDBlocks.DISTANT_DIRT.get(), "Distant Dirt");
-//
-//        // Peat
-//        add(DDBlocks.PEAT.get(),"Peat");
-//        add(DDBlocks.PEAT_WALL.get(),"Peat Wall");
-//        add(DDBlocks.PEAT_SLAB.get(),"Peat Slab");
-//        add(DDBlocks.PEAT_STAIRS.get(),"Peat Stairs");
-//
-//        add(DDBlocks.PACKED_PEAT.get(),"Packed Peat");
-//        add(DDBlocks.PACKED_PEAT_SLAB.get(),"Packed Peat Slab");
-//        add(DDBlocks.PACKED_PEAT_STAIRS.get(),"Packed Peat Stairs");
-//        add(DDBlocks.PACKED_PEAT_WALL.get(),"Packed Peat Wall");
-//
-//        add(DDBlocks.PEAT_BRICKS.get(),"Peat Bricks");
-//        add(DDBlocks.PEAT_BRICK_WALL.get(),"Peat Brick Wall");
-//        add(DDBlocks.PEAT_BRICK_SLAB.get(),"Peat Brick Slab");
-//        add(DDBlocks.PEAT_BRICK_STAIRS.get(),"Peat Brick Stairs");
+
+        // Peat
+        add(DDBlocks.PEAT.get(),"Peat");
+        add(DDBlocks.PEAT_WALL.get(),"Peat Wall");
+        add(DDBlocks.PEAT_SLAB.get(),"Peat Slab");
+        add(DDBlocks.PEAT_STAIRS.get(),"Peat Stairs");
+
+        add(DDBlocks.PACKED_PEAT.get(),"Packed Peat");
+        add(DDBlocks.PACKED_PEAT_SLAB.get(),"Packed Peat Slab");
+        add(DDBlocks.PACKED_PEAT_STAIRS.get(),"Packed Peat Stairs");
+        add(DDBlocks.PACKED_PEAT_WALL.get(),"Packed Peat Wall");
+
+        add(DDBlocks.PEAT_BRICKS.get(),"Peat Bricks");
+        add(DDBlocks.PEAT_BRICK_WALL.get(),"Peat Brick Wall");
+        add(DDBlocks.PEAT_BRICK_SLAB.get(),"Peat Brick Slab");
+        add(DDBlocks.PEAT_BRICK_STAIRS.get(),"Peat Brick Stairs");
+
+        add(DDBlocks.CHISELED_PEAT.get(), "Chiseled Peat");
 //
 //        // ########## ITEMS ##########
 //

@@ -22,6 +22,7 @@ import net.whereabouts.DistantDreams.worldgen.tree.custom.SequoiaTrunkPlacer;
 
 public class DDConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_OAK_KEY = registerKey("ancient_oak");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ANCIENT_BIRCH_KEY = registerKey("ancient_birch");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EUCALYPTUS_KEY = registerKey("eucalyptus");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEQUOIA_KEY = registerKey("sequoia");
 
@@ -32,6 +33,16 @@ public class DDConfiguredFeatures {
                 new StraightTrunkPlacer(4, 2, 1),
 
                 BlockStateProvider.simple(DDBlocks.ANCIENT_OAK_LEAVES.get()),
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+
+                new TwoLayersFeatureSize(1, 0, 2)).build()
+        );
+
+        register(context, ANCIENT_BIRCH_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(DDBlocks.ANCIENT_BIRCH_LOG.get()),
+                new StraightTrunkPlacer(5, 4, 1),
+
+                BlockStateProvider.simple(DDBlocks.ANCIENT_BIRCH_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
 
                 new TwoLayersFeatureSize(1, 0, 2)).build()

@@ -59,7 +59,6 @@ public class DDBiomes {
     }
 
     public static void globalDistantRealmGeneration(BiomeGenerationSettings.Builder builder) {
-        BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
         BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
         BiomeDefaultFeatures.addDefaultSprings(builder);
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
@@ -134,6 +133,7 @@ public class DDBiomes {
 
         globalDistantRealmGeneration(biomeBuilder);
         BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addForestGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
 //        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES)
@@ -144,6 +144,7 @@ public class DDBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder, true);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DDPlacedFeatures.ANCIENT_OAK_PLACED_KEY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DDPlacedFeatures.ANCIENT_BIRCH_PLACED_KEY);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -182,6 +183,7 @@ public class DDBiomes {
 
         globalDistantRealmGeneration(biomeBuilder);
         BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addSavannaGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
 //        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES)
@@ -277,17 +279,18 @@ public class DDBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
 
         globalDistantRealmGeneration(biomeBuilder);
-        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addSavannaExtraGrass(biomeBuilder);
+        BiomeDefaultFeatures.addJungleGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
 //        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES)
         BiomeDefaultFeatures.addBirchForestFlowers(biomeBuilder);
 
+
 //        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_PLAINS);
 
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder, true);
-//        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DDPlacedFeatures.ANCIENT_OAK_PLACED_KEY);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -298,13 +301,13 @@ public class DDBiomes {
                 .putAttributes(EnvironmentAttributeMap.builder()
                         .set(EnvironmentAttributes.WATER_FOG_COLOR, 0x2d84a6)
                         .set(EnvironmentAttributes.SKY_COLOR, 0xB0D4CA)
-                        .set(EnvironmentAttributes.FOG_COLOR, 0xDAF5ED)
+                        .set(EnvironmentAttributes.FOG_COLOR, 0x93dec8)
                         .set(EnvironmentAttributes.AMBIENT_SOUNDS, AmbientSounds.LEGACY_CAVE_SETTINGS)
                         .build())
                 .specialEffects((new BiomeSpecialEffects.Builder())
                         .waterColor(0x2d84a6)
-                        .grassColorOverride(0x358a2c)
-                        .foliageColorOverride(0x2e5d38)
+                        .grassColorOverride(0x63b75b)
+                        .foliageColorOverride(0x63b75b)
                         .build())
 //                        .backgroundMusic(Musics.createGameMusic(ModSounds.HYPNAGOGIA.getHolder().get())).build())
                 .build();

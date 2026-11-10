@@ -38,6 +38,22 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.ANCIENT_OAK_LEAVES.get());
                         output.accept(DDBlocks.ANCIENT_OAK_SAPLING.get());
 
+                        output.accept(DDBlocks.ANCIENT_BIRCH_LOG.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_WOOD.get());
+                        output.accept(DDBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
+                        output.accept(DDBlocks.STRIPPED_ANCIENT_BIRCH_WOOD.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_PLANKS.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_STAIRS.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_SLAB.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_FENCE.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_FENCE_GATE.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_DOOR.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_TRAPDOOR.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_PRESSURE_PLATE.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_BUTTON.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_LEAVES.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_SAPLING.get());
+
                         output.accept(DDBlocks.CHARRED_LOG.get());
                         output.accept(DDBlocks.CHARRED_WOOD.get());
                         output.accept(DDBlocks.STRIPPED_CHARRED_LOG.get());
@@ -152,6 +168,20 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.ISLATE_BRICK_STAIRS.get());
                         output.accept(DDBlocks.ISLATE_BRICK_SLAB.get());
                         output.accept(DDBlocks.ISLATE_BRICK_WALL.get());
+
+                        output.accept(DDBlocks.PEAT.get());
+                        output.accept(DDBlocks.PEAT_STAIRS.get());
+                        output.accept(DDBlocks.PEAT_SLAB.get());
+                        output.accept(DDBlocks.PEAT_WALL.get());
+                        output.accept(DDBlocks.PACKED_PEAT.get());
+                        output.accept(DDBlocks.PACKED_PEAT_STAIRS.get());
+                        output.accept(DDBlocks.PACKED_PEAT_SLAB.get());
+                        output.accept(DDBlocks.PACKED_PEAT_WALL.get());
+                        output.accept(DDBlocks.PEAT_BRICKS.get());
+                        output.accept(DDBlocks.PEAT_BRICK_STAIRS.get());
+                        output.accept(DDBlocks.PEAT_BRICK_SLAB.get());
+                        output.accept(DDBlocks.PEAT_BRICK_WALL.get());
+                        output.accept(DDBlocks.CHISELED_PEAT.get());
 
                         output.accept(DDBlocks.RHYOLITE.get());
                         output.accept(DDBlocks.RHYOLITE_STAIRS.get());
