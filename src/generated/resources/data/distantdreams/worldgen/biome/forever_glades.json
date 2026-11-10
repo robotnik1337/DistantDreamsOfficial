@@ -12,11 +12,7 @@
     "minecraft:visual/sky_color": "#b0d4ca",
     "minecraft:visual/water_fog_color": "#357947"
   },
-  "carvers": [
-    "minecraft:cave",
-    "minecraft:cave_extra_underground",
-    "minecraft:canyon"
-  ],
+  "carvers": [],
   "downfall": 0.8,
   "effects": {
     "foliage_color": "#2e5d38",
@@ -25,10 +21,7 @@
   },
   "features": [
     [],
-    [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
-    ],
+    [],
     [],
     [],
     [],

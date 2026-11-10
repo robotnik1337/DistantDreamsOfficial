@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "distantdreams:block/peat_slab"
+    },
+    "type=double": {
+      "model": "distantdreams:block/peat"
+    },
+    "type=top": {
+      "model": "distantdreams:block/peat_slab_top"
+    }
+  }
+}

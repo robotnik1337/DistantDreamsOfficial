@@ -25,6 +25,12 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.STRIPPED_ANCIENT_OAK_LOG.get())
                 .add(DDBlocks.STRIPPED_ANCIENT_OAK_WOOD.get());
 
+        tag(DDTags.Blocks.ANCIENT_BIRCH_LOGS)
+                .add(DDBlocks.ANCIENT_BIRCH_LOG.get())
+                .add(DDBlocks.ANCIENT_BIRCH_WOOD.get())
+                .add(DDBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get())
+                .add(DDBlocks.STRIPPED_ANCIENT_BIRCH_WOOD.get());
+
         tag(DDTags.Blocks.CHARRED_LOGS)
                 .add(DDBlocks.CHARRED_LOG.get())
                 .add(DDBlocks.CHARRED_WOOD.get())
@@ -57,6 +63,7 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
 
         tag(DDTags.Blocks.DD_LOGS)
                 .addTag(DDTags.Blocks.ANCIENT_OAK_LOGS)
+                .addTag(DDTags.Blocks.ANCIENT_BIRCH_LOGS)
                 .addTag(DDTags.Blocks.EUCALYPTUS_LOGS)
                 .addTag(DDTags.Blocks.SEQUOIA_LOGS)
                 .addTag(DDTags.Blocks.DENDRANTHOS_LOGS)
@@ -110,6 +117,19 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.ISLATE_BRICK_STAIRS.get())
                 .add(DDBlocks.ISLATE_BRICK_SLAB.get())
                 .add(DDBlocks.ISLATE_BRICK_WALL.get())
+                .add(DDBlocks.PEAT.get())
+                .add(DDBlocks.PEAT_STAIRS.get())
+                .add(DDBlocks.PEAT_SLAB.get())
+                .add(DDBlocks.PEAT_WALL.get())
+                .add(DDBlocks.PACKED_PEAT.get())
+                .add(DDBlocks.PACKED_PEAT_STAIRS.get())
+                .add(DDBlocks.PACKED_PEAT_SLAB.get())
+                .add(DDBlocks.PACKED_PEAT_WALL.get())
+                .add(DDBlocks.PEAT_BRICKS.get())
+                .add(DDBlocks.PEAT_BRICK_STAIRS.get())
+                .add(DDBlocks.PEAT_BRICK_SLAB.get())
+                .add(DDBlocks.PEAT_BRICK_WALL.get())
+                .add(DDBlocks.CHISELED_PEAT.get())
                 .add(DDBlocks.RHYOLITE.get())
                 .add(DDBlocks.RHYOLITE_STAIRS.get())
                 .add(DDBlocks.RHYOLITE_SLAB.get())
@@ -133,6 +153,7 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.PLANKS)
                 .add(DDBlocks.ANCIENT_OAK_PLANKS.get())
+                .add(DDBlocks.ANCIENT_BIRCH_PLANKS.get())
                 .add(DDBlocks.EUCALYPTUS_PLANKS.get())
                 .add(DDBlocks.SEQUOIA_PLANKS.get())
                 .add(DDBlocks.DENDRANTHOS_PLANKS.get())
@@ -154,6 +175,7 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.WOODEN_STAIRS)
                 .add(DDBlocks.ANCIENT_OAK_STAIRS.get())
+                .add(DDBlocks.ANCIENT_BIRCH_STAIRS.get())
                 .add(DDBlocks.EUCALYPTUS_STAIRS.get())
                 .add(DDBlocks.SEQUOIA_STAIRS.get())
                 .add(DDBlocks.DENDRANTHOS_STAIRS.get())
@@ -161,6 +183,7 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.WOODEN_SLABS)
                 .add(DDBlocks.ANCIENT_OAK_SLAB.get())
+                .add(DDBlocks.ANCIENT_BIRCH_SLAB.get())
                 .add(DDBlocks.EUCALYPTUS_SLAB.get())
                 .add(DDBlocks.SEQUOIA_SLAB.get())
                 .add(DDBlocks.DENDRANTHOS_SLAB.get())
@@ -168,6 +191,7 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.WOODEN_PRESSURE_PLATES)
                 .add(DDBlocks.ANCIENT_OAK_PRESSURE_PLATE.get())
+                .add(DDBlocks.ANCIENT_BIRCH_PRESSURE_PLATE.get())
                 .add(DDBlocks.EUCALYPTUS_PRESSURE_PLATE.get())
                 .add(DDBlocks.SEQUOIA_PRESSURE_PLATE.get())
                 .add(DDBlocks.DENDRANTHOS_PRESSURE_PLATE.get())
@@ -175,6 +199,7 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.WOODEN_BUTTONS)
                 .add(DDBlocks.ANCIENT_OAK_BUTTON.get())
+                .add(DDBlocks.ANCIENT_BIRCH_BUTTON.get())
                 .add(DDBlocks.EUCALYPTUS_BUTTON.get())
                 .add(DDBlocks.SEQUOIA_BUTTON.get())
                 .add(DDBlocks.DENDRANTHOS_BUTTON.get())
@@ -182,12 +207,16 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.WOODEN_FENCES)
                 .add(DDBlocks.ANCIENT_OAK_FENCE.get())
+                .add(DDBlocks.ANCIENT_BIRCH_FENCE.get())
                 .add(DDBlocks.CHARRED_FENCE.get())
                 .add(DDBlocks.EUCALYPTUS_FENCE.get())
-                .add(DDBlocks.SEQUOIA_FENCE.get());
+                .add(DDBlocks.SEQUOIA_FENCE.get())
+                .add(DDBlocks.DENDRANTHOS_FENCE.get())
+                .add(DDBlocks.DENDRYMYCOS_FENCE.get());
 
         tag(BlockTags.FENCE_GATES)
                 .add(DDBlocks.ANCIENT_OAK_FENCE_GATE.get())
+                .add(DDBlocks.ANCIENT_BIRCH_FENCE_GATE.get())
                 .add(DDBlocks.EUCALYPTUS_FENCE_GATE.get())
                 .add(DDBlocks.SEQUOIA_FENCE_GATE.get())
                 .add(DDBlocks.DENDRANTHOS_FENCE_GATE.get())
@@ -195,6 +224,7 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.WOODEN_DOORS)
                 .add(DDBlocks.ANCIENT_OAK_DOOR.get())
+                .add(DDBlocks.ANCIENT_BIRCH_DOOR.get())
                 .add(DDBlocks.EUCALYPTUS_DOOR.get())
                 .add(DDBlocks.SEQUOIA_DOOR.get())
                 .add(DDBlocks.DENDRANTHOS_DOOR.get())
@@ -202,12 +232,15 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.WOODEN_TRAPDOORS)
                 .add(DDBlocks.ANCIENT_OAK_TRAPDOOR.get())
+                .add(DDBlocks.ANCIENT_BIRCH_TRAPDOOR.get())
                 .add(DDBlocks.EUCALYPTUS_TRAPDOOR.get())
                 .add(DDBlocks.SEQUOIA_TRAPDOOR.get())
                 .add(DDBlocks.DENDRANTHOS_TRAPDOOR.get())
                 .add(DDBlocks.DENDRYMYCOS_TRAPDOOR.get());
 
         tag(BlockTags.LEAVES)
+                .add(DDBlocks.ANCIENT_OAK_LEAVES.get())
+                .add(DDBlocks.ANCIENT_BIRCH_LEAVES.get())
                 .add(DDBlocks.EUCALYPTUS_LEAVES.get())
                 .add(DDBlocks.SEQUOIA_LEAVES.get())
                 .add(DDBlocks.DENDRANTHOS_PETALS.get());
@@ -230,6 +263,9 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.DISTANT_COBBLE_STAIRS.get())
                 .add(DDBlocks.DISTANT_STONE_POLISHED_STAIRS.get())
                 .add(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get())
+                .add(DDBlocks.PEAT_STAIRS.get())
+                .add(DDBlocks.PACKED_PEAT_STAIRS.get())
+                .add(DDBlocks.PEAT_BRICK_STAIRS.get())
                 .add(DDBlocks.ISLATE_STAIRS.get())
                 .add(DDBlocks.ISLATE_COBBLED_STAIRS.get())
                 .add(DDBlocks.ISLATE_POLISHED_STAIRS.get())
@@ -241,6 +277,9 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.DISTANT_COBBLE_SLAB.get())
                 .add(DDBlocks.DISTANT_STONE_POLISHED_SLAB.get())
                 .add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get())
+                .add(DDBlocks.PEAT_SLAB.get())
+                .add(DDBlocks.PACKED_PEAT_SLAB.get())
+                .add(DDBlocks.PEAT_BRICK_SLAB.get())
                 .add(DDBlocks.ISLATE_SLAB.get())
                 .add(DDBlocks.ISLATE_COBBLED_SLAB.get())
                 .add(DDBlocks.ISLATE_POLISHED_SLAB.get())
@@ -268,6 +307,9 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.DISTANT_COBBLE_WALL.get())
                 .add(DDBlocks.DISTANT_STONE_POLISHED_WALL.get())
                 .add(DDBlocks.DISTANT_STONE_BRICK_WALL.get())
+                .add(DDBlocks.PEAT_WALL.get())
+                .add(DDBlocks.PACKED_PEAT_WALL.get())
+                .add(DDBlocks.PEAT_BRICK_WALL.get())
                 .add(DDBlocks.ISLATE_WALL.get())
                 .add(DDBlocks.ISLATE_COBBLED_WALL.get())
                 .add(DDBlocks.ISLATE_POLISHED_WALL.get())
