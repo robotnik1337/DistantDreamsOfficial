@@ -60,7 +60,7 @@ public class DistantDreams {
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, DDSurfaceRules.makeRules());
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, DDSurfaceRules.makeOverworldRules());
     }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {}
 

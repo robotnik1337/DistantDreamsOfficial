@@ -67,6 +67,6 @@
         }
       ]
     },
-    "settings": "minecraft:overworld"
+    "settings": "distantdreams:distant_realm"
   }
 }
