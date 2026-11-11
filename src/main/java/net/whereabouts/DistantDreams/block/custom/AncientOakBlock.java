@@ -95,7 +95,32 @@ public class AncientOakBlock extends DDWoodLogBlock {
             charredBlock = DDBlocks.STRIPPED_CHARRED_LOG.get().defaultBlockState().setValue(AXIS, originalAxis);
         } else if (blockToChar == DDBlocks.STRIPPED_ANCIENT_OAK_WOOD.get()) {
             charredBlock = DDBlocks.STRIPPED_CHARRED_WOOD.get().defaultBlockState().setValue(AXIS, originalAxis);
+        } else if (blockToChar == DDBlocks.ANCIENT_BIRCH_LOG.get()) {
+            charredBlock = DDBlocks.STRIPPED_CHARRED_LOG.get().defaultBlockState().setValue(AXIS, originalAxis);
+        } else if (blockToChar == DDBlocks.ANCIENT_BIRCH_WOOD.get()) {
+            charredBlock = DDBlocks.CHARRED_WOOD.get().defaultBlockState().setValue(AXIS, originalAxis);
+        } else if (blockToChar == DDBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get()) {
+            charredBlock = DDBlocks.STRIPPED_CHARRED_LOG.get().defaultBlockState().setValue(AXIS, originalAxis);
+        } else if (blockToChar == DDBlocks.STRIPPED_ANCIENT_BIRCH_WOOD.get()) {
+            charredBlock = DDBlocks.STRIPPED_CHARRED_WOOD.get().defaultBlockState().setValue(AXIS, originalAxis);
+        } else if (blockToChar == DDBlocks.ANCIENT_ACACIA_LOG.get()) {
+            charredBlock = DDBlocks.STRIPPED_CHARRED_LOG.get().defaultBlockState().setValue(AXIS, originalAxis);
+        } else if (blockToChar == DDBlocks.ANCIENT_ACACIA_WOOD.get()) {
+            charredBlock = DDBlocks.CHARRED_WOOD.get().defaultBlockState().setValue(AXIS, originalAxis);
+        } else if (blockToChar == DDBlocks.STRIPPED_ANCIENT_ACACIA_LOG.get()) {
+            charredBlock = DDBlocks.STRIPPED_CHARRED_LOG.get().defaultBlockState().setValue(AXIS, originalAxis);
+        } else if (blockToChar == DDBlocks.STRIPPED_ANCIENT_ACACIA_WOOD.get()) {
+            charredBlock = DDBlocks.STRIPPED_CHARRED_WOOD.get().defaultBlockState().setValue(AXIS, originalAxis);
+        } else if (blockToChar == DDBlocks.ANCIENT_MANGROVE_LOG.get()) {
+            charredBlock = DDBlocks.STRIPPED_CHARRED_LOG.get().defaultBlockState().setValue(AXIS, originalAxis);
+        } else if (blockToChar == DDBlocks.ANCIENT_MANGROVE_WOOD.get()) {
+            charredBlock = DDBlocks.CHARRED_WOOD.get().defaultBlockState().setValue(AXIS, originalAxis);
+        } else if (blockToChar == DDBlocks.STRIPPED_ANCIENT_MANGROVE_LOG.get()) {
+            charredBlock = DDBlocks.STRIPPED_CHARRED_LOG.get().defaultBlockState().setValue(AXIS, originalAxis);
+        } else if (blockToChar == DDBlocks.STRIPPED_ANCIENT_MANGROVE_WOOD.get()) {
+            charredBlock = DDBlocks.STRIPPED_CHARRED_WOOD.get().defaultBlockState().setValue(AXIS, originalAxis);
         }
+
         return charredBlock;
     }
 

@@ -228,6 +228,12 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get(),
                 _ -> createSlabItemTable(DDBlocks.DISTANT_STONE_BRICK_SLAB.get()));
         dropSelf(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
+        dropSelf(DDBlocks.MOSSY_DISTANT_STONE_BRICKS.get());
+        dropSelf(DDBlocks.MOSSY_DISTANT_STONE_BRICK_STAIRS.get());
+        add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get()));
+        dropSelf(DDBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get());
+        dropSelf(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get());
 
         dropSelf(DDBlocks.DISTANT_SAND.get());
         dropSelf(DDBlocks.DISTANT_SANDSTONE.get());
@@ -241,6 +247,30 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         add(DDBlocks.DISTANT_SANDSTONE_BRICK_SLAB.get(),
                 _ -> createSlabItemTable(DDBlocks.DISTANT_SANDSTONE_BRICK_SLAB.get()));
         dropSelf(DDBlocks.DISTANT_SANDSTONE_BRICK_WALL.get());
+
+        dropSelf(DDBlocks.LIMESTONE_POWDER.get());
+        dropSelf(DDBlocks.LIMESTONE.get());
+        dropSelf(DDBlocks.LIMESTONE_STAIRS.get());
+        add(DDBlocks.LIMESTONE_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.LIMESTONE_SLAB.get()));
+        dropSelf(DDBlocks.LIMESTONE_WALL.get());
+        dropSelf(DDBlocks.POLISHED_LIMESTONE.get());
+        dropSelf(DDBlocks.POLISHED_LIMESTONE_STAIRS.get());
+        add(DDBlocks.POLISHED_LIMESTONE_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.POLISHED_LIMESTONE_SLAB.get()));
+        dropSelf(DDBlocks.POLISHED_LIMESTONE_WALL.get());
+        dropSelf(DDBlocks.LIMESTONE_BRICKS.get());
+        dropSelf(DDBlocks.LIMESTONE_BRICK_STAIRS.get());
+        add(DDBlocks.LIMESTONE_BRICK_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.LIMESTONE_BRICK_SLAB.get()));
+        dropSelf(DDBlocks.LIMESTONE_BRICK_WALL.get());
+        dropSelf(DDBlocks.MOSSY_LIMESTONE_BRICKS.get());
+        dropSelf(DDBlocks.MOSSY_LIMESTONE_BRICK_STAIRS.get());
+        add(DDBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get()));
+        dropSelf(DDBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
+        dropSelf(DDBlocks.CRACKED_LIMESTONE_BRICKS.get());
+        dropSelf(DDBlocks.LIMESTONE_PILLAR.get());
 
         dropSelf(DDBlocks.ISLATE.get());
         dropSelf(DDBlocks.ISLATE_STAIRS.get());

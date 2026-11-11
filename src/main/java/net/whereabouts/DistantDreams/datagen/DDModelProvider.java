@@ -237,6 +237,13 @@ public class DDModelProvider extends ModelProvider {
                 .slab(DDBlocks.DISTANT_STONE_BRICK_SLAB.get())
                 .wall(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
 
+        blockModels.family(DDBlocks.MOSSY_DISTANT_STONE_BRICKS.get())
+                .stairs(DDBlocks.MOSSY_DISTANT_STONE_BRICK_STAIRS.get())
+                .slab(DDBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get())
+                .wall(DDBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get());
+
+        blockModels.createTrivialCube(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get());
+
         // Distant Sandstone
         blockModels.createTrivialCube(DDBlocks.DISTANT_SAND.get());
         blockModels.createRotatedPillarWithHorizontalVariant(DDBlocks.DISTANT_SANDSTONE.get(), TexturedModel.COLUMN_ALT, TexturedModel.COLUMN_HORIZONTAL_ALT );
@@ -251,6 +258,32 @@ public class DDModelProvider extends ModelProvider {
                 .wall(DDBlocks.DISTANT_SANDSTONE_BRICK_WALL.get());
 
         // Limestone
+        blockModels.createTrivialCube(DDBlocks.LIMESTONE_POWDER.get());
+
+        blockModels.family(DDBlocks.LIMESTONE.get())
+                .stairs(DDBlocks.LIMESTONE_STAIRS.get())
+                .slab(DDBlocks.LIMESTONE_SLAB.get())
+                .wall(DDBlocks.LIMESTONE_WALL.get());
+
+        blockModels.family(DDBlocks.POLISHED_LIMESTONE.get())
+                .stairs(DDBlocks.POLISHED_LIMESTONE_STAIRS.get())
+                .slab(DDBlocks.POLISHED_LIMESTONE_SLAB.get())
+                .wall(DDBlocks.POLISHED_LIMESTONE_WALL.get());
+
+        blockModels.family(DDBlocks.LIMESTONE_BRICKS.get())
+                .stairs(DDBlocks.LIMESTONE_BRICK_STAIRS.get())
+                .slab(DDBlocks.LIMESTONE_BRICK_SLAB.get())
+                .wall(DDBlocks.LIMESTONE_BRICK_WALL.get());
+
+        blockModels.family(DDBlocks.MOSSY_LIMESTONE_BRICKS.get())
+                .stairs(DDBlocks.MOSSY_LIMESTONE_BRICK_STAIRS.get())
+                .slab(DDBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get())
+                .wall(DDBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
+
+        blockModels.createTrivialCube(DDBlocks.CRACKED_LIMESTONE_BRICKS.get());
+        blockModels.createRotatedPillarWithHorizontalVariant(DDBlocks.LIMESTONE_PILLAR.get(), TexturedModel.COLUMN_ALT, TexturedModel.COLUMN_HORIZONTAL_ALT );
+
+
 
         // Islate
         blockModels.family(DDBlocks.ISLATE.get())
