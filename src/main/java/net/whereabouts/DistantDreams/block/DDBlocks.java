@@ -631,6 +631,22 @@ public class DDBlocks {
     public static final DeferredBlock<@NotNull WallBlock> DISTANT_STONE_BRICK_WALL = registerBlockItem("distant_stone_brick_wall", WallBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
 
+    public static final DeferredBlock<@NotNull Block> MOSSY_DISTANT_STONE_BRICKS = registerBlockItem("mossy_distant_stone_bricks", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
+
+    public static final DeferredBlock<@NotNull StairBlock> MOSSY_DISTANT_STONE_BRICK_STAIRS = registerBlockItem("mossy_distant_stone_brick_stairs",
+            properties -> new StairBlock(MOSSY_DISTANT_STONE_BRICKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(MOSSY_DISTANT_STONE_BRICKS.get()));
+
+    public static final DeferredBlock<@NotNull SlabBlock> MOSSY_DISTANT_STONE_BRICK_SLAB = registerBlockItem("mossy_distant_stone_brick_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
+
+    public static final DeferredBlock<@NotNull WallBlock> MOSSY_DISTANT_STONE_BRICK_WALL = registerBlockItem("mossy_distant_stone_brick_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
+
+    public static final DeferredBlock<@NotNull Block> CRACKED_DISTANT_STONE_BRICKS = registerBlockItem("cracked_distant_stone_bricks", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.CRACKED_STONE_BRICKS));
+
     // Distant Sand
     public static final DeferredBlock<@NotNull Block> DISTANT_SAND = registerBlockItem("distant_sand",Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SAND));
@@ -665,6 +681,66 @@ public class DDBlocks {
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_WALL));
 
     // Limestone
+    public static final DeferredBlock<@NotNull Block> LIMESTONE_POWDER = registerBlockItem("limestone_powder",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SAND));
+
+    public static final DeferredBlock<@NotNull Block> LIMESTONE = registerBlockItem("limestone",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE));
+
+    public static final DeferredBlock<@NotNull StairBlock> LIMESTONE_STAIRS = registerBlockItem("limestone_stairs",
+            properties -> new StairBlock(LIMESTONE.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(LIMESTONE.get()));
+
+    public static final DeferredBlock<@NotNull SlabBlock> LIMESTONE_SLAB = registerBlockItem("limestone_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE_SLAB));
+
+    public static final DeferredBlock<@NotNull WallBlock> LIMESTONE_WALL = registerBlockItem("limestone_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE_WALL));
+
+    public static final DeferredBlock<@NotNull Block> POLISHED_LIMESTONE = registerBlockItem("polished_limestone",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE));
+
+    public static final DeferredBlock<@NotNull StairBlock> POLISHED_LIMESTONE_STAIRS = registerBlockItem("polished_limestone_stairs",
+            properties -> new StairBlock(POLISHED_LIMESTONE.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(POLISHED_LIMESTONE.get()));
+
+    public static final DeferredBlock<@NotNull SlabBlock> POLISHED_LIMESTONE_SLAB = registerBlockItem("polished_limestone_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE_SLAB));
+
+    public static final DeferredBlock<@NotNull WallBlock> POLISHED_LIMESTONE_WALL = registerBlockItem("polished_limestone_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE_WALL));
+
+    public static final DeferredBlock<@NotNull Block> LIMESTONE_BRICKS = registerBlockItem("limestone_bricks",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
+
+    public static final DeferredBlock<@NotNull StairBlock> LIMESTONE_BRICK_STAIRS = registerBlockItem("limestone_brick_stairs",
+            properties -> new StairBlock(LIMESTONE_BRICKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(LIMESTONE_BRICKS.get()));
+
+    public static final DeferredBlock<@NotNull SlabBlock> LIMESTONE_BRICK_SLAB = registerBlockItem("limestone_brick_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
+
+    public static final DeferredBlock<@NotNull WallBlock> LIMESTONE_BRICK_WALL = registerBlockItem("limestone_brick_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
+
+    public static final DeferredBlock<@NotNull Block> MOSSY_LIMESTONE_BRICKS = registerBlockItem("mossy_limestone_bricks",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
+
+    public static final DeferredBlock<@NotNull StairBlock> MOSSY_LIMESTONE_BRICK_STAIRS = registerBlockItem("mossy_limestone_brick_stairs",
+            properties -> new StairBlock(MOSSY_LIMESTONE_BRICKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(MOSSY_LIMESTONE_BRICKS.get()));
+
+    public static final DeferredBlock<@NotNull SlabBlock> MOSSY_LIMESTONE_BRICK_SLAB = registerBlockItem("mossy_limestone_brick_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
+
+    public static final DeferredBlock<@NotNull WallBlock> MOSSY_LIMESTONE_BRICK_WALL = registerBlockItem("mossy_limestone_brick_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
+
+    public static final DeferredBlock<@NotNull Block> CRACKED_LIMESTONE_BRICKS = registerBlockItem("cracked_limestone_bricks",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.CRACKED_STONE_BRICKS));
+
+    public static final DeferredBlock<@NotNull RotatedPillarBlock> LIMESTONE_PILLAR = registerBlockItem("limestone_pillar",RotatedPillarBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR));
 
     // Islate
     public static final DeferredBlock<@NotNull Block> ISLATE = registerBlockItem("islate",Block::new,

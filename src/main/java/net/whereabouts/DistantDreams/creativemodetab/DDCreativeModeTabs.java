@@ -182,6 +182,31 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get());
                         output.accept(DDBlocks.DISTANT_STONE_BRICK_SLAB.get());
                         output.accept(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
+                        output.accept(DDBlocks.MOSSY_DISTANT_STONE_BRICKS.get());
+                        output.accept(DDBlocks.MOSSY_DISTANT_STONE_BRICK_STAIRS.get());
+                        output.accept(DDBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get());
+                        output.accept(DDBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get());
+                        output.accept(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get());
+
+                        output.accept(DDBlocks.LIMESTONE_POWDER.get());
+                        output.accept(DDBlocks.LIMESTONE.get());
+                        output.accept(DDBlocks.LIMESTONE_STAIRS.get());
+                        output.accept(DDBlocks.LIMESTONE_SLAB.get());
+                        output.accept(DDBlocks.LIMESTONE_WALL.get());
+                        output.accept(DDBlocks.POLISHED_LIMESTONE.get());
+                        output.accept(DDBlocks.POLISHED_LIMESTONE_STAIRS.get());
+                        output.accept(DDBlocks.POLISHED_LIMESTONE_SLAB.get());
+                        output.accept(DDBlocks.POLISHED_LIMESTONE_WALL.get());
+                        output.accept(DDBlocks.LIMESTONE_BRICKS.get());
+                        output.accept(DDBlocks.LIMESTONE_BRICK_STAIRS.get());
+                        output.accept(DDBlocks.LIMESTONE_BRICK_SLAB.get());
+                        output.accept(DDBlocks.LIMESTONE_BRICK_WALL.get());
+                        output.accept(DDBlocks.MOSSY_LIMESTONE_BRICKS.get());
+                        output.accept(DDBlocks.MOSSY_LIMESTONE_BRICK_STAIRS.get());
+                        output.accept(DDBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get());
+                        output.accept(DDBlocks.MOSSY_LIMESTONE_BRICK_WALL.get());
+                        output.accept(DDBlocks.LIMESTONE_PILLAR.get());
+                        output.accept(DDBlocks.CRACKED_LIMESTONE_BRICKS.get());
 
                         output.accept(DDBlocks.DISTANT_SAND.get());
                         output.accept(DDBlocks.DISTANT_SANDSTONE.get());

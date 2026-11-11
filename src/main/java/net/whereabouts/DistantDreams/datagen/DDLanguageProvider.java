@@ -182,32 +182,32 @@ public class DDLanguageProvider extends LanguageProvider {
         add(DDBlocks.DENDRYMYCOS_CAP_GREEN.get(), "Dendrymycos Cap Green");
 
 
-//        // Limestone
-//        add(DDBlocks.LIMESTONE.get(), "Limestone");
-//        add(DDBlocks.LIMESTONE_STAIRS.get(), "Limestone Stairs");
-//        add(DDBlocks.LIMESTONE_SLAB.get(), "Limestone Slab");
-//        add(DDBlocks.LIMESTONE_WALL.get(), "Limestone Wall");
+        // Limestone
+        add(DDBlocks.LIMESTONE.get(), "Limestone");
+        add(DDBlocks.LIMESTONE_STAIRS.get(), "Limestone Stairs");
+        add(DDBlocks.LIMESTONE_SLAB.get(), "Limestone Slab");
+        add(DDBlocks.LIMESTONE_WALL.get(), "Limestone Wall");
 //        add(DDBlocks.LIMESTONE_PRESSURE_PLATE.get(), "Limestone Pressure Plate");
 //        add(DDBlocks.LIMESTONE_BUTTON.get(), "Limestone Button");
-//
-//        add(DDBlocks.LIMESTONE_BRICKS.get(), "Limestone Bricks");
-//        add(DDBlocks.LIMESTONE_BRICK_STAIRS.get(), "Limestone Brick Stairs");
-//        add(DDBlocks.LIMESTONE_BRICK_SLAB.get(), "Limestone Brick Slab");
-//        add(DDBlocks.LIMESTONE_BRICK_WALL.get(), "Limestone Brick Wall");
-//
-//        add(DDBlocks.MOSSY_LIMESTONE_BRICKS.get(), "Mossy Limestone Bricks");
-//        add(DDBlocks.MOSSY_LIMESTONE_BRICK_STAIRS.get(), "Mossy Limestone Brick Stairs");
-//        add(DDBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get(), "Mossy Limestone Brick Slab");
-//        add(DDBlocks.MOSSY_LIMESTONE_BRICK_WALL.get(), "Mossy Limestone Brick Wall");
-//
-//        add(DDBlocks.POLISHED_LIMESTONE.get(), "Polished Limestone");
-//        add(DDBlocks.POLISHED_LIMESTONE_STAIRS.get(), "Polished Limestone Stairs");
-//        add(DDBlocks.POLISHED_LIMESTONE_SLAB.get(), "Polished Limestone Slab");
-//        add(DDBlocks.POLISHED_LIMESTONE_WALL.get(), "Polished Limestone Wall");
-//
-//        add(DDBlocks.LIMESTONE_POWDER.get(), "Limestone Powder");
-//        add(DDBlocks.CRACKED_LIMESTONE_BRICKS.get(), "Cracked Limestone Bricks");
-//        add(DDBlocks.LIMESTONE_PILLAR.get(), "Limestone Pillar");
+
+        add(DDBlocks.LIMESTONE_BRICKS.get(), "Limestone Bricks");
+        add(DDBlocks.LIMESTONE_BRICK_STAIRS.get(), "Limestone Brick Stairs");
+        add(DDBlocks.LIMESTONE_BRICK_SLAB.get(), "Limestone Brick Slab");
+        add(DDBlocks.LIMESTONE_BRICK_WALL.get(), "Limestone Brick Wall");
+
+        add(DDBlocks.MOSSY_LIMESTONE_BRICKS.get(), "Mossy Limestone Bricks");
+        add(DDBlocks.MOSSY_LIMESTONE_BRICK_STAIRS.get(), "Mossy Limestone Brick Stairs");
+        add(DDBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get(), "Mossy Limestone Brick Slab");
+        add(DDBlocks.MOSSY_LIMESTONE_BRICK_WALL.get(), "Mossy Limestone Brick Wall");
+
+        add(DDBlocks.POLISHED_LIMESTONE.get(), "Polished Limestone");
+        add(DDBlocks.POLISHED_LIMESTONE_STAIRS.get(), "Polished Limestone Stairs");
+        add(DDBlocks.POLISHED_LIMESTONE_SLAB.get(), "Polished Limestone Slab");
+        add(DDBlocks.POLISHED_LIMESTONE_WALL.get(), "Polished Limestone Wall");
+
+        add(DDBlocks.LIMESTONE_POWDER.get(), "Limestone Powder");
+        add(DDBlocks.CRACKED_LIMESTONE_BRICKS.get(), "Cracked Limestone Bricks");
+        add(DDBlocks.LIMESTONE_PILLAR.get(), "Limestone Pillar");
 //
 //        // Distant Stone
         add(DDBlocks.DISTANT_STONE.get(), "Distant Stone");
@@ -227,17 +227,17 @@ public class DDLanguageProvider extends LanguageProvider {
         add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get(), "Distant Stone Brick Slab");
         add(DDBlocks.DISTANT_STONE_BRICK_WALL.get(), "Distant Stone Brick Wall");
 //
-//        add(DDBlocks.MOSSY_DISTANT_STONE_BRICKS.get(), "Mossy Distant Stone Bricks");
-//        add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_STAIRS.get(), "Mossy Distant Stone Brick Stairs");
-//        add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get(), "Mossy Distant Stone Brick Slab");
-//        add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get(), "Mossy Distant Stone Brick Wall");
+       add(DDBlocks.MOSSY_DISTANT_STONE_BRICKS.get(), "Mossy Distant Stone Bricks");
+        add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_STAIRS.get(), "Mossy Distant Stone Brick Stairs");
+        add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get(), "Mossy Distant Stone Brick Slab");
+        add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get(), "Mossy Distant Stone Brick Wall");
 
         add(DDBlocks.DISTANT_STONE_POLISHED.get(), "Polished Distant Stone");
         add(DDBlocks.DISTANT_STONE_POLISHED_STAIRS.get(), "Polished Distant Stone Stairs");
         add(DDBlocks.DISTANT_STONE_POLISHED_SLAB.get(), "Polished Distant Stone Slab");
         add(DDBlocks.DISTANT_STONE_POLISHED_WALL.get(), "Polished Distant Stone Wall");
 //
-//        add(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get(), "Cracked Distant Stone Bricks");
+        add(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get(), "Cracked Distant Stone Bricks");
 
         // Distant Sand
         add(DDBlocks.DISTANT_SAND.get(), "Distant Sand");

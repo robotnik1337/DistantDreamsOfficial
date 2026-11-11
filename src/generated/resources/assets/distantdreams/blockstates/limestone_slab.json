@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "distantdreams:block/limestone_slab"
+    },
+    "type=double": {
+      "model": "distantdreams:block/limestone"
+    },
+    "type=top": {
+      "model": "distantdreams:block/limestone_slab_top"
+    }
+  }
+}

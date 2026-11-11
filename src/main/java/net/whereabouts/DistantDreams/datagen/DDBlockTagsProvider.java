@@ -288,8 +288,18 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.DISTANT_GRASS.get())
                 .add(DDBlocks.DISTANT_DIRT.get());
 
+        tag(BlockTags.SAND)
+                .add(DDBlocks.DISTANT_SAND.get())
+                .add(DDBlocks.LIMESTONE_POWDER.get());
 
+        tag(BlockTags.SUPPORTS_DRY_VEGETATION)
+                .add(DDBlocks.DISTANT_SAND.get());
 
+        tag(BlockTags.SAPLINGS)
+                .add(DDBlocks.ANCIENT_OAK_SAPLING.get())
+                .add(DDBlocks.ANCIENT_BIRCH_SAPLING.get())
+                .add(DDBlocks.ANCIENT_ACACIA_SAPLING.get())
+                .add(DDBlocks.SEQUOIA_SAPLING.get());
 
         tag(BlockTags.STAIRS)
                 .add(DDBlocks.CHARRED_STAIRS.get())
@@ -297,8 +307,13 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.DISTANT_COBBLE_STAIRS.get())
                 .add(DDBlocks.DISTANT_STONE_POLISHED_STAIRS.get())
                 .add(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get())
+                .add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_STAIRS.get())
                 .add(DDBlocks.SMOOTH_DISTANT_SANDSTONE_STAIRS.get())
                 .add(DDBlocks.DISTANT_SANDSTONE_BRICK_STAIRS.get())
+                .add(DDBlocks.LIMESTONE_STAIRS.get())
+                .add(DDBlocks.POLISHED_LIMESTONE_STAIRS.get())
+                .add(DDBlocks.LIMESTONE_BRICK_STAIRS.get())
+                .add(DDBlocks.MOSSY_LIMESTONE_BRICK_STAIRS.get())
                 .add(DDBlocks.PEAT_STAIRS.get())
                 .add(DDBlocks.PACKED_PEAT_STAIRS.get())
                 .add(DDBlocks.PEAT_BRICK_STAIRS.get())
@@ -313,8 +328,13 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.DISTANT_COBBLE_SLAB.get())
                 .add(DDBlocks.DISTANT_STONE_POLISHED_SLAB.get())
                 .add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get())
+                .add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get())
                 .add(DDBlocks.SMOOTH_DISTANT_SANDSTONE_SLAB.get())
                 .add(DDBlocks.DISTANT_SANDSTONE_BRICK_SLAB.get())
+                .add(DDBlocks.LIMESTONE_SLAB.get())
+                .add(DDBlocks.POLISHED_LIMESTONE_SLAB.get())
+                .add(DDBlocks.LIMESTONE_BRICK_SLAB.get())
+                .add(DDBlocks.MOSSY_LIMESTONE_BRICK_SLAB.get())
                 .add(DDBlocks.PEAT_SLAB.get())
                 .add(DDBlocks.PACKED_PEAT_SLAB.get())
                 .add(DDBlocks.PEAT_BRICK_SLAB.get())
@@ -345,8 +365,13 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.DISTANT_COBBLE_WALL.get())
                 .add(DDBlocks.DISTANT_STONE_POLISHED_WALL.get())
                 .add(DDBlocks.DISTANT_STONE_BRICK_WALL.get())
+                .add(DDBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get())
                 .add(DDBlocks.SMOOTH_DISTANT_SANDSTONE_WALL.get())
                 .add(DDBlocks.DISTANT_SANDSTONE_BRICK_WALL.get())
+                .add(DDBlocks.LIMESTONE_WALL.get())
+                .add(DDBlocks.POLISHED_LIMESTONE_WALL.get())
+                .add(DDBlocks.LIMESTONE_BRICK_WALL.get())
+                .add(DDBlocks.MOSSY_LIMESTONE_BRICK_WALL.get())
                 .add(DDBlocks.PEAT_WALL.get())
                 .add(DDBlocks.PACKED_PEAT_WALL.get())
                 .add(DDBlocks.PEAT_BRICK_WALL.get())
