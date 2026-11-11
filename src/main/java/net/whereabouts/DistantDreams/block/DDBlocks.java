@@ -6,6 +6,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -605,7 +606,7 @@ public class DDBlocks {
     public static final DeferredBlock<@NotNull WallBlock> DISTANT_COBBLE_WALL = registerBlockItem("distant_cobble_wall", WallBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_WALL));
 
-    public static final DeferredBlock<@NotNull Block> DISTANT_STONE_POLISHED = registerBlockItem("distant_stone_polished",Block::new,
+    public static final DeferredBlock<@NotNull Block> DISTANT_STONE_POLISHED = registerBlockItem("distant_stone_polished", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
 
     public static final DeferredBlock<@NotNull StairBlock> DISTANT_STONE_POLISHED_STAIRS = registerBlockItem("distant_stone_polished_stairs",
@@ -647,14 +648,16 @@ public class DDBlocks {
     public static final DeferredBlock<@NotNull Block> CRACKED_DISTANT_STONE_BRICKS = registerBlockItem("cracked_distant_stone_bricks", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.CRACKED_STONE_BRICKS));
 
+
     // Distant Sand
-    public static final DeferredBlock<@NotNull Block> DISTANT_SAND = registerBlockItem("distant_sand",Block::new,
+    public static final DeferredBlock<@NotNull SandBlock> DISTANT_SAND = registerBlockItem("distant_sand",
+            properties -> new SandBlock(new ColorRGBA(0xc79a77), properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SAND));
 
-    public static final DeferredBlock<@NotNull RotatedPillarBlock> DISTANT_SANDSTONE = registerBlockItem("distant_sandstone",RotatedPillarBlock::new,
+    public static final DeferredBlock<@NotNull RotatedPillarBlock> DISTANT_SANDSTONE = registerBlockItem("distant_sandstone", RotatedPillarBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE));
 
-    public static final DeferredBlock<@NotNull Block> SMOOTH_DISTANT_SANDSTONE = registerBlockItem("smooth_distant_sandstone",Block::new,
+    public static final DeferredBlock<@NotNull Block> SMOOTH_DISTANT_SANDSTONE = registerBlockItem("smooth_distant_sandstone", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE));
 
     public static final DeferredBlock<@NotNull StairBlock> SMOOTH_DISTANT_SANDSTONE_STAIRS = registerBlockItem("smooth_distant_sandstone_stairs",

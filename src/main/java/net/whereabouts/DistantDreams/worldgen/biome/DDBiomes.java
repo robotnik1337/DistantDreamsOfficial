@@ -234,9 +234,10 @@ public class DDBiomes {
         globalDistantRealmGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
-//        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES)
 
+        BiomeDefaultFeatures.addDesertVegetation(biomeBuilder);
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+//        BiomeDefaultFeatures.addDesertExtraVegetation(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder, true);
 
         return new Biome.BiomeBuilder()

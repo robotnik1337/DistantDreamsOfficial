@@ -2,25 +2,24 @@ package net.whereabouts.DistantDreams.worldgen.biome.surface;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SandBlock;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.whereabouts.DistantDreams.block.DDBlocks;
 import net.whereabouts.DistantDreams.worldgen.biome.DDBiomes;
 
 public class DDSurfaceRules {
-    private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
+    private static final SurfaceRules.RuleSource DIRT;
 
-    private static final SurfaceRules.RuleSource FERTILE_SOIL = makeStateRule(DDBlocks.FERTILE_SOIL.get());
+    private static final SurfaceRules.RuleSource FERTILE_SOIL;
 
-    private static final SurfaceRules.RuleSource DISTANT_GRASS = makeStateRule(DDBlocks.DISTANT_GRASS.get());
-    private static final SurfaceRules.RuleSource DISTANT_DIRT = makeStateRule(DDBlocks.DISTANT_DIRT.get());
-    private static final SurfaceRules.RuleSource DISTANT_STONE = makeStateRule(DDBlocks.DISTANT_STONE.get());
-    private static final SurfaceRules.RuleSource DISTANT_SAND = makeStateRule(DDBlocks.DISTANT_SAND.get());
-    private static final SurfaceRules.RuleSource DISTANT_SANDSTONE = makeStateRule(DDBlocks.DISTANT_SANDSTONE.get());
+    private static final SurfaceRules.RuleSource DISTANT_GRASS;
+    private static final SurfaceRules.RuleSource DISTANT_DIRT;
+
+    private static final SurfaceRules.RuleSource DISTANT_SAND;
+    private static final SurfaceRules.RuleSource DISTANT_SANDSTONE;
 
     public static SurfaceRules.RuleSource makeOverworldRules() {
-        SurfaceRules.RuleSource fertileSurface = grassDirtStoneSurfaceRules(FERTILE_SOIL, DIRT, DISTANT_STONE);
+        SurfaceRules.RuleSource fertileSurface = topLayerSurfaceRules(FERTILE_SOIL, DIRT);
 
         return SurfaceRules.sequence(
                 // only run this sequence if we are in the sequoia forest.
@@ -30,24 +29,19 @@ public class DDSurfaceRules {
     }
 
     public static SurfaceRules.RuleSource makeDistantRealmRules() {
-        SurfaceRules.RuleSource distantRealmSurface = grassDirtStoneSurfaceRules(DISTANT_GRASS, DISTANT_DIRT, DISTANT_STONE);
+        SurfaceRules.RuleSource distantGrassDirtSurface = topLayerSurfaceRules(DISTANT_GRASS, DISTANT_DIRT);
+        SurfaceRules.RuleSource distantSandSandstoneSurface = topLayerSurfaceRules(DISTANT_SAND, DISTANT_SANDSTONE);
+
         return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.DISTANT_FOREST), distantRealmSurface),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.TIMEWORN_MEADOWS), distantRealmSurface),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.ANCESTRAL_PLAINS), distantRealmSurface)
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.DISTANT_FOREST), distantGrassDirtSurface),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.TIMEWORN_MEADOWS), distantGrassDirtSurface),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.ANCESTRAL_PLAINS), distantGrassDirtSurface),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.ECHOING_DUNES), distantSandSandstoneSurface)
         );
     }
 
-    public static SurfaceRules.RuleSource makeDistantDesertRules() {
-       SurfaceRules.RuleSource distantRealmSurface = grassDirtStoneSurfaceRules(DISTANT_SAND, DISTANT_SANDSTONE, DISTANT_STONE);
-          return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.ECHOING_DUNES), distantRealmSurface)
-        );
-    }
-
-    private static SurfaceRules.RuleSource grassDirtStoneSurfaceRules(SurfaceRules.RuleSource grass,
-                                                                      SurfaceRules.RuleSource dirt,
-                                                                      SurfaceRules.RuleSource stone) {
+    private static SurfaceRules.RuleSource topLayerSurfaceRules(SurfaceRules.RuleSource grass,
+                                                                SurfaceRules.RuleSource dirt) {
         /* two-part sequence for generating fertile soil & dirt on the surface of sequoia forests. the first part
          * creates the top layer of fertile soil, and the second part creates the fertile dirt layer underneath.
          */
@@ -87,5 +81,17 @@ public class DDSurfaceRules {
 
     private static SurfaceRules.RuleSource makeStateRule(Block block) {
         return SurfaceRules.state(block.defaultBlockState());
+    }
+
+    static {
+        DIRT = makeStateRule(Blocks.DIRT);
+
+        FERTILE_SOIL = makeStateRule(DDBlocks.FERTILE_SOIL.get());
+
+        DISTANT_GRASS = makeStateRule(DDBlocks.DISTANT_GRASS.get());
+        DISTANT_DIRT = makeStateRule(DDBlocks.DISTANT_DIRT.get());
+
+        DISTANT_SAND = makeStateRule(DDBlocks.DISTANT_SAND.get());
+        DISTANT_SANDSTONE = makeStateRule(DDBlocks.DISTANT_SANDSTONE.get());
     }
 }
