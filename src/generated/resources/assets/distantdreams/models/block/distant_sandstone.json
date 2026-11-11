@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "distantdreams:block/distant_sandstone_top",
+    "side": "distantdreams:block/distant_sandstone"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "distantdreams:block/smooth_distant_sandstone_slab"
+    },
+    "type=double": {
+      "model": "distantdreams:block/smooth_distant_sandstone"
+    },
+    "type=top": {
+      "model": "distantdreams:block/smooth_distant_sandstone_slab_top"
+    }
+  }
+}

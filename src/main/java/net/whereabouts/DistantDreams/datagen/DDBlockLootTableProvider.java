@@ -62,6 +62,44 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(DDBlocks.ANCIENT_BIRCH_SAPLING.get());
         dropPottedContents(DDBlocks.POTTED_ANCIENT_BIRCH_SAPLING.get());
 
+        dropSelf(DDBlocks.ANCIENT_ACACIA_LOG.get());
+        dropSelf(DDBlocks.ANCIENT_ACACIA_WOOD.get());
+        dropSelf(DDBlocks.STRIPPED_ANCIENT_ACACIA_LOG.get());
+        dropSelf(DDBlocks.STRIPPED_ANCIENT_ACACIA_WOOD.get());
+        dropSelf(DDBlocks.ANCIENT_ACACIA_PLANKS.get());
+        dropSelf(DDBlocks.ANCIENT_ACACIA_STAIRS.get());
+        add(DDBlocks.ANCIENT_ACACIA_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.ANCIENT_ACACIA_SLAB.get()));
+        dropSelf(DDBlocks.ANCIENT_ACACIA_PRESSURE_PLATE.get());
+        dropSelf(DDBlocks.ANCIENT_ACACIA_BUTTON.get());
+        dropSelf(DDBlocks.ANCIENT_ACACIA_FENCE.get());
+        dropSelf(DDBlocks.ANCIENT_ACACIA_FENCE_GATE.get());
+        add(DDBlocks.ANCIENT_ACACIA_DOOR.get(),
+                _ -> createDoorTable(DDBlocks.ANCIENT_ACACIA_DOOR.get()));
+        dropSelf(DDBlocks.ANCIENT_ACACIA_TRAPDOOR.get());
+        add(DDBlocks.ANCIENT_ACACIA_LEAVES.get(),
+                block -> createLeavesDrops(block, DDBlocks.ANCIENT_ACACIA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(DDBlocks.ANCIENT_ACACIA_SAPLING.get());
+        dropPottedContents(DDBlocks.POTTED_ANCIENT_ACACIA_SAPLING.get());
+
+        dropSelf(DDBlocks.ANCIENT_MANGROVE_LOG.get());
+        dropSelf(DDBlocks.ANCIENT_MANGROVE_WOOD.get());
+        dropSelf(DDBlocks.STRIPPED_ANCIENT_MANGROVE_LOG.get());
+        dropSelf(DDBlocks.STRIPPED_ANCIENT_MANGROVE_WOOD.get());
+        dropSelf(DDBlocks.ANCIENT_MANGROVE_PLANKS.get());
+        dropSelf(DDBlocks.ANCIENT_MANGROVE_STAIRS.get());
+        add(DDBlocks.ANCIENT_MANGROVE_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.ANCIENT_MANGROVE_SLAB.get()));
+        dropSelf(DDBlocks.ANCIENT_MANGROVE_PRESSURE_PLATE.get());
+        dropSelf(DDBlocks.ANCIENT_MANGROVE_BUTTON.get());
+        dropSelf(DDBlocks.ANCIENT_MANGROVE_FENCE.get());
+        dropSelf(DDBlocks.ANCIENT_MANGROVE_FENCE_GATE.get());
+        add(DDBlocks.ANCIENT_MANGROVE_DOOR.get(),
+                _ -> createDoorTable(DDBlocks.ANCIENT_MANGROVE_DOOR.get()));
+        dropSelf(DDBlocks.ANCIENT_MANGROVE_TRAPDOOR.get());
+        add(DDBlocks.ANCIENT_MANGROVE_LEAVES.get(),
+                block -> createLeavesDrops(block, DDBlocks.ANCIENT_BIRCH_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
         // Charred logs and wood will drop 4 pieces of charcoal if they are not broken with silk touch.
         add(DDBlocks.CHARRED_LOG.get(),
                 block -> createSingleItemTableWithSilkTouch(block, Items.CHARCOAL, ConstantValue.exactly(4)));
@@ -190,6 +228,19 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         add(DDBlocks.DISTANT_STONE_BRICK_SLAB.get(),
                 _ -> createSlabItemTable(DDBlocks.DISTANT_STONE_BRICK_SLAB.get()));
         dropSelf(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
+
+        dropSelf(DDBlocks.DISTANT_SAND.get());
+        dropSelf(DDBlocks.DISTANT_SANDSTONE.get());
+        dropSelf(DDBlocks.SMOOTH_DISTANT_SANDSTONE.get());
+        dropSelf(DDBlocks.SMOOTH_DISTANT_SANDSTONE_STAIRS.get());
+        add(DDBlocks.SMOOTH_DISTANT_SANDSTONE_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.SMOOTH_DISTANT_SANDSTONE_SLAB.get()));
+        dropSelf(DDBlocks.SMOOTH_DISTANT_SANDSTONE_WALL.get());
+        dropSelf(DDBlocks.DISTANT_SANDSTONE_BRICKS.get());
+        dropSelf(DDBlocks.DISTANT_SANDSTONE_BRICK_STAIRS.get());
+        add(DDBlocks.DISTANT_SANDSTONE_BRICK_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.DISTANT_SANDSTONE_BRICK_SLAB.get()));
+        dropSelf(DDBlocks.DISTANT_SANDSTONE_BRICK_WALL.get());
 
         dropSelf(DDBlocks.ISLATE.get());
         dropSelf(DDBlocks.ISLATE_STAIRS.get());

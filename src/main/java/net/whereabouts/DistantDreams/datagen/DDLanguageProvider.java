@@ -35,7 +35,6 @@ public class DDLanguageProvider extends LanguageProvider {
         add(DDBlocks.ANCIENT_OAK_BUTTON.get(), "Ancient Oak Button");
 //
         // Ancient Birch
-
         add(DDBlocks.ANCIENT_BIRCH_LOG.get(), "Ancient Birch Log");
         add(DDBlocks.ANCIENT_BIRCH_WOOD.get(), "Ancient Birch Wood");
         add(DDBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get(), "Stripped Ancient Birch Log");
@@ -51,7 +50,40 @@ public class DDLanguageProvider extends LanguageProvider {
         add(DDBlocks.ANCIENT_BIRCH_TRAPDOOR.get(), "Ancient Birch Trapdoor");
         add(DDBlocks.ANCIENT_BIRCH_PRESSURE_PLATE.get(), "Ancient Birch Pressure Plate");
         add(DDBlocks.ANCIENT_BIRCH_BUTTON.get(), "Ancient Birch Button");
-//
+
+        // Ancient Acacia
+        add(DDBlocks.ANCIENT_ACACIA_LOG.get(), "Ancient Acacia Log");
+        add(DDBlocks.ANCIENT_ACACIA_WOOD.get(), "Ancient Acacia Wood");
+        add(DDBlocks.STRIPPED_ANCIENT_ACACIA_LOG.get(), "Stripped Ancient Acacia Log");
+        add(DDBlocks.STRIPPED_ANCIENT_ACACIA_WOOD.get(), "Stripped Ancient Acacia Wood");
+        addBlock(DDBlocks.ANCIENT_ACACIA_PLANKS, "Ancient Acacia Planks");
+        add(DDBlocks.ANCIENT_ACACIA_LEAVES.get(), "Ancient Acacia Leaves");
+        add(DDBlocks.ANCIENT_ACACIA_SAPLING.get(), "Ancient Acacia Sapling");
+        add(DDBlocks.ANCIENT_ACACIA_STAIRS.get(), "Ancient Acacia Stairs");
+        add(DDBlocks.ANCIENT_ACACIA_SLAB.get(), "Ancient Acacia Slab");
+        add(DDBlocks.ANCIENT_ACACIA_FENCE.get(), "Ancient Acacia Fence");
+        add(DDBlocks.ANCIENT_ACACIA_FENCE_GATE.get(), "Ancient Acacia Fence Gate");
+        add(DDBlocks.ANCIENT_ACACIA_DOOR.get(), "Ancient Acacia Door");
+        add(DDBlocks.ANCIENT_ACACIA_TRAPDOOR.get(), "Ancient Acacia Trapdoor");
+        add(DDBlocks.ANCIENT_ACACIA_PRESSURE_PLATE.get(), "Ancient Acacia Pressure Plate");
+        add(DDBlocks.ANCIENT_ACACIA_BUTTON.get(), "Ancient Acacia Button");
+
+        // Ancient Mangrove
+        add(DDBlocks.ANCIENT_MANGROVE_LOG.get(), "Ancient Mangrove Log");
+        add(DDBlocks.ANCIENT_MANGROVE_WOOD.get(), "Ancient Mangrove Wood");
+        add(DDBlocks.STRIPPED_ANCIENT_MANGROVE_LOG.get(), "Stripped Ancient Mangrove Log");
+        add(DDBlocks.STRIPPED_ANCIENT_MANGROVE_WOOD.get(), "Stripped Ancient Mangrove Wood");
+        addBlock(DDBlocks.ANCIENT_MANGROVE_PLANKS, "Ancient Mangrove Planks");
+        add(DDBlocks.ANCIENT_MANGROVE_LEAVES.get(), "Ancient Mangrove Leaves");
+      //  add(DDBlocks.ANCIENT_MANGROVE_PROPAGULE.get(), "Ancient Mangrove Propagule");
+        add(DDBlocks.ANCIENT_MANGROVE_STAIRS.get(), "Ancient Mangrove Stairs");
+        add(DDBlocks.ANCIENT_MANGROVE_SLAB.get(), "Ancient Mangrove Slab");
+        add(DDBlocks.ANCIENT_MANGROVE_FENCE.get(), "Ancient Mangrove Fence");
+        add(DDBlocks.ANCIENT_MANGROVE_FENCE_GATE.get(), "Ancient Mangrove Fence Gate");
+        add(DDBlocks.ANCIENT_MANGROVE_DOOR.get(), "Ancient Mangrove Door");
+        add(DDBlocks.ANCIENT_MANGROVE_TRAPDOOR.get(), "Ancient Mangrove Trapdoor");
+        add(DDBlocks.ANCIENT_MANGROVE_PRESSURE_PLATE.get(), "Ancient Mangrove Pressure Plate");
+        add(DDBlocks.ANCIENT_MANGROVE_BUTTON.get(), "Ancient Mangrove Button");
 
         // Charred Woodset
         add(DDBlocks.CHARRED_LOG.get(), "Charred Log");
@@ -206,6 +238,18 @@ public class DDLanguageProvider extends LanguageProvider {
         add(DDBlocks.DISTANT_STONE_POLISHED_WALL.get(), "Polished Distant Stone Wall");
 //
 //        add(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get(), "Cracked Distant Stone Bricks");
+
+        // Distant Sand
+        add(DDBlocks.DISTANT_SAND.get(), "Distant Sand");
+        add(DDBlocks.DISTANT_SANDSTONE.get(), "Distant Sandstone");
+        add(DDBlocks.SMOOTH_DISTANT_SANDSTONE.get(), "Smooth Distant Sandstone");
+        add(DDBlocks.SMOOTH_DISTANT_SANDSTONE_STAIRS.get(), "Smooth Distant Sandstone Stairs");
+        add(DDBlocks.SMOOTH_DISTANT_SANDSTONE_SLAB.get(), "Smooth Distant Sandstone Slab");
+        add(DDBlocks.SMOOTH_DISTANT_SANDSTONE_WALL.get(), "Smooth Distant Sandstone Wall");
+        add(DDBlocks.DISTANT_SANDSTONE_BRICKS.get(), "Distant Sandstone Bricks");
+        add(DDBlocks.DISTANT_SANDSTONE_BRICK_STAIRS.get(), "Distant Sandstone Brick Stairs");
+        add(DDBlocks.DISTANT_SANDSTONE_BRICK_SLAB.get(), "Distant Sandstone Brick Slab");
+        add(DDBlocks.DISTANT_SANDSTONE_BRICK_WALL.get(), "Distant Sandstone Brick Wall");
 //
          // Islate
         add(DDBlocks.ISLATE.get(), "Islate");

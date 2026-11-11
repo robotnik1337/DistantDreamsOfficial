@@ -54,6 +54,37 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.ANCIENT_BIRCH_LEAVES.get());
                         output.accept(DDBlocks.ANCIENT_BIRCH_SAPLING.get());
 
+                        output.accept(DDBlocks.ANCIENT_ACACIA_LOG.get());
+                        output.accept(DDBlocks.ANCIENT_ACACIA_WOOD.get());
+                        output.accept(DDBlocks.STRIPPED_ANCIENT_ACACIA_LOG.get());
+                        output.accept(DDBlocks.STRIPPED_ANCIENT_ACACIA_WOOD.get());
+                        output.accept(DDBlocks.ANCIENT_ACACIA_PLANKS.get());
+                        output.accept(DDBlocks.ANCIENT_ACACIA_STAIRS.get());
+                        output.accept(DDBlocks.ANCIENT_ACACIA_SLAB.get());
+                        output.accept(DDBlocks.ANCIENT_ACACIA_FENCE.get());
+                        output.accept(DDBlocks.ANCIENT_ACACIA_FENCE_GATE.get());
+                        output.accept(DDBlocks.ANCIENT_ACACIA_DOOR.get());
+                        output.accept(DDBlocks.ANCIENT_ACACIA_TRAPDOOR.get());
+                        output.accept(DDBlocks.ANCIENT_ACACIA_PRESSURE_PLATE.get());
+                        output.accept(DDBlocks.ANCIENT_ACACIA_BUTTON.get());
+                        output.accept(DDBlocks.ANCIENT_ACACIA_LEAVES.get());
+                        output.accept(DDBlocks.ANCIENT_ACACIA_SAPLING.get());
+
+                        output.accept(DDBlocks.ANCIENT_MANGROVE_LOG.get());
+                        output.accept(DDBlocks.ANCIENT_MANGROVE_WOOD.get());
+                        output.accept(DDBlocks.STRIPPED_ANCIENT_MANGROVE_LOG.get());
+                        output.accept(DDBlocks.STRIPPED_ANCIENT_MANGROVE_WOOD.get());
+                        output.accept(DDBlocks.ANCIENT_MANGROVE_PLANKS.get());
+                        output.accept(DDBlocks.ANCIENT_MANGROVE_STAIRS.get());
+                        output.accept(DDBlocks.ANCIENT_MANGROVE_SLAB.get());
+                        output.accept(DDBlocks.ANCIENT_MANGROVE_FENCE.get());
+                        output.accept(DDBlocks.ANCIENT_MANGROVE_FENCE_GATE.get());
+                        output.accept(DDBlocks.ANCIENT_MANGROVE_DOOR.get());
+                        output.accept(DDBlocks.ANCIENT_MANGROVE_TRAPDOOR.get());
+                        output.accept(DDBlocks.ANCIENT_MANGROVE_PRESSURE_PLATE.get());
+                        output.accept(DDBlocks.ANCIENT_MANGROVE_BUTTON.get());
+                        output.accept(DDBlocks.ANCIENT_MANGROVE_LEAVES.get());
+
                         output.accept(DDBlocks.CHARRED_LOG.get());
                         output.accept(DDBlocks.CHARRED_WOOD.get());
                         output.accept(DDBlocks.STRIPPED_CHARRED_LOG.get());
@@ -151,6 +182,17 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.DISTANT_STONE_BRICK_STAIRS.get());
                         output.accept(DDBlocks.DISTANT_STONE_BRICK_SLAB.get());
                         output.accept(DDBlocks.DISTANT_STONE_BRICK_WALL.get());
+
+                        output.accept(DDBlocks.DISTANT_SAND.get());
+                        output.accept(DDBlocks.DISTANT_SANDSTONE.get());
+                        output.accept(DDBlocks.SMOOTH_DISTANT_SANDSTONE.get());
+                        output.accept(DDBlocks.SMOOTH_DISTANT_SANDSTONE_STAIRS.get());
+                        output.accept(DDBlocks.SMOOTH_DISTANT_SANDSTONE_SLAB.get());
+                        output.accept(DDBlocks.SMOOTH_DISTANT_SANDSTONE_WALL.get());
+                        output.accept(DDBlocks.DISTANT_SANDSTONE_BRICKS.get());
+                        output.accept(DDBlocks.DISTANT_SANDSTONE_BRICK_STAIRS.get());
+                        output.accept(DDBlocks.DISTANT_SANDSTONE_BRICK_SLAB.get());
+                        output.accept(DDBlocks.DISTANT_SANDSTONE_BRICK_WALL.get());
 
                         output.accept(DDBlocks.ISLATE.get());
                         output.accept(DDBlocks.ISLATE_STAIRS.get());

@@ -18,6 +18,7 @@ import java.util.List;
 public class DDPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ANCIENT_OAK_PLACED_KEY = registerKey("ancient_oak_placed");
     public static final ResourceKey<PlacedFeature> ANCIENT_BIRCH_PLACED_KEY = registerKey("ancient_birch_placed");
+    public static final ResourceKey<PlacedFeature> ANCIENT_ACACIA_PLACED_KEY = registerKey("ancient_acacia_placed");
     public static final ResourceKey<PlacedFeature> SEQUOIA_PLACED_KEY = registerKey("sequoia_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -30,6 +31,14 @@ public class DDPlacedFeatures {
         register(context, ANCIENT_BIRCH_PLACED_KEY, configuredFeatures.getOrThrow(DDConfiguredFeatures.ANCIENT_BIRCH_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.01f, 1),
                         DDBlocks.ANCIENT_BIRCH_SAPLING.get()));
+
+        register(context, ANCIENT_ACACIA_PLACED_KEY, configuredFeatures.getOrThrow(DDConfiguredFeatures.ANCIENT_ACACIA_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.01f, 1),
+                        DDBlocks.ANCIENT_ACACIA_SAPLING.get()));
+
+       // register(context, ANCIENT_MANGROVE_PLACED_KEY, configuredFeatures.getOrThrow(DDConfiguredFeatures.ANCIENT_MANGROVE_KEY),
+      //          VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.01f, 1),
+       //                 DDBlocks.ANCIENT_MANGROVE_SAPLING.get()));
 
         register(context, SEQUOIA_PLACED_KEY, configuredFeatures.getOrThrow(DDConfiguredFeatures.SEQUOIA_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),

@@ -2,6 +2,7 @@ package net.whereabouts.DistantDreams.worldgen.biome.surface;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SandBlock;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.whereabouts.DistantDreams.block.DDBlocks;
@@ -15,6 +16,8 @@ public class DDSurfaceRules {
     private static final SurfaceRules.RuleSource DISTANT_GRASS = makeStateRule(DDBlocks.DISTANT_GRASS.get());
     private static final SurfaceRules.RuleSource DISTANT_DIRT = makeStateRule(DDBlocks.DISTANT_DIRT.get());
     private static final SurfaceRules.RuleSource DISTANT_STONE = makeStateRule(DDBlocks.DISTANT_STONE.get());
+    private static final SurfaceRules.RuleSource DISTANT_SAND = makeStateRule(DDBlocks.DISTANT_SAND.get());
+    private static final SurfaceRules.RuleSource DISTANT_SANDSTONE = makeStateRule(DDBlocks.DISTANT_SANDSTONE.get());
 
     public static SurfaceRules.RuleSource makeOverworldRules() {
         SurfaceRules.RuleSource fertileSurface = grassDirtStoneSurfaceRules(FERTILE_SOIL, DIRT, DISTANT_STONE);
@@ -32,6 +35,13 @@ public class DDSurfaceRules {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.DISTANT_FOREST), distantRealmSurface),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.TIMEWORN_MEADOWS), distantRealmSurface),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.ANCESTRAL_PLAINS), distantRealmSurface)
+        );
+    }
+
+    public static SurfaceRules.RuleSource makeDistantDesertRules() {
+       SurfaceRules.RuleSource distantRealmSurface = grassDirtStoneSurfaceRules(DISTANT_SAND, DISTANT_SANDSTONE, DISTANT_STONE);
+          return SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(DDBiomes.ECHOING_DUNES), distantRealmSurface)
         );
     }
 
