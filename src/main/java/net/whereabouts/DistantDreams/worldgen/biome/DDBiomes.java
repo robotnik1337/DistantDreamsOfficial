@@ -18,29 +18,31 @@ import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.whereabouts.DistantDreams.DistantDreams;
 import net.whereabouts.DistantDreams.worldgen.DDPlacedFeatures;
+import org.jetbrains.annotations.NotNull;
 
 public class DDBiomes {
     // Overworld Biomes
-    public static final ResourceKey<Biome> SEQUOIA_FOREST = ResourceKey.create(Registries.BIOME,
+    public static final ResourceKey<@NotNull Biome> SEQUOIA_FOREST = ResourceKey.create(Registries.BIOME,
             Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "sequoia_forest"));
 
     // Distant Realm Biomes
-    public static final ResourceKey<Biome> DISTANT_FOREST = ResourceKey.create(Registries.BIOME,
+    public static final ResourceKey<@NotNull Biome> DISTANT_FOREST = ResourceKey.create(Registries.BIOME,
             Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "distant_forest"));
 
-    public static final ResourceKey<Biome> TIMEWORN_MEADOWS = ResourceKey.create(Registries.BIOME,
+    public static final ResourceKey<@NotNull Biome> TIMEWORN_MEADOWS = ResourceKey.create(Registries.BIOME,
             Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "timeworn_meadows"));
 
-    public static final ResourceKey<Biome> ECHOING_DUNES = ResourceKey.create(Registries.BIOME,
+    public static final ResourceKey<@NotNull Biome> ECHOING_DUNES = ResourceKey.create(Registries.BIOME,
             Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "echoing_dunes"));
 
-    public static final ResourceKey<Biome> ANCESTRAL_PLAINS = ResourceKey.create(Registries.BIOME,
+    public static final ResourceKey<@NotNull Biome> ANCESTRAL_PLAINS = ResourceKey.create(Registries.BIOME,
             Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "ancestral_plains"));
 
-    public static final ResourceKey<Biome> FOREVER_GLADES = ResourceKey.create(Registries.BIOME,
+    public static final ResourceKey<@NotNull Biome> FOREVER_GLADES = ResourceKey.create(Registries.BIOME,
             Identifier.fromNamespaceAndPath(DistantDreams.MOD_ID, "forever_glades"));
 
-    public static void bootstrap(BootstrapContext<Biome> context) {
+
+    public static void bootstrap(BootstrapContext<@NotNull Biome> context) {
         context.register(SEQUOIA_FOREST, sequoiaForest(context));
         context.register(DISTANT_FOREST, distantForest(context));
         context.register(TIMEWORN_MEADOWS, timewornMeadows(context));
@@ -64,7 +66,7 @@ public class DDBiomes {
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }
 
-    private static Biome sequoiaForest(BootstrapContext<Biome> context) {
+    private static Biome sequoiaForest(BootstrapContext<@NotNull Biome> context) {
         // ! OVERALL TO-DO FOR THE SEQUOIA FOREST
         /* TODO: find out how to get trees to grow with specific amounts of saplings, then make sequoia only generate
             with 1x1, 2x2, or 3x3 square placements of saplings
@@ -118,7 +120,7 @@ public class DDBiomes {
 
     }
 
-    private static Biome distantForest(BootstrapContext<Biome> context) {
+    private static Biome distantForest(BootstrapContext<@NotNull Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 4, 5));
@@ -168,7 +170,7 @@ public class DDBiomes {
 
     }
 
-    private static Biome timewornMeadows(BootstrapContext<Biome> context) {
+    private static Biome timewornMeadows(BootstrapContext<@NotNull Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 4, 5));
@@ -218,7 +220,7 @@ public class DDBiomes {
 
     }
 
-    private static Biome echoingDunes(BootstrapContext<Biome> context) {
+    private static Biome echoingDunes(BootstrapContext<@NotNull Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 4, 5));
@@ -262,7 +264,7 @@ public class DDBiomes {
 
     }
 
-    private static Biome ancestralPlains(BootstrapContext<Biome> context) {
+    private static Biome ancestralPlains(BootstrapContext<@NotNull Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 4, 5));
@@ -309,7 +311,7 @@ public class DDBiomes {
 
     }
 
-    private static Biome foreverGlades(BootstrapContext<Biome> context) {
+    private static Biome foreverGlades(BootstrapContext<@NotNull Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 4, 5));

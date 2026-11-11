@@ -32,123 +32,6 @@ public class DDBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(DistantDreams.MOD_ID);
 
-    // Ancient Oak
-    public static final DeferredBlock<@NotNull AncientOakBlock> ANCIENT_OAK_LOG = registerBlockItem("ancient_oak_log", AncientOakBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
-
-    public static final DeferredBlock<@NotNull AncientOakBlock> STRIPPED_ANCIENT_OAK_LOG = registerBlockItem("stripped_ancient_oak_log", AncientOakBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG));
-
-    public static final DeferredBlock<@NotNull AncientOakBlock> ANCIENT_OAK_WOOD = registerBlockItem("ancient_oak_wood", AncientOakBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
-
-    public static final DeferredBlock<@NotNull AncientOakBlock> STRIPPED_ANCIENT_OAK_WOOD = registerBlockItem("stripped_ancient_oak_wood", AncientOakBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD));
-
-    public static final DeferredBlock<@NotNull Block> ANCIENT_OAK_PLANKS = registerBlockItem("ancient_oak_planks", Block::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
-
-    public static final DeferredBlock<@NotNull StairBlock> ANCIENT_OAK_STAIRS = registerBlockItem("ancient_oak_stairs",
-            properties -> new StairBlock(ANCIENT_OAK_PLANKS.get().defaultBlockState(), properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(ANCIENT_OAK_PLANKS.get()));
-
-    public static final DeferredBlock<@NotNull SlabBlock> ANCIENT_OAK_SLAB = registerBlockItem("ancient_oak_slab", SlabBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
-
-    public static final DeferredBlock<@NotNull PressurePlateBlock> ANCIENT_OAK_PRESSURE_PLATE = registerBlockItem("ancient_oak_pressure_plate",
-            properties -> new PressurePlateBlock(DDWoods.ANCIENT_OAK_WOOD_SET, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
-
-    public static final DeferredBlock<@NotNull ButtonBlock> ANCIENT_OAK_BUTTON = registerBlockItem("ancient_oak_button",
-            properties -> new ButtonBlock(DDWoods.ANCIENT_OAK_WOOD_SET, 30, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
-
-    public static final DeferredBlock<@NotNull FenceBlock> ANCIENT_OAK_FENCE = registerBlockItem("ancient_oak_fence", FenceBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
-
-    public static final DeferredBlock<@NotNull FenceGateBlock> ANCIENT_OAK_FENCE_GATE = registerBlockItem("ancient_oak_fence_gate",
-            properties -> new FenceGateBlock(DDWoods.ANCIENT_OAK_WOOD_TYPE, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
-
-    public static final DeferredBlock<@NotNull DoorBlock> ANCIENT_OAK_DOOR = registerBlockItem("ancient_oak_door",
-            properties -> new DoorBlock(DDWoods.ANCIENT_OAK_WOOD_SET, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
-
-    public static final DeferredBlock<@NotNull TrapDoorBlock> ANCIENT_OAK_TRAPDOOR = registerBlockItem("ancient_oak_trapdoor",
-            properties -> new TrapDoorBlock(DDWoods.ANCIENT_OAK_WOOD_SET, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
-
-    public static final DeferredBlock<@NotNull UntintedParticleLeavesBlock> ANCIENT_OAK_LEAVES = registerBlockItem("ancient_oak_leaves",
-            properties -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x2e5d38), properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES));
-
-    public static final DeferredBlock<@NotNull SaplingBlock> ANCIENT_OAK_SAPLING = registerBlockItem("ancient_oak_sapling",
-            properties -> new SaplingBlock(DDTreeGrowers.ANCIENT_OAK, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
-
-    public static final DeferredBlock<@NotNull FlowerPotBlock> POTTED_ANCIENT_OAK_SAPLING = registerBlockItem("potted_ancient_oak_sapling",
-            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ANCIENT_OAK_SAPLING, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT));
-
-    // Ancient Birch
-
-    public static final DeferredBlock<@NotNull AncientOakBlock> ANCIENT_BIRCH_LOG = registerBlockItem("ancient_birch_log", AncientOakBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LOG));
-
-    public static final DeferredBlock<@NotNull AncientOakBlock> STRIPPED_ANCIENT_BIRCH_LOG = registerBlockItem("stripped_ancient_birch_log", AncientOakBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_BIRCH_LOG));
-
-    public static final DeferredBlock<@NotNull AncientOakBlock> ANCIENT_BIRCH_WOOD = registerBlockItem("ancient_birch_wood", AncientOakBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_WOOD));
-
-    public static final DeferredBlock<@NotNull AncientOakBlock> STRIPPED_ANCIENT_BIRCH_WOOD = registerBlockItem("stripped_ancient_birch_wood", AncientOakBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_BIRCH_WOOD));
-
-    public static final DeferredBlock<@NotNull Block> ANCIENT_BIRCH_PLANKS = registerBlockItem("ancient_birch_planks", Block::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_PLANKS));
-
-    public static final DeferredBlock<@NotNull StairBlock> ANCIENT_BIRCH_STAIRS = registerBlockItem("ancient_birch_stairs",
-            properties -> new StairBlock(ANCIENT_BIRCH_PLANKS.get().defaultBlockState(), properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(ANCIENT_BIRCH_PLANKS.get()));
-
-    public static final DeferredBlock<@NotNull SlabBlock> ANCIENT_BIRCH_SLAB = registerBlockItem("ancient_birch_slab", SlabBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_SLAB));
-
-    public static final DeferredBlock<@NotNull PressurePlateBlock> ANCIENT_BIRCH_PRESSURE_PLATE = registerBlockItem("ancient_birch_pressure_plate",
-            properties -> new PressurePlateBlock(DDWoods.ANCIENT_BIRCH_WOOD_SET, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_PRESSURE_PLATE));
-
-    public static final DeferredBlock<@NotNull ButtonBlock> ANCIENT_BIRCH_BUTTON = registerBlockItem("ancient_birch_button",
-            properties -> new ButtonBlock(DDWoods.ANCIENT_BIRCH_WOOD_SET, 30, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_BUTTON));
-
-    public static final DeferredBlock<@NotNull FenceBlock> ANCIENT_BIRCH_FENCE = registerBlockItem("ancient_birch_fence", FenceBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_FENCE));
-
-    public static final DeferredBlock<@NotNull FenceGateBlock> ANCIENT_BIRCH_FENCE_GATE = registerBlockItem("ancient_birch_fence_gate",
-            properties -> new FenceGateBlock(DDWoods.ANCIENT_BIRCH_WOOD_TYPE, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_FENCE_GATE));
-
-    public static final DeferredBlock<@NotNull DoorBlock> ANCIENT_BIRCH_DOOR = registerBlockItem("ancient_birch_door",
-            properties -> new DoorBlock(DDWoods.ANCIENT_BIRCH_WOOD_SET, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_DOOR));
-
-    public static final DeferredBlock<@NotNull TrapDoorBlock> ANCIENT_BIRCH_TRAPDOOR = registerBlockItem("ancient_birch_trapdoor",
-            properties -> new TrapDoorBlock(DDWoods.ANCIENT_BIRCH_WOOD_SET, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_TRAPDOOR));
-
-    public static final DeferredBlock<@NotNull UntintedParticleLeavesBlock> ANCIENT_BIRCH_LEAVES = registerBlockItem("ancient_birch_leaves",
-            properties -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x2e5d38), properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES));
-
-    public static final DeferredBlock<@NotNull SaplingBlock> ANCIENT_BIRCH_SAPLING = registerBlockItem("ancient_birch_sapling",
-            properties -> new SaplingBlock(DDTreeGrowers.ANCIENT_BIRCH, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_SAPLING));
-
-    public static final DeferredBlock<@NotNull FlowerPotBlock> POTTED_ANCIENT_BIRCH_SAPLING = registerBlockItem("potted_ancient_birch_sapling",
-            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ANCIENT_BIRCH_SAPLING, properties),
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT));
-
     // Ancient Acacia
     public static final DeferredBlock<@NotNull AncientOakBlock> ANCIENT_ACACIA_LOG = registerBlockItem("ancient_acacia_log", AncientOakBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_LOG));
@@ -207,6 +90,66 @@ public class DDBlocks {
             properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ANCIENT_ACACIA_SAPLING, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT));
 
+
+    // Ancient Birch
+    public static final DeferredBlock<@NotNull AncientOakBlock> ANCIENT_BIRCH_LOG = registerBlockItem("ancient_birch_log", AncientOakBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LOG));
+
+    public static final DeferredBlock<@NotNull AncientOakBlock> STRIPPED_ANCIENT_BIRCH_LOG = registerBlockItem("stripped_ancient_birch_log", AncientOakBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_BIRCH_LOG));
+
+    public static final DeferredBlock<@NotNull AncientOakBlock> ANCIENT_BIRCH_WOOD = registerBlockItem("ancient_birch_wood", AncientOakBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_WOOD));
+
+    public static final DeferredBlock<@NotNull AncientOakBlock> STRIPPED_ANCIENT_BIRCH_WOOD = registerBlockItem("stripped_ancient_birch_wood", AncientOakBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_BIRCH_WOOD));
+
+    public static final DeferredBlock<@NotNull Block> ANCIENT_BIRCH_PLANKS = registerBlockItem("ancient_birch_planks", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_PLANKS));
+
+    public static final DeferredBlock<@NotNull StairBlock> ANCIENT_BIRCH_STAIRS = registerBlockItem("ancient_birch_stairs",
+            properties -> new StairBlock(ANCIENT_BIRCH_PLANKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(ANCIENT_BIRCH_PLANKS.get()));
+
+    public static final DeferredBlock<@NotNull SlabBlock> ANCIENT_BIRCH_SLAB = registerBlockItem("ancient_birch_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_SLAB));
+
+    public static final DeferredBlock<@NotNull PressurePlateBlock> ANCIENT_BIRCH_PRESSURE_PLATE = registerBlockItem("ancient_birch_pressure_plate",
+            properties -> new PressurePlateBlock(DDWoods.ANCIENT_BIRCH_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_PRESSURE_PLATE));
+
+    public static final DeferredBlock<@NotNull ButtonBlock> ANCIENT_BIRCH_BUTTON = registerBlockItem("ancient_birch_button",
+            properties -> new ButtonBlock(DDWoods.ANCIENT_BIRCH_WOOD_SET, 30, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_BUTTON));
+
+    public static final DeferredBlock<@NotNull FenceBlock> ANCIENT_BIRCH_FENCE = registerBlockItem("ancient_birch_fence", FenceBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_FENCE));
+
+    public static final DeferredBlock<@NotNull FenceGateBlock> ANCIENT_BIRCH_FENCE_GATE = registerBlockItem("ancient_birch_fence_gate",
+            properties -> new FenceGateBlock(DDWoods.ANCIENT_BIRCH_WOOD_TYPE, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_FENCE_GATE));
+
+    public static final DeferredBlock<@NotNull DoorBlock> ANCIENT_BIRCH_DOOR = registerBlockItem("ancient_birch_door",
+            properties -> new DoorBlock(DDWoods.ANCIENT_BIRCH_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_DOOR));
+
+    public static final DeferredBlock<@NotNull TrapDoorBlock> ANCIENT_BIRCH_TRAPDOOR = registerBlockItem("ancient_birch_trapdoor",
+            properties -> new TrapDoorBlock(DDWoods.ANCIENT_BIRCH_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_TRAPDOOR));
+
+    public static final DeferredBlock<@NotNull UntintedParticleLeavesBlock> ANCIENT_BIRCH_LEAVES = registerBlockItem("ancient_birch_leaves",
+            properties -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x2e5d38), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES));
+
+    public static final DeferredBlock<@NotNull SaplingBlock> ANCIENT_BIRCH_SAPLING = registerBlockItem("ancient_birch_sapling",
+            properties -> new SaplingBlock(DDTreeGrowers.ANCIENT_BIRCH, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_SAPLING));
+
+    public static final DeferredBlock<@NotNull FlowerPotBlock> POTTED_ANCIENT_BIRCH_SAPLING = registerBlockItem("potted_ancient_birch_sapling",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ANCIENT_BIRCH_SAPLING, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT));
+
+
     // Ancient Mangrove
     public static final DeferredBlock<@NotNull AncientOakBlock> ANCIENT_MANGROVE_LOG = registerBlockItem("ancient_mangrove_log", AncientOakBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_LOG));
@@ -257,9 +200,69 @@ public class DDBlocks {
             properties -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x2e5d38), properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_LEAVES));
 
-   // public static final DeferredBlock<@NotNull SaplingBlock> ANCIENT_MANGROVE_PROPAGULE = registerBlockItem("ancient_mangrove_propagule",
-   //         properties -> new SaplingBlock(DDTreeGrowers.ANCIENT_BIRCH, properties),
-   //         () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PROPAGULE));
+    // public static final DeferredBlock<@NotNull SaplingBlock> ANCIENT_MANGROVE_PROPAGULE = registerBlockItem("ancient_mangrove_propagule",
+    //         properties -> new SaplingBlock(DDTreeGrowers.ANCIENT_BIRCH, properties),
+    //         () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PROPAGULE));
+
+
+    // Ancient Oak
+    public static final DeferredBlock<@NotNull AncientOakBlock> ANCIENT_OAK_LOG = registerBlockItem("ancient_oak_log", AncientOakBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+
+    public static final DeferredBlock<@NotNull AncientOakBlock> STRIPPED_ANCIENT_OAK_LOG = registerBlockItem("stripped_ancient_oak_log", AncientOakBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG));
+
+    public static final DeferredBlock<@NotNull AncientOakBlock> ANCIENT_OAK_WOOD = registerBlockItem("ancient_oak_wood", AncientOakBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+
+    public static final DeferredBlock<@NotNull AncientOakBlock> STRIPPED_ANCIENT_OAK_WOOD = registerBlockItem("stripped_ancient_oak_wood", AncientOakBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD));
+
+    public static final DeferredBlock<@NotNull Block> ANCIENT_OAK_PLANKS = registerBlockItem("ancient_oak_planks", Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+
+    public static final DeferredBlock<@NotNull StairBlock> ANCIENT_OAK_STAIRS = registerBlockItem("ancient_oak_stairs",
+            properties -> new StairBlock(ANCIENT_OAK_PLANKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(ANCIENT_OAK_PLANKS.get()));
+
+    public static final DeferredBlock<@NotNull SlabBlock> ANCIENT_OAK_SLAB = registerBlockItem("ancient_oak_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
+
+    public static final DeferredBlock<@NotNull PressurePlateBlock> ANCIENT_OAK_PRESSURE_PLATE = registerBlockItem("ancient_oak_pressure_plate",
+            properties -> new PressurePlateBlock(DDWoods.ANCIENT_OAK_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
+
+    public static final DeferredBlock<@NotNull ButtonBlock> ANCIENT_OAK_BUTTON = registerBlockItem("ancient_oak_button",
+            properties -> new ButtonBlock(DDWoods.ANCIENT_OAK_WOOD_SET, 30, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
+
+    public static final DeferredBlock<@NotNull FenceBlock> ANCIENT_OAK_FENCE = registerBlockItem("ancient_oak_fence", FenceBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
+
+    public static final DeferredBlock<@NotNull FenceGateBlock> ANCIENT_OAK_FENCE_GATE = registerBlockItem("ancient_oak_fence_gate",
+            properties -> new FenceGateBlock(DDWoods.ANCIENT_OAK_WOOD_TYPE, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
+
+    public static final DeferredBlock<@NotNull DoorBlock> ANCIENT_OAK_DOOR = registerBlockItem("ancient_oak_door",
+            properties -> new DoorBlock(DDWoods.ANCIENT_OAK_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
+
+    public static final DeferredBlock<@NotNull TrapDoorBlock> ANCIENT_OAK_TRAPDOOR = registerBlockItem("ancient_oak_trapdoor",
+            properties -> new TrapDoorBlock(DDWoods.ANCIENT_OAK_WOOD_SET, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
+
+    public static final DeferredBlock<@NotNull UntintedParticleLeavesBlock> ANCIENT_OAK_LEAVES = registerBlockItem("ancient_oak_leaves",
+            properties -> new UntintedParticleLeavesBlock(0.01F, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x2e5d38), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES));
+
+    public static final DeferredBlock<@NotNull SaplingBlock> ANCIENT_OAK_SAPLING = registerBlockItem("ancient_oak_sapling",
+            properties -> new SaplingBlock(DDTreeGrowers.ANCIENT_OAK, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
+
+    public static final DeferredBlock<@NotNull FlowerPotBlock> POTTED_ANCIENT_OAK_SAPLING = registerBlockItem("potted_ancient_oak_sapling",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ANCIENT_OAK_SAPLING, properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT));
+
 
     // Charred
     public static final DeferredBlock<@NotNull DDWoodLogBlock> CHARRED_LOG = registerBlockItem("charred_log",
@@ -310,7 +313,6 @@ public class DDBlocks {
     public static final DeferredBlock<@NotNull TrapDoorBlock> CHARRED_TRAPDOOR = registerBlockItem("charred_trapdoor",
             properties -> new TrapDoorBlock(DDWoods.CHARRED_WOOD_SET, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
-
 
 
     // Eucalyptus
@@ -372,7 +374,6 @@ public class DDBlocks {
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT));
 
 
-
     // Sequoia
     public static final DeferredBlock<@NotNull DDWoodLogBlock> SEQUOIA_LOG = registerBlockItem("sequoia_log", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
@@ -431,41 +432,48 @@ public class DDBlocks {
             properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SEQUOIA_SAPLING, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT));
 
+
+    // Fertile
+    public static final DeferredBlock<@NotNull FertileSoilBlock> FERTILE_SOIL = registerBlockItem("fertile_soil", FertileSoilBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK));
+
+
+
     // Dendranthos
-    public static final DeferredBlock<DDWoodLogBlock> DENDRANTHOS_LOG = registerBlockItem("dendranthos_log", DDWoodLogBlock::new,
+    public static final DeferredBlock<@NotNull DDWoodLogBlock> DENDRANTHOS_LOG = registerBlockItem("dendranthos_log", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
 
     public static final DeferredBlock<@NotNull DDWoodLogBlock> STRIPPED_DENDRANTHOS_LOG = registerBlockItem("stripped_dendranthos_log", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG));
 
-    public static final DeferredBlock<DDWoodLogBlock> DENDRANTHOS_WOOD = registerBlockItem("dendranthos_wood", DDWoodLogBlock::new,
+    public static final DeferredBlock<@NotNull DDWoodLogBlock> DENDRANTHOS_WOOD = registerBlockItem("dendranthos_wood", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
 
     public static final DeferredBlock<@NotNull DDWoodLogBlock> STRIPPED_DENDRANTHOS_WOOD = registerBlockItem("stripped_dendranthos_wood", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD));
 
-    public static final DeferredBlock<Block> DENDRANTHOS_PLANKS = registerBlockItem("dendranthos_planks", Block::new,
+    public static final DeferredBlock<@NotNull Block> DENDRANTHOS_PLANKS = registerBlockItem("dendranthos_planks", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
 
-    public static final DeferredBlock<StairBlock> DENDRANTHOS_STAIRS = registerBlockItem("dendranthos_stairs",
+    public static final DeferredBlock<@NotNull StairBlock> DENDRANTHOS_STAIRS = registerBlockItem("dendranthos_stairs",
             properties -> new StairBlock(DENDRANTHOS_PLANKS.get().defaultBlockState(), properties),
             () -> BlockBehaviour.Properties.ofFullCopy(DENDRANTHOS_PLANKS.get()));
 
-    public static final DeferredBlock<SlabBlock> DENDRANTHOS_SLAB = registerBlockItem("dendranthos_slab", SlabBlock::new,
+    public static final DeferredBlock<@NotNull SlabBlock> DENDRANTHOS_SLAB = registerBlockItem("dendranthos_slab", SlabBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
 
-    public static final DeferredBlock<PressurePlateBlock> DENDRANTHOS_PRESSURE_PLATE = registerBlockItem("dendranthos_pressure_plate",
+    public static final DeferredBlock<@NotNull PressurePlateBlock> DENDRANTHOS_PRESSURE_PLATE = registerBlockItem("dendranthos_pressure_plate",
             properties -> new PressurePlateBlock(DDWoods.DENDRANTHOS_WOOD_SET, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
 
-    public static final DeferredBlock<ButtonBlock> DENDRANTHOS_BUTTON = registerBlockItem("dendranthos_button",
+    public static final DeferredBlock<@NotNull ButtonBlock> DENDRANTHOS_BUTTON = registerBlockItem("dendranthos_button",
             properties -> new ButtonBlock(DDWoods.DENDRANTHOS_WOOD_SET, 30, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
 
-    public static final DeferredBlock<FenceBlock> DENDRANTHOS_FENCE = registerBlockItem("dendranthos_fence", FenceBlock::new,
+    public static final DeferredBlock<@NotNull FenceBlock> DENDRANTHOS_FENCE = registerBlockItem("dendranthos_fence", FenceBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
 
-    public static final DeferredBlock<FenceGateBlock> DENDRANTHOS_FENCE_GATE = registerBlockItem("dendranthos_fence_gate",
+    public static final DeferredBlock<@NotNull FenceGateBlock> DENDRANTHOS_FENCE_GATE = registerBlockItem("dendranthos_fence_gate",
             properties -> new FenceGateBlock(DDWoods.DENDRANTHOS_WOOD_TYPE, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
 
@@ -477,47 +485,48 @@ public class DDBlocks {
             properties -> new TrapDoorBlock(DDWoods.DENDRANTHOS_WOOD_SET, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
 
-    public static final DeferredBlock<Block> DENDRANTHOS_ANTHER = registerBlockItem("dendranthos_anther", Block::new,
+    public static final DeferredBlock<@NotNull Block> DENDRANTHOS_ANTHER = registerBlockItem("dendranthos_anther", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SHROOMLIGHT));
 
-    public static final DeferredBlock<Block> DENDRANTHOS_PETALS = registerBlockItem("dendranthos_petals", Block::new,
+    public static final DeferredBlock<@NotNull Block> DENDRANTHOS_PETALS = registerBlockItem("dendranthos_petals", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES));
 
+
     // Dendrymycos
-    public static final DeferredBlock<DDWoodLogBlock> DENDRYMYCOS_LOG = registerBlockItem("dendrymycos_log", DDWoodLogBlock::new,
+    public static final DeferredBlock<@NotNull DDWoodLogBlock> DENDRYMYCOS_LOG = registerBlockItem("dendrymycos_log", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
 
     public static final DeferredBlock<@NotNull DDWoodLogBlock> STRIPPED_DENDRYMYCOS_LOG = registerBlockItem("stripped_dendrymycos_log", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG));
 
-    public static final DeferredBlock<DDWoodLogBlock> DENDRYMYCOS_WOOD = registerBlockItem("dendrymycos_wood", DDWoodLogBlock::new,
+    public static final DeferredBlock<@NotNull DDWoodLogBlock> DENDRYMYCOS_WOOD = registerBlockItem("dendrymycos_wood", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
 
     public static final DeferredBlock<@NotNull DDWoodLogBlock> STRIPPED_DENDRYMYCOS_WOOD = registerBlockItem("stripped_dendrymycos_wood", DDWoodLogBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD));
 
-    public static final DeferredBlock<Block> DENDRYMYCOS_PLANKS = registerBlockItem("dendrymycos_planks", Block::new,
+    public static final DeferredBlock<@NotNull Block> DENDRYMYCOS_PLANKS = registerBlockItem("dendrymycos_planks", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
 
-    public static final DeferredBlock<StairBlock> DENDRYMYCOS_STAIRS = registerBlockItem("dendrymycos_stairs",
+    public static final DeferredBlock<@NotNull StairBlock> DENDRYMYCOS_STAIRS = registerBlockItem("dendrymycos_stairs",
             properties -> new StairBlock(DENDRYMYCOS_PLANKS.get().defaultBlockState(), properties),
             () -> BlockBehaviour.Properties.ofFullCopy(DENDRYMYCOS_PLANKS.get()));
 
-    public static final DeferredBlock<SlabBlock> DENDRYMYCOS_SLAB = registerBlockItem("dendrymycos_slab", SlabBlock::new,
+    public static final DeferredBlock<@NotNull SlabBlock> DENDRYMYCOS_SLAB = registerBlockItem("dendrymycos_slab", SlabBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
 
-    public static final DeferredBlock<PressurePlateBlock> DENDRYMYCOS_PRESSURE_PLATE = registerBlockItem("dendrymycos_pressure_plate",
+    public static final DeferredBlock<@NotNull PressurePlateBlock> DENDRYMYCOS_PRESSURE_PLATE = registerBlockItem("dendrymycos_pressure_plate",
             properties -> new PressurePlateBlock(DDWoods.DENDRYMYCOS_WOOD_SET, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
 
-    public static final DeferredBlock<ButtonBlock> DENDRYMYCOS_BUTTON = registerBlockItem("dendrymycos_button",
+    public static final DeferredBlock<@NotNull ButtonBlock> DENDRYMYCOS_BUTTON = registerBlockItem("dendrymycos_button",
             properties -> new ButtonBlock(DDWoods.DENDRYMYCOS_WOOD_SET, 30, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
 
-    public static final DeferredBlock<FenceBlock> DENDRYMYCOS_FENCE = registerBlockItem("dendrymycos_fence", FenceBlock::new,
+    public static final DeferredBlock<@NotNull FenceBlock> DENDRYMYCOS_FENCE = registerBlockItem("dendrymycos_fence", FenceBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
 
-    public static final DeferredBlock<FenceGateBlock> DENDRYMYCOS_FENCE_GATE = registerBlockItem("dendrymycos_fence_gate",
+    public static final DeferredBlock<@NotNull FenceGateBlock> DENDRYMYCOS_FENCE_GATE = registerBlockItem("dendrymycos_fence_gate",
             properties -> new FenceGateBlock(DDWoods.DENDRYMYCOS_WOOD_TYPE, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
 
@@ -529,18 +538,16 @@ public class DDBlocks {
             properties -> new TrapDoorBlock(DDWoods.DENDRYMYCOS_WOOD_SET, properties),
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
 
-    public static final DeferredBlock<Block> DENDRYMYCOS_CAP_BLUE = registerBlockItem("dendrymycos_cap_blue", Block::new,
+    public static final DeferredBlock<@NotNull Block> DENDRYMYCOS_CAP_BLUE = registerBlockItem("dendrymycos_cap_blue", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
 
-    public static final DeferredBlock<Block> DENDRYMYCOS_CAP_GREEN = registerBlockItem("dendrymycos_cap_green", Block::new,
+    public static final DeferredBlock<@NotNull Block> DENDRYMYCOS_CAP_GREEN = registerBlockItem("dendrymycos_cap_green", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
 
-    // Fertile
-    public static final DeferredBlock<@NotNull FertileSoilBlock> FERTILE_SOIL = registerBlockItem("fertile_soil", FertileSoilBlock::new,
-            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK));
 
 
-    // Distant Grasses
+
+    // Distant Grass
     public static final DeferredBlock<@NotNull GrassBlock> DISTANT_GRASS = registerBlockItem("distant_grass",
             properties -> new GrassBlock(properties) {
                 private boolean canSurvive(ServerLevel level, BlockPos pos) {
@@ -670,18 +677,19 @@ public class DDBlocks {
     public static final DeferredBlock<@NotNull WallBlock> SMOOTH_DISTANT_SANDSTONE_WALL = registerBlockItem("smooth_distant_sandstone_wall", WallBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE_WALL));
 
-    public static final DeferredBlock<Block> DISTANT_SANDSTONE_BRICKS = registerBlockItem("distant_sandstone_bricks",Block::new,
+    public static final DeferredBlock<@NotNull Block> DISTANT_SANDSTONE_BRICKS = registerBlockItem("distant_sandstone_bricks",Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICKS));
 
-    public static final DeferredBlock<StairBlock> DISTANT_SANDSTONE_BRICK_STAIRS = registerBlockItem("distant_sandstone_brick_stairs",
+    public static final DeferredBlock<@NotNull StairBlock> DISTANT_SANDSTONE_BRICK_STAIRS = registerBlockItem("distant_sandstone_brick_stairs",
             properties -> new StairBlock(DISTANT_SANDSTONE_BRICKS.get().defaultBlockState(), properties),
             () -> BlockBehaviour.Properties.ofFullCopy(DISTANT_SANDSTONE_BRICKS.get()));
 
-    public static final DeferredBlock<SlabBlock> DISTANT_SANDSTONE_BRICK_SLAB = registerBlockItem("distant_sandstone_brick_slab", SlabBlock::new,
+    public static final DeferredBlock<@NotNull SlabBlock> DISTANT_SANDSTONE_BRICK_SLAB = registerBlockItem("distant_sandstone_brick_slab", SlabBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_SLAB));
 
-    public static final DeferredBlock<WallBlock> DISTANT_SANDSTONE_BRICK_WALL = registerBlockItem("distant_sandstone_brick_wall", WallBlock::new,
+    public static final DeferredBlock<@NotNull WallBlock> DISTANT_SANDSTONE_BRICK_WALL = registerBlockItem("distant_sandstone_brick_wall", WallBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_WALL));
+
 
     // Limestone
     public static final DeferredBlock<@NotNull Block> LIMESTONE_POWDER = registerBlockItem("limestone_powder",Block::new,
@@ -745,6 +753,7 @@ public class DDBlocks {
     public static final DeferredBlock<@NotNull RotatedPillarBlock> LIMESTONE_PILLAR = registerBlockItem("limestone_pillar",RotatedPillarBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR));
 
+
     // Islate
     public static final DeferredBlock<@NotNull Block> ISLATE = registerBlockItem("islate",Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE));
@@ -798,87 +807,89 @@ public class DDBlocks {
     public static final DeferredBlock<@NotNull WallBlock> ISLATE_BRICK_WALL = registerBlockItem("islate_brick_wall", WallBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_BRICK_WALL));
 
+
     // Peat
-    public static final DeferredBlock<Block> PEAT = registerBlockItem("peat",Block::new,
+    public static final DeferredBlock<@NotNull Block> PEAT = registerBlockItem("peat",Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD));
 
-    public static final DeferredBlock<StairBlock> PEAT_STAIRS = registerBlockItem("peat_stairs",
+    public static final DeferredBlock<@NotNull StairBlock> PEAT_STAIRS = registerBlockItem("peat_stairs",
             properties -> new StairBlock(PEAT.get().defaultBlockState(), properties),
             () -> BlockBehaviour.Properties.ofFullCopy(PEAT.get()));
 
-    public static final DeferredBlock<SlabBlock> PEAT_SLAB = registerBlockItem("peat_slab", SlabBlock::new,
+    public static final DeferredBlock<@NotNull SlabBlock> PEAT_SLAB = registerBlockItem("peat_slab", SlabBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_SLAB));
 
-    public static final DeferredBlock<WallBlock> PEAT_WALL = registerBlockItem("peat_wall", WallBlock::new,
+    public static final DeferredBlock<@NotNull WallBlock> PEAT_WALL = registerBlockItem("peat_wall", WallBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_WALL));
 
-    public static final DeferredBlock<Block> PACKED_PEAT = registerBlockItem("packed_peat",Block::new,
+    public static final DeferredBlock<@NotNull Block> PACKED_PEAT = registerBlockItem("packed_peat",Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD));
 
-    public static final DeferredBlock<StairBlock> PACKED_PEAT_STAIRS = registerBlockItem("packed_peat_stairs",
+    public static final DeferredBlock<@NotNull StairBlock> PACKED_PEAT_STAIRS = registerBlockItem("packed_peat_stairs",
             properties -> new StairBlock(PACKED_PEAT.get().defaultBlockState(), properties),
             () -> BlockBehaviour.Properties.ofFullCopy(PACKED_PEAT.get()));
 
-    public static final DeferredBlock<SlabBlock> PACKED_PEAT_SLAB = registerBlockItem("packed_peat_slab", SlabBlock::new,
+    public static final DeferredBlock<@NotNull SlabBlock> PACKED_PEAT_SLAB = registerBlockItem("packed_peat_slab", SlabBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_SLAB));
 
-    public static final DeferredBlock<WallBlock> PACKED_PEAT_WALL = registerBlockItem("packed_peat_wall", WallBlock::new,
+    public static final DeferredBlock<@NotNull WallBlock> PACKED_PEAT_WALL = registerBlockItem("packed_peat_wall", WallBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_WALL));
 
-    public static final DeferredBlock<Block> PEAT_BRICKS = registerBlockItem("peat_bricks",Block::new,
+    public static final DeferredBlock<@NotNull Block> PEAT_BRICKS = registerBlockItem("peat_bricks",Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICKS));
 
-    public static final DeferredBlock<StairBlock> PEAT_BRICK_STAIRS = registerBlockItem("peat_brick_stairs",
+    public static final DeferredBlock<@NotNull StairBlock> PEAT_BRICK_STAIRS = registerBlockItem("peat_brick_stairs",
             properties -> new StairBlock(PEAT_BRICKS.get().defaultBlockState(), properties),
             () -> BlockBehaviour.Properties.ofFullCopy(PEAT_BRICKS.get()));
 
-    public static final DeferredBlock<SlabBlock> PEAT_BRICK_SLAB = registerBlockItem("peat_brick_slab", SlabBlock::new,
+    public static final DeferredBlock<@NotNull SlabBlock> PEAT_BRICK_SLAB = registerBlockItem("peat_brick_slab", SlabBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_SLAB));
 
-    public static final DeferredBlock<WallBlock> PEAT_BRICK_WALL = registerBlockItem("peat_brick_wall", WallBlock::new,
+    public static final DeferredBlock<@NotNull WallBlock> PEAT_BRICK_WALL = registerBlockItem("peat_brick_wall", WallBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICK_WALL));
 
-    public static final DeferredBlock<RotatedPillarBlock> CHISELED_PEAT = registerBlockItem("chiseled_peat", RotatedPillarBlock::new,
+    public static final DeferredBlock<@NotNull RotatedPillarBlock> CHISELED_PEAT = registerBlockItem("chiseled_peat", RotatedPillarBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR));
 
+
     // Rhyolite
-    public static final DeferredBlock<Block> RHYOLITE = registerBlockItem("rhyolite",Block::new,
+    public static final DeferredBlock<@NotNull Block> RHYOLITE = registerBlockItem("rhyolite",Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE));
 
-    public static final DeferredBlock<StairBlock> RHYOLITE_STAIRS = registerBlockItem("rhyolite_stairs",
+    public static final DeferredBlock<@NotNull StairBlock> RHYOLITE_STAIRS = registerBlockItem("rhyolite_stairs",
             properties -> new StairBlock(RHYOLITE.get().defaultBlockState(), properties),
             () -> BlockBehaviour.Properties.ofFullCopy(RHYOLITE.get()));
 
-    public static final DeferredBlock<SlabBlock> RHYOLITE_SLAB = registerBlockItem("rhyolite_slab", SlabBlock::new,
+    public static final DeferredBlock<@NotNull SlabBlock> RHYOLITE_SLAB = registerBlockItem("rhyolite_slab", SlabBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_SLAB));
 
-    public static final DeferredBlock<WallBlock> RHYOLITE_WALL = registerBlockItem("rhyolite_wall", WallBlock::new,
+    public static final DeferredBlock<@NotNull WallBlock> RHYOLITE_WALL = registerBlockItem("rhyolite_wall", WallBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_WALL));
 
-    public static final DeferredBlock<Block> RHYOLITE_BRICKS = registerBlockItem("rhyolite_bricks",Block::new,
+    public static final DeferredBlock<@NotNull Block> RHYOLITE_BRICKS = registerBlockItem("rhyolite_bricks",Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE));
 
-    public static final DeferredBlock<StairBlock> RHYOLITE_BRICK_STAIRS = registerBlockItem("rhyolite_brick_stairs",
+    public static final DeferredBlock<@NotNull StairBlock> RHYOLITE_BRICK_STAIRS = registerBlockItem("rhyolite_brick_stairs",
             properties -> new StairBlock(RHYOLITE_BRICKS.get().defaultBlockState(), properties),
             () -> BlockBehaviour.Properties.ofFullCopy(RHYOLITE_BRICKS.get()));
 
-    public static final DeferredBlock<SlabBlock> RHYOLITE_BRICK_SLAB = registerBlockItem("rhyolite_brick_slab", SlabBlock::new,
+    public static final DeferredBlock<@NotNull SlabBlock> RHYOLITE_BRICK_SLAB = registerBlockItem("rhyolite_brick_slab", SlabBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_SLAB));
 
-    public static final DeferredBlock<WallBlock> RHYOLITE_BRICK_WALL = registerBlockItem("rhyolite_brick_wall", WallBlock::new,
+    public static final DeferredBlock<@NotNull WallBlock> RHYOLITE_BRICK_WALL = registerBlockItem("rhyolite_brick_wall", WallBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE_WALL));
 
-    public static final DeferredBlock<Block> RHYOLITE_TILES = registerBlockItem("rhyolite_tiles",Block::new,
+    public static final DeferredBlock<@NotNull Block> RHYOLITE_TILES = registerBlockItem("rhyolite_tiles",Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_TILES));
 
-    public static final DeferredBlock<StairBlock> RHYOLITE_TILE_STAIRS = registerBlockItem("rhyolite_tile_stairs",
+    public static final DeferredBlock<@NotNull StairBlock> RHYOLITE_TILE_STAIRS = registerBlockItem("rhyolite_tile_stairs",
             properties -> new StairBlock(RHYOLITE_TILES.get().defaultBlockState(), properties),
             () -> BlockBehaviour.Properties.ofFullCopy(RHYOLITE_TILES.get()));
 
-    public static final DeferredBlock<SlabBlock> RHYOLITE_TILE_SLAB = registerBlockItem("rhyolite_tile_slab", SlabBlock::new,
+    public static final DeferredBlock<@NotNull SlabBlock> RHYOLITE_TILE_SLAB = registerBlockItem("rhyolite_tile_slab", SlabBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_TILE_SLAB));
 
-    public static final DeferredBlock<WallBlock> RHYOLITE_TILE_WALL = registerBlockItem("rhyolite_tile_wall", WallBlock::new,
+    public static final DeferredBlock<@NotNull WallBlock> RHYOLITE_TILE_WALL = registerBlockItem("rhyolite_tile_wall", WallBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_TILE_WALL));
     
     

@@ -9,11 +9,12 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.whereabouts.DistantDreams.DistantDreams;
 import net.whereabouts.DistantDreams.block.DDBlocks;
 import net.whereabouts.DistantDreams.item.DDItems;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
 public class DDCreativeModeTabs {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
+    public static final DeferredRegister<@NotNull CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, DistantDreams.MOD_ID);
 
     public static final Supplier<CreativeModeTab> DISTANT_DREAMS_TAB = CREATIVE_MODE_TABS.register(
@@ -21,38 +22,6 @@ public class DDCreativeModeTabs {
                     .icon(() -> new ItemStack(DDItems.MUSIC_DISC_HYPNAGOGIA.get()))
                     .title(Component.translatable("itemGroup.distantdreams"))
                     .displayItems((itemDisplayParameters, output) -> {
-
-                        output.accept(DDBlocks.ANCIENT_OAK_LOG.get());
-                        output.accept(DDBlocks.ANCIENT_OAK_WOOD.get());
-                        output.accept(DDBlocks.STRIPPED_ANCIENT_OAK_LOG.get());
-                        output.accept(DDBlocks.STRIPPED_ANCIENT_OAK_WOOD.get());
-                        output.accept(DDBlocks.ANCIENT_OAK_PLANKS.get());
-                        output.accept(DDBlocks.ANCIENT_OAK_STAIRS.get());
-                        output.accept(DDBlocks.ANCIENT_OAK_SLAB.get());
-                        output.accept(DDBlocks.ANCIENT_OAK_FENCE.get());
-                        output.accept(DDBlocks.ANCIENT_OAK_FENCE_GATE.get());
-                        output.accept(DDBlocks.ANCIENT_OAK_DOOR.get());
-                        output.accept(DDBlocks.ANCIENT_OAK_TRAPDOOR.get());
-                        output.accept(DDBlocks.ANCIENT_OAK_PRESSURE_PLATE.get());
-                        output.accept(DDBlocks.ANCIENT_OAK_BUTTON.get());
-                        output.accept(DDBlocks.ANCIENT_OAK_LEAVES.get());
-                        output.accept(DDBlocks.ANCIENT_OAK_SAPLING.get());
-
-                        output.accept(DDBlocks.ANCIENT_BIRCH_LOG.get());
-                        output.accept(DDBlocks.ANCIENT_BIRCH_WOOD.get());
-                        output.accept(DDBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
-                        output.accept(DDBlocks.STRIPPED_ANCIENT_BIRCH_WOOD.get());
-                        output.accept(DDBlocks.ANCIENT_BIRCH_PLANKS.get());
-                        output.accept(DDBlocks.ANCIENT_BIRCH_STAIRS.get());
-                        output.accept(DDBlocks.ANCIENT_BIRCH_SLAB.get());
-                        output.accept(DDBlocks.ANCIENT_BIRCH_FENCE.get());
-                        output.accept(DDBlocks.ANCIENT_BIRCH_FENCE_GATE.get());
-                        output.accept(DDBlocks.ANCIENT_BIRCH_DOOR.get());
-                        output.accept(DDBlocks.ANCIENT_BIRCH_TRAPDOOR.get());
-                        output.accept(DDBlocks.ANCIENT_BIRCH_PRESSURE_PLATE.get());
-                        output.accept(DDBlocks.ANCIENT_BIRCH_BUTTON.get());
-                        output.accept(DDBlocks.ANCIENT_BIRCH_LEAVES.get());
-                        output.accept(DDBlocks.ANCIENT_BIRCH_SAPLING.get());
 
                         output.accept(DDBlocks.ANCIENT_ACACIA_LOG.get());
                         output.accept(DDBlocks.ANCIENT_ACACIA_WOOD.get());
@@ -70,6 +39,22 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.ANCIENT_ACACIA_LEAVES.get());
                         output.accept(DDBlocks.ANCIENT_ACACIA_SAPLING.get());
 
+                        output.accept(DDBlocks.ANCIENT_BIRCH_LOG.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_WOOD.get());
+                        output.accept(DDBlocks.STRIPPED_ANCIENT_BIRCH_LOG.get());
+                        output.accept(DDBlocks.STRIPPED_ANCIENT_BIRCH_WOOD.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_PLANKS.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_STAIRS.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_SLAB.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_FENCE.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_FENCE_GATE.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_DOOR.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_TRAPDOOR.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_PRESSURE_PLATE.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_BUTTON.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_LEAVES.get());
+                        output.accept(DDBlocks.ANCIENT_BIRCH_SAPLING.get());
+
                         output.accept(DDBlocks.ANCIENT_MANGROVE_LOG.get());
                         output.accept(DDBlocks.ANCIENT_MANGROVE_WOOD.get());
                         output.accept(DDBlocks.STRIPPED_ANCIENT_MANGROVE_LOG.get());
@@ -84,6 +69,22 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.ANCIENT_MANGROVE_PRESSURE_PLATE.get());
                         output.accept(DDBlocks.ANCIENT_MANGROVE_BUTTON.get());
                         output.accept(DDBlocks.ANCIENT_MANGROVE_LEAVES.get());
+
+                        output.accept(DDBlocks.ANCIENT_OAK_LOG.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_WOOD.get());
+                        output.accept(DDBlocks.STRIPPED_ANCIENT_OAK_LOG.get());
+                        output.accept(DDBlocks.STRIPPED_ANCIENT_OAK_WOOD.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_PLANKS.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_STAIRS.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_SLAB.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_FENCE.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_FENCE_GATE.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_DOOR.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_TRAPDOOR.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_PRESSURE_PLATE.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_BUTTON.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_LEAVES.get());
+                        output.accept(DDBlocks.ANCIENT_OAK_SAPLING.get());
 
                         output.accept(DDBlocks.CHARRED_LOG.get());
                         output.accept(DDBlocks.CHARRED_WOOD.get());

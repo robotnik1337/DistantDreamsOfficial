@@ -1,14 +1,9 @@
 package net.whereabouts.DistantDreams.worldgen.dimension;
 
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.dimension.DimensionType;
-import net.minecraft.world.level.levelgen.*;
-import net.minecraft.world.level.levelgen.synth.NormalNoise;
-
-import java.util.stream.Stream;
+import net.minecraft.world.level.levelgen.NoiseRouter;
+import net.minecraft.world.level.levelgen.NoiseRouterData;
 
 public class DDNoiseRouter extends NoiseRouterData {
    public static NoiseRouter overworldLikeNoise(BootstrapContext<?> context, boolean isAmplified, boolean largeBiomes) {
