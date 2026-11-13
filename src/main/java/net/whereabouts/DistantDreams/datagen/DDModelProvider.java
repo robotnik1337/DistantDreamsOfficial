@@ -333,6 +333,7 @@ public class DDModelProvider extends ModelProvider {
 
         // *** ITEMS ***
         itemModels.generateFlatItem(DDItems.MUSIC_DISC_HYPNAGOGIA.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DDItems.EOTRAGUS_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
 
 
     }

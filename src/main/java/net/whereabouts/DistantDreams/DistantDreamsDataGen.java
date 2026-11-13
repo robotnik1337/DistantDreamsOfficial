@@ -1,5 +1,6 @@
 package net.whereabouts.DistantDreams;
 
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -7,8 +8,11 @@ import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.whereabouts.DistantDreams.datagen.*;
+import net.whereabouts.DistantDreams.entity.DDEntities;
+import net.whereabouts.DistantDreams.entity.client.EotragusRenderer;
 
 import java.util.Collections;
 import java.util.List;

@@ -1,5 +1,6 @@
 package net.whereabouts.DistantDreams;
 
+import com.geckolib.GeckoLib;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.Identifier;
 import net.neoforged.bus.api.IEventBus;
@@ -13,6 +14,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.whereabouts.DistantDreams.block.DDBlocks;
 import net.whereabouts.DistantDreams.creativemodetab.DDCreativeModeTabs;
+import net.whereabouts.DistantDreams.entity.DDEntities;
 import net.whereabouts.DistantDreams.item.DDItems;
 import net.whereabouts.DistantDreams.worldgen.biome.DDTerrablender;
 import net.whereabouts.DistantDreams.worldgen.biome.surface.DDSurfaceRules;
@@ -38,10 +40,12 @@ public class DistantDreams {
         DDCreativeModeTabs.register(modEventBus);
         DDBlocks.register(modEventBus);
         DDItems.register(modEventBus);
+        DDEntities.register(modEventBus);
 
         DDFoliagePlacers.register(modEventBus);
         DDTrunkPlacerTypes.register(modEventBus);
         DDTerrablender.registerBiomes();
+
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (DistantDreams) to respond directly to events.

@@ -1,8 +1,8 @@
 {
   "values": [
-    "distantdreams:ancient_oak_sapling",
-    "distantdreams:ancient_birch_sapling",
     "distantdreams:ancient_acacia_sapling",
+    "distantdreams:ancient_birch_sapling",
+    "distantdreams:ancient_oak_sapling",
     "distantdreams:sequoia_sapling"
   ]
 }

@@ -17,6 +17,7 @@ import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.whereabouts.DistantDreams.DistantDreams;
+import net.whereabouts.DistantDreams.entity.DDEntities;
 import net.whereabouts.DistantDreams.worldgen.DDPlacedFeatures;
 import org.jetbrains.annotations.NotNull;
 
@@ -268,7 +269,7 @@ public class DDBiomes {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 4, 5));
-        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.ELDER_GUARDIAN, 2, 4));
+        spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(DDEntities.EOTRAGUS.get(), 2, 4));
         spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.PUFFERFISH, 4, 8));
         spawnBuilder.addSpawn(MobCategory.CREATURE, 5, new MobSpawnSettings.SpawnerData(EntityType.AXOLOTL, 2, 4));
 

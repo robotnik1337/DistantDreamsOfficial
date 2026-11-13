@@ -226,6 +226,8 @@
   "block.distantdreams.stripped_eucalyptus_wood": "Stripped Eucalyptus Wood",
   "block.distantdreams.stripped_sequoia_log": "Stripped Sequoia Log",
   "block.distantdreams.stripped_sequoia_wood": "Stripped Sequoia Wood",
+  "entity.distantdreams.eotragus": "Eotragus",
+  "item.distantdreams.eotragus_spawn_egg": "Burnt Trout",
   "item.distantdreams.music_disc_hypnagogia": "Music Disc",
   "item.distantdreams.music_disc_hypnagogia.desc": "TheAnonymousGhoul - Hypnagogia",
   "itemGroup.distantdreams": "Distant Dreams"

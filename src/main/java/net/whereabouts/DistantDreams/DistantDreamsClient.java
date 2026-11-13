@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.block.BlockAndTintGetter;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.ARGB;
 import net.minecraft.world.level.GrassColor;
@@ -18,6 +19,8 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.whereabouts.DistantDreams.block.DDBlocks;
+import net.whereabouts.DistantDreams.entity.DDEntities;
+import net.whereabouts.DistantDreams.entity.client.EotragusRenderer;
 
 import java.util.List;
 
@@ -38,6 +41,8 @@ public class DistantDreamsClient {
         // Some client setup code
         DistantDreams.LOGGER.info("HELLO FROM CLIENT SETUP");
         DistantDreams.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+        EntityRenderers.register(DDEntities.EOTRAGUS.get(), EotragusRenderer::new);
     }
 
     @SubscribeEvent

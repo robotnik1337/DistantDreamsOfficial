@@ -3,6 +3,7 @@ package net.whereabouts.DistantDreams.datagen;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import net.whereabouts.DistantDreams.DistantDreams;
 import net.whereabouts.DistantDreams.block.DDBlocks;
+import net.whereabouts.DistantDreams.entity.DDEntities;
 import net.whereabouts.DistantDreams.item.DDItems;
 import net.minecraft.data.PackOutput;
 import net.whereabouts.DistantDreams.worldgen.biome.DDBiomes;
@@ -475,8 +476,13 @@ public class DDLanguageProvider extends LanguageProvider {
         // ########## ITEMS ############
         addItem(DDItems.MUSIC_DISC_HYPNAGOGIA, "Music Disc");
         add("item.distantdreams.music_disc_hypnagogia.desc", "TheAnonymousGhoul - Hypnagogia");
+
+        addItem(DDItems.EOTRAGUS_SPAWN_EGG, "Burnt Trout");
 //        add(DDItems.COPPER_BEETROOT_1.get(),"Copper Beetroot");
 //        add(DDItems.BROTH_OF_STYX.get(), "Broth of Styx");
+
+        // *** ENTITIES ***
+        add(DDEntities.EOTRAGUS.get(), "Eotragus");
 
 
         // ########## MISCELLANEOUS ##########

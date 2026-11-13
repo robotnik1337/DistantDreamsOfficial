@@ -266,6 +266,8 @@ public class DDCreativeModeTabs {
 
                         output.accept(DDItems.MUSIC_DISC_HYPNAGOGIA.get());
 
+                        output.accept(DDItems.EOTRAGUS_SPAWN_EGG.get());
+
                     }).build()
     );
 

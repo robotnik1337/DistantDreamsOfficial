@@ -1,0 +1,100 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "Eotragus",
+					"pivot": [-2.5, 10, -3.5]
+				},
+				{
+					"name": "EoBody",
+					"parent": "Eotragus",
+					"pivot": [0, 14.5, 11],
+					"cubes": [
+						{"origin": [-4.5, 9, -6], "size": [9, 12, 20], "inflate": 0.1, "uv": [0, 0]},
+						{"origin": [-4, 11, -7], "size": [8, 9, 20], "inflate": 0.01, "uv": [0, 32]}
+					]
+				},
+				{
+					"name": "EoNeck",
+					"parent": "EoBody",
+					"pivot": [0, 13, -7],
+					"cubes": [
+						{"origin": [-2, 13, -12.5], "size": [4, 6, 6], "inflate": -0.01, "uv": [56, 32]}
+					]
+				},
+				{
+					"name": "EoHead",
+					"parent": "EoNeck",
+					"pivot": [0, 19, -11],
+					"cubes": [
+						{"origin": [1, 18, -13.5], "size": [1, 5, 1], "pivot": [1.5, 18.5, -13], "rotation": [25, 0, 0], "uv": [44, 66]},
+						{"origin": [-2, 18, -13.5], "size": [1, 5, 1], "pivot": [-1.5, 18.5, -13], "rotation": [25, 0, 0], "uv": [48, 66]},
+						{"origin": [-2.5, 10, -13], "size": [5, 9, 4], "uv": [56, 44]}
+					]
+				},
+				{
+					"name": "EoEar.R",
+					"parent": "EoHead",
+					"pivot": [-1.5, 18, -11],
+					"cubes": [
+						{"origin": [-2.5, 18, -12.5], "size": [1, 3, 2], "inflate": 0.01, "uv": [44, 61]}
+					]
+				},
+				{
+					"name": "EoEar.L",
+					"parent": "EoHead",
+					"pivot": [1.5, 18, -11],
+					"cubes": [
+						{"origin": [1.5, 18, -12.5], "size": [1, 3, 2], "inflate": 0.01, "uv": [50, 61]}
+					]
+				},
+				{
+					"name": "EoLegF.L",
+					"parent": "Eotragus",
+					"pivot": [2.5, 10, -3.5],
+					"cubes": [
+						{"origin": [1, 7, -6], "size": [3, 5, 5], "inflate": 0.05, "uv": [12, 61]},
+						{"origin": [1, 0, -5], "size": [3, 12, 3], "uv": [56, 57]}
+					]
+				},
+				{
+					"name": "EoLegB.L",
+					"parent": "Eotragus",
+					"pivot": [2.5, 10, 10.5],
+					"cubes": [
+						{"origin": [1, 8, 8], "size": [3, 4, 5], "inflate": 0.05, "uv": [68, 66]},
+						{"origin": [1, 0, 9], "size": [3, 12, 3], "uv": [58, 15]}
+					]
+				},
+				{
+					"name": "EoLegB.R",
+					"parent": "Eotragus",
+					"pivot": [-2.5, 10, 10.5],
+					"cubes": [
+						{"origin": [-4, 8, 8], "size": [3, 4, 5], "inflate": 0.05, "uv": [68, 57]},
+						{"origin": [-4, 0, 9], "size": [3, 12, 3], "uv": [58, 0]}
+					]
+				},
+				{
+					"name": "EoLegF.R",
+					"parent": "Eotragus",
+					"pivot": [-2.5, 10, -3.5],
+					"cubes": [
+						{"origin": [-4, 7, -6], "size": [3, 5, 5], "inflate": 0.05, "uv": [28, 61]},
+						{"origin": [-4, 0, -5], "size": [3, 12, 3], "uv": [0, 61]}
+					]
+				}
+			]
+		}
+	]
+}
