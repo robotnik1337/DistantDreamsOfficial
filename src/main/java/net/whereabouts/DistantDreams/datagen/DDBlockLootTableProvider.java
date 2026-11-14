@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.whereabouts.DistantDreams.block.DDBlocks;
+import net.whereabouts.DistantDreams.item.DDItems;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
@@ -234,6 +235,16 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
                 _ -> createSlabItemTable(DDBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get()));
         dropSelf(DDBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get());
         dropSelf(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get());
+        add(DDBlocks.DISTANT_STONE_IRON_ORE.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.RAW_IRON, ConstantValue.exactly(1)));
+        add(DDBlocks.DISTANT_STONE_COPPER_ORE.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.RAW_COPPER, ConstantValue.exactly(5)));
+        //add(DDBlocks.DISTANT_STONE_REDSTONE_ORE.get(),
+        //        block -> createSingleItemTableWithSilkTouch(block, Items.REDSTONE, ConstantValue.exactly(3)));
+        add(DDBlocks.DISTANT_STONE_LAPIS_ORE.get(),
+                block -> createSingleItemTableWithSilkTouch(block, Items.LAPIS_LAZULI, ConstantValue.exactly(5)));
+        add(DDBlocks.DISTANT_STONE_AURICHYTE_ORE.get(),
+                block -> createSingleItemTableWithSilkTouch(block, DDItems.AURICHYTE_SHARD, ConstantValue.exactly(3)));
 
         dropSelf(DDBlocks.DISTANT_SAND.get());
         dropSelf(DDBlocks.DISTANT_SANDSTONE.get());
@@ -292,6 +303,23 @@ public class DDBlockLootTableProvider extends BlockLootSubProvider {
         add(DDBlocks.ISLATE_BRICK_SLAB.get(),
                 _ -> createSlabItemTable(DDBlocks.ISLATE_BRICK_SLAB.get()));
         dropSelf(DDBlocks.ISLATE_BRICK_WALL.get());
+
+        dropSelf(DDBlocks.AURICHYTE.get());
+        dropSelf(DDBlocks.AURICHYTE_STAIRS.get());
+        add(DDBlocks.AURICHYTE_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.AURICHYTE_SLAB.get()));
+        dropSelf(DDBlocks.AURICHYTE_WALL.get());
+        dropSelf(DDBlocks.POLISHED_AURICHYTE.get());
+        dropSelf(DDBlocks.POLISHED_AURICHYTE_STAIRS.get());
+        add(DDBlocks.POLISHED_AURICHYTE_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.POLISHED_AURICHYTE_SLAB.get()));
+        dropSelf(DDBlocks.POLISHED_AURICHYTE_WALL.get());
+        dropSelf(DDBlocks.AURICHYTE_BRICKS.get());
+        dropSelf(DDBlocks.AURICHYTE_BRICK_STAIRS.get());
+        add(DDBlocks.AURICHYTE_BRICK_SLAB.get(),
+                _ -> createSlabItemTable(DDBlocks.AURICHYTE_BRICK_SLAB.get()));
+        dropSelf(DDBlocks.AURICHYTE_BRICK_WALL.get());
+        dropSelf(DDBlocks.CHISELED_AURICHYTE.get());
 
         dropSelf(DDBlocks.PEAT.get());
         dropSelf(DDBlocks.PEAT_STAIRS.get());

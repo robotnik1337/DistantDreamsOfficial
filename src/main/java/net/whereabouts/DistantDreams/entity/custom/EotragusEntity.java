@@ -37,9 +37,9 @@ public class EotragusEntity extends Animal implements GeoEntity {
 
     public static AttributeSupplier.Builder setAttributes() {
         return Animal.createAnimalAttributes()
-                .add(Attributes.MAX_HEALTH, 160D)
-                .add(Attributes.ATTACK_DAMAGE, 3.0f)
-                .add(Attributes.ATTACK_SPEED, 1.0f)
+                .add(Attributes.MAX_HEALTH, 18D)
+                .add(Attributes.ATTACK_DAMAGE, 1.0f)
+                .add(Attributes.ATTACK_SPEED, 2.0f)
                 .add(Attributes.MOVEMENT_SPEED, 0.2f);
     }
 
@@ -53,9 +53,6 @@ public class EotragusEntity extends Animal implements GeoEntity {
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
 
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Chicken.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
-        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Creeper.class, true));
     }
 
     @Override

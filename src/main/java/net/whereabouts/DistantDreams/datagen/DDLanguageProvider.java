@@ -240,6 +240,12 @@ public class DDLanguageProvider extends LanguageProvider {
 //
         add(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get(), "Cracked Distant Stone Bricks");
 
+        add(DDBlocks.DISTANT_STONE_IRON_ORE.get(), "Distant Stone Iron Ore");
+        add(DDBlocks.DISTANT_STONE_COPPER_ORE.get(), "Distant Stone Copper Ore");
+       // add(DDBlocks.DISTANT_STONE_REDSTONE_ORE.get(), "Distant Stone Redstone Ore");
+        add(DDBlocks.DISTANT_STONE_LAPIS_ORE.get(), "Distant Stone Lapis Ore");
+        add(DDBlocks.DISTANT_STONE_AURICHYTE_ORE.get(), "Distant Stone Aurichyte Ore");
+
         // Distant Sand
         add(DDBlocks.DISTANT_SAND.get(), "Distant Sand");
         add(DDBlocks.DISTANT_SANDSTONE.get(), "Distant Sandstone");
@@ -273,6 +279,24 @@ public class DDLanguageProvider extends LanguageProvider {
         add(DDBlocks.ISLATE_BRICK_STAIRS.get(), "Islate Brick Stairs");
         add(DDBlocks.ISLATE_BRICK_SLAB.get(), "Islate Brick Slab");
         add(DDBlocks.ISLATE_BRICK_WALL.get(), "Islate Brick Wall");
+
+        // Aurichyte
+        add(DDBlocks.AURICHYTE.get(),"Aurichyte");
+        add(DDBlocks.AURICHYTE_WALL.get(),"Aurichyte Wall");
+        add(DDBlocks.AURICHYTE_SLAB.get(),"Aurichyte Slab");
+        add(DDBlocks.AURICHYTE_STAIRS.get(),"Aurichyte Stairs");
+
+        add(DDBlocks.POLISHED_AURICHYTE.get(),"Polished_Aurichyte");
+        add(DDBlocks.POLISHED_AURICHYTE_WALL.get(),"Polished_Aurichyte Wall");
+        add(DDBlocks.POLISHED_AURICHYTE_SLAB.get(),"Polished_Aurichyte Slab");
+        add(DDBlocks.POLISHED_AURICHYTE_STAIRS.get(),"Polished_Aurichyte Stairs");
+
+        add(DDBlocks.AURICHYTE_BRICKS.get(),"Aurichyte_Bricks");
+        add(DDBlocks.AURICHYTE_BRICK_WALL.get(),"Aurichyte_Brick Wall");
+        add(DDBlocks.AURICHYTE_BRICK_SLAB.get(),"Aurichyte_Brick Slab");
+        add(DDBlocks.AURICHYTE_BRICK_STAIRS.get(),"Aurichyte_Brick Stairs");
+
+        add(DDBlocks.CHISELED_AURICHYTE.get(), "Chiseled Aurichyte");
 //
          // Rhyolite
         add(DDBlocks.RHYOLITE.get(), "Rhyolite");
@@ -344,20 +368,6 @@ public class DDLanguageProvider extends LanguageProvider {
 //        add(DDBlocks.CHARRED_STAIRS.get().asItem(), "Charred Stairs");
 //        add(DDBlocks.CHARRED_SLAB.get().asItem(), "Charred Slab");
 //        add(DDBlocks.CHARRED_FENCE.get().asItem(), "Charred Fence");lyptus Log");
-////        add(DDBlocks.EUCALYPTUS_WOOD.get().asItem(), "Eucalyptus Wood");
-////        add(DDBlocks.STRIPPED_EUCALYPTUS_LOG.get().asItem(), "Stripped Eucalyptus Log");
-////        add(DDBlocks.STRIPPED_EUCALYPTUS_WOOD.get().asItem(), "Stripped Eucalyptus Wood");
-////        add(DDBlocks.EUCALYPTUS_PLANKS.get().asItem(), "Eucalyptus Planks");
-////        add(DDBlocks.EUCALYPTUS_LEAVES.get().asItem(), "Eucalyptus Leaves");
-////        add(DDBlocks.EUCALYPTUS_SAPLING.get().asItem(), "Eucalyptus Sapling");
-////        add(DDBlocks.EUCALYPTUS_STAIRS.get().asItem(), "Eucalyptus Stairs");
-////        add(DDBlocks.EUCALYPTUS_SLAB.get().asItem(), "Eucalyptus Slab");
-////        add(DDBlocks.EUCALYPTUS_FENCE.get().asItem(), "Eucalyptus Fence");
-////        add(DDBlocks.EUCALYPTUS_FENCE_GATE.get().asItem(), "Eucalyptus Fence Gate");
-////        add(DDBlocks.EUCALYPTUS_DOOR.get().asItem(), "Eucalyptus Door");
-////        add(DDBlocks.EUCALYPTUS_TRAPDOOR.get().asItem(), "Eucalyptus Trapdoor");
-////        add(DDBlocks.EUCALYPTUS_PRESSURE_PLATE.get().asItem(), "Eucalyptus Pressure Plate");
-////        add(DDBlocks.EUCALYPTUS_BUTTON.get().asItem(), "Eucalyptus Button");
 //        add(DDBlocks.CHARRED_FENCE_GATE.get().asItem(), "Charred Fence Gate");
 //        add(DDBlocks.CHARRED_DOOR.get().asItem(), "Charred Door");
 //        add(DDBlocks.CHARRED_TRAPDOOR.get().asItem(), "Charred Trapdoor");
@@ -476,6 +486,9 @@ public class DDLanguageProvider extends LanguageProvider {
         // ########## ITEMS ############
         addItem(DDItems.MUSIC_DISC_HYPNAGOGIA, "Music Disc");
         add("item.distantdreams.music_disc_hypnagogia.desc", "TheAnonymousGhoul - Hypnagogia");
+
+        addItem(DDItems.AURICHYTE_SHARD,"Aurichyte Shard");
+        addItem(DDItems.RESONANT_AURICHYTE_SHARD, "Resonant Aurichyte Shard");
 
         addItem(DDItems.EOTRAGUS_SPAWN_EGG, "Burnt Trout");
 //        add(DDItems.COPPER_BEETROOT_1.get(),"Copper Beetroot");

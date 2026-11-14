@@ -17,6 +17,9 @@
     "distantdreams:islate_wall",
     "distantdreams:islate_cobbled_wall",
     "distantdreams:islate_polished_wall",
-    "distantdreams:islate_brick_wall"
+    "distantdreams:islate_brick_wall",
+    "distantdreams:aurichyte_wall",
+    "distantdreams:polished_aurichyte_wall",
+    "distantdreams:aurichyte_brick_wall"
   ]
 }

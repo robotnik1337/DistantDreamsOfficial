@@ -188,6 +188,11 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.MOSSY_DISTANT_STONE_BRICK_SLAB.get());
                         output.accept(DDBlocks.MOSSY_DISTANT_STONE_BRICK_WALL.get());
                         output.accept(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get());
+                        output.accept(DDBlocks.DISTANT_STONE_IRON_ORE.get());
+                        output.accept(DDBlocks.DISTANT_STONE_COPPER_ORE.get());
+                       // output.accept(DDBlocks.DISTANT_STONE_REDSTONE_ORE.get());
+                        output.accept(DDBlocks.DISTANT_STONE_LAPIS_ORE.get());
+                        output.accept(DDBlocks.DISTANT_STONE_AURICHYTE_ORE.get());
 
                         output.accept(DDBlocks.LIMESTONE_POWDER.get());
                         output.accept(DDBlocks.LIMESTONE.get());
@@ -237,6 +242,20 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.ISLATE_BRICK_SLAB.get());
                         output.accept(DDBlocks.ISLATE_BRICK_WALL.get());
 
+                        output.accept(DDBlocks.AURICHYTE.get());
+                        output.accept(DDBlocks.AURICHYTE_STAIRS.get());
+                        output.accept(DDBlocks.AURICHYTE_SLAB.get());
+                        output.accept(DDBlocks.AURICHYTE_WALL.get());
+                        output.accept(DDBlocks.POLISHED_AURICHYTE.get());
+                        output.accept(DDBlocks.POLISHED_AURICHYTE_STAIRS.get());
+                        output.accept(DDBlocks.POLISHED_AURICHYTE_SLAB.get());
+                        output.accept(DDBlocks.POLISHED_AURICHYTE_WALL.get());
+                        output.accept(DDBlocks.AURICHYTE_BRICKS.get());
+                        output.accept(DDBlocks.AURICHYTE_BRICK_STAIRS.get());
+                        output.accept(DDBlocks.AURICHYTE_BRICK_SLAB.get());
+                        output.accept(DDBlocks.AURICHYTE_BRICK_WALL.get());
+                        output.accept(DDBlocks.CHISELED_AURICHYTE.get());
+
                         output.accept(DDBlocks.PEAT.get());
                         output.accept(DDBlocks.PEAT_STAIRS.get());
                         output.accept(DDBlocks.PEAT_SLAB.get());
@@ -265,6 +284,8 @@ public class DDCreativeModeTabs {
                         output.accept(DDBlocks.RHYOLITE_TILE_WALL.get());
 
                         output.accept(DDItems.MUSIC_DISC_HYPNAGOGIA.get());
+                        output.accept(DDItems.AURICHYTE_SHARD.get());
+                        output.accept(DDItems.RESONANT_AURICHYTE_SHARD.get());
 
                         output.accept(DDItems.EOTRAGUS_SPAWN_EGG.get());
 

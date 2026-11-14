@@ -322,7 +322,10 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.ISLATE_STAIRS.get())
                 .add(DDBlocks.ISLATE_COBBLED_STAIRS.get())
                 .add(DDBlocks.ISLATE_POLISHED_STAIRS.get())
-                .add(DDBlocks.ISLATE_BRICK_STAIRS.get());
+                .add(DDBlocks.ISLATE_BRICK_STAIRS.get())
+                .add(DDBlocks.AURICHYTE_STAIRS.get())
+                .add(DDBlocks.POLISHED_AURICHYTE_STAIRS.get())
+                .add(DDBlocks.AURICHYTE_BRICK_STAIRS.get());
 
         tag(BlockTags.SLABS)
                 .add(DDBlocks.CHARRED_SLAB.get())
@@ -343,7 +346,10 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.ISLATE_SLAB.get())
                 .add(DDBlocks.ISLATE_COBBLED_SLAB.get())
                 .add(DDBlocks.ISLATE_POLISHED_SLAB.get())
-                .add(DDBlocks.ISLATE_BRICK_SLAB.get());
+                .add(DDBlocks.ISLATE_BRICK_SLAB.get())
+                .add(DDBlocks.AURICHYTE_SLAB.get())
+                .add(DDBlocks.POLISHED_AURICHYTE_SLAB.get())
+                .add(DDBlocks.AURICHYTE_BRICK_SLAB.get());
 
         tag(BlockTags.PRESSURE_PLATES)
                 .add(DDBlocks.CHARRED_PRESSURE_PLATE.get());
@@ -380,6 +386,9 @@ public class DDBlockTagsProvider extends BlockTagsProvider {
                 .add(DDBlocks.ISLATE_WALL.get())
                 .add(DDBlocks.ISLATE_COBBLED_WALL.get())
                 .add(DDBlocks.ISLATE_POLISHED_WALL.get())
-                .add(DDBlocks.ISLATE_BRICK_WALL.get());
+                .add(DDBlocks.ISLATE_BRICK_WALL.get())
+                .add(DDBlocks.AURICHYTE_WALL.get())
+                .add(DDBlocks.POLISHED_AURICHYTE_WALL.get())
+                .add(DDBlocks.AURICHYTE_BRICK_WALL.get());
     }
 }

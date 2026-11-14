@@ -233,6 +233,12 @@ public class DDModelProvider extends ModelProvider {
 
         blockModels.createTrivialCube(DDBlocks.CRACKED_DISTANT_STONE_BRICKS.get());
 
+        blockModels.createTrivialCube(DDBlocks.DISTANT_STONE_IRON_ORE.get());
+        blockModels.createTrivialCube(DDBlocks.DISTANT_STONE_COPPER_ORE.get());
+       // blockModels.createTrivialCube(DDBlocks.DISTANT_STONE_REDSTONE_ORE.get());
+        blockModels.createTrivialCube(DDBlocks.DISTANT_STONE_LAPIS_ORE.get());
+        blockModels.createTrivialCube(DDBlocks.DISTANT_STONE_AURICHYTE_ORE.get());
+
         // Distant Sandstone
         blockModels.createTrivialCube(DDBlocks.DISTANT_SAND.get());
         blockModels.createRotatedPillarWithHorizontalVariant(DDBlocks.DISTANT_SANDSTONE.get(), TexturedModel.COLUMN_ALT, TexturedModel.COLUMN_HORIZONTAL_ALT );
@@ -295,6 +301,25 @@ public class DDModelProvider extends ModelProvider {
                 .slab(DDBlocks.ISLATE_BRICK_SLAB.get())
                 .wall(DDBlocks.ISLATE_BRICK_WALL.get());
 
+        // Aurichyte
+        blockModels.family(DDBlocks.AURICHYTE.get())
+                .stairs(DDBlocks.AURICHYTE_STAIRS.get())
+                .slab(DDBlocks.AURICHYTE_SLAB.get())
+                .wall(DDBlocks.AURICHYTE_WALL.get());
+
+        blockModels.family(DDBlocks.POLISHED_AURICHYTE.get())
+                .stairs(DDBlocks.POLISHED_AURICHYTE_STAIRS.get())
+                .slab(DDBlocks.POLISHED_AURICHYTE_SLAB.get())
+                .wall(DDBlocks.POLISHED_AURICHYTE_WALL.get());
+
+        blockModels.family(DDBlocks.AURICHYTE_BRICKS.get())
+                .stairs(DDBlocks.AURICHYTE_BRICK_STAIRS.get())
+                .slab(DDBlocks.AURICHYTE_BRICK_SLAB.get())
+                .wall(DDBlocks.AURICHYTE_BRICK_WALL.get());
+
+        blockModels.createRotatedPillarWithHorizontalVariant(DDBlocks.CHISELED_AURICHYTE.get(), TexturedModel.COLUMN_ALT, TexturedModel.COLUMN_HORIZONTAL_ALT );
+
+
         // Peat
 
         blockModels.family(DDBlocks.PEAT.get())
@@ -333,6 +358,8 @@ public class DDModelProvider extends ModelProvider {
 
         // *** ITEMS ***
         itemModels.generateFlatItem(DDItems.MUSIC_DISC_HYPNAGOGIA.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DDItems.AURICHYTE_SHARD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(DDItems.RESONANT_AURICHYTE_SHARD.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(DDItems.EOTRAGUS_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
 
 

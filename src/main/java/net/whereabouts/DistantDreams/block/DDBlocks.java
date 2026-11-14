@@ -655,6 +655,21 @@ public class DDBlocks {
     public static final DeferredBlock<@NotNull Block> CRACKED_DISTANT_STONE_BRICKS = registerBlockItem("cracked_distant_stone_bricks", Block::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.CRACKED_STONE_BRICKS));
 
+    public static final DeferredBlock<@NotNull Block> DISTANT_STONE_IRON_ORE = registerBlockItem("distant_stone_iron_ore",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE));
+
+    public static final DeferredBlock<@NotNull Block> DISTANT_STONE_COPPER_ORE = registerBlockItem("distant_stone_copper_ore",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_ORE));
+
+  //  public static final DeferredBlock<@NotNull Block> DISTANT_STONE_REDSTONE_ORE = registerBlockItem("distant_stone_redstone_ore",Block::new,
+   //         () -> BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_ORE));
+
+    public static final DeferredBlock<@NotNull Block> DISTANT_STONE_LAPIS_ORE = registerBlockItem("distant_stone_lapis_ore",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_ORE));
+
+    public static final DeferredBlock<@NotNull Block> DISTANT_STONE_AURICHYTE_ORE = registerBlockItem("distant_stone_aurichyte_ore",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_ORE));
+
 
     // Distant Sand
     public static final DeferredBlock<@NotNull SandBlock> DISTANT_SAND = registerBlockItem("distant_sand",
@@ -807,6 +822,48 @@ public class DDBlocks {
     public static final DeferredBlock<@NotNull WallBlock> ISLATE_BRICK_WALL = registerBlockItem("islate_brick_wall", WallBlock::new,
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_BRICK_WALL));
 
+    // Aurichyte
+    public static final DeferredBlock<@NotNull Block> AURICHYTE = registerBlockItem("aurichyte",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK));
+
+    public static final DeferredBlock<@NotNull StairBlock> AURICHYTE_STAIRS = registerBlockItem("aurichyte_stairs",
+            properties -> new StairBlock(AURICHYTE.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(AURICHYTE.get()));
+
+    public static final DeferredBlock<@NotNull SlabBlock> AURICHYTE_SLAB = registerBlockItem("aurichyte_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICK_SLAB));
+
+    public static final DeferredBlock<@NotNull WallBlock> AURICHYTE_WALL = registerBlockItem("aurichyte_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICK_WALL));
+
+    public static final DeferredBlock<@NotNull Block> POLISHED_AURICHYTE = registerBlockItem("polished_aurichyte",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK));
+
+    public static final DeferredBlock<@NotNull StairBlock> POLISHED_AURICHYTE_STAIRS = registerBlockItem("polished_aurichyte_stairs",
+            properties -> new StairBlock(POLISHED_AURICHYTE.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(POLISHED_AURICHYTE.get()));
+
+    public static final DeferredBlock<@NotNull SlabBlock> POLISHED_AURICHYTE_SLAB = registerBlockItem("polished_aurichyte_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICK_SLAB));
+
+    public static final DeferredBlock<@NotNull WallBlock> POLISHED_AURICHYTE_WALL = registerBlockItem("polished_aurichyte_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICK_WALL));
+
+    public static final DeferredBlock<@NotNull Block> AURICHYTE_BRICKS = registerBlockItem("aurichyte_bricks",Block::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK));
+
+    public static final DeferredBlock<@NotNull StairBlock> AURICHYTE_BRICK_STAIRS = registerBlockItem("aurichyte_brick_stairs",
+            properties -> new StairBlock(AURICHYTE_BRICKS.get().defaultBlockState(), properties),
+            () -> BlockBehaviour.Properties.ofFullCopy(AURICHYTE_BRICKS.get()));
+
+    public static final DeferredBlock<@NotNull SlabBlock> AURICHYTE_BRICK_SLAB = registerBlockItem("aurichyte_brick_slab", SlabBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICK_SLAB));
+
+    public static final DeferredBlock<@NotNull WallBlock> AURICHYTE_BRICK_WALL = registerBlockItem("aurichyte_brick_wall", WallBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_BRICK_WALL));
+
+    public static final DeferredBlock<@NotNull RotatedPillarBlock> CHISELED_AURICHYTE = registerBlockItem("chiseled_aurichyte", RotatedPillarBlock::new,
+            () -> BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR));
 
     // Peat
     public static final DeferredBlock<@NotNull Block> PEAT = registerBlockItem("peat",Block::new,

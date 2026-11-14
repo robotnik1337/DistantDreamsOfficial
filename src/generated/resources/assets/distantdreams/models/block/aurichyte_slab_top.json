@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "distantdreams:block/aurichyte",
+    "side": "distantdreams:block/aurichyte",
+    "top": "distantdreams:block/aurichyte"
+  }
+}

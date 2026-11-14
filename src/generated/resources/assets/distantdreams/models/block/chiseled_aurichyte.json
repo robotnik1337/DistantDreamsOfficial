@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "distantdreams:block/chiseled_aurichyte_top",
+    "side": "distantdreams:block/chiseled_aurichyte"
+  }
+}

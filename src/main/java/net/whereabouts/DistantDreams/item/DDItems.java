@@ -18,6 +18,10 @@ public class DDItems {
 
     public static final DeferredItem<Item> MUSIC_DISC_HYPNAGOGIA = ITEMS.registerSimpleItem("music_disc_hypnagogia");
 
+    public static final DeferredItem<Item> AURICHYTE_SHARD = ITEMS.registerSimpleItem("aurichyte_shard");
+
+    public static final DeferredItem<Item> RESONANT_AURICHYTE_SHARD = ITEMS.registerSimpleItem("resonant_aurichyte_shard");
+
     public static final DeferredItem<Item> EOTRAGUS_SPAWN_EGG = ITEMS.registerItem("eotragus_spawn_egg",
             properties -> new SpawnEggItem(properties.spawnEgg(DDEntities.EOTRAGUS.get())));
 

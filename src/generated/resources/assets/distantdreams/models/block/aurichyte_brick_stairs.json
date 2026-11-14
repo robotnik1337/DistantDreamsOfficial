@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "distantdreams:block/aurichyte_bricks",
+    "side": "distantdreams:block/aurichyte_bricks",
+    "top": "distantdreams:block/aurichyte_bricks"
+  }
+}

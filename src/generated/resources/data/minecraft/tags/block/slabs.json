@@ -18,6 +18,9 @@
     "distantdreams:islate_slab",
     "distantdreams:islate_cobbled_slab",
     "distantdreams:islate_polished_slab",
-    "distantdreams:islate_brick_slab"
+    "distantdreams:islate_brick_slab",
+    "distantdreams:aurichyte_slab",
+    "distantdreams:polished_aurichyte_slab",
+    "distantdreams:aurichyte_brick_slab"
   ]
 }

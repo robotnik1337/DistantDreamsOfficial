@@ -240,7 +240,7 @@ public class DDBiomes {
 
         BiomeDefaultFeatures.addDesertVegetation(biomeBuilder);
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
-//        BiomeDefaultFeatures.addDesertExtraVegetation(biomeBuilder);
+      //  BiomeDefaultFeatures.addDesertExtraVegetation(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder, true);
 
         return new Biome.BiomeBuilder()

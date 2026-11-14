@@ -18,6 +18,9 @@
     "distantdreams:islate_stairs",
     "distantdreams:islate_cobbled_stairs",
     "distantdreams:islate_polished_stairs",
-    "distantdreams:islate_brick_stairs"
+    "distantdreams:islate_brick_stairs",
+    "distantdreams:aurichyte_stairs",
+    "distantdreams:polished_aurichyte_stairs",
+    "distantdreams:aurichyte_brick_stairs"
   ]
 }
